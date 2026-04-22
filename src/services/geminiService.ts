@@ -1,4 +1,4 @@
-import { ExtractedData, CalculatorMode } from '../types';
+import type { ExtractedData, CalculatorMode } from '../types';
 
 const API_ENDPOINT = '/api/analyze-document';
 

@@ -20,6 +20,7 @@ export const NAV_LINKS: Array<{ label: string; href: string }> = [
     { label: 'Home', href: '/' },
     { label: 'Calcolatore', href: '/calcolatore' },
     { label: 'Anticipo', href: '/anticipo' },
+    { label: 'DIS-COLL', href: '/dis-coll' },
     { label: 'Obblighi', href: '/obblighi' },
     { label: 'FAQ', href: '/guida' },
     { label: 'Chi siamo', href: '/chi-siamo' },

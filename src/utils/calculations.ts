@@ -1,5 +1,6 @@
 import { NASPI_CONSTANTS, IRPEF_BRACKETS_2026 } from "../constants";
-import { NaspiResult, TerminationReason, UserInputData, VoluntaryException, MonthlyPayment, AnticipoInput, AnticipoResult } from "../types";
+import { TerminationReason, VoluntaryException } from "../types";
+import type { NaspiResult, UserInputData, MonthlyPayment, AnticipoInput, AnticipoResult } from "../types";
 
 const formatDate = (date: Date): string => {
     if (!date || isNaN(date.getTime())) return "Data non valida";

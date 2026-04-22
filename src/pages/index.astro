@@ -2,11 +2,13 @@
 import Base from '../layouts/Base.astro';
 import Home from '../components/Home';
 import NewsCard from '../components/NewsCard.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import { NASPI_CONSTANTS } from '../constants';
 
+type NewsEntry = CollectionEntry<'news'>;
+
 const latestNews = (await getCollection('news'))
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .sort((a: NewsEntry, b: NewsEntry) => b.data.date.getTime() - a.data.date.getTime())
     .slice(0, 4);
 
 const faqSchema = {
@@ -76,7 +78,7 @@ const howToSchema = {
                 <a href="/news" class="text-sm font-bold text-blue-600 hover:text-blue-700">Tutte le news →</a>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {latestNews.map((entry) => <NewsCard entry={entry} />)}
+                {latestNews.map((entry: NewsEntry) => <NewsCard entry={entry} />)}
             </div>
         </div>
     </section>

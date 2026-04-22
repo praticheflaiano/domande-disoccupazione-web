@@ -1,9 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
 import NewsCard from '../../components/NewsCard.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
-const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+type NewsEntry = CollectionEntry<'news'>;
+
+const news = (await getCollection('news')).sort((a: NewsEntry, b: NewsEntry) => b.data.date.getTime() - a.data.date.getTime());
 
 const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -23,7 +25,7 @@ const breadcrumbs = [
         </header>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {news.map((entry) => <NewsCard entry={entry} />)}
+            {news.map((entry: NewsEntry) => <NewsCard entry={entry} />)}
         </div>
     </section>
 </Base>

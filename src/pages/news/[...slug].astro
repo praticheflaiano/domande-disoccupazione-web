@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/routes';
 
 export async function getStaticPaths() {
     const entries = await getCollection('news');
-    return entries.map((entry) => ({
+    return entries.map((entry: CollectionEntry<'news'>) => ({
         params: { slug: entry.slug },
         props: { entry },
     }));

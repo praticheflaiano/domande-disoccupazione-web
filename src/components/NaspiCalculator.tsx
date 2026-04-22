@@ -2,7 +2,8 @@ import React, { useState, useRef, useId } from 'react';
 import { Calculator, FileText, Upload, CheckCircle, Info, ArrowRight, HelpCircle, AlertTriangle, TrendingDown, Calendar, Briefcase } from 'lucide-react';
 import { analyzeContributionDocument } from '../services/geminiService';
 import { calculateNaspiEligibility, calculateNaspiFromDecree } from '../utils/calculations';
-import { NaspiResult, TerminationReason, UserInputData, VoluntaryException, CalculatorMode } from '../types';
+import { TerminationReason, VoluntaryException } from '../types';
+import type { NaspiResult, UserInputData, CalculatorMode } from '../types';
 import Obligations from './Obligations';
 import LegalDisclaimer from './LegalDisclaimer';
 

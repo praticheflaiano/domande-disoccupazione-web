@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { calculateNaspiEligibility, calculateNaspiFromDecree, calculateAnticipo } from '../calculations';
 import { NASPI_CONSTANTS } from '../../constants';
-import { TerminationReason, VoluntaryException, UserInputData } from '../../types';
+import { TerminationReason, VoluntaryException } from '../../types';
+import type { UserInputData } from '../../types';
 
 const baseInput = (overrides: Partial<UserInputData> = {}): UserInputData => ({
     age: 40,
