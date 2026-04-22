@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+    entry: CollectionEntry<'news'>;
+}
+
+const { entry } = Astro.props;
+const { title, date, category, summary, important } = entry.data;
+const dateStr = new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }).format(date);
+
+const categoryColors: Record<string, string> = {
+    Normativa: 'bg-red-100 text-red-800',
+    Pagamenti: 'bg-green-100 text-green-800',
+    Bonus: 'bg-amber-100 text-amber-800',
+    Agricola: 'bg-emerald-100 text-emerald-800',
+};
+---
+
+<a
+    href={`/news/${entry.slug}`}
+    class="block bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+>
+    <div class="flex items-center gap-2 mb-3">
+        <span class={`text-xs font-bold px-3 py-1 rounded-full ${categoryColors[category]}`}>{category}</span>
+        {important && (
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-red-600 text-white">IMPORTANTE</span>
+        )}
+        <time datetime={date.toISOString()} class="text-xs text-slate-500">{dateStr}</time>
+    </div>
+    <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">{title}</h3>
+    <p class="text-sm text-slate-600 leading-relaxed">{summary}</p>
+</a>

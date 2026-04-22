@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import AnticipoNaspi from '../components/AnticipoNaspi';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Anticipo NASpI', href: '/anticipo' },
+];
+---
+
+<Base
+    title="Anticipo NASpI 2026: liquidazione in unica soluzione"
+    description="Richiedi la liquidazione anticipata della NASpI per avvio di attività autonoma, P.IVA o cooperativa. Calcolo capitale, tassazione separata e istruzioni."
+    breadcrumbs={breadcrumbs}
+>
+    <AnticipoNaspi client:load />
+</Base>

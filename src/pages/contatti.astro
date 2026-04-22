@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import OfficeInfo from '../components/OfficeInfo';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Contatti', href: '/contatti' },
+];
+---
+
+<Base
+    title="Contatti — Centro Pratiche Flaiano (Roma)"
+    description="Sede di Roma: Via Filoteo Alberini 25. Telefono, orari, mappa e servizi di assistenza per NASpI, disoccupazione e pratiche INPS."
+    breadcrumbs={breadcrumbs}
+>
+    <OfficeInfo client:visible />
+</Base>

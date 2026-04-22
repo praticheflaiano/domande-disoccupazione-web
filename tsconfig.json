@@ -1,37 +1,24 @@
 {
+    "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
-        "target": "ES2020",
-        "useDefineForClassFields": true,
-        "lib": [
-            "ES2020",
-            "DOM",
-            "DOM.Iterable"
-        ],
-        "module": "ESNext",
-        "skipLibCheck": true,
-        "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
         "jsx": "react-jsx",
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
+        "jsxImportSource": "react",
         "baseUrl": ".",
         "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        }
+            "@/*": ["./src/*"]
+        },
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     },
     "include": [
+        ".astro/types.d.ts",
         "src",
         "api"
     ],
     "exclude": [
         "node_modules",
+        "dist",
+        ".astro",
         "domandedisoccupazione.it---centro-pratiche-flaiano"
     ]
 }

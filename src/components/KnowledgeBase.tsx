@@ -96,13 +96,7 @@ const faqs: FAQCategory[] = [
     }
 ];
 
-import type { Page } from '../types';
-
-interface KnowledgeBaseProps {
-    onNavigate: (page: Page) => void;
-}
-
-const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({ onNavigate }) => {
+const KnowledgeBase: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredFaqs = faqs.map(category => ({
@@ -176,12 +170,12 @@ const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({ onNavigate }) => {
                 <p className="text-teal-700 mb-6 max-w-lg mx-auto">
                     Consulta il nostro Manuale Completo NASpI 2026 per approfondimenti su decurtazione, sospensione e compatibilità lavorativa.
                 </p>
-                <button
-                    onClick={() => onNavigate('guide-book')}
+                <a
+                    href="/manuale"
                     className="bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-colors shadow-lg hover:shadow-xl inline-flex items-center gap-2"
                 >
                     Apri il Manuale Completo <ArrowRight className="w-5 h-5" />
-                </button>
+                </a>
             </div>
         </div>
     );

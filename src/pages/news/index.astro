@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { getCollection } from 'astro:content';
+
+const news = (await getCollection('news')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'News NASpI', href: '/news' },
+];
+---
+
+<Base
+    title="News NASpI 2026 e ammortizzatori sociali | Centro Pratiche Flaiano"
+    description="Aggiornamenti normativi su NASpI, disoccupazione agricola, bonus SAR e pagamenti INPS. Circolari e novità 2025-2026."
+    breadcrumbs={breadcrumbs}
+>
+    <section class="max-w-6xl mx-auto py-12 px-4">
+        <header class="mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3">News NASpI e ammortizzatori sociali</h1>
+            <p class="text-slate-600 text-lg">Circolari INPS, novità normative e calendario pagamenti.</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {news.map((entry) => <NewsCard entry={entry} />)}
+        </div>
+    </section>
+</Base>

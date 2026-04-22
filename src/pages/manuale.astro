@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import NaspiGuide from '../components/NaspiGuide';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Manuale NASpI 2026', href: '/manuale' },
+];
+---
+
+<Base
+    title="Manuale NASpI 2026: guida completa INPS"
+    description="Manuale completo NASpI 2026: compatibilità con altri lavori, sospensione, decadenza, decalage, tabella compatibilità e obblighi."
+    breadcrumbs={breadcrumbs}
+>
+    <NaspiGuide client:visible />
+</Base>

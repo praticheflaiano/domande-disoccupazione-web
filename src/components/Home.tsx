@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, type LucideIcon } from 'lucide-react';
-import { Page } from '../types';
-
-interface HomeProps { onNavigate: (page: Page) => void; }
 
 const PracticeCounter = () => {
     const [count] = useState(1843);
@@ -28,7 +25,7 @@ const Card = ({ icon: Icon, title, text, highlight = false }: { icon: LucideIcon
     </div>
 );
 
-const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+const Home: React.FC = () => {
     return (
         <div className="space-y-12 pb-12">
 
@@ -53,20 +50,20 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                 Niente burocrazia, solo chiarezza.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button
-                                    onClick={() => onNavigate('calculator')}
+                                <a
+                                    href="/calcolatore"
                                     className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-300 flex items-center justify-center gap-2 group"
                                 >
                                     Calcola Ora
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                                <button
-                                    onClick={() => onNavigate('guide-book')}
+                                </a>
+                                <a
+                                    href="/manuale"
                                     className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-100 rounded-2xl font-bold text-lg hover:border-teal-100 hover:bg-teal-50/50 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
                                     <BookOpen className="w-5 h-5 text-teal-600" />
                                     Guida 2026
-                                </button>
+                                </a>
                             </div>
                             <div className="flex items-center gap-4 text-sm text-slate-500 pt-4">
                                 <div className="flex -space-x-2">
@@ -176,9 +173,9 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                         <p className="mb-8 text-slate-600">
                             Il nostro calcolatore avanzato utilizza le ultime aliquote INPS e l'Intelligenza Artificiale per analizzare la tua situazione contributiva.
                         </p>
-                        <button onClick={() => onNavigate('calculator')} className="w-full bg-slate-900 text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-slate-800 transition-colors">
+                        <a href="/calcolatore" className="w-full bg-slate-900 text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-slate-800 transition-colors">
                             Vai al Calcolatore <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </Section>
@@ -203,9 +200,9 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <p className="mb-6 text-slate-600 max-w-2xl mx-auto">
                         La domanda va presentata entro <strong>68 giorni</strong> dalla cessazione del rapporto di lavoro, pena la decadenza del diritto.
                     </p>
-                    <button onClick={() => onNavigate('apply')} className="bg-blue-600 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <a href="/richiedi" className="inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
                         Inizia la Richiesta Online
-                    </button>
+                    </a>
                 </div>
             </Section>
 

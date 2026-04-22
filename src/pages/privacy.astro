@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import PrivacyPolicy from '../components/PrivacyPolicy';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Privacy Policy', href: '/privacy' },
+];
+---
+
+<Base
+    title="Privacy Policy | Centro Pratiche Flaiano"
+    description="Informativa privacy ai sensi del GDPR: trattamento dei dati personali, cookie, diritti dell'interessato."
+    breadcrumbs={breadcrumbs}
+>
+    <PrivacyPolicy client:idle />
+</Base>

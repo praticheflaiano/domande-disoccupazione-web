@@ -1,21 +1,25 @@
 {
   "name": "domandedisoccupazione",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "astro dev",
     "dev:vercel": "vercel dev",
-    "build": "tsc && vite build",
-    "typecheck": "tsc --noEmit",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check && tsc --noEmit -p tsconfig.json",
     "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"api/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,astro,css}\" \"api/**/*.ts\"",
     "test": "vitest",
-    "test:coverage": "vitest --run --coverage",
-    "preview": "vite preview"
+    "test:coverage": "vitest --run --coverage"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/tailwind": "^6.0.2",
     "@google/generative-ai": "^0.24.1",
+    "astro": "^5.18.1",
     "lucide-react": "^0.454.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,7 +34,6 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "@vercel/node": "^3.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
     "@vitest/coverage-v8": "^1.6.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.1",
@@ -42,7 +45,6 @@
     "prettier": "^3.8.3",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11",
     "vitest": "^1.6.1"
   }
 }
