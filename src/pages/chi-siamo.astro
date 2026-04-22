@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import { LAST_UPDATED } from '../constants';
 
 const breadcrumbs = [
@@ -87,4 +88,6 @@ const authorSchema = {
             </p>
         </section>
     </article>
+
+    <RelatedPages current="chi-siamo" />
 </Base>

@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import GuidaNav from '../../components/GuidaNav.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import ConversionCTA from '../../components/ConversionCTA';
 import { LAST_UPDATED } from '../../constants';
 
@@ -107,4 +108,6 @@ const howToSchema = {
             subline="Il Centro Pratiche Flaiano si occupa di tutta la pratica: domanda, DID, SIISL, comunicazioni periodiche. Tu devi solo inviare i documenti su WhatsApp."
         />
     </article>
+
+    <RelatedPages current="guida" />
 </Base>

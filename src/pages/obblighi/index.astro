@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ObblighiNav from '../../components/ObblighiNav.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import ConversionCTA from '../../components/ConversionCTA';
 import { LAST_UPDATED } from '../../constants';
 
@@ -108,4 +109,6 @@ const timelineSchema = {
             subline="Ti affianchiamo durante tutto il periodo di indennità: promemoria sulle scadenze SIISL/CPI, NASpI-Com compilate per te, verifica delle comunicazioni INPS."
         />
     </article>
+
+    <RelatedPages current="obblighi" />
 </Base>

@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Home from '../components/Home';
 import NewsCard from '../components/NewsCard.astro';
 import ReviewsBlock from '../components/ReviewsBlock.astro';
+import ExpertQuote from '../components/ExpertQuote.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { NASPI_CONSTANTS } from '../constants';
 
@@ -71,6 +72,15 @@ const howToSchema = {
     jsonLd={[faqSchema, howToSchema]}
 >
     <Home client:load />
+
+    <section aria-label="Cosa dice la normativa" class="bg-white border-t border-slate-200 py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">Cosa dice la normativa</h2>
+            <p class="text-slate-600 mb-6">I riferimenti ufficiali su cui si basa il nostro servizio: Cassazione, INPS e Jobs Act.</p>
+            <ExpertQuote id="inps-98-2025" />
+            <ExpertQuote id="cass-5445-2026" />
+        </div>
+    </section>
 
     <ReviewsBlock />
 

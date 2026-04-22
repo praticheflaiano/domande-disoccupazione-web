@@ -1,0 +1,56 @@
+---
+import type { Quote } from '../data/quotes';
+import { quoteById } from '../data/quotes';
+
+export interface Props {
+    id: string;
+}
+
+const { id } = Astro.props;
+const q: Quote | undefined = quoteById(id);
+
+if (!q) {
+    throw new Error(`ExpertQuote: quote id "${id}" non trovato in src/data/quotes.ts`);
+}
+
+const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Quotation',
+    text: q.text,
+    citation: q.source,
+    isBasedOn: q.sourceUrl ?? q.source,
+    datePublished: q.date,
+    creator: {
+        '@type': 'Person',
+        name: q.author,
+        jobTitle: q.role,
+    },
+};
+
+const formatDate = (iso: string): string => {
+    if (/^\d{4}$/.test(iso)) return iso;
+    try {
+        return new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
+    } catch {
+        return iso;
+    }
+};
+---
+
+<figure class="my-8 border-l-4 border-teal-500 bg-teal-50/60 rounded-r-xl p-5 md:p-6 not-prose">
+    <blockquote cite={q.sourceUrl} class="text-slate-800 leading-relaxed italic">
+        «{q.text}»
+    </blockquote>
+    <figcaption class="mt-3 text-sm text-slate-600">
+        —{' '}<strong class="text-slate-900">{q.author}</strong>, {q.role}.
+        {q.sourceUrl ? (
+            <a href={q.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+                {q.source}
+            </a>
+        ) : (
+            <span>{q.source}</span>
+        )}
+        {' '}(<time datetime={q.date}>{formatDate(q.date)}</time>)
+    </figcaption>
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</figure>
