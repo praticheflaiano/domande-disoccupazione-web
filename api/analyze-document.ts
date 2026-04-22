@@ -31,6 +31,7 @@ const decreeSchema: ResponseSchema = {
 };
 
 export const config = {
+    maxDuration: 20,
     api: {
         bodyParser: { sizeLimit: '4.5mb' },
     },

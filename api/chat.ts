@@ -4,6 +4,8 @@ import { getModel } from './_lib/gemini';
 import { checkRateLimit, resolveClientIp } from './_lib/rateLimit';
 import { assertAllowedOrigin } from './_lib/origin';
 
+export const config = { maxDuration: 20 };
+
 const SYSTEM_INSTRUCTION = `
 Sei l'Assistente Virtuale del "Centro Pratiche Flaiano" (domandedisoccupazione.it).
 INFO UFFICIO: Via Filoteo Alberini, 25/int 10, 00139 Roma (RM). Lun-Gio 9:30-13/15:30-18, Ven 9:30-14. Tel 06 9784 5429.
