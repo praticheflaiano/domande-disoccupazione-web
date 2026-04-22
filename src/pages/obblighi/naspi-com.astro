@@ -1,0 +1,88 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Quanto tempo ho per fare la NASpI-Com?',
+        a: 'Entro 30 giorni dall\'inizio della nuova attività (subordinata, autonoma o occasionale). Per il reddito presunto dell\'anno in corso la scadenza è il 31 gennaio.',
+    },
+    {
+        q: 'Devo fare la NASpI-Com anche per un contratto che durerà pochi giorni?',
+        a: 'Sì. Qualsiasi nuovo rapporto, anche di un solo giorno, va comunicato. L\'unica eccezione è se il datore di lavoro gestisce in automatico la comunicazione UNILAV (che però non sostituisce la NASpI-Com quando si tratta di prestazione autonoma, occasionale o co.co.co.).',
+    },
+    {
+        q: 'Cosa succede se sbaglio il reddito previsto?',
+        a: 'Non succede nulla se dichiari in buona fede e poi aggiorni. A fine anno INPS confronterà i dati trasmessi dal datore con la tua comunicazione: se il reddito reale supera la soglia, scatterà recupero delle somme non dovute, ma senza sanzione se avevi comunicato. Se invece non avevi comunicato nulla, la decadenza è retroattiva.',
+    },
+    {
+        q: 'Serve lo SPID per fare la NASpI-Com?',
+        a: 'Sì per il portale INPS, ma puoi anche chiedere a un patronato di farlo per te. Il Centro Pratiche Flaiano la compila per i propri clienti come parte del servizio di gestione NASpI.',
+    },
+];
+---
+
+<ObblighiLayout
+    title="NASpI-Com: come comunicare nuovo lavoro o reddito all'INPS | 2026"
+    description="Guida operativa alla NASpI-Com: quando va compilata (30 giorni), cosa comunicare (lavoro subordinato, autonomo, occasionale, P.IVA, reddito presunto), come farla su portale INPS."
+    slug="naspi-com"
+    h1="NASpI-Com: comunicare nuovi redditi"
+    kicker="Obbligo continuo durante la NASpI"
+    sources={[
+        'D.Lgs. 22/2015 art. 10 (obbligo di comunicazione)',
+        'Circ. INPS n. 174 del 23/11/2017 (modulistica NASpI-Com)',
+        'Msg. INPS n. 2599 del 18/06/2018 (termine 30 giorni)',
+        'INPS — Servizio "Comunicazioni NASpI" su portale telematico',
+    ]}
+    faq={faq}
+>
+    <h2>Cos'è la NASpI-Com</h2>
+    <p>
+        La <strong>NASpI-Com</strong> è la comunicazione telematica obbligatoria con cui il percettore di NASpI informa l'INPS
+        di qualunque <strong>variazione</strong> della propria situazione lavorativa o reddituale. È regolata dall'art. 10 del
+        D.Lgs. 22/2015 ed è il più importante strumento di "condizionalità": l'omissione comporta
+        <strong> decadenza retroattiva</strong> dell'intera prestazione.
+    </p>
+
+    <h2>Quando va compilata — le 6 situazioni tipiche</h2>
+    <ol>
+        <li><strong>Nuovo rapporto di lavoro subordinato</strong> (a tempo determinato, indeterminato o apprendistato): entro 30 giorni dall'assunzione, dichiarando reddito annuo previsto.</li>
+        <li><strong>Collaborazione coordinata e continuativa (co.co.co.)</strong>: entro 30 giorni dall'inizio, dichiarando compenso previsto.</li>
+        <li><strong>Apertura P.IVA / impresa individuale / cooperativa</strong>: entro 30 giorni dall'avvio, dichiarando reddito netto previsto.</li>
+        <li><strong>Prestazione occasionale PrestO</strong> (Libretto Famiglia o Contratto di Prestazione Occasionale): entro 30 giorni dall'inizio, dichiarando importo previsto.</li>
+        <li><strong>Tirocinio retribuito extracurriculare</strong>: entro 30 giorni dall'avvio, dichiarando indennità annua.</li>
+        <li><strong>Reddito presunto dell'anno in corso</strong> (se già in attività al 1° gennaio): entro <strong>31 gennaio</strong> di ogni anno.</li>
+    </ol>
+
+    <h2>Come si compila</h2>
+    <p>Hai tre modi per presentare la NASpI-Com:</p>
+    <ol>
+        <li><strong>Portale INPS</strong>: accedi con SPID/CIE/CNS → Prestazioni → NASpI → "Comunicazioni NASpI". Compila il modulo online, allega eventuale contratto, invia. Ricevi protocollo in tempo reale.</li>
+        <li><strong>Contact Center INPS</strong> — 803.164 (gratuito da rete fissa) o 06.164.164 (da cellulare): l'operatore compila per te, servono SPID e dati del rapporto.</li>
+        <li><strong>Patronato o consulente del lavoro</strong>: delega via modello SR163, la comunicazione la fa il professionista a tuo nome.</li>
+    </ol>
+
+    <h2>Cosa succede al tuo importo NASpI</h2>
+    <p>
+        INPS, ricevuta la comunicazione, ricalcola automaticamente la tua indennità:
+    </p>
+    <ul>
+        <li>Se il reddito previsto è sotto le <a href="/obblighi/redditi">soglie compatibili</a> (€ 8.500 subordinato, € 5.500 autonomo, € 5.000 PrestO), la NASpI viene <strong>ridotta dell'80% del reddito previsto</strong> per la durata del rapporto.</li>
+        <li>Se supera le soglie, la NASpI viene <strong>sospesa</strong> per tutta la durata del nuovo rapporto (riprende alla cessazione, se ancora entro i mesi residui).</li>
+        <li>Se il reddito presunto fosse zero (es. P.IVA appena aperta, nessuna fattura prevista), la NASpI continua senza riduzioni, ma la comunicazione è comunque obbligatoria.</li>
+    </ul>
+
+    <h2>Sanzione per omissione</h2>
+    <p>
+        La mancata NASpI-Com è una delle omissioni più pericolose: INPS dispone della <strong>decadenza</strong> dall'inizio del rapporto
+        non comunicato, con richiesta di restituzione di tutte le somme percepite da quella data. Spesso scoperta in sede di controllo
+        incrociato con Agenzia delle Entrate o datore di lavoro (flussi UniEmens). Anche una dimenticanza di buona fede viene trattata
+        come omissione.
+    </p>
+
+    <h2>Consiglio operativo</h2>
+    <p>
+        Appena firmi un nuovo contratto, un affidamento co.co.co. o apri P.IVA, <strong>la stessa settimana</strong> compila la NASpI-Com.
+        Non aspettare il trentesimo giorno. Se ti affidi a noi, la compiliamo per conto tuo entro 48 ore dalla tua segnalazione:
+        basta inviare una foto del contratto via WhatsApp.
+    </p>
+</ObblighiLayout>

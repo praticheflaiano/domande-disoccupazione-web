@@ -1,0 +1,142 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Cosa significa "decadenza" dalla NASpI?',
+        a: 'Decadenza significa perdita totale e definitiva dell\'indennità, oltre alla perdita dello stato di disoccupazione (quindi esci anche dalla piattaforma SIISL). Per riaccedere alla NASpI in futuro servono nuovi 13 settimane di contributi maturati dopo la cessazione del rapporto che aveva originato la decadenza.',
+    },
+    {
+        q: 'Posso fare ricorso contro una sanzione?',
+        a: 'Sì, entro 90 giorni dal provvedimento tramite ricorso amministrativo INPS (portale online) o direttamente in Tribunale del Lavoro. Un patronato o avvocato giuslavorista può valutare se il rifiuto di un\'offerta era giustificato (es. distanza reale maggiore di quella dichiarata, retribuzione sotto l\'80%).',
+    },
+    {
+        q: 'Le decurtazioni si sommano?',
+        a: 'Sì. Ogni assenza o mancato adempimento genera una decurtazione che si aggiunge alle precedenti. Alla terza "assenza" nella stessa categoria scatta la decadenza automatica.',
+    },
+    {
+        q: 'Posso perdere la NASpI anche al primo errore?',
+        a: 'Sì, in tre casi: (1) rifiuto di un\'offerta congrua, (2) NASpI-Com omessa per un rapporto di lavoro attivo, (3) dichiarazione mendace nella domanda iniziale. In tutti gli altri casi la sanzione è progressiva.',
+    },
+];
+---
+
+<ObblighiLayout
+    title="Sanzioni NASpI 2026: decurtazioni, sospensione, decadenza | Tabella completa"
+    description="Tabella dettagliata di tutte le sanzioni previste per il percettore NASpI: mancata firma PAD, assenza CPI, rifiuto offerta congrua, omessa NASpI-Com. Come funzionano ricorsi e recuperi."
+    slug="sanzioni"
+    h1="Sanzioni: cosa rischi e come evitarle"
+    kicker="Tutto ciò che NON devi fare"
+    sources={[
+        'D.Lgs. 150/2015 art. 21 (sanzioni per inadempimenti nel PSP)',
+        'D.Lgs. 22/2015 art. 11 (decadenza dalla NASpI)',
+        'DM 10 aprile 2018 (criteri dell\'offerta di lavoro congrua)',
+        'Prassi INPS 2025-2026 post DL 48/2023',
+    ]}
+    faq={faq}
+>
+    <h2>Le 4 tipologie di sanzione</h2>
+    <ol>
+        <li><strong>Decurtazione percentuale</strong>: riduzione una tantum dell'importo NASpI (es. 25% di una mensilità = circa 7 giorni persi).</li>
+        <li><strong>Sospensione</strong>: pagamento interrotto per un periodo (1 mensilità, fino a 3 mensilità).</li>
+        <li><strong>Decadenza</strong>: cessazione definitiva, con eventuale <strong>restituzione retroattiva</strong> delle somme indebitamente percepite.</li>
+        <li><strong>Restituzione</strong>: in caso di omissione NASpI-Com o di errori gravi, INPS recupera tutti i pagamenti effettuati dalla data dell'evento non comunicato.</li>
+    </ol>
+
+    <h2>Tabella dettagliata delle sanzioni</h2>
+    <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Inadempimento</th>
+                    <th class="p-3 text-left">1ª volta</th>
+                    <th class="p-3 text-left">2ª volta</th>
+                    <th class="p-3 text-left">3ª volta</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Mancata firma PAD / CV SIISL incompleto</td>
+                    <td class="p-3">Decurt. 25% di 1 mensilità (circa 7 giorni)</td>
+                    <td class="p-3">Decurt. 1 mensilità</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Mancata presentazione a convocazione CPI</td>
+                    <td class="p-3">Decurt. 25% di 1 mensilità</td>
+                    <td class="p-3">Decurt. 1 mensilità</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza + perdita stato disoccupazione</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Mancata partecipazione a colloquio di orientamento / PSP</td>
+                    <td class="p-3">Decurt. 25%</td>
+                    <td class="p-3">1 mensilità</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Mancata partecipazione a corso GOL prenotato</td>
+                    <td class="p-3">Decurt. 1 mensilità</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza</td>
+                    <td class="p-3">—</td>
+                </tr>
+                <tr class="bg-amber-50">
+                    <td class="p-3 font-semibold">Rifiuto di un'offerta di lavoro congrua</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza immediata</td>
+                    <td class="p-3">—</td>
+                    <td class="p-3">—</td>
+                </tr>
+                <tr class="bg-amber-50">
+                    <td class="p-3 font-semibold">Omessa NASpI-Com per nuovo rapporto</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza retroattiva + restituzione somme</td>
+                    <td class="p-3">—</td>
+                    <td class="p-3">—</td>
+                </tr>
+                <tr class="bg-amber-50">
+                    <td class="p-3 font-semibold">Superamento soglie reddito compatibile</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza dal mese di superamento</td>
+                    <td class="p-3">—</td>
+                    <td class="p-3">—</td>
+                </tr>
+                <tr class="bg-amber-50">
+                    <td class="p-3 font-semibold">Dichiarazione mendace nella domanda iniziale</td>
+                    <td class="p-3 text-red-700 font-bold">Decadenza + denuncia penale</td>
+                    <td class="p-3">—</td>
+                    <td class="p-3">—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Quando un'offerta di lavoro NON è congrua (e puoi rifiutarla)</h2>
+    <p>Un'offerta è <strong>rifiutabile senza sanzione</strong> se manca anche solo uno di questi requisiti:</p>
+    <ul>
+        <li>La retribuzione è inferiore all'80% dell'ultima retribuzione percepita.</li>
+        <li>La sede di lavoro dista più di 80 km dalla residenza (100 km se NASpI > 12 mesi) o più di 100 minuti con mezzi pubblici.</li>
+        <li>Il contratto è irregolare (es. proposta "in nero", o con tipologie non previste dal CCNL di riferimento).</li>
+        <li>La mansione è incompatibile con documentati vincoli di salute (attestati da certificato medico).</li>
+    </ul>
+    <p>
+        Rifiutare per motivi soggettivi (stipendio che "piace poco", orario scomodo entro i limiti di legge) <strong>comporta
+        decadenza</strong>. Conserva sempre per iscritto ogni proposta e ogni documento a supporto del tuo rifiuto.
+    </p>
+
+    <h2>Recupero delle somme e piano di rientro</h2>
+    <p>
+        Se INPS dispone la decadenza retroattiva, invia al contribuente un <strong>avviso di indebito</strong>. Hai 90 giorni per:
+    </p>
+    <ul>
+        <li>Pagare in unica soluzione (eventualmente con bonus contestazione se la domanda era incerta).</li>
+        <li>Chiedere <strong>rateizzazione</strong> (fino a 24 mesi, su istanza).</li>
+        <li>Presentare <strong>ricorso amministrativo</strong> entro 90 giorni, sospendendo temporaneamente la richiesta.</li>
+    </ul>
+    <p>In caso di ricorso respinto, resta aperta la via giudiziale al Tribunale del Lavoro (termine 3 anni dal provvedimento).</p>
+
+    <h2>Come evitare le sanzioni — 5 regole pratiche</h2>
+    <ol>
+        <li><strong>Segna in calendario le scadenze</strong>: 15 giorni per PAD, 30 giorni per convocazione CPI, 30 giorni per NASpI-Com ogni evento.</li>
+        <li><strong>Rispondi sempre alle convocazioni CPI</strong>, anche per chiedere uno spostamento motivato.</li>
+        <li><strong>Comunica subito ogni cambiamento</strong>: contratti firmati, P.IVA aperte, prestazioni occasionali. Non aspettare il trentesimo giorno.</li>
+        <li><strong>Conserva le prove</strong>: PEC, email, SMS, raccomandate. Se un'offerta ti viene proposta verbalmente, chiedi conferma scritta.</li>
+        <li><strong>In caso di dubbio, chiedi al patronato</strong>: molte decurtazioni nascono da errori di interpretazione, non da malafede. Il nostro centro gestisce tutto questo per i clienti.</li>
+    </ol>
+</ObblighiLayout>

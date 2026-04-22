@@ -1,5 +1,6 @@
 import React from 'react';
 import { AlertTriangle, Briefcase, Printer, Coins, Book, ArrowRight } from 'lucide-react';
+import LegalDisclaimer from './LegalDisclaimer';
 
 const NaspiGuide: React.FC = () => {
     const handlePrint = () => {
@@ -8,14 +9,19 @@ const NaspiGuide: React.FC = () => {
 
     return (
         <div className="max-w-5xl mx-auto px-4 py-8 animate-in fade-in duration-700 print:w-full print:max-w-none">
-            {/* Header */}
+            <LegalDisclaimer variant="guide" className="mb-8 print:hidden" />
             {/* Header */}
             <div className="relative overflow-hidden rounded-3xl mb-12 shadow-2xl group">
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
                         src="/assets/guide_header.png"
-                        alt="Background"
+                        alt=""
+                        aria-hidden="true"
+                        width={1024}
+                        height={1024}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-transparent"></div>
@@ -26,7 +32,7 @@ const NaspiGuide: React.FC = () => {
                         <div className="max-w-2xl animate-in slide-in-from-bottom duration-700">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold uppercase tracking-wider mb-6 border border-teal-500/30 backdrop-blur-md print:hidden">
                                 <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                                Manuale Ufficiale 2025
+                                Manuale Ufficiale 2026
                             </div>
                             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">
                                 Guida Completa NASpI

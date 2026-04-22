@@ -5,7 +5,7 @@ const Obligations: React.FC = () => {
     return (
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="bg-slate-50 p-6 border-b border-slate-200 flex items-center justify-between">
-                <h3 className="text-xl font-bold flex items-center gap-2"><CheckSquare className="w-6 h-6 text-emerald-600" /> I Tuoi Obblighi (2025)</h3>
+                <h3 className="text-xl font-bold flex items-center gap-2"><CheckSquare className="w-6 h-6 text-emerald-600" /> I Tuoi Obblighi (2026)</h3>
                 <span className="text-xs font-bold bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full uppercase">Aggiornato</span>
             </div>
 

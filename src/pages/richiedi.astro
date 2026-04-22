@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import ApplyOnline from '../components/ApplyOnline';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Invia domanda online', href: '/richiedi' },
+];
+---
+
+<Base
+    title="Richiedi la NASpI online | Centro Pratiche Flaiano"
+    description="Invia la domanda NASpI online con assistenza Flaiano: upload documenti, verifica dati, invio telematico all'INPS. Risposta entro 24 ore."
+    breadcrumbs={breadcrumbs}
+>
+    <ApplyOnline client:load />
+</Base>

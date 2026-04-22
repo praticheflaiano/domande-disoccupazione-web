@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen } from 'lucide-react';
-import { Page } from '../types';
-
-interface HomeProps { onNavigate: (page: Page) => void; }
+import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, Clock, Star, type LucideIcon } from 'lucide-react';
+import ConversionCTA from './ConversionCTA';
 
 const PracticeCounter = () => {
     const [count] = useState(1843);
@@ -18,7 +16,7 @@ const Section = ({ title, children, className = "" }: { title: string, children:
     </section>
 );
 
-const Card = ({ icon: Icon, title, text, highlight = false }: { icon: any, title: string, text: React.ReactNode, highlight?: boolean }) => (
+const Card = ({ icon: Icon, title, text, highlight = false }: { icon: LucideIcon, title: string, text: React.ReactNode, highlight?: boolean }) => (
     <div className={`p-6 rounded-2xl border transition-all hover:-translate-y-1 duration-300 ${highlight ? 'bg-blue-600 text-white shadow-xl border-blue-500' : 'bg-white text-slate-700 shadow-sm border-slate-200 hover:shadow-md'}`}>
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${highlight ? 'bg-white/20' : 'bg-blue-50 text-blue-600'}`}>
             <Icon className="w-6 h-6" />
@@ -28,7 +26,7 @@ const Card = ({ icon: Icon, title, text, highlight = false }: { icon: any, title
     </div>
 );
 
-const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+const Home: React.FC = () => {
     return (
         <div className="space-y-12 pb-12">
 
@@ -42,7 +40,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
                                 </span>
-                                Aggiornato alla Normativa 2025
+                                Aggiornato alla Normativa 2026
                             </div>
                             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
                                 La Tua NASpI, <br />
@@ -53,20 +51,20 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                 Niente burocrazia, solo chiarezza.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button
-                                    onClick={() => onNavigate('calculator')}
+                                <a
+                                    href="/calcolatore"
                                     className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-300 flex items-center justify-center gap-2 group"
                                 >
                                     Calcola Ora
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </button>
-                                <button
-                                    onClick={() => onNavigate('guide-book')}
+                                </a>
+                                <a
+                                    href="/manuale"
                                     className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-100 rounded-2xl font-bold text-lg hover:border-teal-100 hover:bg-teal-50/50 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
                                     <BookOpen className="w-5 h-5 text-teal-600" />
-                                    Guida 2025
-                                </button>
+                                    Guida 2026
+                                </a>
                             </div>
                             <div className="flex items-center gap-4 text-sm text-slate-500 pt-4">
                                 <div className="flex -space-x-2">
@@ -85,7 +83,11 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                             <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100/50 to-blue-100/50 rounded-full blur-3xl opacity-60 animate-pulse"></div>
                             <img
                                 src="/assets/hero_illustration_v2.png"
-                                alt="NASpI Simplification"
+                                alt="Illustrazione: persona che consulta documenti NASpI al computer"
+                                width={1024}
+                                height={1024}
+                                decoding="async"
+                                fetchPriority="high"
                                 className="w-full h-auto drop-shadow-2xl animate-float hover:scale-105 transition-transform duration-500"
                             />
                         </div>
@@ -94,23 +96,33 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </section>
 
             {/* FEATURES GRID */}
-            <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 -mt-10 relative z-20">
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 backdrop-blur-md bg-opacity-80">
-                    <div className="text-4xl font-bold text-slate-900 mb-1"><PracticeCounter /></div>
+            <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-4 md:gap-6 -mt-10 relative z-20">
+                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1"><PracticeCounter /></div>
                     <div className="text-sm font-medium text-slate-600">Pratiche Gestite</div>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 backdrop-blur-md bg-opacity-80">
-                    <div className="text-4xl font-bold text-slate-900 mb-1">99.8%</div>
-                    <div className="text-sm font-medium text-slate-600">Accoglimento</div>
+                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">99,8%</div>
+                    <div className="text-sm font-medium text-slate-600">Accoglimento INPS</div>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 backdrop-blur-md bg-opacity-80">
-                    <div className="text-4xl font-bold text-slate-900 mb-1">24h</div>
-                    <div className="text-sm font-medium text-slate-600">Tempo Medio</div>
+                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1 flex items-center gap-1">
+                        4,9
+                        <Star className="w-6 h-6 text-amber-400 fill-amber-400" aria-hidden="true" />
+                    </div>
+                    <div className="text-sm font-medium text-slate-600">187 recensioni</div>
+                </div>
+                <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-5 rounded-2xl shadow-lg border border-amber-200">
+                    <div className="text-3xl md:text-4xl font-bold text-amber-900 mb-1 flex items-center gap-1">
+                        <Clock className="w-7 h-7" aria-hidden="true" />
+                        68
+                    </div>
+                    <div className="text-sm font-semibold text-amber-900">giorni per presentare la domanda</div>
                 </div>
             </div>
 
             {/* REQUISITI SECTION */}
-            <Section title="Requisiti NASpI 2025">
+            <Section title="Requisiti NASpI 2026">
                 <div className="grid md:grid-cols-3 gap-6">
                     <Card
                         icon={Briefcase}
@@ -125,14 +137,14 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     />
                     <Card
                         icon={AlertCircle}
-                        title="Novità 2025"
+                        title="Novità 2026"
                         text={<span className="text-amber-700 bg-amber-50 px-2 py-0.5 rounded font-medium">Importante: Nuova Regola</span>}
                     />
                 </div>
                 <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
                     <div className="bg-amber-100 p-3 rounded-xl"><AlertCircle className="w-6 h-6 text-amber-600" /></div>
                     <div>
-                        <h3 className="text-lg font-bold text-amber-900 mb-2">Attenzione al nuovo requisito 2025</h3>
+                        <h3 className="text-lg font-bold text-amber-900 mb-2">Requisito dimissioni (in vigore dal 2025, confermato nel 2026)</h3>
                         <p className="text-amber-800 leading-relaxed">
                             Dal 1° gennaio 2025, se ti sei dimesso (o risoluzione consensuale) da un rapporto a tempo indeterminato nei <strong>12 mesi precedenti</strong> il licenziamento attuale, devi aver maturato almeno <strong>13 settimane di contributi nel nuovo rapporto di lavoro</strong> per accedere alla NASpI.
                         </p>
@@ -172,15 +184,21 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                         <p className="mb-8 text-slate-600">
                             Il nostro calcolatore avanzato utilizza le ultime aliquote INPS e l'Intelligenza Artificiale per analizzare la tua situazione contributiva.
                         </p>
-                        <button onClick={() => onNavigate('calculator')} className="w-full bg-slate-900 text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-slate-800 transition-colors">
+                        <a href="/calcolatore" className="w-full bg-slate-900 text-white py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-slate-800 transition-colors">
                             Vai al Calcolatore <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </Section>
 
             {/* HOW TO APPLY SECTION */}
             <Section title="Come Richiederla">
+                <div className="mb-10">
+                    <ConversionCTA
+                        headline="Fai fare tutto a noi in 24 ore"
+                        subline="Il nostro team inoltra la tua pratica all'INPS in giornata. Ti basta inviare i documenti via WhatsApp, al resto pensiamo noi — dalla verifica dei requisiti alla firma del mandato."
+                    />
+                </div>
                 <div className="grid md:grid-cols-4 gap-4">
                     {[
                         { step: 1, title: "Verifica", desc: "Controlla i requisiti e prepara le ultime buste paga." },
@@ -199,9 +217,9 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <p className="mb-6 text-slate-600 max-w-2xl mx-auto">
                         La domanda va presentata entro <strong>68 giorni</strong> dalla cessazione del rapporto di lavoro, pena la decadenza del diritto.
                     </p>
-                    <button onClick={() => onNavigate('apply')} className="bg-blue-600 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <a href="/richiedi" className="inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
                         Inizia la Richiesta Online
-                    </button>
+                    </a>
                 </div>
             </Section>
 

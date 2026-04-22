@@ -1,0 +1,103 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Chi mi convoca al CPI?',
+        a: 'Il Centro per l\'Impiego della tua Regione/Provincia, competente per il tuo domicilio. La convocazione arriva via SMS, e-mail PEC o posta ordinaria entro 30 giorni dalla firma del PAD su SIISL.',
+    },
+    {
+        q: 'Posso rifiutare un\'offerta di lavoro proposta dal CPI?',
+        a: 'No, se è "congrua": cioè coerente con le tue competenze, con retribuzione pari ad almeno l\'80% dell\'ultimo trattamento e distanza ≤ 80 km dalla residenza (o 100 minuti con mezzi pubblici). Se la NASpI dura da oltre 12 mesi i limiti si allargano. Rifiutare un\'offerta congrua comporta decadenza immediata.',
+    },
+    {
+        q: 'Ogni quanto devo tornare al CPI?',
+        a: 'Il PSP prevede di norma un colloquio ogni 90 giorni, salvo convocazioni straordinarie per proposte di lavoro o corsi. Ogni convocazione è obbligatoria: l\'assenza comporta decurtazioni progressive.',
+    },
+    {
+        q: 'ANPAL, CPI e Agenzie per il Lavoro sono la stessa cosa?',
+        a: 'No. ANPAL (oggi confluita nel Ministero del Lavoro e in SIISL) è l\'ente di coordinamento nazionale. I CPI sono sportelli pubblici regionali/provinciali che erogano i servizi. Le APL (GiGroup, Adecco, Randstad…) sono private, autorizzate dal Ministero, e lavorano in sussidiarietà al pubblico.',
+    },
+];
+---
+
+<ObblighiLayout
+    title="Centro per l'Impiego (CPI) e PSP: chi ti chiama e cosa aspettarsi | NASpI 2026"
+    description="Cosa fa il Centro per l'Impiego dopo la firma PAD: convocazione, assessment, firma del Patto di Servizio Personalizzato. Offerta di lavoro congrua e differenze con ANPAL e APL private."
+    slug="cpi"
+    h1="Centro per l'Impiego e Patto di Servizio"
+    kicker="Secondo obbligo — entro 30 giorni dal PAD"
+    sources={[
+        'D.Lgs. 150/2015, artt. 20-22 (PSP e offerta congrua)',
+        'DM 10 aprile 2018 (criteri di congruità dell\'offerta di lavoro)',
+        'D.Lgs. 276/2003 (autorizzazione Agenzie per il Lavoro)',
+        'Portali regionali CPI (linkati in fondo)',
+    ]}
+    faq={faq}
+>
+    <h2>Chi è il Centro per l'Impiego</h2>
+    <p>
+        Il <strong>Centro per l'Impiego (CPI)</strong> è l'ufficio pubblico della tua Regione o Città Metropolitana che eroga i servizi
+        per il lavoro ai cittadini. Dopo la firma del PAD su SIISL, i tuoi dati vengono trasferiti al CPI competente in base al domicilio
+        dichiarato. Il CPI è l'interlocutore principale per tutta la durata della NASpI.
+    </p>
+    <p>Non confondere il CPI con:</p>
+    <ul>
+        <li><strong>ANPAL / Ministero del Lavoro / SIISL</strong>: coordinamento nazionale, piattaforma digitale. Non fa colloqui individuali.</li>
+        <li><strong>INPS</strong>: paga la NASpI e applica le sanzioni, ma non eroga politiche attive.</li>
+        <li><strong>APL private</strong> (GiGroup, Adecco, Manpower, Randstad, Umana, Openjobmetis…): collocano candidati in azienda, anche per GOL in sussidiarietà, ma il PSP lo firmi al CPI pubblico.</li>
+    </ul>
+
+    <h2>La convocazione</h2>
+    <p>
+        Entro <strong>30 giorni</strong> dalla firma del PAD il CPI ti contatta (SMS, e-mail, PEC o raccomandata) fissando un
+        appuntamento. <strong>La convocazione non è facoltativa</strong>: la mancata presentazione è una delle cause più frequenti
+        di perdita della NASpI. Se hai un impedimento (malattia, lutto, trasferta), devi comunicarlo prima e ottenere il riscadenziamento.
+    </p>
+
+    <h2>Cosa succede al primo colloquio (assessment)</h2>
+    <p>
+        L'operatore del CPI conduce un <strong>colloquio strutturato di profilazione</strong> (orientativo, qualitativo) che dura
+        in genere 45-60 minuti. Vengono valutati:
+    </p>
+    <ul>
+        <li><strong>Età e anzianità di disoccupazione</strong>: più sono alti, più aumenta la "distanza dal mercato" — indice che determina il percorso GOL.</li>
+        <li><strong>Titolo di studio e competenze</strong>: confronto tra il tuo profilo e le professioni più richieste nel territorio.</li>
+        <li><strong>Vincoli personali</strong>: familiari a carico, problemi di salute, possibilità di spostamento.</li>
+        <li><strong>Obiettivo occupazionale realistico</strong>: condiviso tra operatore e lavoratore.</li>
+    </ul>
+
+    <h2>La firma del PSP (Patto di Servizio Personalizzato)</h2>
+    <p>
+        Al termine dell'assessment viene stilato e firmato (cartaceo o digitale) il <strong>PSP</strong>, un vero contratto che definisce:
+    </p>
+    <ol>
+        <li><strong>Percorso GOL assegnato</strong> (Reinserimento, Upskilling, Reskilling, Lavoro e Inclusione — vedi <a href="/obblighi/gol">pagina dedicata</a>).</li>
+        <li><strong>Obiettivo</strong> (es. ricollocazione in ambito amministrativo entro 6 mesi).</li>
+        <li><strong>Attività previste</strong>: colloqui periodici, orientamento specialistico, corsi di formazione, tirocinio, supporto all'autoimpiego.</li>
+        <li><strong>Cadenza degli incontri</strong> (normalmente ogni 90 giorni).</li>
+        <li><strong>Impegno ad accettare offerte di lavoro congrue</strong>.</li>
+    </ol>
+
+    <h2>Offerta di lavoro congrua: i 4 criteri</h2>
+    <p>Un'offerta di lavoro è <strong>"congrua"</strong>, e quindi obbligatoria, se rispetta tutti questi requisiti:</p>
+    <ol>
+        <li><strong>Coerenza</strong> con le tue competenze ed esperienze (o con quelle acquisite tramite GOL).</li>
+        <li><strong>Retribuzione</strong> almeno pari all'80% dell'importo NASpI mensile (o dell'ultima retribuzione in alcuni casi).</li>
+        <li><strong>Distanza</strong>: non oltre 80 km dalla residenza oppure raggiungibile in 100 minuti con mezzi pubblici. Se percepisci NASpI da oltre 12 mesi, il limite sale a 100 km e in casi particolari può estendersi all'intero territorio nazionale.</li>
+        <li><strong>Tipologia contrattuale</strong>: tempo indeterminato, determinato, apprendistato o somministrazione. Il part-time è congruo se compatibile con i vincoli che hai dichiarato.</li>
+    </ol>
+    <p>Rifiutare un'offerta che rispetta tutti e quattro i criteri comporta <strong>decadenza immediata</strong> dalla NASpI (art. 21 D.Lgs. 150/2015).</p>
+
+    <h2>Dove trovare il tuo CPI</h2>
+    <p>Ogni Regione ha il suo portale di riferimento. Cerca la sede competente in base al comune di residenza:</p>
+    <ul>
+        <li><a href="https://www.regione.lazio.it/cittadini/lavoro-formazione/centri-impiego" target="_blank" rel="noopener noreferrer">Lazio — Centri per l'Impiego</a></li>
+        <li><a href="https://www.afolmet.it" target="_blank" rel="noopener noreferrer">Lombardia (Città Metropolitana) — AFOL Metropolitana</a></li>
+        <li><a href="https://www.cliclavoroveneto.it" target="_blank" rel="noopener noreferrer">Veneto — ClicLavoroVeneto</a></li>
+        <li><a href="https://www.iolavoro.org" target="_blank" rel="noopener noreferrer">Piemonte — IoLavoro</a></li>
+        <li><a href="https://www.agenzialavoro.tn.it" target="_blank" rel="noopener noreferrer">Provincia di Trento — Agenzia del Lavoro</a></li>
+        <li><a href="https://lavoroperte.regione.emilia-romagna.it" target="_blank" rel="noopener noreferrer">Emilia-Romagna — Lavoro per Te</a></li>
+        <li><a href="https://servizi-digitali.regione.campania.it" target="_blank" rel="noopener noreferrer">Campania — Servizi Digitali</a></li>
+    </ul>
+</ObblighiLayout>

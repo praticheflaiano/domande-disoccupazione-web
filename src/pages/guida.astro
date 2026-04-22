@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import KnowledgeBase from '../components/KnowledgeBase';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'FAQ e Guide', href: '/guida' },
+];
+---
+
+<Base
+    title="FAQ NASpI 2026: domande e risposte sui requisiti"
+    description="Risposte alle domande più frequenti sulla NASpI 2026: requisiti, dimissioni per giusta causa, SIISL, novità normative e casi particolari."
+    breadcrumbs={breadcrumbs}
+>
+    <KnowledgeBase client:load />
+</Base>

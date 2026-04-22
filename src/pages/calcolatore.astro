@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import NaspiCalculator from '../components/NaspiCalculator';
+import { NASPI_CONSTANTS } from '../constants';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Calcolatore NASpI', href: '/calcolatore' },
+];
+
+const calcSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Calcolatore NASpI 2026',
+    applicationCategory: 'GovernmentApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    description: `Simulatore ufficiale dell'importo e della durata NASpI con parametri INPS 2026 (soglia ${NASPI_CONSTANTS.THRESHOLD_AMOUNT} €, massimale ${NASPI_CONSTANTS.MAX_MONTHLY_CAP} €).`,
+};
+---
+
+<Base
+    title="Calcolatore NASpI 2026 | Stima importo e durata"
+    description={`Calcola l'importo lordo e netto della tua NASpI con i parametri INPS 2026: massimale ${NASPI_CONSTANTS.MAX_MONTHLY_CAP} €, decalage 3% mensile dal 6° mese.`}
+    breadcrumbs={breadcrumbs}
+    jsonLd={calcSchema}
+>
+    <NaspiCalculator client:load />
+</Base>

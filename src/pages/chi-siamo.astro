@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import { LAST_UPDATED } from '../constants';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Chi siamo', href: '/chi-siamo' },
+];
+
+const authorSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Centro Pratiche Flaiano',
+    url: 'https://domandedisoccupazione.it',
+    logo: 'https://domandedisoccupazione.it/og/cover.png',
+    description:
+        "Centro di assistenza autorizzato per pratiche NASpI e disoccupazione INPS, attivo a Roma dal 2010.",
+    knowsAbout: [
+        'NASpI',
+        'DIS-COLL',
+        'Indennità di disoccupazione',
+        'Programma GOL',
+        'Piattaforma SIISL',
+        'Anticipo NASpI per avvio attività',
+    ],
+};
+---
+
+<Base
+    title="Chi siamo — Centro Pratiche Flaiano"
+    description="Siamo un centro di assistenza specializzato in pratiche NASpI e disoccupazione INPS, con sede a Roma. Oltre 1.800 pratiche gestite."
+    breadcrumbs={breadcrumbs}
+    jsonLd={authorSchema}
+>
+    <article class="max-w-3xl mx-auto py-12 px-4 space-y-8">
+        <header>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Chi siamo</h1>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Il <strong>Centro Pratiche Flaiano</strong> è un centro di assistenza specializzato in pratiche di disoccupazione
+                NASpI e DIS-COLL, con sede a Roma dal 2010. Aiutiamo ogni anno migliaia di lavoratori a ottenere l'indennità
+                che gli spetta, con velocità e precisione.
+            </p>
+        </header>
+
+        <section>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Perché fidarsi di noi</h2>
+            <ul class="space-y-3 text-slate-700">
+                <li>• <strong>1.843+</strong> pratiche NASpI gestite con successo.</li>
+                <li>• <strong>Aggiornamento continuo</strong> alla normativa: circolari INPS, Legge di Bilancio, decreti lavoro.</li>
+                <li>• <strong>Assistenza umana</strong> oltre al software: un operatore segue la tua pratica dall'invio alla liquidazione.</li>
+                <li>• <strong>Trasparenza</strong>: il calcolatore online usa esattamente le stesse formule INPS, e la fonte di ogni valore è dichiarata.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Competenze</h2>
+            <p class="text-slate-700 leading-relaxed">
+                La nostra area di specializzazione copre la <strong>NASpI</strong> (requisiti, calcolo importo, decalage,
+                compatibilità con altri redditi), l'<strong>anticipo NASpI</strong> per avvio attività autonoma o partecipazione
+                a cooperativa, gli <strong>obblighi SIISL/PAD/GOL</strong> e il sistema sanzionatorio. Abbiamo anche esperienza
+                con la <strong>DIS-COLL</strong> per collaboratori coordinati e continuativi e la <strong>disoccupazione agricola</strong>
+                (CISOA, requisito 102 giornate).
+            </p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Contatti e sede</h2>
+            <address class="not-italic text-slate-700 leading-relaxed">
+                <strong>Centro Pratiche Flaiano</strong><br />
+                Via Filoteo Alberini, 25/int 10 — 00139 Roma (RM)<br />
+                Telefono: <a href="tel:+390697845429" class="text-blue-600 hover:underline">06 9784 5429</a><br />
+                Email: <a href="mailto:info@praticheflaiano.it" class="text-blue-600 hover:underline">info@praticheflaiano.it</a><br />
+                Orari: Lun–Gio 9:30–13:00 / 15:30–18:00 — Ven 9:30–14:00
+            </address>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Fonti e aggiornamento</h2>
+            <p class="text-slate-700 leading-relaxed">
+                I contenuti di questo sito si basano su: <strong>D.Lgs. 22/2015</strong> (istituzione NASpI), circolari INPS
+                aggiornate (98/2025, 149/2025), <strong>Legge di Bilancio 2026</strong> (L. 199/2025) e comunicazioni ufficiali
+                del Ministero del Lavoro. I parametri annuali NASpI sono allineati alla rivalutazione ISTAT comunicata da INPS
+                all'inizio di ciascun anno.
+            </p>
+            <p class="text-sm text-slate-500 mt-4">
+                Ultimo aggiornamento della pagina: <time datetime={LAST_UPDATED}>{LAST_UPDATED}</time>
+            </p>
+        </section>
+    </article>
+</Base>

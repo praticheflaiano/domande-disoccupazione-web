@@ -1,0 +1,134 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Posso lavorare mentre percepisco la NASpI?',
+        a: 'Sì, entro precise soglie di reddito annuo: € 8.500 per lavoro subordinato, € 5.500 per lavoro autonomo/P.IVA, € 5.000 per prestazioni occasionali. Sopra tali soglie scatta la sospensione o la decadenza.',
+    },
+    {
+        q: 'Come si calcola la riduzione dell\'80%?',
+        a: 'Esempio: hai NASpI di € 1.000/mese e inizi un contratto subordinato a 6 mesi con reddito previsto € 7.000 annui. NASpI ridotta = 1.000 − (7.000 × 80% / 12 mesi) = 1.000 − 466 = € 534/mese per i 6 mesi del contratto.',
+    },
+    {
+        q: 'Le prestazioni occasionali contano insieme al lavoro autonomo?',
+        a: 'No, le soglie sono distinte per tipologia. Puoi cumulare € 5.000 di PrestO + € 5.500 di P.IVA nello stesso anno senza perdere la NASpI, a condizione di comunicare entrambe le attività con NASpI-Com.',
+    },
+    {
+        q: 'Il tirocinio extracurriculare incide?',
+        a: 'L\'indennità di tirocinio non è reddito di lavoro ma va comunque comunicata e conta per la soglia subordinato. Se l\'indennità annua supera € 8.500, la NASpI viene sospesa.',
+    },
+];
+---
+
+<ObblighiLayout
+    title="Redditi compatibili NASpI 2026: soglie e cumulo | Guida completa"
+    description="Quanto puoi guadagnare mentre ricevi la NASpI 2026: soglie aggiornate per lavoro subordinato (8.500 €), autonomo/P.IVA (5.500 €), PrestO (5.000 €). Come si applica la riduzione 80%."
+    slug="redditi"
+    h1="Redditi compatibili con la NASpI 2026"
+    kicker="Quanto puoi lavorare senza perdere l'indennità"
+    sources={[
+        'D.Lgs. 22/2015 artt. 9-10 (cumulabilità e riduzione)',
+        'Circ. INPS n. 174/2017 (prima attuazione)',
+        'Circ. INPS n. 4 del 28/01/2026 (rivalutazione ISTAT soglie annue)',
+        'L. 96/2017 (prestazioni occasionali PrestO)',
+    ]}
+    faq={faq}
+>
+    <h2>Le 3 soglie aggiornate 2026</h2>
+    <p>
+        La NASpI è <strong>compatibile con nuove attività lavorative</strong>, entro precise soglie di reddito annuo. Se rispetti il
+        limite, la NASpI continua (ridotta dell'80% del reddito previsto). Se superi il limite, la NASpI viene sospesa per il periodo
+        di incompatibilità o, nei casi più gravi, revocata.
+    </p>
+
+    <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Tipologia di attività</th>
+                    <th class="p-3 text-left">Soglia 2026</th>
+                    <th class="p-3 text-left">Cosa succede sotto</th>
+                    <th class="p-3 text-left">Cosa succede sopra</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Lavoro subordinato (tempo indeterminato, determinato, apprendistato)</td>
+                    <td class="p-3 font-bold text-blue-700">€ 8.500 annui lordi</td>
+                    <td class="p-3">NASpI ridotta dell'80% del reddito previsto, per la durata del contratto</td>
+                    <td class="p-3 text-red-700 font-semibold">NASpI sospesa per tutta la durata del contratto</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Lavoro autonomo, P.IVA, impresa individuale, cooperativa</td>
+                    <td class="p-3 font-bold text-blue-700">€ 5.500 annui (reddito netto)</td>
+                    <td class="p-3">NASpI ridotta dell'80% del reddito previsto</td>
+                    <td class="p-3 text-red-700 font-semibold">Decadenza dalla NASpI dal mese di superamento</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Prestazione occasionale PrestO (Libretto Famiglia o Contratto Prestazione Occasionale)</td>
+                    <td class="p-3 font-bold text-blue-700">€ 5.000 annui lordi</td>
+                    <td class="p-3">Nessuna riduzione, cumulo pieno con NASpI</td>
+                    <td class="p-3 text-red-700 font-semibold">Decadenza al superamento della soglia</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Co.co.co. (collaborazione coordinata e continuativa)</td>
+                    <td class="p-3 font-bold text-blue-700">€ 8.500 annui</td>
+                    <td class="p-3">NASpI ridotta dell'80% del compenso previsto</td>
+                    <td class="p-3 text-red-700 font-semibold">NASpI sospesa</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Tirocinio extracurriculare retribuito</td>
+                    <td class="p-3 font-bold text-blue-700">€ 8.500 annui indennità</td>
+                    <td class="p-3">Cumulo con riduzione 80%</td>
+                    <td class="p-3 text-red-700 font-semibold">NASpI sospesa</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>La regola dell'80%: come si applica</h2>
+    <p>
+        Quando la tua nuova attività rientra nelle soglie, INPS calcola una <strong>riduzione della NASpI pari all'80% del reddito
+        previsto</strong>, rapportato al periodo intercorrente tra l'inizio dell'attività e la fine della NASpI o la fine dell'anno
+        solare (si prende il periodo più breve).
+    </p>
+    <p><strong>Esempio 1 — Subordinato a termine</strong>:</p>
+    <ul>
+        <li>NASpI lorda: € 1.200/mese, durata residua: 12 mesi.</li>
+        <li>Firmi contratto a tempo determinato 6 mesi con RAL € 14.000 (reddito previsto 7.000 per i 6 mesi).</li>
+        <li>Riduzione NASpI = 7.000 × 80% / 6 = € 933/mese.</li>
+        <li>NASpI ridotta effettiva = 1.200 − 933 = <strong>€ 267/mese</strong> per i 6 mesi del contratto.</li>
+        <li>Alla fine del contratto, NASpI torna a 1.200 per i mesi residui (soggetta a decalage se applicabile).</li>
+    </ul>
+    <p><strong>Esempio 2 — P.IVA compatibile</strong>:</p>
+    <ul>
+        <li>NASpI: € 800/mese, residua 10 mesi.</li>
+        <li>Apri P.IVA regime forfettario, reddito netto previsto € 4.000.</li>
+        <li>Sotto la soglia 5.500 → compatibilità.</li>
+        <li>Riduzione = 4.000 × 80% / 10 = € 320/mese.</li>
+        <li>NASpI ridotta = 800 − 320 = <strong>€ 480/mese</strong> per tutto il periodo.</li>
+    </ul>
+
+    <h2>Cosa conta come "reddito"</h2>
+    <ul>
+        <li><strong>Lavoro subordinato</strong>: imponibile previdenziale (busta paga lordo − oneri ente previdenziale a carico lavoratore).</li>
+        <li><strong>Lavoro autonomo / P.IVA</strong>: reddito netto = ricavi − costi documentati. In regime forfettario, il 78% circa dei compensi.</li>
+        <li><strong>Co.co.co.</strong>: compenso lordo − contributi INPS a carico collaboratore.</li>
+        <li><strong>PrestO</strong>: compenso netto percepito (INPS espone gli importi esatti).</li>
+        <li><strong>Tirocinio</strong>: indennità di partecipazione lorda (non è reddito da lavoro in senso stretto, ma rileva per la soglia).</li>
+    </ul>
+
+    <h2>Cumulabilità tra tipologie</h2>
+    <p>
+        Le soglie sono <strong>indipendenti e cumulabili</strong>. Nello stesso anno puoi percepire, per esempio,
+        € 4.500 di PrestO + € 3.000 di P.IVA + € 7.000 di lavoro subordinato tutti sotto soglia: la NASpI viene ridotta
+        tenendo conto solo del reddito da subordinato (quello attivo nel periodo). I redditi occasionali sotto 5.000 non riducono nulla.
+    </p>
+
+    <h2>Sempre e comunque: NASpI-Com obbligatoria</h2>
+    <p>
+        Qualunque sia l'importo, <strong>ogni attività va comunicata</strong> con NASpI-Com entro 30 giorni (o entro il 31 gennaio
+        per il reddito presunto dell'anno in corso). Vedi la <a href="/obblighi/naspi-com">pagina dedicata</a>.
+    </p>
+</ObblighiLayout>

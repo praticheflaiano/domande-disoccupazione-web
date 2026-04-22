@@ -18,10 +18,10 @@ const faqs: FAQCategory[] = [
         icon: <Briefcase className="w-5 h-5" />,
         items: [
             {
-                question: "Quali sono i requisiti aggiornati per il 2025?",
+                question: "Quali sono i requisiti aggiornati per il 2026?",
                 answer: (
                     <div className="space-y-2">
-                        <p>Per accedere alla NASpI nel 2025 devi soddisfare tre requisiti fondamentali:</p>
+                        <p>Per accedere alla NASpI nel 2026 devi soddisfare tre requisiti fondamentali:</p>
                         <ul className="list-disc pl-5 space-y-1">
                             <li><strong>Stato di Disoccupazione:</strong> Essere privi di impiego e aver dato la disponibilità al lavoro (DID).</li>
                             <li><strong>Requisito Contributivo:</strong> Almeno 13 settimane di contributi versati nei 4 anni precedenti l'inizio della disoccupazione.</li>
@@ -90,17 +90,13 @@ const faqs: FAQCategory[] = [
         items: [
             {
                 question: "Quali sono i nuovi obblighi SIISL?",
-                answer: "Per il 2025 è attiva la piattaforma SIISL. Tutti i percettori sono iscritti d'ufficio. Devi accedere entro 15gg per firmare il PAD (Patto Attivazione Digitale), pena sanzioni."
+                answer: "Anche nel 2026 è attiva la piattaforma SIISL (operativa dal 24/11/2024). Tutti i percettori sono iscritti d'ufficio. Devi accedere entro 15gg per firmare il PAD (Patto Attivazione Digitale), pena sanzioni."
             }
         ]
     }
 ];
 
-interface KnowledgeBaseProps {
-    onNavigate: (page: any) => void;
-}
-
-const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({ onNavigate }) => {
+const KnowledgeBase: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredFaqs = faqs.map(category => ({
@@ -172,14 +168,14 @@ const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({ onNavigate }) => {
                 <BookOpen className="w-12 h-12 text-teal-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-teal-900 mb-2">Non hai trovato la risposta?</h3>
                 <p className="text-teal-700 mb-6 max-w-lg mx-auto">
-                    Consulta il nostro Manuale Completo NASpI 2025 per approfondimenti su decurtazione, sospensione e compatibilità lavorativa.
+                    Consulta il nostro Manuale Completo NASpI 2026 per approfondimenti su decurtazione, sospensione e compatibilità lavorativa.
                 </p>
-                <button
-                    onClick={() => onNavigate('guide-book')}
+                <a
+                    href="/manuale"
                     className="bg-teal-600 text-white px-8 py-3 rounded-full font-bold hover:bg-teal-700 transition-colors shadow-lg hover:shadow-xl inline-flex items-center gap-2"
                 >
                     Apri il Manuale Completo <ArrowRight className="w-5 h-5" />
-                </button>
+                </a>
             </div>
         </div>
     );

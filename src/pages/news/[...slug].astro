@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { SITE_URL } from '../../lib/routes';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('news');
+    return entries.map((entry: CollectionEntry<'news'>) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+interface Props {
+    entry: CollectionEntry<'news'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { title, date, category, summary, source, updated } = entry.data;
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'News', href: '/news' },
+    { label: title, href: `/news/${entry.slug}` },
+];
+
+const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: title,
+    description: summary,
+    datePublished: date.toISOString(),
+    dateModified: (updated ?? date).toISOString(),
+    articleSection: category,
+    isBasedOn: source,
+    author: {
+        '@type': 'Organization',
+        name: 'Centro Pratiche Flaiano',
+        url: SITE_URL,
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'Centro Pratiche Flaiano',
+        logo: { '@type': 'ImageObject', url: `${SITE_URL}/og/cover.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/news/${entry.slug}` },
+};
+
+const dateStr = new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+---
+
+<Base title={`${title} | Centro Pratiche Flaiano`} description={summary} breadcrumbs={breadcrumbs} jsonLd={articleSchema}>
+    <article class="max-w-3xl mx-auto py-12 px-4">
+        <header class="mb-8">
+            <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
+                <span class="bg-slate-100 px-3 py-1 rounded-full font-medium">{category}</span>
+                <time datetime={date.toISOString()}>{dateStr}</time>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
+            <p class="text-lg text-slate-600 leading-relaxed">{summary}</p>
+        </header>
+
+        <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed">
+            <Content />
+        </div>
+
+        <footer class="mt-10 pt-6 border-t border-slate-200 text-sm text-slate-500">
+            <p>Fonte: {source}</p>
+            {updated && <p class="mt-1">Ultimo aggiornamento: {new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(updated)}</p>}
+        </footer>
+    </article>
+</Base>

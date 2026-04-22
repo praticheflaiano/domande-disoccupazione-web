@@ -22,7 +22,7 @@ const AccessibilityToolbar: React.FC = () => {
     return (
         <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-2">
             {isOpen && (
-                <div className="bg-white p-4 rounded-2xl shadow-2xl border border-slate-200 animate-in slide-in-from-right mb-2 w-48 space-y-3">
+                <div id="a11y-toolbar-panel" role="region" aria-label="Strumenti di accessibilità" className="bg-white p-4 rounded-2xl shadow-2xl border border-slate-200 animate-in slide-in-from-right mb-2 w-48 space-y-3">
                     <h4 className="font-bold text-slate-800 text-sm mb-2">Accessibilità</h4>
 
                     <div className="flex justify-between items-center">
@@ -48,11 +48,14 @@ const AccessibilityToolbar: React.FC = () => {
             )}
 
             <button
+                type="button"
                 onClick={() => setIsOpen(!isOpen)}
                 className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center"
-                title="Strumenti Accessibilità"
+                aria-label={isOpen ? 'Chiudi strumenti accessibilità' : 'Apri strumenti accessibilità'}
+                aria-expanded={isOpen}
+                aria-controls="a11y-toolbar-panel"
             >
-                <Eye className="w-6 h-6" />
+                <Eye className="w-6 h-6" aria-hidden="true" />
             </button>
         </div>
     );

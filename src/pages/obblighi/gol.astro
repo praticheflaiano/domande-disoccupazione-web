@@ -1,0 +1,89 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Chi decide a quale percorso GOL vengo assegnato?',
+        a: 'L\'operatore del Centro per l\'Impiego, durante l\'assessment iniziale. Applica una profilazione quantitativa (età, titolo, anzianità di disoccupazione) e qualitativa (competenze, vincoli, obiettivi) stabilita dal Decreto Ministeriale 5 novembre 2021.',
+    },
+    {
+        q: 'Posso chiedere di cambiare percorso?',
+        a: 'Sì, se emergono nuovi elementi (es. infortunio, cambiamenti familiari, nuova certificazione conseguita). Il cambio va motivato e approvato in sede di ricollocazione del PSP.',
+    },
+    {
+        q: 'I corsi GOL sono gratuiti?',
+        a: 'Sì, sono interamente finanziati dal PNRR (Missione 5) e dal Fondo Sociale Europeo. Non ti viene chiesto alcun pagamento. In alcuni casi è prevista un\'indennità di frequenza.',
+    },
+    {
+        q: 'Partecipare a GOL è obbligatorio?',
+        a: 'Sì, nella misura prevista dal tuo PSP. Rifiutarsi di partecipare alle attività (formazione, orientamento, tirocinio) previste dal piano comporta le stesse sanzioni della mancata presentazione al CPI.',
+    },
+];
+---
+
+<ObblighiLayout
+    title="Programma GOL: i 4 percorsi e chi li assegna | Guida NASpI 2026"
+    description="Garanzia Occupabilità Lavoratori (GOL): spieghiamo i 4 percorsi (Reinserimento, Upskilling, Reskilling, Lavoro e Inclusione) e il meccanismo di assessment del CPI."
+    slug="gol"
+    h1="Programma GOL e i 4 percorsi"
+    kicker="Il tuo piano personalizzato"
+    sources={[
+        'DM 5 novembre 2021 (istituzione del programma GOL)',
+        'PNRR Missione 5 — Componente 1 (Politiche attive del lavoro)',
+        'D.Lgs. 150/2015 art. 22 (politiche di attivazione)',
+        'ANPAL — Scheda GOL Missione 5 (lineaamica.gov.it)',
+    ]}
+    faq={faq}
+>
+    <h2>Cos'è GOL</h2>
+    <p>
+        <strong>GOL (Garanzia di Occupabilità dei Lavoratori)</strong> è il programma nazionale finanziato dal PNRR che, dal 2022,
+        offre a chi percepisce NASpI (o altri ammortizzatori) un percorso personalizzato di politica attiva. L'obiettivo è ridurre la
+        distanza dal mercato del lavoro e portare il disoccupato verso una nuova occupazione stabile o, dove serve, verso una
+        riqualificazione professionale.
+    </p>
+
+    <h2>Come funziona l'assegnazione</h2>
+    <p>
+        Durante l'assessment al Centro per l'Impiego, l'operatore calcola il tuo <strong>indice di fragilità occupazionale</strong>
+        incrociando dati oggettivi (età, titolo di studio, durata della disoccupazione, composizione familiare) e soggettivi
+        (competenze digitali, linguistiche, esperienza pregressa, disponibilità). Sulla base del risultato, vieni assegnato a
+        uno dei quattro percorsi di seguito.
+    </p>
+
+    <h2>Percorso 1 — Reinserimento lavorativo</h2>
+    <p><strong>Per chi</strong>: persone vicine al mercato, con competenze spendibili e breve periodo di disoccupazione.</p>
+    <p><strong>Attività</strong>: orientamento specialistico, bilancio di competenze, accompagnamento al lavoro, scouting vacancies, match con offerte di APL private partner.</p>
+    <p><strong>Durata media</strong>: 3-6 mesi. <strong>Formazione</strong>: eventualmente brevissima (30-60 h) per ripassare competenze trasversali.</p>
+
+    <h2>Percorso 2 — Aggiornamento (Upskilling)</h2>
+    <p><strong>Per chi</strong>: lavoratori con competenze valide ma da aggiornare (nuovi software, nuove certificazioni di settore, digitalizzazione).</p>
+    <p><strong>Attività</strong>: <strong>formazione professionalizzante fino a 150 ore</strong>, seguita da intermediazione al lavoro.</p>
+    <p><strong>Esempi</strong>: corso di digital marketing per un venditore tradizionale, aggiornamento di programmazione CNC per un tornitore, corso di inglese business B2 per un impiegato commerciale.</p>
+
+    <h2>Percorso 3 — Riqualificazione (Reskilling)</h2>
+    <p><strong>Per chi</strong>: persone le cui competenze attuali non sono più richieste dal mercato, che devono cambiare mestiere.</p>
+    <p><strong>Attività</strong>: <strong>formazione intensiva fino a 600 ore</strong>, con rilascio di <strong>qualifica o certificazione regionale</strong> e spendibilità EQF.</p>
+    <p><strong>Esempi</strong>: corso OSS (Operatore Socio-Sanitario, 1000 h), corso di saldatore certificato, corso di tecnico infermieristico, sviluppatore web full-stack.</p>
+
+    <h2>Percorso 4 — Lavoro e Inclusione</h2>
+    <p><strong>Per chi</strong>: persone con bisogni complessi (disabilità, dipendenze, problemi abitativi, caregiver prolungato) che richiedono una presa in carico integrata.</p>
+    <p><strong>Attività</strong>: GOL + rete dei servizi sociali, sanitari ed educativi del territorio. Spesso il percorso prevede tirocini protetti o inserimenti in cooperative sociali.</p>
+
+    <h2>Percorso 5 — Ricollocazione collaborativa (crisi aziendali)</h2>
+    <p>
+        Per lavoratori coinvolti in <strong>crisi aziendali strutturate</strong> (grandi aziende in cassa integrazione straordinaria,
+        accordi sindacali di esuberi), GOL prevede un quinto percorso pensato in collaborazione tra azienda, Regione, INPS e APL.
+        L'attivazione avviene tipicamente prima della cessazione del contratto.
+    </p>
+
+    <h2>Durante il percorso</h2>
+    <p>
+        Ogni azione (colloquio, corso, candidatura, tirocinio) viene registrata sul tuo fascicolo SIISL e sulla <strong>Scheda
+        Anagrafico-Professionale (SAP)</strong> di MyANPAL, sezione 6. Questo storico ti segue anche dopo la NASpI: se in futuro
+        perdi di nuovo il lavoro, il nuovo operatore parte dal tuo percorso precedente.
+    </p>
+    <p>
+        Per vedere i corsi disponibili nel tuo percorso, leggi la pagina <a href="/obblighi/formazione">Corsi e formazione</a>.
+    </p>
+</ObblighiLayout>

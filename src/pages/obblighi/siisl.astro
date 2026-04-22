@@ -1,0 +1,90 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Cos\'è esattamente SIISL?',
+        a: 'SIISL è il Sistema Informativo per l\'Inclusione Sociale e Lavorativa, gestito dal Ministero del Lavoro. Sostituisce MyANPAL come piattaforma unica per la ricerca di lavoro e formazione di chi percepisce NASpI, DIS-COLL, SFL o Assegno di Inclusione.',
+    },
+    {
+        q: 'Sono obbligato a iscrivermi?',
+        a: 'No, l\'iscrizione avviene automaticamente quando INPS accoglie la tua domanda NASpI. Tu devi solo accedere entro 15 giorni, completare il profilo e firmare il PAD.',
+    },
+    {
+        q: 'Cosa succede se non firmo il PAD in tempo?',
+        a: 'Alla prima omissione riceverai una decurtazione (in genere pari al 25% di una mensilità). Alla seconda, una mensilità intera. Alla terza, decadenza totale della NASpI.',
+    },
+    {
+        q: 'Serve lo SPID?',
+        a: 'Sì, per accedere a SIISL serve SPID livello 2, oppure CIE (Carta d\'Identità Elettronica) con PIN, oppure CNS (Carta Nazionale dei Servizi).',
+    },
+];
+---
+
+<ObblighiLayout
+    title="SIISL e PAD: come iscriversi e firmare in 15 giorni | NASpI 2026"
+    description="Guida passo-passo alla piattaforma SIISL e al Patto di Attivazione Digitale (PAD). Cosa fare dopo l'accoglimento della NASpI per non perdere l'indennità."
+    slug="siisl"
+    h1="SIISL e Patto di Attivazione Digitale (PAD)"
+    kicker="Primo obbligo — entro 15 giorni"
+    sources={[
+        'DL 48/2023 conv. L. 85/2023, art. 5 (istituzione SIISL)',
+        'Msg. INPS n. 3905 del 21/11/2024 (iscrizione d\'ufficio percettori NASpI/DIS-COLL)',
+        'D.Lgs. 150/2015, art. 20 (firma PAD come condizione per mantenere la prestazione)',
+        'Portale ufficiale: siisl.lavoro.gov.it',
+    ]}
+    faq={faq}
+>
+    <h2>Cos'è e perché è obbligatoria</h2>
+    <p>
+        La piattaforma <strong>SIISL (Sistema Informativo per l'Inclusione Sociale e Lavorativa)</strong> è attiva dal 24 novembre 2024 e
+        rappresenta il punto unico dove incontrano domanda e offerta di lavoro i percettori di ammortizzatori sociali. Tutti i titolari
+        di NASpI vengono <strong>iscritti d'ufficio</strong> nel momento in cui INPS accoglie la loro domanda. Dal 2025 la firma del
+        <strong> Patto di Attivazione Digitale (PAD)</strong> è il prerequisito per non vedersi sospendere la prestazione.
+    </p>
+
+    <h2>Quando scatta l'obbligo</h2>
+    <p>
+        Dal giorno in cui INPS accoglie la tua domanda NASpI (ricevi notifica via "Cassetta Postale" del Fascicolo Previdenziale del
+        Cittadino o SMS), hai <strong>15 giorni di tempo</strong> per accedere a SIISL, aggiornare il CV e firmare il PAD.
+        Scaduti i 15 giorni senza alcuna azione, la tua NASpI entra in fase di "pre-sospensione": INPS ti richiama, e dopo un secondo
+        mancato adempimento parte la decurtazione.
+    </p>
+
+    <h2>Come accedere passo per passo</h2>
+    <ol>
+        <li>Vai su <a href="https://siisl.lavoro.gov.it" target="_blank" rel="noopener noreferrer">siisl.lavoro.gov.it</a> e clicca "Accedi".</li>
+        <li>Scegli il metodo di autenticazione: <strong>SPID livello 2</strong>, <strong>CIE</strong> o <strong>CNS</strong>.</li>
+        <li>Alla prima autenticazione ti viene chiesto di acconsentire al trattamento dati.</li>
+        <li>Compila il tuo <strong>profilo professionale</strong> (sezione "Il mio profilo"): dati anagrafici già precompilati, CV da completare, preferenze occupazionali.</li>
+        <li>Vai nella sezione "Patto di Attivazione Digitale" e firma digitalmente il documento dopo averlo letto.</li>
+    </ol>
+
+    <h2>Cosa contiene il CV da aggiornare</h2>
+    <ul>
+        <li><strong>Istruzione e titoli</strong>: diploma, laurea, master, certificazioni.</li>
+        <li><strong>Esperienze lavorative</strong>: almeno le ultime 3-5, con mansioni specifiche, periodi e motivo di cessazione.</li>
+        <li><strong>Competenze digitali</strong>: livello (base, intermedio, avanzato) su pacchetto Office, email, web, social, software specifici.</li>
+        <li><strong>Competenze linguistiche</strong>: livelli QCER (A1, A2, B1, B2, C1, C2) per ogni lingua.</li>
+        <li><strong>Disponibilità</strong>: spostamenti quotidiani (km massimi), trasferimento, part-time/full-time, turni.</li>
+        <li><strong>Patente</strong>: tipologia e possesso di auto propria.</li>
+    </ul>
+    <p>Più dettagliato è il CV, più precise saranno le proposte di lavoro e di formazione che ti arrivano.</p>
+
+    <h2>Cosa autorizzi firmando il PAD</h2>
+    <p>Il PAD è un consenso informato che autorizza:</p>
+    <ul>
+        <li>La <strong>profilazione</strong> del tuo CV (algoritmo che calcola l'indice di fragilità occupazionale).</li>
+        <li>L'invio dei tuoi dati al <strong>Centro per l'Impiego</strong> territorialmente competente.</li>
+        <li>Il <strong>matching automatico</strong> con offerte di lavoro e corsi di formazione presenti a catalogo SIISL.</li>
+        <li>L'eventuale coinvolgimento di <strong>Agenzie per il Lavoro private</strong> (GiGroup, Randstad, Adecco, Manpower ecc.) in modalità sussidiaria.</li>
+    </ul>
+
+    <h2>Dopo la firma: cosa succede</h2>
+    <p>
+        Entro <strong>30 giorni dalla firma del PAD</strong>, il Centro per l'Impiego ti convocherà per l'assessment iniziale e la firma
+        del <strong>PSP — Patto di Servizio Personalizzato</strong>. Nel frattempo, puoi già navigare il catalogo offerte di lavoro e
+        corsi di formazione su SIISL, candidarti direttamente e prenotare i corsi che ti interessano.
+        Vedi la sezione <a href="/obblighi/cpi">Centro per l'Impiego</a> per il seguito.
+    </p>
+</ObblighiLayout>

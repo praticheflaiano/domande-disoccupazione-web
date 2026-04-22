@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import Home from '../components/Home';
+import NewsCard from '../components/NewsCard.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { NASPI_CONSTANTS } from '../constants';
+
+type NewsEntry = CollectionEntry<'news'>;
+
+const latestNews = (await getCollection('news'))
+    .sort((a: NewsEntry, b: NewsEntry) => b.data.date.getTime() - a.data.date.getTime())
+    .slice(0, 4);
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'Qual è l\'importo massimo della NASpI nel 2026?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: `Nel 2026 il massimale mensile lordo della NASpI è ${NASPI_CONSTANTS.MAX_MONTHLY_CAP.toLocaleString('it-IT', { minimumFractionDigits: 2 })} €, con soglia di calcolo a ${NASPI_CONSTANTS.THRESHOLD_AMOUNT.toLocaleString('it-IT', { minimumFractionDigits: 2 })} € (rivalutazione ISTAT +1,4%). Sotto la soglia si riceve il 75% della retribuzione media mensile; sopra si aggiunge il 25% dell'eccedenza, fino al massimale.`,
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Quanti contributi servono per avere diritto alla NASpI?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Servono almeno 13 settimane di contribuzione negli ultimi 4 anni. Per chi si è dimesso volontariamente nei 12 mesi precedenti, le 13 settimane devono essere maturate nel nuovo rapporto.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Quanto dura la NASpI?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'La durata è pari alla metà delle settimane di contribuzione degli ultimi 4 anni, con un massimo di 24 mesi (104 settimane). Dal 6° mese scatta il decalage del 3% mensile (dall\'8° mese per chi ha compiuto 55 anni).',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'Entro quando va presentata la domanda NASpI?',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'La domanda va presentata entro 68 giorni dalla cessazione del rapporto di lavoro, pena la decadenza del diritto.',
+            },
+        },
+    ],
+};
+
+const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Come richiedere la NASpI 2026',
+    description: 'Procedura completa per presentare la domanda di indennità di disoccupazione NASpI all\'INPS nel 2026.',
+    step: [
+        { '@type': 'HowToStep', position: 1, name: 'Verifica requisiti', text: 'Controlla di avere almeno 13 settimane di contributi negli ultimi 4 anni e che la cessazione sia involontaria.' },
+        { '@type': 'HowToStep', position: 2, name: 'Calcolo importo', text: 'Stima importo e durata con il calcolatore online aggiornato ai parametri INPS 2026.' },
+        { '@type': 'HowToStep', position: 3, name: 'Presentazione domanda', text: 'Invia la domanda entro 68 giorni dalla cessazione, tramite portale INPS, patronato o il servizio online Flaiano.' },
+        { '@type': 'HowToStep', position: 4, name: 'DID e SIISL', text: 'Registra la DID online e firma il Patto di Attivazione Digitale (PAD) sulla piattaforma SIISL entro 15 giorni.' },
+    ],
+};
+---
+
+<Base
+    title="NASpI 2026: calcolo, requisiti e domanda online | Centro Pratiche Flaiano"
+    description={`Calcolatore NASpI 2026 aggiornato ai parametri INPS (soglia ${NASPI_CONSTANTS.THRESHOLD_AMOUNT.toLocaleString('it-IT')} €, massimale ${NASPI_CONSTANTS.MAX_MONTHLY_CAP.toLocaleString('it-IT')} €). Guida a requisiti, durata, decalage e invio domanda con assistenza CAF.`}
+    jsonLd={[faqSchema, howToSchema]}
+>
+    <Home client:load />
+
+    <section class="bg-slate-50 border-t border-slate-200 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-8">
+                <h2 class="text-3xl font-bold text-slate-900">Ultime news</h2>
+                <a href="/news" class="text-sm font-bold text-blue-600 hover:text-blue-700">Tutte le news →</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {latestNews.map((entry: NewsEntry) => <NewsCard entry={entry} />)}
+            </div>
+        </div>
+    </section>
+</Base>

@@ -1,0 +1,190 @@
+---
+import '../index.css';
+import { NAV_LINKS, SITE_URL } from '../lib/routes';
+import { Logo } from '../components/Logo';
+import Footer from '../components/Footer';
+import StickyContactBar from '../components/StickyContactBar';
+import AccessibilityToolbar from '../components/AccessibilityToolbar';
+import CookieBanner from '../components/CookieBanner';
+import { LAST_UPDATED } from '../constants';
+
+export interface Props {
+    title: string;
+    description: string;
+    canonical?: string;
+    ogImage?: string;
+    breadcrumbs?: Array<{ label: string; href: string }>;
+    jsonLd?: unknown;
+}
+
+const {
+    title,
+    description,
+    canonical,
+    ogImage = '/og/cover.png',
+    breadcrumbs,
+    jsonLd,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const canonicalUrl = canonical ?? new URL(currentPath, SITE_URL).toString();
+const fullOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_URL).toString();
+
+const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/#organization`,
+    name: 'Centro Pratiche Flaiano',
+    url: SITE_URL,
+    telephone: '+390697845429',
+    email: 'info@praticheflaiano.it',
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Via Filoteo Alberini, 25/int 10',
+        addressLocality: 'Roma',
+        postalCode: '00139',
+        addressRegion: 'RM',
+        addressCountry: 'IT',
+    },
+    openingHoursSpecification: [
+        {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+            opens: '09:30',
+            closes: '18:00',
+        },
+        {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Friday',
+            opens: '09:30',
+            closes: '14:00',
+        },
+    ],
+    areaServed: 'IT',
+    priceRange: '€€',
+    description:
+        "Centro Pratiche Flaiano (Roma) assiste nella domanda NASpI e disoccupazione INPS, con calcolatore online, guide aggiornate e invio domanda telematica.",
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '187',
+        bestRating: '5',
+        worstRating: '1',
+    },
+};
+
+const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
+    ? {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: breadcrumbs.map((b, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              name: b.label,
+              item: new URL(b.href, SITE_URL).toString(),
+          })),
+      }
+    : null;
+---
+
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang="it-IT" href={canonicalUrl} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="it_IT" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={fullOgImage} />
+        <meta property="og:site_name" content="Centro Pratiche Flaiano" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={fullOgImage} />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+            rel="stylesheet"
+        />
+
+        <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+        {breadcrumbSchema && (
+            <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+        )}
+        {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    </head>
+    <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col font-sans">
+        <a href="#main" class="skip-link">Salta al contenuto principale</a>
+
+        <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
+                <a href="/" class="flex items-center gap-2 transform hover:scale-[1.02] transition-transform duration-300" aria-label="Centro Pratiche Flaiano — Home">
+                    <Logo className="scale-75 origin-left" />
+                </a>
+                <nav class="hidden md:flex gap-6" aria-label="Navigazione principale">
+                    {NAV_LINKS.map((link) => (
+                        <a
+                            href={link.href}
+                            class:list={[
+                                'text-sm font-bold uppercase tracking-wider transition-colors',
+                                currentPath === link.href ? 'text-teal-700' : 'text-slate-500 hover:text-slate-800',
+                            ]}
+                            aria-current={currentPath === link.href ? 'page' : undefined}
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+                </nav>
+                <a
+                    href="/richiedi"
+                    class="bg-teal-700 hover:bg-teal-800 text-white px-6 py-3 rounded-md text-sm font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 uppercase tracking-wide"
+                >
+                    Richiedi Online
+                </a>
+            </div>
+        </header>
+
+        {breadcrumbs && breadcrumbs.length > 0 && (
+            <nav class="flex items-center text-xs text-slate-500 px-4 max-w-7xl mx-auto mt-4" aria-label="Breadcrumb">
+                <ol class="flex items-center gap-1 flex-wrap">
+                    {breadcrumbs.map((b, i) => (
+                        <li class="flex items-center gap-1">
+                            {i < breadcrumbs.length - 1 ? (
+                                <>
+                                    <a href={b.href} class="hover:text-blue-600">{b.label}</a>
+                                    <span aria-hidden="true">›</span>
+                                </>
+                            ) : (
+                                <span class="font-medium text-slate-800" aria-current="page">{b.label}</span>
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </nav>
+        )}
+
+        <main id="main" class="flex-1" tabindex="-1">
+            <slot />
+        </main>
+
+        <p class="text-xs text-slate-400 text-center py-4" aria-label="Ultimo aggiornamento dei contenuti">
+            Ultimo aggiornamento: {LAST_UPDATED}
+        </p>
+
+        <Footer client:idle />
+        <StickyContactBar client:idle />
+        <AccessibilityToolbar client:idle />
+        <CookieBanner client:idle />
+    </body>
+</html>
