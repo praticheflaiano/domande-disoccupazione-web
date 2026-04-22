@@ -5,7 +5,7 @@ const ROUTE_MAP: Record<Page, string> = {
     calculator: '/calcolatore',
     anticipo: '/anticipo',
     obligations: '/obblighi',
-    guide: '/guida',
+    guide: '/faq',
     'guide-book': '/manuale',
     office: '/contatti',
     apply: '/richiedi',
@@ -16,12 +16,14 @@ export const pageToUrl = (page: Page): string => ROUTE_MAP[page] ?? '/';
 
 export const SITE_URL = 'https://domandedisoccupazione.it';
 
+export const GOOGLE_BUSINESS_URL =
+    'https://www.google.com/search?q=Centro+Pratiche+Flaiano+Via+Filoteo+Alberini+Roma';
+
 export const NAV_LINKS: Array<{ label: string; href: string }> = [
     { label: 'Home', href: '/' },
     { label: 'Calcolatore', href: '/calcolatore' },
-    { label: 'Anticipo', href: '/anticipo' },
-    { label: 'DIS-COLL', href: '/dis-coll' },
+    { label: 'Guida', href: '/guida' },
     { label: 'Obblighi', href: '/obblighi' },
-    { label: 'FAQ', href: '/guida' },
-    { label: 'Chi siamo', href: '/chi-siamo' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Richiedi', href: '/richiedi' },
 ];

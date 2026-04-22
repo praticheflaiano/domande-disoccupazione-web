@@ -1,0 +1,117 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Entro quanto posso fare ricorso?',
+        a: 'Hai 90 giorni dalla data di notifica del provvedimento INPS (rigetto, decadenza, avviso di indebito) per presentare ricorso amministrativo al Comitato provinciale INPS. Oltre i 90 giorni resta solo la via giudiziale (Tribunale del Lavoro), entro 3 anni dalla prestazione contestata.',
+    },
+    {
+        q: 'Serve un avvocato per il ricorso amministrativo?',
+        a: 'No, il ricorso al Comitato provinciale si presenta in autonomia dal portale INPS. Un patronato può assisterti gratuitamente. Serve l\'avvocato solo se dopo il rigetto amministrativo decidi di ricorrere in Tribunale del Lavoro.',
+    },
+    {
+        q: 'Se vinco il ricorso, ricevo gli arretrati?',
+        a: 'Sì, con interessi legali dalla data di maturazione di ogni mensilità. Se perdi o il ricorso decade, puoi comunque agire in via giudiziale entro 3 anni.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Domanda NASpI rigettata: ricorso amministrativo e giudiziale 2026"
+    description="Cosa fare se l\'INPS rigetta la domanda NASpI o dispone la decadenza: ricorso amministrativo entro 90 giorni, ricorso giudiziale, motivi più frequenti di rigetto."
+    slug="ricorso"
+    h1="Ricorso: se la domanda NASpI è rigettata"
+    kicker="Tutela del diritto"
+    sources={[
+        'D.Lgs. 22/2015 art. 11 (decadenza) e art. 12 (ricorso)',
+        'L. 88/1989 art. 46 (Comitati provinciali INPS)',
+        'D.L. 138/2011 art. 38 (mediazione obbligatoria in materia previdenziale — abrogata)',
+        'Rito del lavoro — art. 409 c.p.c. e seguenti',
+    ]}
+    faq={faq}
+>
+    <h2>Quando puoi ricorrere</h2>
+    <p>Puoi presentare ricorso contro:</p>
+    <ul>
+        <li><strong>Rigetto</strong> della domanda NASpI (mancanza requisiti secondo INPS).</li>
+        <li><strong>Decadenza</strong> disposta durante la prestazione (assenza CPI, omessa NASpI-Com, superamento reddito).</li>
+        <li><strong>Avviso di indebito</strong> (richiesta di restituzione somme percepite).</li>
+        <li><strong>Importo calcolato</strong> diversamente da quanto ti aspettavi.</li>
+        <li><strong>Durata</strong> riconosciuta inferiore a quella dovuta.</li>
+    </ul>
+
+    <h2>I 3 gradi di tutela</h2>
+    <ol>
+        <li><strong>Ricorso amministrativo</strong> al Comitato provinciale INPS (gratuito, 90 giorni).</li>
+        <li><strong>Ricorso giudiziario</strong> al Tribunale del Lavoro (serve avvocato, 3 anni).</li>
+        <li><strong>Appello</strong> alla Corte d'Appello sezione lavoro (30 giorni dalla sentenza di primo grado).</li>
+    </ol>
+
+    <h2>Ricorso amministrativo — passo-passo</h2>
+    <h3>Tempi</h3>
+    <p>Entro <strong>90 giorni</strong> dalla data di ricezione del provvedimento (notifica via PEC o Cassetta Postale del Fascicolo Previdenziale).</p>
+
+    <h3>Dove si presenta</h3>
+    <ul>
+        <li><strong>Portale INPS online</strong>: "Ricorsi Online" → "Ricorso amministrativo NASpI".</li>
+        <li><strong>Tramite patronato</strong>: gratuito, il patronato istruisce la pratica a tuo nome.</li>
+        <li><strong>Raccomandata A/R</strong> alla sede INPS competente (meno consigliato, tempi lunghi).</li>
+    </ul>
+
+    <h3>Cosa allegare</h3>
+    <ol>
+        <li>Copia del <strong>provvedimento INPS</strong> contestato.</li>
+        <li><strong>Memoria difensiva</strong>: spiegazione dei motivi per cui ritieni la decisione sbagliata, con riferimenti normativi.</li>
+        <li><strong>Documenti probatori</strong>: contratto di lavoro, buste paga, certificati medici, corrispondenza, prove di comunicazioni inviate.</li>
+        <li><strong>Contributi</strong>: estratto conto contributivo aggiornato.</li>
+    </ol>
+
+    <h3>Tempi di risposta</h3>
+    <p>
+        Il Comitato provinciale INPS deve pronunciarsi entro <strong>90 giorni</strong> dal ricorso. Se non decide, vale il
+        <strong>silenzio-rigetto</strong> e puoi passare al ricorso giudiziale. Se decide e accoglie, la domanda viene
+        riliquidata con arretrati + interessi legali.
+    </p>
+
+    <h2>I 10 motivi di rigetto più frequenti (e come contestarli)</h2>
+    <ol>
+        <li><strong>Requisito 13 settimane non maturato</strong>: INPS legge male l'estratto conto. Allega estratto aggiornato con settimane residue.</li>
+        <li><strong>Dimissioni volontarie senza giusta causa</strong>: dimostra giusta causa (mancato pagamento stipendio, mobbing, molestie) con denunce, certificati medici, PEC.</li>
+        <li><strong>Presentazione oltre 68 giorni</strong>: dimostra impossibilità oggettiva (ricovero, calamità, documentazione perduta in posta).</li>
+        <li><strong>Reddito oltre soglia compatibile</strong>: contesta il calcolo (eventuali spese detraibili non considerate nel reddito netto autonomo).</li>
+        <li><strong>Mancata comunicazione NASpI-Com</strong>: dimostra che il rapporto era già UniEmens e quindi noto all'INPS.</li>
+        <li><strong>Invalidità del licenziamento</strong>: se il licenziamento è stato annullato da giudice, l'INPS deve ricalcolare.</li>
+        <li><strong>Data cessazione errata</strong>: contesta con contratto/lettera di licenziamento.</li>
+        <li><strong>Contributi figurativi non riconosciuti</strong>: allega certificati malattia, maternità, CIG.</li>
+        <li><strong>Superamento durata massima</strong>: contesta con calcolo corretto delle settimane negli ultimi 4 anni.</li>
+        <li><strong>Doppia prestazione</strong>: dimostra che l'altra prestazione (es. NASpI precedente) era già chiusa.</li>
+    </ol>
+
+    <h2>Ricorso giudiziale al Tribunale del Lavoro</h2>
+    <p>
+        Se il Comitato rigetta o non risponde in 90 giorni, puoi fare ricorso al <strong>Tribunale del Lavoro</strong> nel
+        territorio dove risiedi. Termine: <strong>3 anni</strong> dalla prestazione contestata (prescrizione estintiva).
+    </p>
+    <ul>
+        <li>Serve un <strong>avvocato giuslavorista</strong>.</li>
+        <li>Se hai reddito basso puoi chiedere il <strong>gratuito patrocinio</strong> (reddito famigliare inferiore a 12.838 € — 2026).</li>
+        <li>Il rito è quello del lavoro (art. 409 c.p.c.), molto più veloce del civile ordinario.</li>
+        <li>Possibile sentenza in <strong>6-12 mesi</strong>. Ricorso in appello entro 30 giorni dalla notifica della sentenza.</li>
+    </ul>
+
+    <h2>Cosa NON fare</h2>
+    <ul>
+        <li><strong>Ignorare il provvedimento</strong> sperando che passi: gli avvisi di indebito maturano interessi e possono attivare pignoramenti.</li>
+        <li><strong>Presentare ricorso fuori termine</strong>: il ricorso tardivo è dichiarato inammissibile.</li>
+        <li><strong>Rivolgersi a "mediatori" non accreditati</strong>: patronati e avvocati sono gli unici interlocutori ammessi.</li>
+    </ul>
+
+    <h2>Serve supporto immediato?</h2>
+    <p>
+        Il Centro Pratiche Flaiano assiste nell'intero ciclo del ricorso amministrativo (senza costi, tramite delega patronato)
+        e può riferirti ad avvocati giuslavoristi fidati per il grado giudiziale. Il primo passo è sempre leggere insieme il
+        provvedimento per capire se c'è margine di ricorso: alcune motivazioni sono insanabili (es. domanda oltre 68 giorni
+        senza giustificato motivo), altre sono risolvibili con documentazione integrativa.
+    </p>
+</GuidaLayout>

@@ -1,0 +1,101 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Posso trasferirmi all\'estero mantenendo la NASpI?',
+        a: 'Sì, nei Paesi UE/SEE e in Svizzera, per un massimo di 3 mesi consecutivi, per cercare lavoro. Serve il modulo U2 rilasciato dall\'INPS prima della partenza. Oltre i 3 mesi la NASpI cessa, salvo proroghe eccezionali autorizzate.',
+    },
+    {
+        q: 'In quali Paesi si applica il modulo U2?',
+        a: 'Tutti i 27 Stati UE, i 3 Paesi SEE (Islanda, Liechtenstein, Norvegia) e la Svizzera. Per il Regno Unito post-Brexit vale un accordo specifico, ma in pratica simile. Fuori da questi Paesi la NASpI si sospende o decade in base alla natura del trasferimento.',
+    },
+    {
+        q: 'Quando va richiesto l\'U2?',
+        a: 'Almeno 30 giorni prima della partenza, con domanda online al portale INPS (sezione "Prestazione in Paese UE"). Devi aver percepito la NASpI per almeno 4 settimane in Italia prima di poter esportare la prestazione.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI all\'estero: modulo U2 e portabilità UE | Guida 2026"
+    description="Come mantenere la NASpI in un altro Paese UE/SEE o in Svizzera. Modulo U2, procedura, proroga fino a 6 mesi, decadenza. Regolamento CE 883/2004."
+    slug="estero-u2"
+    h1="Portare la NASpI all'estero (modulo U2)"
+    kicker="Mobilità UE e ricerca di lavoro"
+    sources={[
+        'Reg. CE 883/2004 (coordinamento sicurezza sociale UE)',
+        'Reg. CE 987/2009 (regolamento di applicazione)',
+        'Msg. INPS vari su "Prestazione in Paese UE"',
+        'Formulario PDU2 (ex modulo E303)',
+    ]}
+    faq={faq}
+>
+    <h2>Il principio della portabilità UE</h2>
+    <p>
+        Ai sensi del <strong>Regolamento CE 883/2004</strong>, un cittadino UE che percepisce un'indennità di disoccupazione
+        in uno Stato membro può continuare a riceverla in un altro Stato UE, SEE o in Svizzera per un periodo determinato
+        finalizzato alla <strong>ricerca di lavoro</strong>. È una misura di libera circolazione.
+    </p>
+
+    <h2>Chi può richiedere l'U2</h2>
+    <ul>
+        <li>Cittadini italiani o di altro Stato UE/SEE/Svizzera residenti in Italia.</li>
+        <li>Percettori NASpI attivi (non sospesi) da <strong>almeno 4 settimane</strong>.</li>
+        <li>Con intenzione documentabile di cercare lavoro (non vacanza): meglio indicare città, eventuale partner di ricerca (es. APL locale, programma EURES).</li>
+    </ul>
+
+    <h2>Durata della portabilità</h2>
+    <ul>
+        <li><strong>Massimo 3 mesi</strong> consecutivi dalla data di partenza.</li>
+        <li>Estensibile fino a <strong>6 mesi</strong> solo con autorizzazione eccezionale di INPS, motivata (es. offerta di lavoro concreta all'estero con colloqui fissati).</li>
+        <li>Al termine del periodo, se non trovi lavoro, la NASpI <strong>cessa definitivamente</strong>: non puoi rientrare in Italia e riprenderla.</li>
+    </ul>
+
+    <h2>Come funziona — procedura passo-passo</h2>
+    <ol>
+        <li><strong>Domanda U2</strong> sul portale INPS (sezione "Prestazioni in Paese UE"), almeno 30 giorni prima della partenza.</li>
+        <li>Allega: documento di identità, dichiarazione del luogo di destinazione, eventuale lettera di invito azienda/APL.</li>
+        <li>INPS rilascia il <strong>formulario PDU2</strong> (cartaceo + versione digitale sul Fascicolo Previdenziale).</li>
+        <li>Entro <strong>7 giorni dall'arrivo nel Paese di destinazione</strong>, iscriviti al servizio per l'impiego locale (l'equivalente del CPI). Esempi: Bundesagentur für Arbeit (Germania), Pôle Emploi (Francia), SEPE (Spagna), Arbetsförmedlingen (Svezia).</li>
+        <li>Presenta il formulario PDU2 all'ufficio locale: questo certifica il tuo stato presso l'ente pagatore italiano.</li>
+        <li>La NASpI continua a essere pagata dall'INPS sul tuo IBAN italiano (o estero SEPA) per i 3 mesi.</li>
+        <li>Se trovi lavoro: la NASpI cessa al primo giorno di nuovo rapporto. Se rientri in Italia prima dei 3 mesi: la NASpI riprende normalmente.</li>
+    </ol>
+
+    <h2>Cosa succede se NON richiedi l'U2 e ti trasferisci comunque?</h2>
+    <p>
+        L'assenza prolungata dal territorio italiano senza U2 comporta la <strong>sospensione e poi decadenza</strong> della
+        NASpI. L'INPS incrocia i dati con l'Agenzia delle Entrate, l'anagrafe residenti all'estero (AIRE) e i flussi SII UE,
+        quindi il controllo è automatico.
+    </p>
+
+    <h2>Brexit e Regno Unito</h2>
+    <p>
+        Post-Brexit vale l'<strong>accordo di recesso UE-UK</strong> (rafforzato dal Protocollo sul coordinamento sicurezza
+        sociale). In pratica, la portabilità U2 continua a essere ammessa per UK, con la stessa procedura e le stesse durate.
+        Verifica sempre aggiornamenti, perché il framework può evolvere.
+    </p>
+
+    <h2>Paesi extra-UE</h2>
+    <p>
+        In Paesi diversi da UE/SEE/Svizzera/UK la NASpI <strong>non è esportabile</strong>. Il trasferimento (iscrizione AIRE)
+        determina la cessazione della prestazione. Eccezioni: Paesi con convenzioni bilaterali di sicurezza sociale (Argentina,
+        USA per specifici aspetti, Canada, Australia, Brasile, ecc.) — ma tipicamente riguardano pensioni e infortuni, non
+        la NASpI.
+    </p>
+
+    <h2>Contributi figurativi durante il periodo estero</h2>
+    <p>
+        I periodi di NASpI fruita all'estero maturano contributi figurativi allo stesso modo di quelli italiani, utili per la
+        pensione futura. Al rientro non devi fare nulla: sono già registrati.
+    </p>
+
+    <h2>Consigli pratici</h2>
+    <ul>
+        <li>Apri un <strong>conto corrente locale</strong> nel Paese di destinazione (alcuni enti richiedono domiciliazione locale).</li>
+        <li>Iscriviti preventivamente a <strong>EURES</strong> (rete europea di mobilità professionale): agevola colloqui e offerte oltre che certificare la ricerca.</li>
+        <li>Mantieni tutta la <strong>documentazione</strong>: iscrizione al servizio pubblico locale, candidature fatte, colloqui, eventuali comunicazioni di assunzione o rifiuto. Serve in caso di controlli.</li>
+        <li><strong>Non annullare la residenza italiana</strong> per i 3 mesi U2, altrimenti la NASpI decade.</li>
+    </ul>
+</GuidaLayout>

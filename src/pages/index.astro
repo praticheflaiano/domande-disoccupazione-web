@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Home from '../components/Home';
 import NewsCard from '../components/NewsCard.astro';
+import ReviewsBlock from '../components/ReviewsBlock.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { NASPI_CONSTANTS } from '../constants';
 
@@ -70,6 +71,8 @@ const howToSchema = {
     jsonLd={[faqSchema, howToSchema]}
 >
     <Home client:load />
+
+    <ReviewsBlock />
 
     <section class="bg-slate-50 border-t border-slate-200 py-12 px-4">
         <div class="max-w-6xl mx-auto">

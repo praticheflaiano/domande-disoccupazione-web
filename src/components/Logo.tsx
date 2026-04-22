@@ -1,40 +1,50 @@
 import React from 'react';
 
+/**
+ * Logo principale (footer, versioni full).
+ * Segno + wordmark affiancati, tipografia Inter, nessun border.
+ */
 export const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
     return (
-        <div className={`relative inline-flex flex-col items-center p-4 border-2 border-slate-600 ${className}`}>
-            {/* Main Text */}
-            <div className="flex flex-col items-center leading-none">
-                <span className="text-3xl md:text-4xl font-extrabold text-slate-700 tracking-tight uppercase text-center">
-                    Centro
+        <span className={`inline-flex items-center gap-3 ${className}`}>
+            <LogoMark />
+            <span className="flex flex-col leading-tight">
+                <span className="text-sm md:text-base font-extrabold text-slate-900 tracking-tight uppercase">
+                    Centro Pratiche
                 </span>
-                <span className="text-3xl md:text-4xl font-extrabold text-slate-700 tracking-tight uppercase text-center">
-                    Pratiche
-                </span>
-                <span className="text-3xl md:text-4xl font-light text-slate-400 tracking-wider uppercase opacity-80 mt-1 text-center">
+                <span className="text-xs md:text-sm font-semibold text-teal-700 tracking-[0.18em] uppercase">
                     Flaiano
                 </span>
-            </div>
-
-            {/* Bottom Tagline */}
-            <div className="absolute -bottom-3 bg-white px-2">
-                <span className="text-[10px] md:text-xs font-bold text-slate-600 tracking-[0.2em] uppercase whitespace-nowrap">
-                    CAF - Patronato - Servizi
-                </span>
-            </div>
-        </div>
+            </span>
+        </span>
     );
 };
 
+/**
+ * Segno puro: quadrato arrotondato con monogramma CF. Altezza 40px.
+ */
+export const LogoMark: React.FC<{ className?: string }> = ({ className = '' }) => (
+    <span
+        aria-hidden="true"
+        className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-slate-900 to-slate-700 text-white font-extrabold text-base shadow-sm ${className}`}
+    >
+        CF
+    </span>
+);
+
+/**
+ * Variante ridotta per uso in-line (privacy policy, email, etc.).
+ * Solo wordmark senza mark.
+ */
 export const LogoSmall: React.FC<{ className?: string }> = ({ className = '' }) => {
     return (
-        <div className={`flex flex-col leading-tight ${className}`}>
-            <div className="text-lg font-extrabold text-slate-700 tracking-tight uppercase">
+        <span className={`inline-flex flex-col leading-tight ${className}`}>
+            <span className="text-sm font-extrabold tracking-tight uppercase">
                 Centro Pratiche
-            </div>
-            <div className="text-sm font-light text-slate-500 tracking-wider uppercase">
+            </span>
+            <span className="text-xs font-semibold tracking-[0.18em] uppercase opacity-80">
                 Flaiano
-            </div>
-        </div>
-    )
-}
+            </span>
+        </span>
+    );
+};

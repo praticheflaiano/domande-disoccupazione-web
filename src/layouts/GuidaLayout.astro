@@ -1,0 +1,80 @@
+---
+import Base from './Base.astro';
+import GuidaNav from '../components/GuidaNav.astro';
+import ConversionCTA from '../components/ConversionCTA';
+import { LAST_UPDATED } from '../constants';
+
+export interface Props {
+    title: string;
+    description: string;
+    slug: string;
+    h1: string;
+    kicker: string;
+    sources: string[];
+    faq?: Array<{ q: string; a: string }>;
+}
+
+const { title, description, slug, h1, kicker, sources, faq } = Astro.props;
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Guida operativa', href: '/guida' },
+    { label: h1, href: `/guida/${slug}` },
+];
+
+const faqSchema = faq && faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+} : undefined;
+---
+
+<Base title={title} description={description} breadcrumbs={breadcrumbs} jsonLd={faqSchema}>
+    <article class="max-w-4xl mx-auto py-12 px-4 space-y-10">
+        <header>
+            <p class="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-2">{kicker}</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">{h1}</h1>
+            <p class="text-sm text-slate-500">Aggiornato al <time datetime={LAST_UPDATED}>{LAST_UPDATED}</time></p>
+        </header>
+
+        <div class="prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-blue-600">
+            <slot />
+        </div>
+
+        {faq && faq.length > 0 && (
+            <section aria-labelledby="faq-heading">
+                <h2 id="faq-heading" class="text-2xl font-bold text-slate-900 mb-6">Domande frequenti</h2>
+                <dl class="space-y-4">
+                    {faq.map((item) => (
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                            <dt class="font-bold text-slate-900 mb-2">{item.q}</dt>
+                            <dd class="text-slate-700 leading-relaxed">{item.a}</dd>
+                        </div>
+                    ))}
+                </dl>
+            </section>
+        )}
+
+        <ConversionCTA
+            variant="inline"
+            headline="Vuoi una mano con questa procedura?"
+            subline="Gli operatori del Centro Pratiche Flaiano seguono ogni tuo passo: dalla domanda NASpI alla gestione degli obblighi periodici."
+        />
+
+        <section class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-sm text-slate-600">
+            <h2 class="font-bold text-slate-900 text-base mb-2">Fonti e riferimenti</h2>
+            <ul class="space-y-1">
+                {sources.map((source) => <li>• {source}</li>)}
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Continua la guida</h2>
+            <GuidaNav current={slug} />
+        </section>
+    </article>
+</Base>

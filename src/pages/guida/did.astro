@@ -1,0 +1,95 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'DID e SIISL sono la stessa cosa?',
+        a: 'No, ma sono complementari. La DID dichiara formalmente la tua disponibilità al lavoro ai fini INPS e ANPAL; SIISL è la piattaforma operativa dove aggiorni CV, firmi il PAD e trovi le offerte. La DID è un prerequisito amministrativo per lo stato di disoccupazione, e quindi per la NASpI stessa.',
+    },
+    {
+        q: 'Se ho già presentato domanda NASpI devo fare anche la DID?',
+        a: 'Sì. Dal 2024 la DID va resa contestualmente o comunque entro la firma del PAD su SIISL. In pratica il percorso è: domanda NASpI → iscrizione automatica a SIISL → DID online + firma PAD entro 15 giorni.',
+    },
+    {
+        q: 'Cosa succede se non rendo la DID?',
+        a: 'Senza DID non hai lo "stato di disoccupazione" formale. Dopo un primo sollecito, l\'INPS sospende la prestazione. Se la situazione persiste, la NASpI viene revocata.',
+    },
+];
+---
+
+<GuidaLayout
+    title="DID Online 2026: Dichiarazione di Immediata Disponibilità al lavoro"
+    description="Cos\'è la DID online, quando e come renderla, differenza con l\'iscrizione SIISL, conseguenze in caso di mancata presentazione. Guida operativa 2026."
+    slug="did"
+    h1="DID online: la Dichiarazione di Disponibilità al lavoro"
+    kicker="Prerequisito formale"
+    sources={[
+        'D.Lgs. 150/2015 art. 19 (stato di disoccupazione)',
+        'DL 4/2019 conv. L. 26/2019 (DID come requisito per prestazioni)',
+        'Portale SIISL: siisl.lavoro.gov.it → Stato disoccupazione',
+        'Portale INPS: "DID - Dichiarazione di Disponibilità al Lavoro"',
+    ]}
+    faq={faq}
+>
+    <h2>Cos'è la DID</h2>
+    <p>
+        La <strong>DID (Dichiarazione di Immediata Disponibilità al lavoro)</strong> è l'atto formale con cui il cittadino
+        dichiara di essere disoccupato e immediatamente disponibile a svolgere un'attività lavorativa. È regolata dall'art. 19
+        del D.Lgs. 150/2015 ed è <strong>prerequisito</strong> per:
+    </p>
+    <ul>
+        <li>Il riconoscimento dello <strong>stato di disoccupazione</strong>.</li>
+        <li>L'erogazione di <strong>NASpI, DIS-COLL, SFL, ADI</strong>.</li>
+        <li>L'accesso al <strong>programma GOL</strong> e alla formazione finanziata.</li>
+    </ul>
+
+    <h2>Quando va resa</h2>
+    <p>
+        La DID va resa <strong>contestualmente alla domanda NASpI</strong> o al più tardi entro la <strong>firma del PAD</strong>
+        su SIISL (quindi entro 15 giorni dall'accoglimento). Se la domanda NASpI viene presentata dopo la cessazione del lavoro,
+        la DID va resa anch'essa immediatamente: vale come dichiarazione di volontà.
+    </p>
+
+    <h2>Come si rende la DID — tre canali</h2>
+    <ol>
+        <li><strong>Portale SIISL</strong> (<a href="https://siisl.lavoro.gov.it" target="_blank" rel="noopener noreferrer">siisl.lavoro.gov.it</a>): al primo accesso, il sistema ti chiede se vuoi rendere la DID. Basta confermare. È il canale più rapido.</li>
+        <li><strong>Portale INPS</strong>: sezione "DID - Dichiarazione di Disponibilità al Lavoro" (disponibile anche integrata nella domanda NASpI, spunta "DID contestuale").</li>
+        <li><strong>Centro per l'Impiego</strong>: al primo appuntamento, l'operatore ti fa firmare la DID cartacea. È l'opzione di ripiego se non hai dimestichezza digitale.</li>
+    </ol>
+
+    <h2>Cosa dichiari firmando la DID</h2>
+    <ul>
+        <li>Di essere privo di occupazione (o di essere stato dichiarato disoccupato da azienda in crisi conclamata).</li>
+        <li>Di essere <strong>immediatamente disponibile</strong> a svolgere un'attività lavorativa e a partecipare alle politiche attive.</li>
+        <li>Di accettare di essere convocato dal CPI per incontri di orientamento e proposte di lavoro.</li>
+        <li>Di partecipare alle misure di attivazione previste dal PSP (Patto di Servizio Personalizzato).</li>
+    </ul>
+
+    <h2>Differenza tra DID e iscrizione SIISL</h2>
+    <table>
+        <thead>
+            <tr><th>Aspetto</th><th>DID</th><th>SIISL</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Natura</td><td>Atto di volontà del cittadino</td><td>Piattaforma operativa</td></tr>
+            <tr><td>Effetto</td><td>Riconoscimento stato di disoccupazione</td><td>Accesso a offerte di lavoro e corsi</td></tr>
+            <tr><td>Scadenza</td><td>Va resa subito</td><td>Accesso entro 15 gg da accoglimento NASpI</td></tr>
+            <tr><td>Conseguenza omissione</td><td>No stato disoccupazione → no NASpI</td><td>Sospensione e poi decadenza NASpI</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Perdita dello stato di disoccupazione</h2>
+    <p>Lo stato di disoccupazione — e con esso la DID — si perde se:</p>
+    <ul>
+        <li>Accetti un'offerta di lavoro (e con essa cessa la NASpI).</li>
+        <li>Rifiuti un'offerta congrua (vedi <a href="/obblighi/cpi">obblighi CPI</a>).</li>
+        <li>Non rispondi a due convocazioni consecutive del CPI senza giustificato motivo.</li>
+        <li>Inizi un'attività autonoma con reddito sopra soglia senza comunicazione.</li>
+    </ul>
+
+    <h2>Verifica lo stato della tua DID</h2>
+    <p>
+        Sul portale SIISL, nella sezione "Il mio profilo", compare la data di presentazione della DID e lo stato attuale.
+        Se vedi <em>"Stato di disoccupazione non attivo"</em>, intervieni subito: la NASpI è a rischio sospensione.
+    </p>
+</GuidaLayout>
