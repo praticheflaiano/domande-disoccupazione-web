@@ -1,0 +1,99 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Entro quanti giorni devo presentare la domanda?',
+        a: 'Entro 68 giorni dalla cessazione del rapporto di lavoro. Il computo parte dal giorno successivo all\'ultimo giorno di lavoro. Oltre i 68 giorni, il diritto decade automaticamente.',
+    },
+    {
+        q: 'Serve lo SPID per fare la domanda?',
+        a: 'Sì, per il portale INPS serve SPID livello 2, CIE o CNS. In alternativa puoi delegare un patronato o il Centro Pratiche Flaiano compilando il modulo SR163.',
+    },
+    {
+        q: 'Cosa succede se commetto un errore nella domanda?',
+        a: 'INPS contatta il richiedente per integrazioni tramite la Cassetta Postale del Fascicolo Previdenziale. Rispondi entro 30 giorni o la domanda viene rigettata. Se la pratica è già stata trasmessa in modo errato puoi presentare una nuova domanda purché ancora entro i 68 giorni.',
+    },
+    {
+        q: 'Quando inizia il pagamento?',
+        a: 'Dall\'8° giorno dopo la cessazione, indipendentemente da quando presenti la domanda (entro i 68 giorni). Se presenti dopo i primi 8 giorni, la prestazione decorre comunque dal giorno 8 ma il primo pagamento arriverà con arretrati.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Presentare la domanda NASpI 2026: guida INPS passo-passo"
+    description="Come compilare e trasmettere la domanda NASpI sul portale INPS nel 2026: documenti, SPID, modulo SR163, scadenza 68 giorni, decorrenza del pagamento."
+    slug="presentare-domanda"
+    h1="Presentare la domanda NASpI passo-passo"
+    kicker="Primo adempimento — entro 68 giorni"
+    sources={[
+        'D.Lgs. 22/2015 art. 6 (termine decadenziale 68 giorni)',
+        'Circ. INPS n. 94/2015 (istruzioni operative)',
+        'Portale INPS: Prestazioni → NASpI → "Domanda NASpI"',
+        'Modulo SR163 (delega al patronato)',
+    ]}
+    faq={faq}
+>
+    <h2>Prima di iniziare: cosa serve</h2>
+    <ul>
+        <li><strong>SPID livello 2</strong>, CIE con PIN o CNS (Carta Nazionale Servizi).</li>
+        <li><strong>Ultima busta paga</strong> (per verificare RAL, reddito imponibile, data cessazione).</li>
+        <li><strong>Contratto di lavoro</strong> o lettera di licenziamento.</li>
+        <li><strong>IBAN italiano o SEPA</strong> intestato al richiedente (no conti cointestati ad altri).</li>
+        <li><strong>Codice fiscale</strong> (ed eventualmente tessera sanitaria).</li>
+        <li><strong>Ricevuta delle dimissioni telematiche</strong>, se cessazione volontaria per giusta causa.</li>
+    </ul>
+
+    <h2>Le due strade: portale INPS o patronato</h2>
+    <p>La domanda si presenta in due modi:</p>
+    <ol>
+        <li><strong>Portale INPS</strong> (autonomia completa): accedi a <a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">inps.it</a>, sezione "Prestazioni → NASpI". Tempo stimato: 30-45 minuti, richiede dimestichezza con il portale.</li>
+        <li><strong>Patronato o CAF</strong> (es. Centro Pratiche Flaiano): firmi il modulo <strong>SR163</strong> (delega alla riscossione e all'assistenza), consegni i documenti, il patronato compila e trasmette per te. Tempo dell'utente: 10 minuti.</li>
+    </ol>
+
+    <h2>Procedura su portale INPS — 8 passi</h2>
+    <ol>
+        <li><strong>Login</strong>: <a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">inps.it</a> → "MyINPS" → SPID/CIE/CNS.</li>
+        <li><strong>Menu "Prestazioni" → "NASpI: domanda"</strong>.</li>
+        <li><strong>Verifica anagrafica</strong>: dati precompilati. Correggi se necessario (indirizzo, e-mail, telefono).</li>
+        <li><strong>Dati sul rapporto cessato</strong>: datore di lavoro, CCNL, qualifica, data assunzione, data cessazione, motivo. Il sistema incrocia con flussi UniEmens e pre-compila.</li>
+        <li><strong>Dichiarazione requisiti</strong>: attesti che la cessazione è involontaria, di avere 13 settimane contributive, di non lavorare, di non ricevere altre prestazioni di disoccupazione.</li>
+        <li><strong>IBAN</strong>: inserisci l'IBAN su cui vuoi il pagamento mensile.</li>
+        <li><strong>Riepilogo e invio</strong>: ultima verifica, conferma con SPID, ricevi il <strong>protocollo</strong> (salvalo o scarica la ricevuta PDF).</li>
+        <li><strong>Stato della pratica</strong>: consultabile da "Consultazione domanda" entro 24 h.</li>
+    </ol>
+
+    <h2>Decorrenza dei pagamenti</h2>
+    <ul>
+        <li>La NASpI decorre dall'<strong>8° giorno</strong> successivo alla cessazione (es. cessazione il 5 aprile → decorrenza dal 13 aprile).</li>
+        <li>Il <strong>primo pagamento</strong> arriva in genere 45-60 giorni dopo la trasmissione della domanda (INPS deve validare contributi e calcolare l'importo).</li>
+        <li>I pagamenti successivi sono mensili posticipati, tipicamente tra il 10 e il 15 del mese.</li>
+    </ul>
+
+    <h2>Tempi di lavorazione e controllo dello stato</h2>
+    <p>Dopo l'invio, INPS pubblica lo stato della domanda sul Fascicolo Previdenziale:</p>
+    <ul>
+        <li><strong>Acquisita</strong>: domanda ricevuta, in attesa di istruttoria.</li>
+        <li><strong>In lavorazione</strong>: operatore sta verificando requisiti.</li>
+        <li><strong>Accolta</strong>: diritto confermato, calcolo importo in corso. Da qui partono le scadenze SIISL (15 giorni per il PAD).</li>
+        <li><strong>Accolta in pagamento</strong>: primo accredito programmato.</li>
+        <li><strong>Respinta</strong>: motivazione nella comunicazione; hai 90 giorni per <a href="/guida/ricorso">ricorrere</a>.</li>
+    </ul>
+
+    <h2>Errori più comuni che causano rigetto</h2>
+    <ul>
+        <li>IBAN errato o non intestato al richiedente.</li>
+        <li>Mancata dichiarazione di dimissioni per giusta causa (quando applicabile).</li>
+        <li>Dichiarazione di reddito in corso non comunicato tempestivamente.</li>
+        <li>Periodo contributivo insufficiente (controlla l'estratto conto contributivo prima di domandare).</li>
+        <li>Presentazione oltre il 68° giorno.</li>
+    </ul>
+
+    <h2>Serve aiuto?</h2>
+    <p>
+        Il Centro Pratiche Flaiano gestisce l'intera procedura al posto tuo con il modulo SR163: verifica requisiti, compila
+        la domanda, la trasmette e segue l'istruttoria fino al primo pagamento. Documenti si inviano via WhatsApp o in sede
+        a Roma. Tempo dell'utente: 10 minuti per la firma del mandato, zero altre interazioni richieste.
+    </p>
+</GuidaLayout>

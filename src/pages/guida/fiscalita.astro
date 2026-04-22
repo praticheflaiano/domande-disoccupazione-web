@@ -1,0 +1,112 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'La NASpI è soggetta a IRPEF?',
+        a: 'Sì, la NASpI è reddito assimilato a lavoro dipendente ai fini IRPEF (art. 50 TUIR). L\'INPS applica le ritenute alla fonte mese per mese e rilascia la Certificazione Unica (CU) entro marzo dell\'anno successivo.',
+    },
+    {
+        q: 'Ho diritto alle detrazioni per lavoro dipendente mentre ricevo NASpI?',
+        a: 'Sì, ma per il solo periodo NASpI le detrazioni sono calcolate su base annua e parametrate ai giorni effettivi di prestazione. In sede di 730 viene fatto il conguaglio tenendo conto di tutti i redditi dell\'anno.',
+    },
+    {
+        q: 'Se riprendo a lavorare nello stesso anno, cosa succede all\'IRPEF?',
+        a: 'In sede di 730 si sommano il reddito NASpI e quello da lavoro dipendente: l\'IRPEF è progressiva sul totale. Spesso emerge un conguaglio a debito perché datore di lavoro e INPS hanno applicato due scaglioni più bassi di quello effettivo. Per evitare sorprese puoi chiedere al datore di lavoro di applicare aliquote più alte con il modello TFR/detrazioni.',
+    },
+    {
+        q: 'Quando arriva la Certificazione Unica?',
+        a: 'L\'INPS pubblica la CU entro il 16 marzo dell\'anno successivo nel Fascicolo Previdenziale → "Certificazione Unica". Puoi scaricarla anche in formato PDF firmato digitalmente.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI e fiscalità: 730, CU, IRPEF e conguaglio | Guida 2026"
+    description="Tutto sulla tassazione della NASpI: ritenute IRPEF, Certificazione Unica, 730 / modello Redditi, detrazioni lavoro dipendente, conguaglio quando si torna a lavorare."
+    slug="fiscalita"
+    h1="NASpI e fiscalità: CU, 730 e IRPEF"
+    kicker="Gestione fiscale durante la disoccupazione"
+    sources={[
+        'D.P.R. 917/86 (TUIR), art. 50 comma 1 lettera b (reddito assimilato a lavoro dipendente)',
+        'Circ. Agenzia Entrate n. 18/E del 2017',
+        'Istruzioni modello 730/2026 (in pubblicazione ad aprile)',
+        'Portale INPS: "Certificazione Unica" nel Fascicolo Previdenziale',
+    ]}
+    faq={faq}
+>
+    <h2>La NASpI è reddito imponibile</h2>
+    <p>
+        La NASpI è considerata dal fisco un <strong>reddito assimilato a lavoro dipendente</strong> (art. 50 TUIR). Questo
+        significa che:
+    </p>
+    <ul>
+        <li>Concorre al reddito complessivo ai fini IRPEF.</li>
+        <li>È soggetta agli <strong>scaglioni IRPEF 2026</strong> (23% fino 28.000 €, 33% tra 28.000 e 50.000 €, 43% oltre — L. 199/2025).</li>
+        <li>Dà diritto alle <strong>detrazioni per lavoro dipendente</strong> (no tax area fino 8.500 €, decalage fino a 50.000 €).</li>
+        <li>Non è soggetta a contributi INPS o INAIL (non maturi altri contributi mentre ricevi NASpI, ma accrediti figurativi sì).</li>
+    </ul>
+
+    <h2>Come l'INPS applica le ritenute</h2>
+    <p>
+        Ogni mese l'INPS calcola una ritenuta IRPEF sulla NASpI usando lo scaglione minimo (23%) più le detrazioni annuali
+        proporzionate. Il risultato è che la NASpI netta è circa <strong>85-90% del lordo</strong>, a seconda delle detrazioni
+        applicate. Nel tuo cedolino NASpI (visibile nel Fascicolo Previdenziale) vedi la distinzione lordo / ritenute / netto.
+    </p>
+
+    <h2>La Certificazione Unica (CU) INPS</h2>
+    <p>
+        Entro il <strong>16 marzo</strong> di ogni anno, l'INPS pubblica la CU relativa all'anno precedente. Contiene:
+    </p>
+    <ul>
+        <li><strong>Punto 1</strong>: totale NASpI lorda percepita nell'anno.</li>
+        <li><strong>Punto 21</strong>: ritenute IRPEF trattenute.</li>
+        <li><strong>Punti 11-12</strong>: giorni di prestazione NASpI (utili per detrazioni).</li>
+        <li><strong>Punti 351 e seguenti</strong>: dati previdenziali (contribuzione figurativa accreditata).</li>
+    </ul>
+    <p>La CU si scarica dal Fascicolo Previdenziale → "Certificazione Unica" → "Cittadini e ente".</p>
+
+    <h2>Dichiarazione dei redditi: 730 o modello Redditi</h2>
+    <p>
+        Se percepisci NASpI devi comunque presentare il <strong>730</strong> (o modello Redditi) nei casi normali:
+    </p>
+    <ul>
+        <li>Se <strong>hai un sostituto d'imposta</strong> nell'anno (es. sei tornato a lavorare): presenti 730 attraverso il nuovo datore o online via precompilata.</li>
+        <li>Se <strong>NON hai un sostituto d'imposta</strong> al momento della dichiarazione (ancora in NASpI): usa il <strong>730 con modalità "senza sostituto"</strong>. Eventuale rimborso arriva dall'Agenzia delle Entrate direttamente sull'IBAN.</li>
+        <li>Se hai partita IVA attiva o altri redditi particolari: presenti il <strong>modello Redditi PF</strong>.</li>
+    </ul>
+
+    <h2>Il conguaglio IRPEF a fine anno</h2>
+    <p>
+        Poiché INPS e datore di lavoro (se riprendi) calcolano separatamente l'IRPEF, quasi sempre emerge un <strong>conguaglio
+        a debito</strong> in sede di 730. Esempio tipico:
+    </p>
+    <ul>
+        <li>Gennaio–giugno: NASpI 8.000 € lordi, ritenuta media 10% → 800 € trattenuti.</li>
+        <li>Luglio–dicembre: lavoro dipendente 14.000 € lordi, ritenuta media 22% → 3.080 € trattenuti.</li>
+        <li>Totale lordo 22.000 €, IRPEF dovuta ~23% × 22.000 − detrazioni = ~3.800 €.</li>
+        <li>Totale trattenuto 3.880 €. In questo caso un piccolo <strong>rimborso</strong>, ma se le aliquote salgono (es. reddito > 28.000 €) emerge un <strong>debito</strong> di qualche centinaio di euro.</li>
+    </ul>
+    <p>Per evitare sorprese puoi chiedere al nuovo datore di applicare detrazioni "zero" o ritenute aggiuntive.</p>
+
+    <h2>Cosa NON rientra nel lordo NASpI</h2>
+    <ul>
+        <li>L'<strong>Assegno al Nucleo Familiare (ANF)</strong> eventualmente percepito non è imponibile IRPEF.</li>
+        <li>I contributi figurativi accreditati non concorrono al reddito.</li>
+        <li>Eventuali <strong>arretrati di anni precedenti</strong> (es. se la domanda si è chiusa in ritardo) sono tassati separatamente con aliquota media degli ultimi 2 anni (art. 17 TUIR).</li>
+    </ul>
+
+    <h2>Bonus fiscali compatibili</h2>
+    <ul>
+        <li><strong>Bonus dipendenti 100 €/mese</strong> (ex "trattamento integrativo" 1.200 €/anno): spetta anche durante NASpI se il reddito complessivo annuo è compatibile.</li>
+        <li><strong>Assegno Unico figli</strong>: spetta indipendentemente dalla NASpI, va richiesto separatamente (non incide).</li>
+        <li><strong>Detrazioni per carichi familiari</strong>: spettano normalmente.</li>
+    </ul>
+
+    <h2>Errori da evitare</h2>
+    <ul>
+        <li>Non dichiarare il reddito NASpI nel 730 perché "l'INPS ha già trattenuto" → sanzione per omessa dichiarazione.</li>
+        <li>Applicare detrazioni per lavoro dipendente per l'intero anno quando non spettano (si generano debiti in conguaglio).</li>
+        <li>Non scaricare la CU entro marzo e perdere la scadenza 730.</li>
+    </ul>
+</GuidaLayout>

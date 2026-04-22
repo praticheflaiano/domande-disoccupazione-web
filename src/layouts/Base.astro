@@ -1,7 +1,7 @@
 ---
 import '../index.css';
-import { NAV_LINKS, SITE_URL } from '../lib/routes';
-import { Logo } from '../components/Logo';
+import { SITE_URL } from '../lib/routes';
+import SiteHeader from '../components/SiteHeader.astro';
 import Footer from '../components/Footer';
 import StickyContactBar from '../components/StickyContactBar';
 import AccessibilityToolbar from '../components/AccessibilityToolbar';
@@ -64,13 +64,6 @@ const organizationSchema = {
     priceRange: '€€',
     description:
         "Centro Pratiche Flaiano (Roma) assiste nella domanda NASpI e disoccupazione INPS, con calcolatore online, guide aggiornate e invio domanda telematica.",
-    aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '187',
-        bestRating: '5',
-        worstRating: '1',
-    },
 };
 
 const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
@@ -127,33 +120,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
     <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col font-sans">
         <a href="#main" class="skip-link">Salta al contenuto principale</a>
 
-        <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
-                <a href="/" class="flex items-center gap-2 transform hover:scale-[1.02] transition-transform duration-300" aria-label="Centro Pratiche Flaiano — Home">
-                    <Logo className="scale-75 origin-left" />
-                </a>
-                <nav class="hidden md:flex gap-6" aria-label="Navigazione principale">
-                    {NAV_LINKS.map((link) => (
-                        <a
-                            href={link.href}
-                            class:list={[
-                                'text-sm font-bold uppercase tracking-wider transition-colors',
-                                currentPath === link.href ? 'text-teal-700' : 'text-slate-500 hover:text-slate-800',
-                            ]}
-                            aria-current={currentPath === link.href ? 'page' : undefined}
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                </nav>
-                <a
-                    href="/richiedi"
-                    class="bg-teal-700 hover:bg-teal-800 text-white px-6 py-3 rounded-md text-sm font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 uppercase tracking-wide"
-                >
-                    Richiedi Online
-                </a>
-            </div>
-        </header>
+        <SiteHeader currentPath={currentPath} />
 
         {breadcrumbs && breadcrumbs.length > 0 && (
             <nav class="flex items-center text-xs text-slate-500 px-4 max-w-7xl mx-auto mt-4" aria-label="Breadcrumb">

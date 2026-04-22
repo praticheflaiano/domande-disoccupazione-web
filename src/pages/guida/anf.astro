@@ -1,0 +1,110 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'L\'ANF è compatibile con la NASpI?',
+        a: 'Sì, l\'Assegno al Nucleo Familiare è pienamente compatibile con la NASpI e si somma all\'indennità. Va richiesto separatamente con il modulo ANF/NASpI (codice SR163 + istanza dedicata).',
+    },
+    {
+        q: 'L\'ANF è la stessa cosa dell\'Assegno Unico?',
+        a: 'No. L\'Assegno Unico Universale (da 2022) riguarda i figli a carico fino a 21 anni ed è erogato direttamente dall\'INPS indipendentemente dalla NASpI. L\'ANF "residuale" rimane invece per coniuge e altri familiari a carico (fratelli, genitori anziani) in specifiche casistiche.',
+    },
+    {
+        q: 'Quanto spetta di ANF durante la NASpI?',
+        a: 'Dipende dalla composizione e dal reddito del nucleo. Per i nuclei con solo NASpI come reddito principale, per un coniuge a carico l\'importo si aggira tra 50 e 150 € mensili (tabelle INPS aggiornate annualmente).',
+    },
+];
+---
+
+<GuidaLayout
+    title="ANF durante la NASpI 2026: importi, moduli e compatibilità"
+    description="Assegno al Nucleo Familiare durante la NASpI: cumulo, beneficiari (coniuge, altri familiari), importi 2026, domanda, differenza con Assegno Unico."
+    slug="anf"
+    h1="Assegno al Nucleo Familiare (ANF) durante la NASpI"
+    kicker="Prestazione aggiuntiva cumulabile"
+    sources={[
+        'DL 69/1988 art. 2 (istituzione ANF)',
+        'D.Lgs. 230/2021 (introduzione Assegno Unico che sostituisce parte ANF per i figli)',
+        'Circ. INPS annuale di aggiornamento tabelle (gennaio-febbraio)',
+        'Modulo SR163 + istanza ANF online',
+    ]}
+    faq={faq}
+>
+    <h2>Cos'è l'ANF (versione post-2022)</h2>
+    <p>
+        Dal 1° marzo 2022, con l'introduzione dell'<strong>Assegno Unico Universale</strong> (AUU), l'ANF per i figli è stato
+        sostituito. Resta in vigore l'<strong>ANF residuale</strong> che riguarda:
+    </p>
+    <ul>
+        <li><strong>Coniuge</strong> a carico (con reddito annuo inferiore alla soglia di carico, ~2.840 €).</li>
+        <li><strong>Fratelli, sorelle, nipoti</strong> minorenni o inabili al lavoro, purché orfani di entrambi i genitori.</li>
+        <li><strong>Genitori o suoceri</strong> ultra-65enni inabili al lavoro e non titolari di pensione di reversibilità.</li>
+        <li>Altri casi particolari (es. figli di età > 21 inabili al 100%).</li>
+    </ul>
+    <p>Per i <strong>figli minorenni</strong> e fino a 21 anni, invece, la prestazione è l'<strong>Assegno Unico</strong>, che ha regole diverse.</p>
+
+    <h2>Compatibilità con la NASpI</h2>
+    <p>
+        L'ANF è <strong>cumulabile al 100%</strong> con la NASpI e con l'Assegno Unico. In pratica, se hai diritto alla NASpI e
+        hai un coniuge a carico senza reddito, puoi ricevere ogni mese:
+    </p>
+    <ul>
+        <li>NASpI (es. 900 €) + ANF per coniuge (es. 80 €) = <strong>980 €/mese</strong>.</li>
+        <li>Se hai anche figli sotto 21: aggiungi l'Assegno Unico (importo variabile con ISEE).</li>
+    </ul>
+
+    <h2>Come calcolare l'importo ANF</h2>
+    <p>
+        L'importo è stabilito da <strong>tabelle INPS</strong> annuali, incrociando:
+    </p>
+    <ul>
+        <li><strong>Tipologia del nucleo</strong> (solo coniuge a carico, coniuge + anziano a carico, ecc.).</li>
+        <li><strong>Reddito complessivo del nucleo</strong> nell'anno precedente (da 730 o CU).</li>
+    </ul>
+    <p>
+        Esempio 2026 (valori orientativi, soggetti a circolare annuale): per un nucleo "coniuge a carico" con reddito
+        familiare annuo di 14.000 €, l'ANF mensile è di circa <strong>110 €</strong>. Consulta le tabelle ufficiali INPS
+        di gennaio di ogni anno per importi precisi.
+    </p>
+
+    <h2>Come fare domanda</h2>
+    <ol>
+        <li>Accedi al <a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">portale INPS</a> con SPID/CIE/CNS.</li>
+        <li>Sezione "Prestazioni → Assegno Nucleo Familiare ANF".</li>
+        <li>Scegli la modalità <strong>"ANF NASpI"</strong> (quando ricevi già NASpI).</li>
+        <li>Compila il modulo con i dati del nucleo e il reddito dichiarato.</li>
+        <li>Allega eventuali certificati (stato di famiglia, invalidità per casi particolari).</li>
+        <li>Invia. L'importo verrà sommato automaticamente alla NASpI mensile.</li>
+    </ol>
+    <p>
+        Come per la NASpI, puoi delegare un patronato col modulo SR163. Il Centro Pratiche Flaiano presenta l'ANF contestualmente
+        alla domanda NASpI, senza costi aggiuntivi per chi ha affidato la pratica.
+    </p>
+
+    <h2>Periodo di competenza</h2>
+    <p>
+        L'ANF si paga per il periodo <strong>1° luglio - 30 giugno</strong> di ogni anno (non coincide con l'anno solare).
+        Ogni anno devi rinnovare la domanda entro giugno con i nuovi dati di reddito.
+    </p>
+
+    <h2>Quando non spetta</h2>
+    <ul>
+        <li>Se il <strong>reddito del coniuge</strong> supera la soglia di carico (~2.840 € annui).</li>
+        <li>Se la NASpI è inferiore alla soglia di "reddito prevalente da lavoro dipendente" (~70% del reddito complessivo).</li>
+        <li>Per i familiari a carico per i quali spetta già l'Assegno Unico.</li>
+    </ul>
+
+    <h2>ANF vs Assegno Unico: promemoria</h2>
+    <table>
+        <thead>
+            <tr><th>Beneficiario</th><th>Prestazione</th><th>Piattaforma</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Figli 0-21 anni</td><td>Assegno Unico Universale</td><td>INPS dedicato (SPID)</td></tr>
+            <tr><td>Figli > 21 inabili</td><td>Assegno Unico (maggiorazione disabilità)</td><td>INPS dedicato</td></tr>
+            <tr><td>Coniuge a carico</td><td>ANF residuale</td><td>ANF NASpI / ANF lavoratori</td></tr>
+            <tr><td>Genitori > 65 inabili</td><td>ANF residuale</td><td>ANF NASpI / ANF lavoratori</td></tr>
+        </tbody>
+    </table>
+</GuidaLayout>

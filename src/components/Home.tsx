@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, Clock, Star, type LucideIcon } from 'lucide-react';
+import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, Clock, type LucideIcon } from 'lucide-react';
 import ConversionCTA from './ConversionCTA';
 
 const PracticeCounter = () => {
@@ -96,21 +96,14 @@ const Home: React.FC = () => {
             </section>
 
             {/* FEATURES GRID */}
-            <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-4 md:gap-6 -mt-10 relative z-20">
+            <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-4 md:gap-6 -mt-10 relative z-20">
                 <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
                     <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1"><PracticeCounter /></div>
                     <div className="text-sm font-medium text-slate-600">Pratiche Gestite</div>
                 </div>
                 <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
-                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">99,8%</div>
-                    <div className="text-sm font-medium text-slate-600">Accoglimento INPS</div>
-                </div>
-                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
-                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1 flex items-center gap-1">
-                        4,9
-                        <Star className="w-6 h-6 text-amber-400 fill-amber-400" aria-hidden="true" />
-                    </div>
-                    <div className="text-sm font-medium text-slate-600">187 recensioni</div>
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">24 h</div>
+                    <div className="text-sm font-medium text-slate-600">Invio della domanda</div>
                 </div>
                 <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-5 rounded-2xl shadow-lg border border-amber-200">
                     <div className="text-3xl md:text-4xl font-bold text-amber-900 mb-1 flex items-center gap-1">

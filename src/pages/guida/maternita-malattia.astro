@@ -1,0 +1,126 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Se mi ammalo durante la NASpI, perdo l\'indennità?',
+        a: 'No. La NASpI si sospende temporaneamente e l\'INPS eroga l\'indennità di malattia al posto della NASpI. Al termine della malattia la NASpI riprende per i giorni residui.',
+    },
+    {
+        q: 'Se scopro di essere incinta mentre ricevo NASpI, ho diritto alla maternità?',
+        a: 'Sì, se matura durante il periodo NASpI, l\'indennità di maternità (5 mesi) si attiva automaticamente e sostituisce la NASpI. La NASpI si sospende e riprende dopo la maternità per i mesi residui.',
+    },
+    {
+        q: 'Posso chiedere il congedo parentale?',
+        a: 'Sì, ma solo per periodi successivi alla ripresa del lavoro. Durante la NASpI il congedo parentale non si applica perché non hai un datore di lavoro; il tempo che dedichi alla cura del figlio non è coperto da specifiche indennità, ma la NASpI continua (se rispetti gli obblighi SIISL/CPI).',
+    },
+];
+---
+
+<GuidaLayout
+    title="Maternità, malattia e NASpI 2026: cosa cambia e quali indennità spettano"
+    description="Come funziona la NASpI in caso di maternità, gravidanza a rischio o malattia: sospensione, indennità sostitutiva, congedi parentali, ripresa al termine dell\'evento."
+    slug="maternita-malattia"
+    h1="Maternità e malattia durante la NASpI"
+    kicker="Eventi sospensivi"
+    sources={[
+        'D.Lgs. 151/2001 (Testo Unico Maternità e Paternità)',
+        'D.Lgs. 22/2015 art. 8 (sospensione NASpI per eventi indennizzabili)',
+        'Circ. INPS n. 174/2017 (istruzioni NASpI)',
+        'Circ. INPS n. 135/2022 (aggiornamento indennità maternità lavoratrici sospese)',
+    ]}
+    faq={faq}
+>
+    <h2>Il principio generale: sospensione e sostituzione</h2>
+    <p>
+        Quando durante la NASpI si verifica un evento indennizzato (malattia, maternità, infortunio), l'INPS applica il principio
+        di <strong>sostituzione</strong>: la NASpI si sospende e viene erogata l'indennità specifica (malattia o maternità).
+        Al termine dell'evento, la NASpI riprende per i <strong>giorni residui</strong>.
+    </p>
+
+    <h2>Malattia durante la NASpI</h2>
+
+    <h3>Chi paga</h3>
+    <p>L'INPS stessa, tramite la "indennità di malattia per disoccupati indennizzati" (art. 1 L. 138/1943 + circolari INPS).</p>
+
+    <h3>Importo</h3>
+    <p>
+        L'indennità di malattia è <strong>pari al lordo NASpI</strong> che avresti percepito in quel periodo. Quindi il cambio
+        di titolo non incide economicamente.
+    </p>
+
+    <h3>Procedura</h3>
+    <ol>
+        <li>Il medico di base trasmette il <strong>certificato telematico</strong> all'INPS indicando giorni di malattia.</li>
+        <li>INPS rileva automaticamente che sei in NASpI e converte la prestazione in indennità di malattia per i giorni certificati.</li>
+        <li>Nessuna istanza separata da presentare.</li>
+        <li>A fine malattia la NASpI riprende il ciclo interrotto, per i giorni non fruiti.</li>
+    </ol>
+
+    <h3>Visite fiscali</h3>
+    <p>
+        Anche da "disoccupato in malattia" sei soggetto a <strong>visite fiscali</strong> nelle fasce di reperibilità
+        (10:00-12:00 e 17:00-19:00, tutti i giorni inclusi festivi). Assenza ingiustificata: sanzione pecuniaria e, nei casi
+        gravi, revoca dell'indennità.
+    </p>
+
+    <h2>Maternità durante la NASpI</h2>
+
+    <h3>Diritto e durata</h3>
+    <p>
+        Se durante il periodo NASpI si entra nel <strong>congedo obbligatorio di maternità</strong> (2 mesi prima del parto + 3
+        mesi dopo, o altra combinazione ex art. 20 D.Lgs. 151/2001), l'INPS attiva automaticamente l'<strong>indennità di
+        maternità</strong> (5 mesi totali).
+    </p>
+
+    <h3>Importo</h3>
+    <p>
+        L'indennità di maternità <strong>sostituisce</strong> la NASpI ed è calcolata al <strong>80% della retribuzione media
+        giornaliera</strong> delle ultime 4 settimane precedenti l'inizio del congedo. Se la base di calcolo dà un risultato
+        inferiore alla NASpI, INPS paga l'importo maggiore (principio di tutela).
+    </p>
+
+    <h3>Procedura</h3>
+    <ol>
+        <li>Invii all'INPS il <strong>certificato medico di gravidanza</strong> con data presunta parto.</li>
+        <li>Presenti la <strong>domanda di indennità di maternità</strong> dal portale INPS (sezione "Maternità lavoratrici sospese").</li>
+        <li>INPS sospende la NASpI e attiva l'indennità di maternità per i 5 mesi.</li>
+        <li>Dopo il 3° mese dal parto la NASpI <strong>riprende</strong> per i mesi residui.</li>
+    </ol>
+
+    <h3>Gravidanza a rischio</h3>
+    <p>
+        Se sei in <strong>interdizione anticipata</strong> per gravidanza a rischio (certificata da medico specialista + ASL),
+        l'indennità di maternità parte anche prima dei 2 mesi standard, sostituendo la NASpI.
+    </p>
+
+    <h2>Congedo parentale durante la NASpI</h2>
+    <p>
+        Il congedo parentale è una prestazione riservata a <strong>chi ha un datore di lavoro</strong>. Durante la NASpI non
+        hai un rapporto di lavoro in corso, quindi il congedo parentale non si applica. Se nel frattempo torni a lavorare, i
+        mesi di congedo parentale maturano dal nuovo rapporto.
+    </p>
+
+    <h2>Dimissioni per maternità</h2>
+    <p>
+        Se ti dimetti durante il periodo protetto della maternità (1° anno di vita del bambino) hai diritto alla NASpI come se
+        la cessazione fosse involontaria. Le dimissioni devono essere <strong>convalidate dall'ITL</strong> (Ispettorato
+        Territoriale del Lavoro). Un motivo comune è il cambiamento repentino delle condizioni lavorative (orari, mansione,
+        sede) incompatibili con la cura del figlio.
+    </p>
+
+    <h2>Ripresa della NASpI dopo l'evento</h2>
+    <p>
+        Alla fine della malattia o della maternità, la NASpI <strong>riprende automaticamente</strong> per i giorni residui.
+        Attenzione: i giorni di malattia/maternità <strong>non consumano</strong> la durata NASpI, ma allungano la data di
+        fine prestazione.
+    </p>
+    <p>Esempio: NASpI 360 gg iniziata il 1° gennaio. Malattia dal 1° marzo al 15 aprile (46 gg). Fine NASpI originaria 26 dicembre → slitta al 10 febbraio successivo.</p>
+
+    <h2>Casi particolari</h2>
+    <ul>
+        <li><strong>Infortunio</strong>: idem malattia, con possibile indennità INAIL se l'evento è avvenuto in contesti assimilabili a lavoro.</li>
+        <li><strong>Aborto spontaneo dopo il 3° mese</strong>: l'indennità di maternità spetta comunque (art. 19 D.Lgs. 151/2001).</li>
+        <li><strong>Maternità all'estero</strong>: se dai alla luce in un altro Stato UE, l'indennità italiana continua se la NASpI è "portata all'estero" con modulo U2.</li>
+    </ul>
+</GuidaLayout>
