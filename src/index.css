@@ -6,6 +6,14 @@
     body {
         @apply text-slate-800 bg-slate-50;
     }
+
+    :focus-visible {
+        @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-50 rounded-md;
+    }
+
+    .skip-link {
+        @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-slate-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg;
+    }
 }
 
 .prose {

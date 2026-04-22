@@ -96,8 +96,10 @@ const faqs: FAQCategory[] = [
     }
 ];
 
+import type { Page } from '../types';
+
 interface KnowledgeBaseProps {
-    onNavigate: (page: any) => void;
+    onNavigate: (page: Page) => void;
 }
 
 const KnowledgeBase: React.FC<KnowledgeBaseProps> = ({ onNavigate }) => {

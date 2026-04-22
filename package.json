@@ -8,7 +8,7 @@
     "dev:vercel": "vercel dev",
     "build": "tsc && vite build",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"api/**/*.ts\"",
     "test": "vitest",
     "test:coverage": "vitest --run --coverage",

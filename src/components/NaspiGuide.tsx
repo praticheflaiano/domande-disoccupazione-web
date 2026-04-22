@@ -16,7 +16,12 @@ const NaspiGuide: React.FC = () => {
                 <div className="absolute inset-0 z-0">
                     <img
                         src="/assets/guide_header.png"
-                        alt="Background"
+                        alt=""
+                        aria-hidden="true"
+                        width={1024}
+                        height={1024}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-transparent"></div>

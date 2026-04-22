@@ -96,18 +96,18 @@ const AnticipoNaspi: React.FC<AnticipoNaspiProps> = ({ onNavigate }) => {
 
                         <div className="space-y-6">
                             <div>
-                                <label className="block text-sm font-medium text-slate-300 mb-2">Importo Mensile Lordo NASpI</label>
+                                <label htmlFor="anticipo-monthly" className="block text-sm font-medium text-slate-300 mb-2">Importo Mensile Lordo NASpI</label>
                                 <div className="relative">
-                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">€</span>
-                                    <input type="number" value={monthlyAmount || ''} onChange={e => setMonthlyAmount(+e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-4 pl-8 text-white focus:border-emerald-500 outline-none transition-colors" placeholder="0.00" />
+                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" aria-hidden="true">€</span>
+                                    <input id="anticipo-monthly" type="number" min={0} value={monthlyAmount || ''} onChange={e => setMonthlyAmount(+e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-4 pl-8 text-white focus:border-emerald-500 outline-none transition-colors" placeholder="0.00" />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-slate-300 mb-2">Giorni Residui Spettanti</label>
+                                <label htmlFor="anticipo-days" className="block text-sm font-medium text-slate-300 mb-2">Giorni Residui Spettanti</label>
                                 <div className="relative">
-                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"><Calendar className="w-4 h-4" /></span>
-                                    <input type="number" value={daysRemaining || ''} onChange={e => setDaysRemaining(+e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-4 pl-10 text-white focus:border-emerald-500 outline-none transition-colors" placeholder="Es. 365" />
+                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" aria-hidden="true"><Calendar className="w-4 h-4" /></span>
+                                    <input id="anticipo-days" type="number" min={0} value={daysRemaining || ''} onChange={e => setDaysRemaining(+e.target.value)} className="w-full bg-slate-800 border border-slate-700 rounded-xl p-4 pl-10 text-white focus:border-emerald-500 outline-none transition-colors" placeholder="Es. 365" />
                                 </div>
                             </div>
 

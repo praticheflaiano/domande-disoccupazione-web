@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useId } from 'react';
 import { Calculator, FileText, Upload, CheckCircle, Info, ArrowRight, HelpCircle, AlertTriangle, TrendingDown, Calendar, Briefcase } from 'lucide-react';
 import { analyzeContributionDocument } from '../services/geminiService';
 import { calculateNaspiEligibility, calculateNaspiFromDecree } from '../utils/calculations';
@@ -33,6 +33,15 @@ const NaspiCalculator: React.FC = () => {
     const [inputData, setInputData] = useState<UserInputData>({ age: 30, weeksWorkedLast4Years: 0, totalGrossWagesLast4Years: 0, terminationReason: TerminationReason.INVOLUNTARY, voluntaryException: VoluntaryException.NONE, hasWorked30DaysLastYear: true, terminationDate: new Date().toISOString().split('T')[0], approvedStartDate: '', approvedDaysDuration: 0, approvedMonthlyAmount: 0 });
     const [result, setResult] = useState<NaspiResult | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const ageId = useId();
+    const termDateId = useId();
+    const weeksId = useId();
+    const weeksHintId = useId();
+    const wagesId = useId();
+    const wagesHintId = useId();
+    const reasonId = useId();
+    const daysApprovedId = useId();
+    const monthlyApprovedId = useId();
 
     const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -105,12 +114,16 @@ const NaspiCalculator: React.FC = () => {
                             <h2 className="text-2xl font-bold mb-4">Carica Documento</h2>
                             <p className="text-slate-500 mb-8">Carica il tuo Estratto Conto Contributivo (o la lettera INPS) per compilare i dati automaticamente.</p>
 
-                            <div onClick={() => fileInputRef.current?.click()} className="border-3 border-dashed border-slate-200 rounded-2xl p-12 cursor-pointer hover:border-blue-400 hover:bg-slate-50 transition-colors mb-6 group">
-                                <Upload className="w-12 h-12 text-slate-400 mx-auto mb-4 group-hover:text-blue-500 transition-colors" />
-                                <span className="font-bold text-slate-700">Clicca per caricare</span>
-                                <p className="text-sm text-slate-400 mt-2">PDF, Immagini (max 10MB)</p>
-                            </div>
-                            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*,application/pdf" />
+                            <button
+                                type="button"
+                                onClick={() => fileInputRef.current?.click()}
+                                className="w-full border-2 border-dashed border-slate-200 rounded-2xl p-12 cursor-pointer hover:border-blue-400 hover:bg-slate-50 transition-colors mb-6 group text-center"
+                            >
+                                <Upload className="w-12 h-12 text-slate-400 mx-auto mb-4 group-hover:text-blue-500 transition-colors" aria-hidden="true" />
+                                <span className="font-bold text-slate-700 block">Clicca per caricare</span>
+                                <span className="text-sm text-slate-400 mt-2 block">PDF, Immagini (max 10MB)</span>
+                            </button>
+                            <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*,application/pdf" aria-label="Carica documento contributivo" />
 
                             <div className="relative py-4">
                                 <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
@@ -127,34 +140,42 @@ const NaspiCalculator: React.FC = () => {
                             <div className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-bold text-slate-700 mb-2">La tua Età</label>
-                                        <input type="number" value={inputData.age} onChange={e => setInputData({ ...inputData, age: +e.target.value })} className="w-full p-4 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-slate-300" />
+                                        <label htmlFor={ageId} className="block text-sm font-bold text-slate-700 mb-2">La tua Età</label>
+                                        <input id={ageId} type="number" min={14} max={99} value={inputData.age} onChange={e => setInputData({ ...inputData, age: +e.target.value })} className="w-full p-4 rounded-xl border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-slate-300" />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-bold text-slate-700 mb-2">Data Licenziamento</label>
-                                        <input type="date" value={inputData.terminationDate} onChange={e => setInputData({ ...inputData, terminationDate: e.target.value })} className="w-full p-4 rounded-xl border border-slate-300 focus:border-blue-500 outline-none transition-all" />
+                                        <label htmlFor={termDateId} className="block text-sm font-bold text-slate-700 mb-2">Data Licenziamento</label>
+                                        <input id={termDateId} type="date" value={inputData.terminationDate} onChange={e => setInputData({ ...inputData, terminationDate: e.target.value })} className="w-full p-4 rounded-xl border border-slate-300 focus:border-blue-500 outline-none transition-all" />
                                     </div>
                                 </div>
 
                                 {mode === 'forecast' ? (
                                     <>
                                         <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                            <h3 className="font-bold text-slate-900 mb-4 flex gap-2"><Briefcase className="w-5 h-5 text-slate-500" /> Dati Contributivi (4 Anni)</h3>
+                                            <h3 className="font-bold text-slate-900 mb-4 flex gap-2"><Briefcase className="w-5 h-5 text-slate-500" aria-hidden="true" /> Dati Contributivi (4 Anni)</h3>
                                             <div className="grid md:grid-cols-2 gap-6">
                                                 <div>
-                                                    <label className="block text-sm font-medium text-slate-600 mb-1">Settimane Lavorate <HelpCircle className="w-4 h-4 inline text-slate-400" /></label>
-                                                    <input type="number" value={inputData.weeksWorkedLast4Years} onChange={e => setInputData({ ...inputData, weeksWorkedLast4Years: +e.target.value })} className="w-full p-3 rounded-lg border" />
+                                                    <label htmlFor={weeksId} className="flex items-center gap-1 text-sm font-medium text-slate-600 mb-1">
+                                                        Settimane Lavorate
+                                                        <HelpCircle className="w-4 h-4 inline text-slate-400" aria-hidden="true" />
+                                                    </label>
+                                                    <input id={weeksId} aria-describedby={weeksHintId} type="number" min={0} max={208} value={inputData.weeksWorkedLast4Years} onChange={e => setInputData({ ...inputData, weeksWorkedLast4Years: +e.target.value })} className="w-full p-3 rounded-lg border" />
+                                                    <p id={weeksHintId} className="text-xs text-slate-500 mt-1">Numero totale di settimane contributive negli ultimi 4 anni.</p>
                                                 </div>
                                                 <div>
-                                                    <label className="block text-sm font-medium text-slate-600 mb-1">Totale Imponibile Lordo <HelpCircle className="w-4 h-4 inline text-slate-400" /></label>
-                                                    <input type="number" value={inputData.totalGrossWagesLast4Years} onChange={e => setInputData({ ...inputData, totalGrossWagesLast4Years: +e.target.value })} className="w-full p-3 rounded-lg border" />
+                                                    <label htmlFor={wagesId} className="flex items-center gap-1 text-sm font-medium text-slate-600 mb-1">
+                                                        Totale Imponibile Lordo
+                                                        <HelpCircle className="w-4 h-4 inline text-slate-400" aria-hidden="true" />
+                                                    </label>
+                                                    <input id={wagesId} aria-describedby={wagesHintId} type="number" min={0} value={inputData.totalGrossWagesLast4Years} onChange={e => setInputData({ ...inputData, totalGrossWagesLast4Years: +e.target.value })} className="w-full p-3 rounded-lg border" />
+                                                    <p id={wagesHintId} className="text-xs text-slate-500 mt-1">Somma delle retribuzioni imponibili ai fini previdenziali.</p>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-bold text-slate-700 mb-2">Motivo Cessazione</label>
-                                            <select value={inputData.terminationReason} onChange={e => setInputData({ ...inputData, terminationReason: e.target.value as TerminationReason })} className="w-full p-4 rounded-xl border border-slate-300 bg-white">
+                                            <label htmlFor={reasonId} className="block text-sm font-bold text-slate-700 mb-2">Motivo Cessazione</label>
+                                            <select id={reasonId} value={inputData.terminationReason} onChange={e => setInputData({ ...inputData, terminationReason: e.target.value as TerminationReason })} className="w-full p-4 rounded-xl border border-slate-300 bg-white">
                                                 {Object.values(TerminationReason).map(r => <option key={r} value={r}>{r}</option>)}
                                             </select>
                                         </div>
@@ -163,8 +184,14 @@ const NaspiCalculator: React.FC = () => {
                                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                                         <h3 className="font-bold text-slate-900 mb-4">Dati da Lettera INPS</h3>
                                         <div className="grid md:grid-cols-2 gap-6">
-                                            <div><label className="block text-sm">Giorni Spettanti</label><input type="number" value={inputData.approvedDaysDuration} onChange={e => setInputData({ ...inputData, approvedDaysDuration: +e.target.value })} className="w-full p-3 rounded-lg border" /></div>
-                                            <div><label className="block text-sm">Importo Mensile Lordo</label><input type="number" value={inputData.approvedMonthlyAmount} onChange={e => setInputData({ ...inputData, approvedMonthlyAmount: +e.target.value })} className="w-full p-3 rounded-lg border" /></div>
+                                            <div>
+                                                <label htmlFor={daysApprovedId} className="block text-sm">Giorni Spettanti</label>
+                                                <input id={daysApprovedId} type="number" min={0} value={inputData.approvedDaysDuration} onChange={e => setInputData({ ...inputData, approvedDaysDuration: +e.target.value })} className="w-full p-3 rounded-lg border" />
+                                            </div>
+                                            <div>
+                                                <label htmlFor={monthlyApprovedId} className="block text-sm">Importo Mensile Lordo</label>
+                                                <input id={monthlyApprovedId} type="number" min={0} value={inputData.approvedMonthlyAmount} onChange={e => setInputData({ ...inputData, approvedMonthlyAmount: +e.target.value })} className="w-full p-3 rounded-lg border" />
+                                            </div>
                                         </div>
                                     </div>
                                 )}

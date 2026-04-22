@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen } from 'lucide-react';
+import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, type LucideIcon } from 'lucide-react';
 import { Page } from '../types';
 
 interface HomeProps { onNavigate: (page: Page) => void; }
@@ -18,7 +18,7 @@ const Section = ({ title, children, className = "" }: { title: string, children:
     </section>
 );
 
-const Card = ({ icon: Icon, title, text, highlight = false }: { icon: any, title: string, text: React.ReactNode, highlight?: boolean }) => (
+const Card = ({ icon: Icon, title, text, highlight = false }: { icon: LucideIcon, title: string, text: React.ReactNode, highlight?: boolean }) => (
     <div className={`p-6 rounded-2xl border transition-all hover:-translate-y-1 duration-300 ${highlight ? 'bg-blue-600 text-white shadow-xl border-blue-500' : 'bg-white text-slate-700 shadow-sm border-slate-200 hover:shadow-md'}`}>
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${highlight ? 'bg-white/20' : 'bg-blue-50 text-blue-600'}`}>
             <Icon className="w-6 h-6" />
@@ -85,7 +85,11 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                             <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100/50 to-blue-100/50 rounded-full blur-3xl opacity-60 animate-pulse"></div>
                             <img
                                 src="/assets/hero_illustration_v2.png"
-                                alt="NASpI Simplification"
+                                alt="Illustrazione: persona che consulta documenti NASpI al computer"
+                                width={1024}
+                                height={1024}
+                                decoding="async"
+                                fetchPriority="high"
                                 className="w-full h-auto drop-shadow-2xl animate-float hover:scale-105 transition-transform duration-500"
                             />
                         </div>

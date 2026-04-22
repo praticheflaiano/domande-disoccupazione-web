@@ -27,11 +27,17 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+            <a href="#main" className="skip-link">Salta al contenuto principale</a>
             <header className="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
-                    <div className="flex items-center gap-2 cursor-pointer transform hover:scale-[1.02] transition-transform duration-300" onClick={() => nav('home')}>
+                    <button
+                        type="button"
+                        onClick={() => nav('home')}
+                        aria-label="Torna alla home"
+                        className="flex items-center gap-2 transform hover:scale-[1.02] transition-transform duration-300"
+                    >
                         <Logo className="scale-75 origin-left" />
-                    </div>
+                    </button>
 
                     <nav className="hidden md:flex gap-8">
                         <button onClick={() => nav('home')} className={`text-sm font-bold uppercase tracking-wider transition-colors ${page === 'home' ? 'text-teal-700' : 'text-slate-500 hover:text-slate-800'}`}>Home</button>
@@ -50,7 +56,7 @@ const App: React.FC = () => {
 
             <Breadcrumbs currentPage={page} onNavigate={nav} />
 
-            <main className="flex-1">
+            <main id="main" className="flex-1" tabIndex={-1}>
                 {page === 'home' && (
                     <>
                         <SEO title="Home" description="Portale NASpI e Disoccupazione." />
