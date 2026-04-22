@@ -1,0 +1,112 @@
+---
+import ObblighiLayout from '../../layouts/ObblighiLayout.astro';
+
+const faq = [
+    {
+        q: 'Dove posso cercare i corsi finanziati?',
+        a: 'Il catalogo unico è su SIISL (siisl.lavoro.gov.it, sezione "Formazione"). In alternativa puoi consultare MyANPAL e i portali regionali: FormaLazio, Bandi Online Lombardia, ClicLavoroVeneto, Lavoro per Te Emilia-Romagna, IoLavoro Piemonte, servizi digitali Regione Campania.',
+    },
+    {
+        q: 'Posso scegliere io il corso?',
+        a: 'Sì, all\'interno del percorso GOL che ti è stato assegnato. Puoi selezionare un corso dal catalogo SIISL e prenotarlo; la prenotazione viene validata dal CPI. Non puoi scegliere un corso fuori dal tuo percorso (es. un Reskilling se sei in Upskilling) senza una modifica del PSP.',
+    },
+    {
+        q: 'Sono pagato mentre faccio il corso?',
+        a: 'In molti casi sì: è prevista un\'indennità di frequenza variabile per corso (€ 3-6 all\'ora) oppure il rimborso spese di trasporto. L\'indennità si aggiunge alla NASpI e non ne determina la sospensione.',
+    },
+    {
+        q: 'Come trovo un ente accreditato di qualità?',
+        a: 'Verifica che sia accreditato dalla Regione di riferimento (elenco pubblico sui portali regionali). Le reti nazionali più strutturate sono IFOA, ENAIP, Forma.Camera, IAL, Cnos-Fap, Endo-Fap, Ciofs. Per gli ex-somministrati c\'è il fondo bilaterale Formatemp con un proprio elenco di enti partner.',
+    },
+];
+---
+
+<ObblighiLayout
+    title="Corsi GOL e formazione NASpI: dove cercarli | Guida 2026"
+    description="Come trovare corsi di formazione durante la NASpI: SIISL, MyANPAL, portali regionali, enti accreditati (IFOA, ENAIP, IAL, Cnos-Fap) e Formatemp per ex-somministrati."
+    slug="formazione"
+    h1="Corsi di formazione: dove cercarli e chi li eroga"
+    kicker="Come sfruttare il tempo della NASpI"
+    sources={[
+        'Catalogo unico SIISL (siisl.lavoro.gov.it — sezione Formazione)',
+        'DM 10 ottobre 2018 (qualificazioni regionali e certificazione competenze)',
+        'Elenchi regionali enti accreditati (sito di ogni Regione)',
+        'Formatemp — Fondo bilaterale per la formazione in somministrazione',
+    ]}
+    faq={faq}
+>
+    <h2>Perché conviene formarsi durante la NASpI</h2>
+    <p>
+        La NASpI dura al massimo 24 mesi: è il momento migliore della tua vita lavorativa per rimettere a posto le competenze.
+        I corsi del programma GOL sono <strong>gratuiti</strong>, spesso con indennità di frequenza, e rilasciano attestati o
+        qualifiche <strong>spendibili in tutta l'Unione Europea</strong> (EQF). Ignorarli è uno spreco.
+    </p>
+
+    <h2>Dove cercare: i 4 canali principali</h2>
+
+    <h3>1. Portale SIISL — il catalogo unico nazionale</h3>
+    <p>
+        Il punto di partenza è <a href="https://siisl.lavoro.gov.it" target="_blank" rel="noopener noreferrer">siisl.lavoro.gov.it</a>.
+        Nella sezione "Formazione" trovi un catalogo filtrabile per:
+    </p>
+    <ul>
+        <li><strong>Regione e provincia</strong> di erogazione</li>
+        <li><strong>Settore economico</strong> (industria, servizi, ICT, sanità, agricoltura, turismo…)</li>
+        <li><strong>Percorso GOL</strong> (Upskilling, Reskilling, Lavoro e Inclusione)</li>
+        <li><strong>Modalità</strong> (aula, FAD sincrona, blended, laboratorio)</li>
+        <li><strong>Durata e calendario</strong> (corsi brevi, lunghi, orario diurno/serale)</li>
+    </ul>
+    <p>
+        Esempio concreto: cerca "GOL Upskilling digitale Roma" → filtra provincia Roma, settore ICT, percorso Upskilling.
+        Apri il corso interessato, verifica ente erogatore, sede, date. Clicca "Prenota": la richiesta viene inoltrata al CPI,
+        che valida la partecipazione entro 5-10 giorni.
+    </p>
+
+    <h3>2. MyANPAL — storico e certificazione</h3>
+    <p>
+        <a href="https://myanpal.anpal.gov.it" target="_blank" rel="noopener noreferrer">myanpal.anpal.gov.it</a> ospita la tua
+        <strong>Scheda Anagrafico-Professionale (SAP)</strong>: qui vengono registrati tutti i corsi svolti (sez. 6). La piattaforma è
+        utile soprattutto per scaricare attestati e verificare il proprio percorso formativo pregresso.
+    </p>
+
+    <h3>3. Portali regionali</h3>
+    <p>Ogni Regione ha un proprio catalogo, spesso più aggiornato di quello nazionale:</p>
+    <ul>
+        <li><a href="https://www.regione.lazio.it/cittadini/lavoro-formazione" target="_blank" rel="noopener noreferrer">Lazio — FormaLazio / Portale Cittadini</a></li>
+        <li><a href="https://www.bandi.regione.lombardia.it" target="_blank" rel="noopener noreferrer">Lombardia — Bandi Online</a> (+ piattaforma Sintesi)</li>
+        <li><a href="https://www.cliclavoroveneto.it" target="_blank" rel="noopener noreferrer">Veneto — ClicLavoroVeneto</a></li>
+        <li><a href="https://lavoroperte.regione.emilia-romagna.it" target="_blank" rel="noopener noreferrer">Emilia-Romagna — Lavoro per Te</a></li>
+        <li><a href="https://www.regione.piemonte.it/web/temi/istruzione-formazione-lavoro" target="_blank" rel="noopener noreferrer">Piemonte — Istruzione Formazione Lavoro</a></li>
+        <li><a href="https://servizi-digitali.regione.campania.it" target="_blank" rel="noopener noreferrer">Campania — Servizi Digitali</a></li>
+    </ul>
+
+    <h3>4. Formatemp — per chi ha lavorato in somministrazione</h3>
+    <p>
+        Se negli ultimi 2 anni hai lavorato con un'agenzia per il lavoro (GiGroup, Randstad, Adecco, Manpower, Umana, Openjobmetis),
+        puoi accedere ai corsi del fondo bilaterale <a href="https://www.formatemp.it" target="_blank" rel="noopener noreferrer">Formatemp</a>.
+        I corsi sono gratuiti, riservati a ex-somministrati, e coprono ambiti base (lingue, digitale, sicurezza) e settoriali.
+    </p>
+
+    <h2>Reti nazionali di enti accreditati</h2>
+    <p>Sono le reti più estese e con standard qualitativi verificati:</p>
+    <ul>
+        <li><a href="https://www.ifoa.it" target="_blank" rel="noopener noreferrer">IFOA</a> — rete camerale, presente in 7 regioni, focus su ICT e amministrazione.</li>
+        <li><a href="https://www.enaip.it" target="_blank" rel="noopener noreferrer">ENAIP</a> — rete ACLI, copertura capillare nazionale, corsi lunghi in ambito sanitario, ristorazione, logistica.</li>
+        <li><a href="https://www.formacamera.it" target="_blank" rel="noopener noreferrer">Forma.Camera</a> — azienda speciale CCIAA Roma, orientata all'autoimpiego e ai settori creativi.</li>
+        <li><a href="https://ialweb.it" target="_blank" rel="noopener noreferrer">IAL</a> — rete CISL, storica sul territorio, corsi professionalizzanti.</li>
+        <li><a href="https://www.cnos-fap.it" target="_blank" rel="noopener noreferrer">Cnos-Fap</a> — rete Salesiani, focus giovani e meccanica/energia.</li>
+        <li><a href="https://www.endofap.it" target="_blank" rel="noopener noreferrer">Endo-Fap</a> — rete Don Orione, inclusione e sociale.</li>
+        <li><a href="https://www.ciofs.fp.it" target="_blank" rel="noopener noreferrer">Ciofs-FP</a> — rete Salesiane, specializzata in donne e fasce deboli.</li>
+    </ul>
+
+    <h2>Come prenotare un corso: procedura operativa</h2>
+    <ol>
+        <li>Accedi a SIISL con SPID.</li>
+        <li>Apri la sezione "Formazione" e applica i filtri (regione, settore, percorso GOL).</li>
+        <li>Leggi la scheda del corso: ente, sede, durata, calendario, prerequisiti, qualifica rilasciata.</li>
+        <li>Clicca "Prenota" e aggiungi eventuali note per l'operatore.</li>
+        <li>Attendi la validazione del CPI (5-10 giorni).</li>
+        <li>Ricevi conferma dall'ente, verifica posto, partecipi.</li>
+        <li>Al termine, l'attestato viene registrato automaticamente su MyANPAL.</li>
+    </ol>
+</ObblighiLayout>

@@ -3,7 +3,7 @@ import '../index.css';
 import { NAV_LINKS, SITE_URL } from '../lib/routes';
 import { Logo } from '../components/Logo';
 import Footer from '../components/Footer';
-import ChatBot from '../components/ChatBot';
+import StickyContactBar from '../components/StickyContactBar';
 import AccessibilityToolbar from '../components/AccessibilityToolbar';
 import CookieBanner from '../components/CookieBanner';
 import { LAST_UPDATED } from '../constants';
@@ -64,6 +64,13 @@ const organizationSchema = {
     priceRange: '€€',
     description:
         "Centro Pratiche Flaiano (Roma) assiste nella domanda NASpI e disoccupazione INPS, con calcolatore online, guide aggiornate e invio domanda telematica.",
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        reviewCount: '187',
+        bestRating: '5',
+        worstRating: '1',
+    },
 };
 
 const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
@@ -176,7 +183,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         </p>
 
         <Footer client:idle />
-        <ChatBot client:idle />
+        <StickyContactBar client:idle />
         <AccessibilityToolbar client:idle />
         <CookieBanner client:idle />
     </body>

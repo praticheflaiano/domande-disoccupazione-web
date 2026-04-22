@@ -1,0 +1,44 @@
+---
+export interface Props {
+    current?: string;
+}
+
+const { current } = Astro.props;
+
+const sections = [
+    { slug: 'siisl', label: 'SIISL e PAD', icon: '💻', hint: 'Iscrizione automatica e Patto di Attivazione Digitale' },
+    { slug: 'cpi', label: 'Centro per l\'Impiego', icon: '🏢', hint: 'Convocazione, PSP e offerta di lavoro congrua' },
+    { slug: 'gol', label: 'Programma GOL', icon: '🎯', hint: 'I 4 percorsi e come vieni assegnato' },
+    { slug: 'formazione', label: 'Corsi e formazione', icon: '🎓', hint: 'Dove cercare i corsi e chi li eroga' },
+    { slug: 'naspi-com', label: 'NASpI-Com', icon: '📨', hint: 'Comunicare nuovo lavoro o reddito' },
+    { slug: 'redditi', label: 'Redditi compatibili', icon: '💶', hint: 'Soglie 2026 per subordinato, autonomo, occasionale' },
+    { slug: 'sanzioni', label: 'Sanzioni', icon: '⚠️', hint: 'Decurtazioni, sospensione, decadenza' },
+];
+---
+
+<nav aria-label="Sezioni della guida obblighi" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    {sections.map((section) => {
+        const isCurrent = current === section.slug;
+        const classes = [
+            'block rounded-2xl border p-4 transition-all',
+            isCurrent
+                ? 'bg-blue-50 border-blue-300 ring-2 ring-blue-200 cursor-default'
+                : 'bg-white border-slate-200 hover:border-blue-300 hover:shadow-md',
+        ].join(' ');
+        return (
+            <a
+                href={isCurrent ? undefined : `/obblighi/${section.slug}`}
+                aria-current={isCurrent ? 'page' : undefined}
+                class={classes}
+            >
+                <div class="flex items-start gap-3">
+                    <span class="text-2xl" aria-hidden="true">{section.icon}</span>
+                    <div>
+                        <div class={`font-bold ${isCurrent ? 'text-blue-900' : 'text-slate-900'}`}>{section.label}</div>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">{section.hint}</p>
+                    </div>
+                </div>
+            </a>
+        );
+    })}
+</nav>

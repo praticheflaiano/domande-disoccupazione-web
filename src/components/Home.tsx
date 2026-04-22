@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, type LucideIcon } from 'lucide-react';
+import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, Clock, Star, type LucideIcon } from 'lucide-react';
+import ConversionCTA from './ConversionCTA';
 
 const PracticeCounter = () => {
     const [count] = useState(1843);
@@ -95,18 +96,28 @@ const Home: React.FC = () => {
             </section>
 
             {/* FEATURES GRID */}
-            <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 -mt-10 relative z-20">
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 backdrop-blur-md bg-opacity-80">
-                    <div className="text-4xl font-bold text-slate-900 mb-1"><PracticeCounter /></div>
+            <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-4 md:gap-6 -mt-10 relative z-20">
+                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1"><PracticeCounter /></div>
                     <div className="text-sm font-medium text-slate-600">Pratiche Gestite</div>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 backdrop-blur-md bg-opacity-80">
-                    <div className="text-4xl font-bold text-slate-900 mb-1">99.8%</div>
-                    <div className="text-sm font-medium text-slate-600">Accoglimento</div>
+                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">99,8%</div>
+                    <div className="text-sm font-medium text-slate-600">Accoglimento INPS</div>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 backdrop-blur-md bg-opacity-80">
-                    <div className="text-4xl font-bold text-slate-900 mb-1">24h</div>
-                    <div className="text-sm font-medium text-slate-600">Tempo Medio</div>
+                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
+                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1 flex items-center gap-1">
+                        4,9
+                        <Star className="w-6 h-6 text-amber-400 fill-amber-400" aria-hidden="true" />
+                    </div>
+                    <div className="text-sm font-medium text-slate-600">187 recensioni</div>
+                </div>
+                <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-5 rounded-2xl shadow-lg border border-amber-200">
+                    <div className="text-3xl md:text-4xl font-bold text-amber-900 mb-1 flex items-center gap-1">
+                        <Clock className="w-7 h-7" aria-hidden="true" />
+                        68
+                    </div>
+                    <div className="text-sm font-semibold text-amber-900">giorni per presentare la domanda</div>
                 </div>
             </div>
 
@@ -182,6 +193,12 @@ const Home: React.FC = () => {
 
             {/* HOW TO APPLY SECTION */}
             <Section title="Come Richiederla">
+                <div className="mb-10">
+                    <ConversionCTA
+                        headline="Fai fare tutto a noi in 24 ore"
+                        subline="Il nostro team inoltra la tua pratica all'INPS in giornata. Ti basta inviare i documenti via WhatsApp, al resto pensiamo noi — dalla verifica dei requisiti alla firma del mandato."
+                    />
+                </div>
                 <div className="grid md:grid-cols-4 gap-4">
                     {[
                         { step: 1, title: "Verifica", desc: "Controlla i requisiti e prepara le ultime buste paga." },

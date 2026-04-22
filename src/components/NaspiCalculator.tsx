@@ -6,6 +6,7 @@ import { TerminationReason, VoluntaryException } from '../types';
 import type { NaspiResult, UserInputData, CalculatorMode } from '../types';
 import Obligations from './Obligations';
 import LegalDisclaimer from './LegalDisclaimer';
+import ConversionCTA from './ConversionCTA';
 
 const InfoCard = ({ title, desc }: { title: string, desc: string }) => (
     <div className="bg-blue-50 border border-blue-100 p-4 rounded-xl mb-4 text-sm">
@@ -242,34 +243,46 @@ const NaspiCalculator: React.FC = () => {
                             </div>
 
                             {result.isEligible && (
-                                <div className="p-8">
-                                    <h3 className="font-bold text-slate-900 mb-4">Piano dei Pagamenti Stimato</h3>
-                                    <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
-                                        <table className="w-full text-sm text-left">
-                                            <thead className="bg-slate-50 text-slate-500 font-medium border-b">
-                                                <tr>
-                                                    <th className="p-4">Periodo</th>
-                                                    <th className="p-4">Lordo</th>
-                                                    <th className="p-4 hidden md:table-cell">Netto Stimato*</th>
-                                                    <th className="p-4 hidden md:table-cell">Note</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody className="divide-y">
-                                                {result.schedule.map((row, i) => (
-                                                    <tr key={i} className="hover:bg-slate-50">
-                                                        <td className="p-4 font-bold text-slate-700">{row.monthYear}</td>
-                                                        <td className="p-4">€ {row.grossAmount.toFixed(2)}</td>
-                                                        <td className="p-4 hidden md:table-cell text-emerald-600 font-medium">€ {row.netAmount.toFixed(2)}</td>
-                                                        <td className="p-4 hidden md:table-cell text-xs text-slate-400">
-                                                            {row.reductionApplied && <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded">Ridotto {row.reductionPercentage}%</span>}
-                                                        </td>
+                                <div className="p-8 space-y-8">
+                                    <ConversionCTA
+                                        headline={`Puoi ottenere fino a € ${result.grossMonthlyAmount.toLocaleString('it-IT')} al mese`}
+                                        subline={`La tua stima NASpI copre ${result.totalDaysDuration} giorni, dal ${result.startDate} al ${result.endDate}. Presenta la domanda entro 68 giorni dal licenziamento: possiamo farlo per te oggi.`}
+                                    />
+
+                                    <div>
+                                        <h3 className="font-bold text-slate-900 mb-4">Piano dei Pagamenti Stimato</h3>
+                                        <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
+                                            <table className="w-full text-sm text-left">
+                                                <thead className="bg-slate-50 text-slate-500 font-medium border-b">
+                                                    <tr>
+                                                        <th className="p-4">Periodo</th>
+                                                        <th className="p-4">Lordo</th>
+                                                        <th className="p-4 hidden md:table-cell">Netto Stimato*</th>
+                                                        <th className="p-4 hidden md:table-cell">Note</th>
                                                     </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                        <div className="p-4 bg-slate-50 text-xs text-slate-400 text-center">* Il netto è puramente indicativo e dipende dalle detrazioni personali.</div>
+                                                </thead>
+                                                <tbody className="divide-y">
+                                                    {result.schedule.map((row, i) => (
+                                                        <tr key={i} className="hover:bg-slate-50">
+                                                            <td className="p-4 font-bold text-slate-700">{row.monthYear}</td>
+                                                            <td className="p-4">€ {row.grossAmount.toFixed(2)}</td>
+                                                            <td className="p-4 hidden md:table-cell text-emerald-600 font-medium">€ {row.netAmount.toFixed(2)}</td>
+                                                            <td className="p-4 hidden md:table-cell text-xs text-slate-400">
+                                                                {row.reductionApplied && <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded">Ridotto {row.reductionPercentage}%</span>}
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                            <div className="p-4 bg-slate-50 text-xs text-slate-400 text-center">* Il netto è puramente indicativo e dipende dalle detrazioni personali.</div>
+                                        </div>
                                     </div>
                                     <Obligations />
+                                    <ConversionCTA
+                                        variant="inline"
+                                        headline="Non perdere la scadenza di 68 giorni"
+                                        subline="Dopo quella data non puoi più presentare la domanda. Affida la pratica ai nostri operatori: in 24 ore inviamo tutto all'INPS."
+                                    />
                                 </div>
                             )}
                         </div>

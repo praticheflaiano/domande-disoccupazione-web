@@ -1,5 +1,7 @@
 import React from 'react';
+import { MessageCircle, Phone } from 'lucide-react';
 import { LogoSmall } from './Logo';
+import { WHATSAPP_HREF, WHATSAPP_NUMBER, PHONE_HREF, PHONE_LABEL } from './ConversionCTA';
 
 const Footer: React.FC = () => {
     return (
@@ -40,20 +42,26 @@ const Footer: React.FC = () => {
                     </address>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-teal-400">Resta Aggiornato</h3>
-                        <p className="text-slate-400 text-sm mb-4">Ricevi le ultime novità su ammortizzatori sociali e bonus.</p>
-                        <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
-                            <label htmlFor="newsletter-email" className="sr-only">Indirizzo email</label>
-                            <input
-                                id="newsletter-email"
-                                type="email"
-                                placeholder="La tua email"
-                                className="w-full px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-teal-500 transition-colors placeholder:text-slate-500 text-sm"
-                            />
-                            <button type="submit" className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 rounded-lg transition-colors text-sm">
-                                Iscriviti
-                            </button>
-                        </form>
+                        <h3 className="font-bold text-lg mb-4 text-teal-400">Parlaci ora</h3>
+                        <p className="text-slate-400 text-sm mb-4">Hai 68 giorni per presentare la NASpI. Non rimandare.</p>
+                        <div className="space-y-2">
+                            <a
+                                href={WHATSAPP_HREF}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition-colors text-sm flex items-center justify-center gap-2"
+                            >
+                                <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                                WhatsApp {WHATSAPP_NUMBER}
+                            </a>
+                            <a
+                                href={PHONE_HREF}
+                                className="w-full border border-slate-700 hover:border-teal-500 hover:text-teal-400 text-slate-300 font-semibold py-2.5 rounded-lg transition-colors text-sm flex items-center justify-center gap-2"
+                            >
+                                <Phone className="w-4 h-4" aria-hidden="true" />
+                                {PHONE_LABEL}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

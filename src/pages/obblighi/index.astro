@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+import ObblighiNav from '../../components/ObblighiNav.astro';
+import ConversionCTA from '../../components/ConversionCTA';
+import { LAST_UPDATED } from '../../constants';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Obblighi NASpI', href: '/obblighi' },
+];
+
+const timelineSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Cronologia degli obblighi NASpI 2026',
+    description: 'Sequenza completa degli adempimenti di chi riceve la NASpI: dalla firma del PAD su SIISL alla partecipazione al programma GOL.',
+    totalTime: 'P30D',
+    step: [
+        { '@type': 'HowToStep', position: 1, name: 'Giorno 0: domanda accolta', text: 'INPS accoglie la domanda NASpI e ti iscrive d\'ufficio alla piattaforma SIISL.' },
+        { '@type': 'HowToStep', position: 2, name: 'Entro 15 giorni: firma PAD', text: 'Accedi a siisl.lavoro.gov.it con SPID/CIE, aggiorna il CV e firma il Patto di Attivazione Digitale.' },
+        { '@type': 'HowToStep', position: 3, name: 'Entro 30 giorni: convocazione CPI', text: 'Il Centro per l\'Impiego competente ti contatta per l\'assessment e la firma del PSP.' },
+        { '@type': 'HowToStep', position: 4, name: 'In corso NASpI: formazione', text: 'Partecipa ai corsi del percorso GOL assegnato (Reinserimento, Upskilling, Reskilling o Lavoro e Inclusione).' },
+        { '@type': 'HowToStep', position: 5, name: 'Ad ogni cambio: NASpI-Com', text: 'Comunica entro 30 giorni ogni nuovo rapporto di lavoro, P.IVA, prestazione occasionale e reddito previsto.' },
+    ],
+};
+---
+
+<Base
+    title="Obblighi NASpI 2026: guida completa agli adempimenti"
+    description="Cosa deve fare il percettore NASpI 2026: SIISL, PAD, Centro per l'Impiego, programma GOL, corsi, comunicazioni reddito, sanzioni. Guida operativa aggiornata."
+    breadcrumbs={breadcrumbs}
+    jsonLd={timelineSchema}
+>
+    <article class="max-w-5xl mx-auto py-12 px-4 space-y-12">
+        <header>
+            <p class="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">Guida operativa 2026</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Gli obblighi del percettore NASpI</h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
+                Ricevere la NASpI non è un "regalo". In cambio devi rispettare obblighi precisi: iscriverti alla piattaforma SIISL,
+                firmare il Patto di Attivazione Digitale, presentarti al Centro per l'Impiego, seguire il programma GOL a cui vieni
+                assegnato e comunicare ogni nuovo reddito. Una sola omissione può farti perdere l'intera indennità.
+            </p>
+            <p class="text-sm text-slate-500 mt-3">Aggiornato al <time datetime={LAST_UPDATED}>{LAST_UPDATED}</time> — fonti: D.Lgs. 22/2015, D.Lgs. 150/2015, DL 48/2023 conv. L. 85/2023, Circ. INPS n. 4/2026, Msg. INPS 3905/2024.</p>
+        </header>
+
+        <section class="bg-slate-900 text-white rounded-3xl p-6 md:p-8">
+            <h2 class="text-2xl font-bold mb-6">Cronologia completa degli obblighi</h2>
+            <ol class="space-y-4">
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center">0</span>
+                    <div>
+                        <div class="font-bold">Giorno 0 — Domanda accolta</div>
+                        <p class="text-slate-300 text-sm">INPS accetta la richiesta e ti iscrive d'ufficio su SIISL. Ricevi notifica.</p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center">15</span>
+                    <div>
+                        <div class="font-bold">Entro 15 giorni — Firma PAD su SIISL</div>
+                        <p class="text-slate-300 text-sm">Aggiorna CV, dichiara disponibilità, firma il Patto di Attivazione Digitale. <a href="/obblighi/siisl" class="underline text-blue-300">Come si fa →</a></p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center">30</span>
+                    <div>
+                        <div class="font-bold">Entro 30 giorni — Convocazione del CPI</div>
+                        <p class="text-slate-300 text-sm">Un operatore ti contatta (SMS/e-mail) per assessment e firma PSP. <a href="/obblighi/cpi" class="underline text-blue-300">Dettagli CPI →</a></p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center">90</span>
+                    <div>
+                        <div class="font-bold">Ogni 90 giorni — Colloqui ricorrenti GOL</div>
+                        <p class="text-slate-300 text-sm">Verifica del percorso, prenotazione corsi, candidature proposte. <a href="/obblighi/gol" class="underline text-blue-300">I 4 percorsi GOL →</a></p>
+                    </div>
+                </li>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 w-10 h-10 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center">!</span>
+                    <div>
+                        <div class="font-bold">Ogni nuovo lavoro o reddito — NASpI-Com entro 30 giorni</div>
+                        <p class="text-slate-300 text-sm">Subordinato, autonomo, P.IVA, PrestO, tirocinio: tutto va comunicato. <a href="/obblighi/naspi-com" class="underline text-blue-300">Quando e come →</a></p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Naviga per argomento</h2>
+            <p class="text-slate-600 mb-6 max-w-3xl">Abbiamo suddiviso la guida in 7 sezioni operative. Clicca quella che ti interessa: ogni pagina contiene procedura esatta, tempi, fonti normative e sanzioni.</p>
+            <ObblighiNav />
+        </section>
+
+        <section class="bg-amber-50 border border-amber-200 rounded-3xl p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-amber-900 mb-3">⚠ Errori più frequenti (che portano alla decadenza)</h2>
+            <ul class="space-y-3 text-amber-900">
+                <li>• <strong>Non firmare il PAD su SIISL entro 15 giorni</strong>: la prestazione viene sospesa e, dopo richiami, revocata definitivamente.</li>
+                <li>• <strong>Mancata presentazione alla convocazione del CPI</strong>: decurtazione di 1 mensilità già alla seconda assenza, decadenza alla terza.</li>
+                <li>• <strong>Omettere la NASpI-Com per un nuovo contratto</strong>: la decadenza è retroattiva dall'inizio del rapporto non comunicato, con obbligo di restituire tutte le somme percepite.</li>
+                <li>• <strong>Rifiutare un'offerta di lavoro congrua</strong>: decadenza immediata e totale della NASpI, anche al primo rifiuto.</li>
+                <li>• <strong>Superare le soglie di reddito compatibile</strong>: NASpI revocata dal mese di superamento.</li>
+            </ul>
+            <p class="mt-4 text-sm text-amber-800">Tutti i dettagli e le percentuali esatte nella <a href="/obblighi/sanzioni" class="underline font-semibold">pagina Sanzioni</a>.</p>
+        </section>
+
+        <ConversionCTA
+            variant="inline"
+            headline="Non rischiare di perdere la NASpI"
+            subline="Ti affianchiamo durante tutto il periodo di indennità: promemoria sulle scadenze SIISL/CPI, NASpI-Com compilate per te, verifica delle comunicazioni INPS."
+        />
+    </article>
+</Base>
