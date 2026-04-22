@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import NaspiCalculator from '../components/NaspiCalculator';
+import RelatedPages from '../components/RelatedPages.astro';
 import { NASPI_CONSTANTS } from '../constants';
 
 const breadcrumbs = [
@@ -26,4 +27,6 @@ const calcSchema = {
     jsonLd={calcSchema}
 >
     <NaspiCalculator client:load />
+
+    <RelatedPages current="calcolatore" />
 </Base>

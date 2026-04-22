@@ -1,8 +1,10 @@
 ---
 import Base from './Base.astro';
 import ObblighiNav from '../components/ObblighiNav.astro';
+import RelatedPages from '../components/RelatedPages.astro';
 import ConversionCTA from '../components/ConversionCTA';
 import { LAST_UPDATED } from '../constants';
+import { SITE_URL } from '../lib/routes';
 
 export interface Props {
     title: string;
@@ -31,9 +33,31 @@ const faqSchema = faq && faq.length > 0 ? {
         acceptedAnswer: { '@type': 'Answer', text: item.a },
     })),
 } : undefined;
+
+const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: h1,
+    description,
+    datePublished: LAST_UPDATED,
+    dateModified: LAST_UPDATED,
+    inLanguage: 'it-IT',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': new URL(`/obblighi/${slug}`, SITE_URL).toString() },
+    author: { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    image: `${SITE_URL}/og/cover.png`,
+};
+
+const combinedSchema = faqSchema ? [articleSchema, faqSchema] : articleSchema;
 ---
 
-<Base title={title} description={description} breadcrumbs={breadcrumbs} jsonLd={faqSchema}>
+<Base
+    title={title}
+    description={description}
+    breadcrumbs={breadcrumbs}
+    jsonLd={combinedSchema}
+    modifiedTime={LAST_UPDATED}
+>
     <article class="max-w-4xl mx-auto py-12 px-4 space-y-10">
         <header>
             <p class="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">{kicker}</p>
@@ -76,5 +100,17 @@ const faqSchema = faq && faq.length > 0 ? {
             <h2 class="text-2xl font-bold text-slate-900 mb-4">Continua la guida</h2>
             <ObblighiNav current={slug} />
         </section>
+
+        <section class="bg-white border border-slate-200 rounded-2xl p-5 text-sm text-slate-600">
+            <h2 class="font-bold text-slate-900 text-base mb-2">A cura della redazione</h2>
+            <p class="leading-relaxed">
+                Contenuto redatto e aggiornato dalla redazione del
+                <a href="/chi-siamo" class="text-blue-600 hover:underline font-semibold">Centro Pratiche Flaiano</a>
+                — CAF e patronato di Roma specializzato in pratiche NASpI e ammortizzatori sociali.
+                Ultima revisione normativa: <time datetime={LAST_UPDATED}>{LAST_UPDATED}</time>.
+            </p>
+        </section>
     </article>
+
+    <RelatedPages current={`obblighi/${slug}`} />
 </Base>

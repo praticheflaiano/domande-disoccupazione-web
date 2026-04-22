@@ -50,7 +50,17 @@ const articleSchema = {
 const dateStr = new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
 ---
 
-<Base title={`${title} | Centro Pratiche Flaiano`} description={summary} breadcrumbs={breadcrumbs} jsonLd={articleSchema}>
+<Base
+    title={`${title} | Centro Pratiche Flaiano`}
+    description={summary}
+    breadcrumbs={breadcrumbs}
+    jsonLd={articleSchema}
+    ogType="article"
+    publishedTime={date.toISOString()}
+    modifiedTime={(updated ?? date).toISOString()}
+    articleSection={category}
+    articleAuthor="Centro Pratiche Flaiano"
+>
     <article class="max-w-3xl mx-auto py-12 px-4">
         <header class="mb-8">
             <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">

@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import AnticipoNaspi from '../components/AnticipoNaspi';
+import RelatedPages from '../components/RelatedPages.astro';
 
 const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -14,4 +15,6 @@ const breadcrumbs = [
     breadcrumbs={breadcrumbs}
 >
     <AnticipoNaspi client:load />
+
+    <RelatedPages current="anticipo" />
 </Base>
