@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
-import { sendChatMessage } from '../services/chatService';
+import { sendChatMessage, ChatMessage } from '../services/chatService';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ChatBot: React.FC<any> = () => {
+const ChatBot: React.FC = () => {
     const [open, setOpen] = useState(false);
-    const [msgs, setMsgs] = useState([{ role: 'model', text: 'Ciao! Come posso aiutarti?' }]);
+    const [msgs, setMsgs] = useState<ChatMessage[]>([{ role: 'model', text: 'Ciao! Come posso aiutarti?' }]);
     const [input, setInput] = useState('');
+    const [sending, setSending] = useState(false);
 
     const send = async () => {
-        if (!input) return;
-        const newMsgs = [...msgs, { role: 'user', text: input }];
-        // @ts-ignore
+        if (!input || sending) return;
+        const newMsgs: ChatMessage[] = [...msgs, { role: 'user', text: input }];
         setMsgs(newMsgs);
         setInput('');
-        // @ts-ignore
+        setSending(true);
         const res = await sendChatMessage(newMsgs, input);
-        // @ts-ignore
         setMsgs([...newMsgs, { role: 'model', text: res }]);
+        setSending(false);
     };
 
     return (
