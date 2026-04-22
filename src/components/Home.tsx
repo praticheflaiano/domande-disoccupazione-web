@@ -42,7 +42,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
                                 </span>
-                                Aggiornato alla Normativa 2025
+                                Aggiornato alla Normativa 2026
                             </div>
                             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
                                 La Tua NASpI, <br />
@@ -65,7 +65,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                                     className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-100 rounded-2xl font-bold text-lg hover:border-teal-100 hover:bg-teal-50/50 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
                                     <BookOpen className="w-5 h-5 text-teal-600" />
-                                    Guida 2025
+                                    Guida 2026
                                 </button>
                             </div>
                             <div className="flex items-center gap-4 text-sm text-slate-500 pt-4">
@@ -110,7 +110,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
 
             {/* REQUISITI SECTION */}
-            <Section title="Requisiti NASpI 2025">
+            <Section title="Requisiti NASpI 2026">
                 <div className="grid md:grid-cols-3 gap-6">
                     <Card
                         icon={Briefcase}
@@ -125,14 +125,14 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     />
                     <Card
                         icon={AlertCircle}
-                        title="Novità 2025"
+                        title="Novità 2026"
                         text={<span className="text-amber-700 bg-amber-50 px-2 py-0.5 rounded font-medium">Importante: Nuova Regola</span>}
                     />
                 </div>
                 <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
                     <div className="bg-amber-100 p-3 rounded-xl"><AlertCircle className="w-6 h-6 text-amber-600" /></div>
                     <div>
-                        <h3 className="text-lg font-bold text-amber-900 mb-2">Attenzione al nuovo requisito 2025</h3>
+                        <h3 className="text-lg font-bold text-amber-900 mb-2">Requisito dimissioni (in vigore dal 2025, confermato nel 2026)</h3>
                         <p className="text-amber-800 leading-relaxed">
                             Dal 1° gennaio 2025, se ti sei dimesso (o risoluzione consensuale) da un rapporto a tempo indeterminato nei <strong>12 mesi precedenti</strong> il licenziamento attuale, devi aver maturato almeno <strong>13 settimane di contributi nel nuovo rapporto di lavoro</strong> per accedere alla NASpI.
                         </p>

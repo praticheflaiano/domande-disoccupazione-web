@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     </div>
                 </div>
             </div>
-            <p>© 2025 Centro Pratiche Flaiano. Tutti i diritti riservati.</p>
+            <p>© 2026 Centro Pratiche Flaiano. Tutti i diritti riservati.</p>
             <p className="text-xs mt-4 max-w-xl mx-auto opacity-50">
                 Le informazioni fornite hanno scopo puramente informativo e non sostituiscono la consulenza professionale.
                 Gli importi sono stime basate sulla normativa vigente.

@@ -4,6 +4,7 @@ import { analyzeContributionDocument } from '../services/geminiService';
 import { calculateNaspiEligibility, calculateNaspiFromDecree } from '../utils/calculations';
 import { NaspiResult, TerminationReason, UserInputData, VoluntaryException, CalculatorMode } from '../types';
 import Obligations from './Obligations';
+import LegalDisclaimer from './LegalDisclaimer';
 
 const InfoCard = ({ title, desc }: { title: string, desc: string }) => (
     <div className="bg-blue-50 border border-blue-100 p-4 rounded-xl mb-4 text-sm">
@@ -61,8 +62,9 @@ const NaspiCalculator: React.FC = () => {
 
             {/* HEADER & PROGRESS */}
             <div className="mb-12 text-center">
-                <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">Calcolatore NASpI</h1>
-                <p className="text-slate-500 max-w-2xl mx-auto mb-8">Stima precisa dell'importo e della durata della tua indennità di disoccupazione basata sulla normativa vigente.</p>
+                <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">Calcolatore NASpI 2026</h1>
+                <p className="text-slate-500 max-w-2xl mx-auto mb-6">Stima dell'importo e della durata della tua indennità di disoccupazione in base ai parametri INPS 2026.</p>
+                <LegalDisclaimer variant="calculator" className="max-w-3xl mx-auto mb-8 text-left" />
                 <div className="flex justify-center gap-4 md:gap-12">
                     {[0, 1, 2, 3].map(i => <StepIndicator key={i} step={i} current={step} />)}
                 </div>

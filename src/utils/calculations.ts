@@ -1,4 +1,4 @@
-import { NASPI_CONSTANTS } from "../constants";
+import { NASPI_CONSTANTS, IRPEF_BRACKETS_2026 } from "../constants";
 import { NaspiResult, TerminationReason, UserInputData, VoluntaryException, MonthlyPayment, AnticipoInput, AnticipoResult } from "../types";
 
 const formatDate = (date: Date): string => {
@@ -14,22 +14,34 @@ const formatMonthYear = (date: Date): string => {
 const calculateEstimatedNet = (grossAmount: number, daysPaid: number): number => {
     if (!grossAmount || grossAmount <= 0 || !daysPaid || daysPaid <= 0) return 0;
     const projectedAnnualIncome = (grossAmount / daysPaid) * 365;
-    let annualTax = 0;
+    const { FIRST_LIMIT, SECOND_LIMIT, FIRST_RATE, SECOND_RATE, THIRD_RATE,
+            BASE_DETRACTION, DETRACTION_DECAY_15K_28K_BASE, DETRACTION_DECAY_15K_28K_BONUS,
+            DETRACTION_DECAY_28K_50K_BASE } = IRPEF_BRACKETS_2026;
 
-    if (projectedAnnualIncome <= 28000) {
-        annualTax = projectedAnnualIncome * 0.23;
-    } else if (projectedAnnualIncome <= 50000) {
-        annualTax = 6440 + ((projectedAnnualIncome - 28000) * 0.35);
+    const firstBracketTax = FIRST_LIMIT * FIRST_RATE;
+    const secondBracketTax = firstBracketTax + (SECOND_LIMIT - FIRST_LIMIT) * SECOND_RATE;
+
+    let annualTax = 0;
+    if (projectedAnnualIncome <= FIRST_LIMIT) {
+        annualTax = projectedAnnualIncome * FIRST_RATE;
+    } else if (projectedAnnualIncome <= SECOND_LIMIT) {
+        annualTax = firstBracketTax + ((projectedAnnualIncome - FIRST_LIMIT) * SECOND_RATE);
     } else {
-        annualTax = 14140 + ((projectedAnnualIncome - 50000) * 0.43);
+        annualTax = secondBracketTax + ((projectedAnnualIncome - SECOND_LIMIT) * THIRD_RATE);
     }
 
     let annualDetraction = 0;
-    if (projectedAnnualIncome <= 15000) annualDetraction = 1955;
-    else if (projectedAnnualIncome <= 28000) annualDetraction = 1910 + (1190 * ((28000 - projectedAnnualIncome) / 13000));
-    else if (projectedAnnualIncome <= 50000) annualDetraction = 1910 * ((50000 - projectedAnnualIncome) / 22000);
+    if (projectedAnnualIncome <= 15000) {
+        annualDetraction = BASE_DETRACTION;
+    } else if (projectedAnnualIncome <= FIRST_LIMIT) {
+        annualDetraction = DETRACTION_DECAY_15K_28K_BASE +
+            (DETRACTION_DECAY_15K_28K_BONUS * ((FIRST_LIMIT - projectedAnnualIncome) / 13000));
+    } else if (projectedAnnualIncome <= SECOND_LIMIT) {
+        annualDetraction = DETRACTION_DECAY_28K_50K_BASE *
+            ((SECOND_LIMIT - projectedAnnualIncome) / (SECOND_LIMIT - FIRST_LIMIT));
+    }
 
-    let netAnnualTax = Math.max(0, annualTax - annualDetraction);
+    const netAnnualTax = Math.max(0, annualTax - annualDetraction);
     const effectiveTaxRate = netAnnualTax / projectedAnnualIncome;
     return parseFloat((grossAmount * (1 - effectiveTaxRate)).toFixed(2));
 };

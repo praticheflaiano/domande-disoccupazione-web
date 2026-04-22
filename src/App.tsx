@@ -62,9 +62,9 @@ const App: React.FC = () => {
                 )}
                 {page === 'calculator' && <><SEO title="Calcolatore NASpI" description="Simula importo e durata." /><NaspiCalculator /></>}
                 {page === 'anticipo' && <><SEO title="Anticipo NASpI" description="Richiedi la liquidazione anticipata." /><AnticipoNaspi onNavigate={nav} /></>}
-                {page === 'obligations' && <><SEO title="Obblighi e GOL" description="Guida SIISL e programma GOL 2025." /><div className="max-w-4xl mx-auto py-8 px-4"><Obligations /></div></>}
+                {page === 'obligations' && <><SEO title="Obblighi e GOL" description="Guida SIISL e programma GOL 2026." /><div className="max-w-4xl mx-auto py-8 px-4"><Obligations /></div></>}
                 {page === 'guide' && <><SEO title="Guide e FAQ" description="Risposte alle tue domande." /><KnowledgeBase onNavigate={nav} /></>}
-                {page === 'guide-book' && <><SEO title="Manuale NASpI 2025" description="Guida completa, compatibilità e sospensione." /><NaspiGuide /></>}
+                {page === 'guide-book' && <><SEO title="Manuale NASpI 2026" description="Guida completa, compatibilità e sospensione." /><NaspiGuide /></>}
                 {page === 'office' && <><SEO title="Contatti Sede" description="Vieni a trovarci a Pescara." /><OfficeInfo /></>}
                 {page === 'apply' && <><SEO title="Invia Pratica" description="Richiesta online sicura." /><ApplyOnline /></>}
                 {page === 'privacy' && <><SEO title="Privacy Policy" description="Trattamento dei dati." /><PrivacyPolicy /></>}
