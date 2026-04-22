@@ -4,5 +4,6 @@ dist
 .env.local
 .DS_Store
 .vercel
+.vercel/output
 .astro
 domandedisoccupazione.it---centro-pratiche-flaiano.zip
