@@ -1,0 +1,144 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Se trovo lavoro durante la NASpI, cosa devo fare subito?',
+        a: 'Compila la NASpI-Com entro 30 giorni dall\'inizio del nuovo rapporto indicando tipo contratto, data inizio e reddito annuo previsto. Dalla comunicazione l\'INPS decide se sospendere, ridurre o far decadere la NASpI in base al reddito.',
+    },
+    {
+        q: 'Se il contratto è breve (meno di 6 mesi) perdo la NASpI definitivamente?',
+        a: 'No. Con contratto subordinato sotto 6 mesi e reddito annuo ≤ 8.500 €, la NASpI viene solo ridotta dell\'80% del reddito previsto per la durata del rapporto. Alla cessazione la NASpI riprende per i giorni residui, senza bisogno di nuova domanda.',
+    },
+    {
+        q: 'Con un contratto a tempo indeterminato perdo la NASpI?',
+        a: 'Sì. Il tempo indeterminato (salvo per licenziamento in periodo di prova entro 30 giorni) determina la decadenza dello stato di disoccupazione, quindi cessa la NASpI. Si può riaprire una nuova NASpI solo con futuro licenziamento involontario.',
+    },
+    {
+        q: 'Posso cumulare prestazione occasionale (PrestO) senza perdere la NASpI?',
+        a: 'Sì, fino a € 5.000 annui di PrestO la NASpI è cumulabile al 100%, senza riduzioni. Oltre: decadenza dal momento del superamento. La NASpI-Com va compilata comunque.',
+    },
+    {
+        q: 'Apro P.IVA (regime forfettario): cosa succede?',
+        a: 'Devi comunicare con NASpI-Com entro 30 giorni dall\'apertura. Se il reddito netto annuo previsto è ≤ 5.500 €, NASpI ridotta dell\'80% del reddito per la durata stimata. Se supera: decadenza al momento del superamento documentato. Puoi anche richiedere la liquidazione in un\'unica soluzione tramite la NASpI anticipata (vedi guida).',
+    },
+];
+---
+
+<GuidaLayout
+    title="Nuovo lavoro durante NASpI: cosa fare | Guida 2026"
+    description="Se trovi lavoro durante la NASpI: soglie di cumulo, NASpI-Com entro 30 giorni, contratti brevi vs indeterminato, P.IVA, PrestO. Come non perdere giorni residui di indennità."
+    slug="nuovo-lavoro-durante-naspi"
+    h1="Trovato un lavoro durante la NASpI: cosa fare"
+    kicker="Cumulo, sospensione, decadenza — senza perdere giorni"
+    sources={[
+        'D.Lgs. 22/2015 artt. 9-10 (cumulabilità con nuovi redditi)',
+        'Circ. INPS n. 174/2017 (istruzioni cumulo NASpI e nuovi redditi)',
+        'Circ. INPS n. 4/2026 (rivalutazione ISTAT soglie annue)',
+        'L. 96/2017 (prestazioni occasionali PrestO)',
+    ]}
+    faq={faq}
+>
+    <h2>La regola di base</h2>
+    <p>
+        Durante la NASpI puoi svolgere <strong>nuove attività lavorative</strong>, ma devi rispettare due obblighi:
+    </p>
+    <ol>
+        <li><strong>Comunicare la nuova attività</strong> all'INPS con la <strong>NASpI-Com entro 30 giorni</strong>.</li>
+        <li><strong>Restare sotto le soglie di reddito</strong> compatibili, pena sospensione o decadenza.</li>
+    </ol>
+    <p>
+        Omettere la comunicazione è una delle cause più gravi di decadenza retroattiva: INPS lo scopre automaticamente
+        via flussi UniEmens e Agenzia Entrate, e richiede la <strong>restituzione di tutte le somme percepite</strong>
+        dalla data di inizio del nuovo rapporto. Vedi <a href="/obblighi/naspi-com">guida NASpI-Com</a>.
+    </p>
+
+    <h2>Scenario per scenario</h2>
+
+    <h3>Contratto subordinato a tempo determinato (sotto 6 mesi)</h3>
+    <ul>
+        <li><strong>Soglia reddito</strong>: 8.500 € annui.</li>
+        <li><strong>Effetto</strong>: NASpI ridotta dell'80% del reddito previsto, per la durata del contratto.</li>
+        <li><strong>Alla cessazione</strong>: NASpI riprende automaticamente per i giorni residui. Nessuna nuova domanda.</li>
+        <li><strong>Azione</strong>: NASpI-Com entro 30 giorni + IBAN aggiornato se cambiato.</li>
+    </ul>
+    <p><strong>Esempio</strong>: NASpI 1.200 €/mese, residua 10 mesi. Contratto 4 mesi a 12.000 € annui (= 4.000 € per i 4 mesi). Riduzione = 4.000 × 80% / 4 = 800 €/mese. NASpI ridotta effettiva = 1.200 − 800 = <strong>400 €/mese</strong> per 4 mesi. Poi riprende piena 1.200 €/mese per i 6 mesi residui.</p>
+
+    <h3>Contratto subordinato a tempo determinato (oltre 6 mesi)</h3>
+    <ul>
+        <li>NASpI <strong>sospesa</strong> per tutta la durata del contratto.</li>
+        <li>Alla cessazione, la NASpI può riprendere per i mesi residui <strong>se</strong> non sono passati più di 2 mesi dalla cessazione del rapporto precedente (art. 9 D.Lgs. 22/2015). Oltre: nuova domanda NASpI.</li>
+        <li>Durante la sospensione, non maturi contribuzione figurativa NASpI, ma contribuzione normale del nuovo rapporto.</li>
+    </ul>
+
+    <h3>Contratto a tempo indeterminato</h3>
+    <ul>
+        <li><strong>Decadenza dello stato di disoccupazione</strong> e cessazione NASpI.</li>
+        <li>Eccezione: licenziamento durante il periodo di prova entro 30 giorni dall'assunzione → NASpI riprende se eri ancora nel periodo residuo.</li>
+        <li>In futuro, nuovo licenziamento involontario = nuova domanda NASpI con nuovi requisiti (13 settimane).</li>
+    </ul>
+
+    <h3>Prestazione occasionale PrestO (Libretto Famiglia o Contratto Prestazione Occasionale)</h3>
+    <ul>
+        <li><strong>Soglia</strong>: 5.000 € annui lordi.</li>
+        <li><strong>Cumulo pieno</strong>: sotto soglia, NASpI non ridotta.</li>
+        <li><strong>Sopra soglia</strong>: decadenza dal momento del superamento.</li>
+        <li><strong>NASpI-Com</strong> obbligatoria anche per PrestO.</li>
+    </ul>
+
+    <h3>Collaborazione coordinata e continuativa (co.co.co.)</h3>
+    <ul>
+        <li><strong>Soglia</strong>: 8.500 € annui.</li>
+        <li>Stesso regime del subordinato: riduzione 80% se sotto, sospensione se sopra.</li>
+    </ul>
+
+    <h3>Apertura P.IVA / lavoro autonomo</h3>
+    <ul>
+        <li><strong>Soglia</strong>: 5.500 € annui di reddito netto (ricavi − costi).</li>
+        <li><strong>In forfettario</strong>: reddito = 78% dei compensi circa.</li>
+        <li>NASpI-Com entro 30 giorni dall'apertura P.IVA; se aperta al 1° gennaio, comunicazione entro 31 gennaio.</li>
+        <li><strong>Alternativa</strong>: <a href="/anticipo">anticipo NASpI</a> — chiedi la liquidazione in un'unica soluzione del residuo per avvio attività autonoma. Utile se hai bisogno di capitale iniziale.</li>
+    </ul>
+
+    <h3>Tirocinio retribuito extracurriculare</h3>
+    <ul>
+        <li><strong>Soglia</strong>: 8.500 € annui (indennità di tirocinio).</li>
+        <li>Non è lavoro subordinato ma va comunicato e incide sulla soglia. Se l'indennità annua supera 8.500 €, NASpI sospesa.</li>
+    </ul>
+
+    <h2>Cumulabilità tra tipologie</h2>
+    <p>
+        Le soglie sono <strong>indipendenti</strong>: puoi percepire nello stesso anno PrestO fino 5.000 € + P.IVA fino
+        5.500 € + subordinato fino 8.500 € senza decadenza, sommando tre cumuli distinti. Ma ciascuna attività va comunicata
+        separatamente.
+    </p>
+
+    <h2>NASpI-Com: come si compila</h2>
+    <ol>
+        <li>Accedi a <a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">inps.it</a> → Prestazioni → NASpI → "Comunicazioni NASpI"</li>
+        <li>Scegli il tipo di attività (subordinato / autonomo / PrestO / co.co.co. / tirocinio)</li>
+        <li>Inserisci data inizio, tipo contratto, datore, reddito annuo previsto</li>
+        <li>Allega eventuale contratto o documentazione</li>
+        <li>Invia → ricevi protocollo; lo stesso giorno INPS ricalcola la tua NASpI</li>
+    </ol>
+
+    <h2>Come calcolare se conviene accettare il lavoro</h2>
+    <p>Formula pratica per contratto subordinato sotto 6 mesi:</p>
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 my-4 text-sm">
+        <strong>Totale mensile durante il nuovo lavoro</strong> = Stipendio netto nuovo lavoro + NASpI ridotta
+        <br />
+        <strong>NASpI ridotta</strong> = Importo NASpI lordo − (Reddito totale previsto × 80% / mesi di contratto)
+    </div>
+    <p>
+        Quasi sempre accettare conviene perché lo stipendio pieno + NASpI ridotta > NASpI piena. Inoltre, alla cessazione
+        del nuovo contratto, la NASpI riparte per i giorni residui, quindi non hai "perso" nulla.
+    </p>
+
+    <h2>Errori che fanno perdere tutto</h2>
+    <ul>
+        <li><strong>Non fare NASpI-Com</strong>: INPS scopre tramite UniEmens → decadenza retroattiva + restituzione arretrati.</li>
+        <li><strong>Dichiarare reddito previsto troppo basso</strong> per mantenere la NASpI e poi superare: in consuntivo recupero somme dovute.</li>
+        <li><strong>Aprire P.IVA il 2 gennaio pensando che il reddito inizi "l'anno dopo"</strong>: la soglia è annua, ogni euro conta da subito.</li>
+        <li><strong>Non aggiornare l'IBAN</strong> se cambi banca: pagamenti bloccati, rischio sospensione formale.</li>
+    </ul>
+</GuidaLayout>

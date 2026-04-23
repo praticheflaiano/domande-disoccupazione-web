@@ -1,0 +1,135 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Quando arriva la NASpI ogni mese?',
+        a: 'L\'INPS accredita la NASpI tra l\'8° e il 17° giorno del mese successivo a quello di competenza. Date tipiche recenti: gennaio tra 10-15, febbraio tra 10-14, marzo 11-15, aprile 8-17, maggio 8-13. Le date precise vengono pubblicate nel calendario INPS di inizio anno.',
+    },
+    {
+        q: 'Perché il pagamento è in ritardo?',
+        a: 'Le cause più frequenti sono: mancata firma del PAD su SIISL, decadenza dello stato di disoccupazione, mancata comunicazione NASpI-Com di nuovo lavoro, pratica rinviata a istruttoria per integrazione documenti, errore IBAN. Controlla "Esiti domanda" nel Fascicolo Previdenziale per capire la causa.',
+    },
+    {
+        q: 'Il primo pagamento quando arriva?',
+        a: 'Il primo accredito tipicamente entro 45-60 giorni dalla domanda accolta. Include gli arretrati dall\'8° giorno successivo alla cessazione. Accrediti successivi sono mensili nei giorni standard.',
+    },
+    {
+        q: 'Come verifico l\'importo esatto?',
+        a: 'Fascicolo Previdenziale INPS → NASpI → "Consultazione domanda" → scarica il prospetto di calcolo PDF. Mostra importo lordo, giorni pagati, ritenute IRPEF, eventuale decalage applicato, totale netto accreditato.',
+    },
+    {
+        q: 'Cosa fare se l\'accredito non arriva entro il 18 del mese?',
+        a: 'Entro il 20 del mese: verifica nel Fascicolo Previdenziale che la domanda sia "Accolta in pagamento". Se sì, contatta la tua banca: accredito SEPA può richiedere 1-2 giorni lavorativi. Se la domanda è "sospesa" identifica la causa (vedi sezione "sospensioni"). Oltre i 5 giorni di ritardo senza causa chiara: chiamata Contact Center INPS 803.164.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Quando arriva la NASpI 2026: calendario pagamenti e verifica"
+    description="Calendario pagamenti NASpI mese per mese 2026, come verificare stato accredito, cause di ritardo e sospensione, primo pagamento e arretrati. Fascicolo Previdenziale INPS."
+    slug="pagamenti-accredito"
+    h1="Quando arriva la NASpI: calendario 2026 e verifica pagamenti"
+    kicker="Date accredito mensile, ritardi e come verificare"
+    sources={[
+        'Calendario pagamenti INPS 2026 (pubblicato fine 2025 + aggiornamenti mensili)',
+        'Portale INPS — Fascicolo Previdenziale, servizio Consultazione domande',
+        'D.Lgs. 22/2015 art. 4 (decorrenza e accredito)',
+        'Contact Center INPS 803.164 / 06.164.164',
+    ]}
+    faq={faq}
+>
+    <h2>Quando arriva la NASpI: regola generale</h2>
+    <p>
+        La NASpI è una prestazione <strong>mensile posticipata</strong>: ogni accredito copre il mese precedente. L'INPS
+        elabora i pagamenti in blocco e li invia alle banche intorno al <strong>giorno 7-10</strong> di ciascun mese, con
+        arrivo sul conto del beneficiario <strong>tra l'8 e il 17</strong> a seconda della banca.
+    </p>
+
+    <h2>Calendario indicativo 2026</h2>
+    <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Mensilità di competenza</th>
+                    <th class="p-3 text-left">Accredito tipico</th>
+                    <th class="p-3 text-left">Note</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white"><td class="p-3 font-semibold">Gennaio 2026</td><td class="p-3">10-15 febbraio</td><td class="p-3">Avvio anno, possibili ritardi tecnici.</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Febbraio 2026</td><td class="p-3">10-14 marzo</td><td class="p-3">Mese corto, accrediti anticipati.</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Marzo 2026</td><td class="p-3">11-15 aprile</td><td class="p-3">Periodo pagamenti CU fiscali (scadenza 16 marzo CU INPS).</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Aprile 2026</td><td class="p-3">8-17 maggio</td><td class="p-3">—</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Maggio 2026</td><td class="p-3">8-13 giugno</td><td class="p-3">Già alcune anticipazioni in dashboard INPS.</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Giugno 2026</td><td class="p-3">10-14 luglio</td><td class="p-3">Pre-estate.</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Luglio 2026</td><td class="p-3">9-13 agosto</td><td class="p-3">Attenzione festività 15 agosto.</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Agosto 2026</td><td class="p-3">10-15 settembre</td><td class="p-3">—</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Novembre 2026</td><td class="p-3">5 dicembre (anticipato)</td><td class="p-3">Tradizionalmente anticipato per festività natalizie.</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Dicembre 2026</td><td class="p-3">8-13 gennaio 2027</td><td class="p-3">—</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="text-sm text-slate-500">Date indicative. Calendario ufficiale pubblicato da INPS inizio 2026 e aggiornato mensilmente sul portale.</p>
+
+    <h2>Come verificare il pagamento: 3 strumenti</h2>
+    <h3>1. Fascicolo Previdenziale del Cittadino</h3>
+    <ol>
+        <li><a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">inps.it</a> → MyINPS → SPID/CIE/CNS</li>
+        <li>Menu "Fascicolo Previdenziale del Cittadino"</li>
+        <li>Sezione "Prestazioni" → "NASpI"</li>
+        <li>Clicca la tua domanda → pulsante <strong>"Consultazione domanda"</strong></li>
+        <li>Scarica il prospetto mensile PDF con importo lordo, trattenute, netto accreditato, IBAN di destinazione, data invio ordine</li>
+    </ol>
+
+    <h3>2. App INPS Mobile</h3>
+    <p>
+        App ufficiale per iOS/Android (free). Login SPID. Schermata "Prestazioni" mostra tutti gli accrediti in cronologia
+        con importi, date previste e stato (In pagamento / Effettuato / Sospeso).
+    </p>
+
+    <h3>3. Contact Center INPS</h3>
+    <p>
+        <strong>803.164</strong> (gratuito da rete fissa) — <strong>06.164.164</strong> (da cellulare, costo variabile).
+        L'operatore verifica la tua posizione dopo identificazione con codice fiscale + data nascita. Utile quando il
+        portale è inaccessibile.
+    </p>
+
+    <h2>Cause di ritardo e stati dashboard</h2>
+    <ul>
+        <li><strong>"In istruttoria"</strong>: pratica ancora in lavorazione, primo pagamento in arrivo. Normale per i primi 30-45 giorni dalla domanda.</li>
+        <li><strong>"Accolta in pagamento"</strong>: tutto ok, ordine inviato alla banca, arrivo entro pochi giorni lavorativi.</li>
+        <li><strong>"Sospesa"</strong>: INPS blocca il pagamento. Cause: mancata firma PAD SIISL, decadenza stato disoccupazione, NASpI-Com non compilata per nuovo rapporto, errore IBAN. Vedi <a href="/guida/sospensione-naspi">guida sospensione e riattivazione</a>.</li>
+        <li><strong>"Respinta per ricorso pendente"</strong>: INPS ha disposto decadenza ma tu hai fatto ricorso. Pagamento bloccato fino all'esito.</li>
+        <li><strong>"Decaduta"</strong>: perdita definitiva. Richiede ricorso amministrativo entro 90 giorni se contestabile.</li>
+    </ul>
+
+    <h2>Primo pagamento: cosa aspettarsi</h2>
+    <p>
+        Il <strong>primo accredito</strong> è il più complesso da calcolare:
+    </p>
+    <ul>
+        <li>Arriva 45-60 giorni dopo l'accoglimento della domanda (a volte anche 90 giorni in caso di istruttoria complessa).</li>
+        <li>Include gli <strong>arretrati</strong> dall'8° giorno successivo alla cessazione del lavoro. Esempio: cessazione 15 gennaio, decorrenza NASpI 23 gennaio, primo accredito a fine marzo che copre ~35 giorni di prestazione (dal 23/1 al 28/2).</li>
+        <li>Successivamente gli accrediti diventano regolari con cadenza mensile.</li>
+    </ul>
+
+    <h2>Come controllare l'importo esatto</h2>
+    <p>
+        Nel prospetto PDF del Fascicolo Previdenziale vedi:
+    </p>
+    <ul>
+        <li><strong>Lordo mensile</strong>: importo base secondo calcolo NASpI (max € 1.584,70 nel 2026).</li>
+        <li><strong>Decalage applicato</strong>: -3% dal 6° mese (8° se over 55). Esempio: dal 6° mese importo lordo -3%, dal 7° -5,91%, dal 8° -8,73%, ecc.</li>
+        <li><strong>Ritenute IRPEF</strong>: l'INPS applica 23% base + detrazioni proporzionate. Vedi <a href="/guida/fiscalita">guida fiscalità NASpI</a>.</li>
+        <li><strong>Netto accreditato</strong>: quello che arriva in banca.</li>
+        <li><strong>Giorni pagati</strong>: 30 in un mese completo, 28-29-31 se prorata.</li>
+    </ul>
+
+    <h2>Festività e anticipi</h2>
+    <p>
+        Tradizionalmente l'INPS <strong>anticipa il pagamento di novembre</strong> (che normalmente arriverebbe a dicembre)
+        al <strong>5 dicembre</strong> per agevolare le spese natalizie. Anche altre festività religiose (Pasqua) possono
+        comportare piccoli anticipi. Il calendario ufficiale va sempre consultato sul portale INPS.
+    </p>
+</GuidaLayout>
