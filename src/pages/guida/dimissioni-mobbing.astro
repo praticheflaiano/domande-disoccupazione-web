@@ -1,0 +1,141 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+import ExpertQuote from '../../components/ExpertQuote.astro';
+
+const faq = [
+    {
+        q: 'Mobbing e demansionamento: posso avere la NASpI se mi dimetto?',
+        a: 'Sì. Sia il mobbing sia il demansionamento sostanziale (che impoverisce la professionalità) costituiscono giusta causa ai sensi dell\'art. 2119 c.c. La Circolare INPS 163/2003 lo ha confermato espressamente per il mobbing. Serve documentare il danno subito.',
+    },
+    {
+        q: 'Che differenza c\'è tra mobbing, straining e burnout?',
+        a: 'Mobbing = comportamenti ostili reiterati con intento persecutorio. Straining = condizione lavorativa oggettivamente stressogena anche senza intento persecutorio (Cass. 28923/2023). Burnout = sindrome di esaurimento da sovraccarico. I primi due legittimano dimissioni per giusta causa se documentati; il burnout è più complesso e richiede perizia medica specifica.',
+    },
+    {
+        q: 'Come dimostro il mobbing?',
+        a: 'L\'onere della prova è a carico del lavoratore. Documenti utili: certificati medici (psichiatra, psicologo), denuncia penale o segnalazione a INAIL, email e messaggi vessatori, testimonianze di colleghi (verbalizzate ITL o da avvocato), ordini di servizio punitivi, tabulati che dimostrano l\'isolamento. Più prove documentali + testimoniali = più probabilità di vincere.',
+    },
+    {
+        q: 'Il demansionamento lo devo "subire" prima di dimettermi?',
+        a: 'No. La Cassazione 811/2021 ha chiarito che se il demansionamento è evidente già dalla comunicazione formale delle nuove mansioni, il lavoratore può dimettersi immediatamente per giusta causa, senza dover sperimentare la dequalificazione.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Dimissioni per mobbing e demansionamento: procedura e NASpI"
+    description="Mobbing, straining e demansionamento come giusta causa di dimissioni con diritto alla NASpI. Circolare INPS 163/2003, Cass. 811/2021 demansionamento, Cass. 28923/2023 straining. Come provarlo."
+    slug="dimissioni-mobbing"
+    h1="Dimissioni per mobbing e demansionamento"
+    kicker="Giusta causa tutelata dalla legge"
+    sources={[
+        'Circolare INPS n. 163 del 20 ottobre 2003 (mobbing = giusta causa)',
+        'Cass. sez. lav. n. 811/2021 (demansionamento immediato)',
+        'Cass. sez. lav. n. 28923/2023 (straining e danno alla salute)',
+        'Codice civile art. 2103 (mansioni) e art. 2119 (giusta causa)',
+    ]}
+    faq={faq}
+>
+    <h2>Tre forme di violenza organizzativa</h2>
+    <p>
+        La giurisprudenza italiana distingue tre situazioni che possono legittimare le dimissioni per giusta causa:
+    </p>
+    <ol>
+        <li><strong>Mobbing</strong>: comportamenti ostili, denigratori, persecutori posti in essere da superiori o colleghi (con tolleranza del datore) in modo sistematico per un periodo prolungato, con intento emarginativo. Tutela: artt. 2087 e 2119 c.c. + Circolare INPS 163/2003.</li>
+        <li><strong>Straining</strong>: condizione lavorativa oggettivamente stressogena — es. carichi impossibili, orari disumani, strumenti inadeguati — anche in assenza di intento persecutorio. Riconosciuto da Cass. 28923/2023 come fonte di danno alla salute risarcibile e può legittimare dimissioni.</li>
+        <li><strong>Demansionamento</strong>: assegnazione a mansioni sostanzialmente inferiori o privazione di compiti che impoverisce la professionalità. Vietato dall'art. 2103 c.c. Cass. 811/2021: dimissioni immediate possibili senza sperimentare la dequalificazione.</li>
+    </ol>
+
+    <ExpertQuote id="cass-811-2021" />
+
+    <h2>Mobbing: quando si configura</h2>
+    <p>
+        La Cassazione richiede <strong>5 elementi concorrenti</strong>:
+    </p>
+    <ul>
+        <li><strong>Ambiente di lavoro</strong>: il fatto avviene sul luogo o in occasione dell'attività lavorativa.</li>
+        <li><strong>Pluralità e sistematicità</strong> dei comportamenti ostili (non un singolo episodio). Soglia minima indicativa: 6 mesi di condotta.</li>
+        <li><strong>Intento persecutorio</strong>: finalità di emarginare, umiliare, espellere il lavoratore.</li>
+        <li><strong>Danno</strong>: psichico, fisico, professionale, documentabile (certificati medici, peggioramento retribuzione, ecc.).</li>
+        <li><strong>Nesso causale</strong>: il danno deriva dai comportamenti, non da cause esterne.</li>
+    </ul>
+    <p><strong>Onere probatorio interamente a carico del lavoratore</strong>, a differenza di altre cause di giusta causa dove basta la prova dell'inadempimento.</p>
+
+    <ExpertQuote id="inps-circ-163-2003" />
+
+    <h2>Demansionamento: quando è sostanziale</h2>
+    <p>
+        Non è sufficiente una riduzione quantitativa dei compiti: serve una <strong>sottrazione qualitativa di mansioni</strong>
+        che comporti un abbassamento del livello di prestazione. Esempi tipici:
+    </p>
+    <ul>
+        <li>Dirigente spostato a compiti esecutivi di segreteria.</li>
+        <li>Responsabile di reparto privato della gestione delle risorse.</li>
+        <li>Specialista tecnico assegnato a mansioni generiche non correlate al suo ruolo.</li>
+        <li>Isolamento professionale ("ufficio del dimenticatoio", nessun incarico assegnato per settimane).</li>
+    </ul>
+    <p>
+        L'art. 2103 c.c. riformato dal Jobs Act (D.Lgs. 81/2015) consente al datore di assegnare mansioni di livello
+        inferiore solo in <strong>modifica degli assetti organizzativi</strong> della struttura, con specifico atto scritto.
+        Senza queste condizioni, il demansionamento è illegittimo e legittima le dimissioni.
+    </p>
+
+    <h2>La procedura</h2>
+    <ol>
+        <li>
+            <strong>Documentazione del danno</strong>:
+            <ul>
+                <li>Certificato medico psichiatrico / psicologico (ansia, depressione, disturbo post-traumatico da stress);</li>
+                <li>Eventuale denuncia di <strong>infortunio INAIL</strong> per "costrittività organizzativa";</li>
+                <li>Eventuale denuncia penale (artt. 572 c.p. maltrattamenti, 610 violenza privata, 660 molestia);</li>
+                <li>Email, messaggi WhatsApp, screenshot di Slack/Teams, ordini di servizio;</li>
+                <li>Testimonianze di colleghi (verbalizzate davanti a ITL o avvocato).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Segnalazione interna</strong> (se esiste HR o sportello ascolto aziendale). Non è obbligatoria ma la
+            sua assenza può essere usata dal datore come difesa.
+        </li>
+        <li>
+            <strong>Diffida scritta</strong> (PEC o raccomandata): elenca le condotte, chiede la cessazione entro 15 giorni,
+            preannuncia dimissioni per giusta causa.
+        </li>
+        <li>
+            <strong>Dimissioni telematiche</strong> con motivazione <em>"giusta causa — mobbing/demansionamento"</em> e
+            riferimento alla diffida inevasa.
+        </li>
+        <li>
+            <strong>Domanda NASpI</strong> entro 68 giorni, allegando tutta la documentazione medica e probatoria.
+        </li>
+        <li>
+            <strong>Azione risarcitoria</strong> parallela al Tribunale del Lavoro per il danno biologico, esistenziale e
+            professionale (prescrizione 10 anni). Il risarcimento si cumula con NASpI e indennità preavviso.
+        </li>
+    </ol>
+
+    <h2>Importi tipici di risarcimento</h2>
+    <p>
+        A titolo indicativo, in base alla giurisprudenza degli ultimi anni:
+    </p>
+    <ul>
+        <li><strong>Danno biologico</strong>: quantificato con tabelle di Milano (2-10% di invalidità permanente) + danno morale.</li>
+        <li><strong>Danno professionale</strong>: in genere 30-50% della retribuzione annua per ogni anno di demansionamento documentato.</li>
+        <li><strong>Danno esistenziale</strong>: importi variabili (€ 5.000-50.000) a seconda della gravità e durata.</li>
+    </ul>
+
+    <h2>Errori che fanno perdere la NASpI</h2>
+    <ul>
+        <li><strong>Dimettersi senza diffida</strong>: INPS può contestare la tempestività della reazione.</li>
+        <li><strong>Mancanza di certificazione medica</strong>: il danno psico-fisico è l'elemento centrale della prova.</li>
+        <li><strong>Tempi lunghi tra condotta e dimissioni</strong>: se la condotta dura 3 anni e ti dimetti il giorno dopo l'ultimo episodio, è sospetto. Meglio documentare reazioni intermedie (lamentele formali, richieste HR).</li>
+        <li><strong>Atteggiamenti contraddittori</strong>: lodi pubbliche sul datore, partecipazione a eventi aziendali, post social positivi indeboliscono la tesi.</li>
+    </ul>
+
+    <h2>Straining: la nuova frontiera</h2>
+    <p>
+        La Cass. 28923/2023 ha chiarito che lo <em>stress da lavoro oggettivo</em> (straining), anche in assenza di intento
+        persecutorio, <strong>può configurare giusta causa</strong> se causa danno alla salute documentato. Utile in tutti
+        i casi dove il mobbing classico non si prova (manca l'intento) ma la situazione lavorativa è oggettivamente
+        insostenibile.
+    </p>
+</GuidaLayout>

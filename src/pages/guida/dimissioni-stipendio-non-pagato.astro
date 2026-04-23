@@ -1,0 +1,120 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Dopo quanti mesi di stipendio non pagato posso dimettermi per giusta causa?',
+        a: 'La giurisprudenza consolidata richiede almeno 3 mensilità consecutive non pagate per configurare la giusta causa. Un singolo ritardo isolato o breve non basta. Attenzione: oltre i 6 mesi di silenzio la Cassazione considera il tuo comportamento come accettazione tacita dell\'inadempimento, quindi bisogna agire tempestivamente con diffida e dimissioni.',
+    },
+    {
+        q: 'Devo mandare una diffida prima di dimettermi?',
+        a: 'Sì, è fortemente consigliato. Raccomandata A/R (o PEC) che indichi gli stipendi non pagati e chieda il saldo entro 7 giorni, costituendo il datore in mora ex art. 1219 c.c. Senza diffida, in caso di contestazione INPS o giudiziale, la tua posizione è più debole.',
+    },
+    {
+        q: 'Chi paga gli stipendi arretrati se l\'azienda non li paga?',
+        a: 'In caso di insolvenza conclamata (fallimento, liquidazione giudiziale), interviene il Fondo di Garanzia INPS per il TFR e le ultime tre mensilità. Per stipendi non pagati di aziende ancora attive, serve agire con decreto ingiuntivo in Tribunale del Lavoro (tempi 2-6 mesi).',
+    },
+    {
+        q: 'Cosa allego alla domanda NASpI?',
+        a: 'Copia della diffida raccomandata A/R o PEC, copia delle buste paga non saldate, estratto conto bancario che mostra l\'assenza degli accrediti, copia delle dimissioni telematiche con motivazione "giusta causa - mancato pagamento retribuzione". In caso di procedure giudiziali, allegare copia del ricorso depositato.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Dimissioni per mancato pagamento stipendio: NASpI dopo 3 mesi"
+    description="Quando scatta la giusta causa per stipendio non pagato: soglia 3 mesi (Cassazione), limite 6 mesi di silenzio, diffida obbligatoria, procedura per accedere alla NASpI e recupero crediti."
+    slug="dimissioni-stipendio-non-pagato"
+    h1="Dimissioni per mancato pagamento stipendio"
+    kicker="Soglia 3 mesi — Cass. consolidata"
+    sources={[
+        'Codice civile, art. 2119 (giusta causa) e art. 1219 (mora del debitore)',
+        'Cassazione civile, giurisprudenza consolidata sulla soglia delle 3 mensilità',
+        'D.Lgs. 22/2015 art. 3 (NASpI per giusta causa)',
+        'Fondo di Garanzia INPS (L. 297/1982)',
+    ]}
+    faq={faq}
+>
+    <h2>La regola delle 3 mensilità</h2>
+    <p>
+        Il mancato pagamento dello stipendio è la causa più frequente di dimissioni per giusta causa in Italia. La
+        Cassazione, in una giurisprudenza ormai pacifica, richiede che l'inadempimento del datore sia <strong>grave e
+        reiterato</strong>: in pratica, <strong>almeno 3 mensilità consecutive</strong> di stipendio non percepito.
+    </p>
+    <ul>
+        <li><strong>1 mensilità non pagata</strong>: non è giusta causa. Il datore ha una "zona di tolleranza" per ritardi isolati.</li>
+        <li><strong>2 mensilità</strong>: borderline. Se c'è una giustificazione contingente del datore (es. temporaneo problema di liquidità comunicato), la giusta causa può essere negata.</li>
+        <li><strong>3 mensilità</strong>: soglia consolidata dalla Cassazione per giusta causa, specialmente se accompagnate da diffida inevasa.</li>
+        <li><strong>6 mensilità senza reazione</strong>: attenzione. Questo silenzio prolungato può essere interpretato come <em>accettazione tacita</em> dell'inadempimento, che potrebbe indebolire la tesi della giusta causa.</li>
+    </ul>
+
+    <h2>La procedura in 5 step</h2>
+    <ol>
+        <li>
+            <strong>Raccolta prove</strong>. Conserva:
+            <ul>
+                <li>Buste paga non saldate;</li>
+                <li>Estratto conto bancario che mostri l'assenza degli accrediti;</li>
+                <li>Eventuali scambi verbali o email con l'ufficio paghe (screenshot);</li>
+                <li>Copia del CCNL applicato (per dimostrare l'ammontare dovuto).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Diffida formale</strong>. Invia raccomandata A/R (o PEC) al datore:
+            <ul>
+                <li>Elenca le mensilità arretrate con importi;</li>
+                <li>Richiama l'art. 2094 c.c. (obbligo retributivo) e l'art. 1219 c.c. (mora);</li>
+                <li>Concede termine di 7 giorni per il saldo;</li>
+                <li>Preannuncia le dimissioni per giusta causa in difetto.</li>
+            </ul>
+            <p>La diffida è spesso risolutiva: il datore paga per evitare conseguenze. Se non paga, hai una prova fondamentale.</p>
+        </li>
+        <li>
+            <strong>Dimissioni telematiche</strong>. Portale <a href="https://servizi.lavoro.gov.it" target="_blank" rel="noopener noreferrer">servizi.lavoro.gov.it</a>,
+            spunta <strong>"dimissioni per giusta causa"</strong>, indica nel campo note: "mancato pagamento retribuzione per
+            X mensilità, previa diffida del [data]".
+        </li>
+        <li>
+            <strong>Domanda NASpI</strong>. Entro 68 giorni dalla cessazione. Allega diffida, buste paga non saldate,
+            dimissioni telematiche. Scegli "giusta causa - inadempimento retributivo" come motivo.
+        </li>
+        <li>
+            <strong>Recupero crediti</strong>. Parallelamente, attiva il recupero delle somme:
+            <ul>
+                <li><strong>Decreto ingiuntivo</strong> al Tribunale del Lavoro (serve avvocato, costo contenuto, tempi 2-4 mesi);</li>
+                <li><strong>Procedura di conciliazione ITL</strong>: gratuita ma richiede consenso del datore;</li>
+                <li><strong>Fondo di Garanzia INPS</strong> per TFR + ultime 3 mensilità, se c'è insolvenza dichiarata.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Se l'azienda fallisce</h2>
+    <p>
+        Con la dichiarazione di <strong>liquidazione giudiziale</strong> (ex fallimento), il curatore subentra nel rapporto.
+        Il lavoratore può:
+    </p>
+    <ul>
+        <li>Insinuarsi al passivo per gli stipendi arretrati (istanza allegata alla dichiarazione di insolvenza).</li>
+        <li>Chiedere l'intervento del <strong>Fondo di Garanzia INPS</strong> per il TFR e le ultime 3 mensilità (massimo 3 volte il massimale CIG). Procedura: SR52 + documentazione dell'insolvenza.</li>
+        <li>Accedere alla NASpI come cessazione involontaria (non serve giusta causa in questo caso: la cessazione per cessazione aziendale è sempre involontaria).</li>
+    </ul>
+
+    <h2>Casi particolari</h2>
+    <h3>TFR non liquidato</h3>
+    <p>
+        Il TFR non versato non rientra tra gli "stipendi" ai fini della giusta causa, ma è comunque credito privilegiato.
+        Se il datore non lo paga alla cessazione, hai 5 anni per il recupero giudiziale (prescrizione ordinaria).
+    </p>
+
+    <h3>Pagamento parziale</h3>
+    <p>
+        Se il datore paga solo una parte (es. metà stipendio), la giusta causa può comunque configurarsi se l'importo omesso
+        è sostanziale (Cass. > 40% della retribuzione netta attesa). Serve prova del contratto e della retribuzione pattuita.
+    </p>
+
+    <h3>Stipendio pagato in ritardo ma completo</h3>
+    <p>
+        Un ritardo sistematico di 30-60 giorni, anche se seguito dal pagamento completo, può configurare giusta causa
+        se ripetuto per lunghi periodi (6+ mesi), perché lede la funzione retributiva tipica del rapporto (Cass.).
+    </p>
+</GuidaLayout>

@@ -1,0 +1,148 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+import ExpertQuote from '../../components/ExpertQuote.astro';
+
+const faq = [
+    {
+        q: 'L\'azienda è stata venduta: posso dimettermi e avere la NASpI?',
+        a: 'Solo se nei 3 mesi successivi al trasferimento le tue condizioni di lavoro subiscono una modifica sostanziale (demansionamento, taglio stipendio, trasferimento sede lontano, riduzione benefit). In tal caso scatta la giusta causa ex art. 2112, comma 4 c.c. e hai diritto a NASpI + indennità sostitutiva preavviso.',
+    },
+    {
+        q: 'Cosa significa "modifica sostanziale" delle condizioni?',
+        a: 'Non basta un fastidio. Servono cambiamenti che incidano sulla struttura del rapporto: riduzione del livello inquadramento, taglio significativo di stipendio (> 20-30%), modifica drastica di orari o sede, perdita di ruolo o benefit contrattualmente previsti. La prova deve essere oggettiva e documentale.',
+    },
+    {
+        q: 'Ho una finestra di 3 mesi: quando partono?',
+        a: 'Dalla data di efficacia del trasferimento d\'azienda (iscrizione atto cessione al Registro Imprese). Oltre i 3 mesi le condizioni nuove si considerano "accettate" e non si può più invocare la giusta causa ex art. 2112. Resta la via della giusta causa ordinaria (art. 2119) se ricorrono i presupposti.',
+    },
+    {
+        q: 'Il CCNL può essere peggiorato dal nuovo datore?',
+        a: 'Il nuovo datore (cessionario) applica il suo CCNL sostituendo quello precedente. Se il nuovo CCNL è sostanzialmente peggiorativo, questo è uno dei casi tipici di "modifica sostanziale" che legittima le dimissioni per giusta causa entro 3 mesi.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Cessione d'azienda e dimissioni: la finestra di 3 mesi | NASpI"
+    description="Se l'azienda viene venduta e le tue condizioni peggiorano nei 3 mesi successivi, puoi dimetterti per giusta causa ex art. 2112 c.c. e avere la NASpI. Guida alla procedura e alle tutele."
+    slug="dimissioni-cessione-azienda"
+    h1="Cessione d'azienda e diritti del lavoratore"
+    kicker="Art. 2112 c.c. — Finestra di 3 mesi"
+    sources={[
+        'Codice civile, art. 2112 (mantenimento diritti in trasferimento azienda)',
+        'Codice civile, art. 2119 (giusta causa di recesso)',
+        'Legge 428/1990 (informazione e consultazione sindacale)',
+        'Direttiva 2001/23/CE (trasferimento di imprese, unità economiche, parti di esse)',
+    ]}
+    faq={faq}
+>
+    <h2>Il principio art. 2112 c.c.</h2>
+    <p>
+        Quando un'azienda viene ceduta (vendita, fusione, scissione, affitto), l'<strong>art. 2112 del Codice civile</strong>
+        tutela la continuità del rapporto di lavoro: il lavoratore passa automaticamente al <strong>cessionario</strong>
+        (nuovo datore) mantenendo <strong>tutti i diritti</strong> maturati, inclusi anzianità, livello contrattuale,
+        CCNL (con adeguamento) e retribuzione.
+    </p>
+    <p>
+        La legge prevede però che se il passaggio al nuovo datore causa <strong>modifiche sostanziali peggiorative</strong>,
+        il lavoratore ha una via d'uscita privilegiata: le dimissioni per giusta causa ex art. 2119 c.c., con diritto
+        pieno alla NASpI.
+    </p>
+
+    <ExpertQuote id="cc-art2112" />
+
+    <h2>La finestra dei 3 mesi</h2>
+    <p>
+        L'art. 2112, comma 4, c.c. fissa il termine: <strong>3 mesi dal trasferimento</strong>. Entro questa finestra,
+        se le condizioni di lavoro peggiorano sostanzialmente, puoi dimetterti per giusta causa. Oltre i 3 mesi si considera
+        che abbia "accettato" le nuove condizioni e la tutela speciale decade (resta comunque la giusta causa ordinaria
+        se ricorrono i presupposti generali).
+    </p>
+
+    <h2>Cosa conta come "modifica sostanziale"</h2>
+    <ul>
+        <li><strong>Demansionamento</strong>: assegnazione a compiti di livello inferiore. Vedi anche <a href="/guida/dimissioni-mobbing">guida demansionamento</a>.</li>
+        <li><strong>Taglio retribuzione</strong> > 20-30% rispetto al precedente complessivo (salario + benefit + variabili).</li>
+        <li><strong>Trasferimento sede</strong> oltre i limiti ragionevoli (es. da Roma a Milano). Vedi <a href="/guida/dimissioni-trasferimento">guida trasferimento</a>.</li>
+        <li><strong>CCNL sostituito</strong> con uno oggettivamente peggiore (minori tutele, retribuzione, ferie).</li>
+        <li><strong>Perdita di benefit contrattualmente previsti</strong>: auto aziendale, ticket, premio produzione strutturale.</li>
+        <li><strong>Nuovi obblighi non previsti</strong>: turni notturni, reperibilità, trasferte frequenti imposte.</li>
+    </ul>
+    <p><strong>Non conta come modifica sostanziale</strong>: piccoli cambi organizzativi, nuove procedure informatiche, cambio superiore gerarchico, trasferimento in ufficio più piccolo ma vicino.</p>
+
+    <h2>Informazione e consultazione sindacale</h2>
+    <p>
+        La Legge 428/1990 obbliga cedente e cessionario a informare per iscritto le <strong>rappresentanze sindacali</strong>
+        almeno <strong>25 giorni prima</strong> dell'efficacia del trasferimento, su:
+    </p>
+    <ul>
+        <li>Data e ragioni del trasferimento;</li>
+        <li>Conseguenze giuridiche, economiche e sociali per i lavoratori;</li>
+        <li>Eventuali misure previste (es. riassetti organizzativi).</li>
+    </ul>
+    <p>
+        La mancata informazione è <strong>condotta antisindacale</strong> ex art. 28 Statuto dei Lavoratori e può essere
+        sanzionata. Per il singolo lavoratore non annulla il trasferimento, ma è un'ulteriore prova di condotta scorretta
+        del datore utile in eventuale contenzioso.
+    </p>
+
+    <h2>La procedura step by step</h2>
+    <ol>
+        <li>
+            <strong>Data di efficacia del trasferimento</strong>: verifica all'atto notarile di cessione o consultando
+            il Registro delle Imprese. Da qui parte la finestra dei 3 mesi.
+        </li>
+        <li>
+            <strong>Confronto condizioni pre/post</strong>:
+            <ul>
+                <li>Raccogli ultima busta paga con cedente + prima con cessionario;</li>
+                <li>Confronta CCNL applicato, inquadramento, livello, stipendio;</li>
+                <li>Annota per iscritto cambiamenti in ruolo, sede, orari, strumenti.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Diffida formale</strong> al cessionario (PEC): elenca le modifiche peggiorative, chiede ripristino
+            condizioni entro 15 giorni. Richiama espressamente art. 2112 comma 4 c.c.
+        </li>
+        <li>
+            <strong>Dimissioni telematiche</strong> prima che scadano i 3 mesi dal trasferimento. Motivazione:
+            <em>"giusta causa ex art. 2112 c.c. — modifica sostanziale condizioni di lavoro"</em>.
+        </li>
+        <li>
+            <strong>Domanda NASpI</strong> entro 68 giorni dalla cessazione. Allega:
+            <ul>
+                <li>Copia dell'atto di cessione (o visura camerale);</li>
+                <li>Buste paga pre e post trasferimento (confronto);</li>
+                <li>Diffida PEC;</li>
+                <li>Ricevuta dimissioni telematiche.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Pagamento indennità sostitutiva preavviso</strong>: è dovuta dal cessionario (nuovo datore) come in
+            caso di licenziamento. Se non la paga, azione in Tribunale del Lavoro.
+        </li>
+    </ol>
+
+    <h2>Alternative alla dimissione</h2>
+    <ul>
+        <li><strong>Contestazione formale e rientro</strong>: non dimettersi ma ottenere la reintegra alle condizioni precedenti via diffida + eventuale ricorso art. 2103 c.c.</li>
+        <li><strong>Conciliazione ITL</strong>: accordo tra lavoratore e cessionario per risoluzione consensuale con accesso NASpI. Richiede disponibilità del datore.</li>
+        <li><strong>Esercizio diritto di prelazione</strong> se previsto dal CCNL per rientro in azienda cedente (casi rari).</li>
+    </ul>
+
+    <h2>Differenza con cessione di ramo d'azienda</h2>
+    <p>
+        La <strong>cessione di ramo d'azienda</strong> (art. 2112 comma 5 c.c.) riguarda il trasferimento di una parte
+        funzionalmente autonoma dell'azienda (es. un reparto, una filiale). Le tutele sono le stesse del trasferimento
+        integrale, ma la Cassazione richiede che il ramo ceduto abbia <strong>effettiva autonomia organizzativa</strong>
+        preesistente alla cessione. Se l'autonomia è fittizia (creata ad hoc per trasferire lavoratori "scomodi"),
+        il trasferimento è nullo e il rapporto continua con il cedente originario. In questi casi la tutela è massima.
+    </p>
+
+    <h2>Serve un avvocato?</h2>
+    <p>
+        Per la domanda NASpI no, basta un patronato. Per il riconoscimento del danno da modifica sostanziale,
+        l'azione di nullità della cessione di ramo o il recupero dell'indennità sostitutiva di preavviso non pagata,
+        sì: serve un avvocato giuslavorista. Il Centro Pratiche Flaiano può indirizzarti a professionisti di fiducia.
+    </p>
+</GuidaLayout>
