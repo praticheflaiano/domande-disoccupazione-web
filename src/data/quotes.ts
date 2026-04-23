@@ -79,6 +79,28 @@ export const quotes: Record<string, Quote> = {
         date: '2018-04-10',
         topic: 'offerta-lavoro',
     },
+
+    'cass-10559-2026': {
+        id: 'cass-10559-2026',
+        text: "In tema di NASpI, il riconoscimento della prestazione al lavoratore dimissionario richiede che il recesso sia avvenuto per giusta causa, che postula l'accertamento di circostanze imputabili al datore di lavoro integranti un grave inadempimento. La mera distanza della nuova sede di lavoro, anche superiore a 50 km, non è di per sé sufficiente a configurare giusta causa: occorre che il trasferimento non sia sorretto da comprovate ragioni tecniche, organizzative o produttive, oppure che da esso derivi una condotta intollerabile del datore.",
+        author: 'Corte di Cassazione',
+        role: 'Sezione Lavoro, ordinanza n. 10559/2026',
+        source: 'Cass. sez. lav., ord. 21 aprile 2026, n. 10559',
+        sourceUrl: 'https://www.eutekne.info/Sezioni/Art_1101855_con_il_trasferimento_le_dimissioni_sono_per_giusta_causa_se_c.aspx',
+        date: '2026-04-21',
+        topic: 'dimissioni',
+    },
+
+    'dlgs-151-2001-art55': {
+        id: 'dlgs-151-2001-art55',
+        text: "La risoluzione consensuale del rapporto o la richiesta di dimissioni presentate dalla lavoratrice, durante il periodo di gravidanza, e dalla lavoratrice o dal lavoratore durante i primi tre anni di vita del bambino o nei primi tre anni di accoglienza del minore adottato o in affidamento, devono essere convalidate dal servizio ispettivo del Ministero del lavoro competente per territorio. A detta convalida è sospensivamente condizionata l'efficacia della risoluzione del rapporto di lavoro.",
+        author: 'Legislatore italiano',
+        role: 'Testo normativo',
+        source: 'D.Lgs. 26 marzo 2001, n. 151 — art. 55 (Testo Unico Maternità e Paternità)',
+        sourceUrl: 'https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticolo?art.idArticolo=55&art.codiceRedazionale=001G0200',
+        date: '2001-03-26',
+        topic: 'dimissioni',
+    },
 };
 
 export const quoteById = (id: string): Quote | undefined => quotes[id];

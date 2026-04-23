@@ -70,6 +70,21 @@ const G_RICORSO = {
     label: 'Domanda rigettata: fare ricorso',
     description: 'Ricorso amministrativo 90 giorni e giudiziale.',
 };
+const G_DIMISSIONI_GC = {
+    href: '/guida/dimissioni-giusta-causa',
+    label: 'Dimissioni per giusta causa',
+    description: 'Le 7 causali riconosciute (contributi, stipendi, mobbing...) e la procedura.',
+};
+const G_DIMISSIONI_TRASF = {
+    href: '/guida/dimissioni-trasferimento',
+    label: 'Dimissioni per trasferimento',
+    description: 'Cass. 10559/2026: la sola distanza non basta, serve inadempimento.',
+};
+const G_DIMISSIONI_MAT = {
+    href: '/guida/dimissioni-maternita',
+    label: 'Dimissioni primo anno figlio',
+    description: 'Convalida ITL e diritto pieno alla NASpI ex art. 55 D.Lgs. 151/2001.',
+};
 
 // Obblighi
 const O_SIISL = {
@@ -145,13 +160,16 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'obblighi': [GUIDA_HUB, G_DOMANDA, FAQ_PAGE],
 
     // Guide
-    'guida/presentare-domanda': [G_DID, O_SIISL, CALC],
+    'guida/presentare-domanda': [G_DID, G_DIMISSIONI_GC, CALC],
     'guida/did': [O_SIISL, G_DOMANDA, G_MATERNITA],
     'guida/fiscalita': [G_ANF, O_REDDITI, G_ESTERO],
     'guida/anf': [G_FISCALITA, O_REDDITI, CALC],
-    'guida/maternita-malattia': [O_NASPICOM, G_RICORSO, G_FISCALITA],
+    'guida/maternita-malattia': [G_DIMISSIONI_MAT, O_NASPICOM, G_FISCALITA],
     'guida/estero-u2': [O_NASPICOM, G_DOMANDA, G_DID],
-    'guida/ricorso': [O_SANZIONI, G_DOMANDA, CHISIAMO],
+    'guida/ricorso': [G_DIMISSIONI_GC, O_SANZIONI, G_DOMANDA],
+    'guida/dimissioni-giusta-causa': [G_DIMISSIONI_TRASF, G_DIMISSIONI_MAT, G_RICORSO],
+    'guida/dimissioni-trasferimento': [G_DIMISSIONI_GC, O_CPI, G_RICORSO],
+    'guida/dimissioni-maternita': [G_DIMISSIONI_GC, G_MATERNITA, G_DOMANDA],
 
     // Obblighi
     'obblighi/siisl': [O_CPI, O_GOL, G_DID],

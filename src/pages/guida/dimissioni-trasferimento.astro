@@ -1,0 +1,90 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+import ExpertQuote from '../../components/ExpertQuote.astro';
+
+const faq = [
+    {
+        q: 'Se il datore mi trasferisce a 200 km, posso dimettermi e ricevere la NASpI?',
+        a: 'Dipende. La sola distanza, anche oltre 50 km, non basta. La Cassazione (ord. 10559/2026) richiede che il trasferimento sia illegittimo, ossia privo delle comprovate ragioni tecniche, organizzative o produttive previste dall\'art. 2103 c.c., oppure che da esso derivi un grave inadempimento del datore. Servono prove documentali.',
+    },
+    {
+        q: 'Quali prove servono per contestare il trasferimento?',
+        a: 'L\'ordine di trasferimento con le motivazioni aziendali, eventuali rifiuti precedenti da altri colleghi, il confronto con le dimensioni del nuovo ufficio, testimonianze sulla reale necessità della riorganizzazione. Più la motivazione aziendale è generica, più aumentano le possibilità di ottenere la giusta causa.',
+    },
+    {
+        q: 'Il rifiuto del trasferimento può configurare giusta causa senza dover dimettermi?',
+        a: 'Rifiutare un trasferimento illegittimo può esporre al licenziamento per giusta causa del datore. In quel caso la NASpI spetta senza complicazioni. Dimettersi è la strada se preferisci uscire subito invece di affrontare il contenzioso.',
+    },
+    {
+        q: 'Vale anche per i trasferimenti all\'interno della stessa città?',
+        a: 'Teoricamente sì, ma la gravità deve essere palese (es. da Roma Nord a Roma Sud con tempi di percorrenza triplicati e nessuna ragione produttiva). In pratica, per trasferimenti intracomunali la giusta causa è difficile da dimostrare.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Dimissioni per trasferimento e NASpI: la Cassazione 2026"
+    description="Se il datore mi trasferisce lontano, posso dimettermi e avere la NASpI? Ord. Cass. 10559/2026: la distanza non basta, serve inadempimento. Guida con procedura e casi."
+    slug="dimissioni-trasferimento"
+    h1="Dimissioni per trasferimento: la distanza non basta"
+    kicker="Cass. ord. n. 10559/2026"
+    sources={[
+        'Cass. sez. lav., ordinanza 21 aprile 2026, n. 10559',
+        'Codice civile, art. 2103 (trasferimento del lavoratore)',
+        'Eutekne.info e Sole24Ore NT+Diritto (commenti giurisprudenziali)',
+        'D.Lgs. 22/2015 art. 3 (NASpI)',
+    ]}
+    faq={faq}
+>
+    <h2>Il principio (Cass. 10559/2026)</h2>
+    <p>
+        Con l'ordinanza del 21 aprile 2026, n. 10559, la Corte di Cassazione, Sezione Lavoro, ha chiarito un punto
+        controverso: la <strong>sola distanza</strong> del nuovo luogo di lavoro, anche se superiore a 50 km dalla
+        residenza, <strong>non è sufficiente</strong> a configurare la giusta causa di dimissioni ai fini della NASpI.
+        Serve accertare un <strong>inadempimento del datore</strong> — tipicamente la violazione dell'art. 2103 c.c.,
+        che ammette il trasferimento solo se sorretto da "comprovate ragioni tecniche, organizzative o produttive".
+    </p>
+
+    <ExpertQuote id="cass-10559-2026" />
+
+    <h2>Cosa cambia rispetto al passato</h2>
+    <p>
+        Prima di questa pronuncia, parte della giurisprudenza di merito e l'INPS riconoscevano la giusta causa in via
+        quasi automatica se la distanza superava una certa soglia (50 km o 80 minuti con i mezzi pubblici, per analogia
+        con il criterio di "offerta congrua" del DM 10 aprile 2018). La Cassazione ha posto fine a quest'automatismo:
+        <strong>la distanza è un indizio, non una prova</strong>. Conta l'illegittimità del trasferimento.
+    </p>
+
+    <h2>Cosa deve contestare il lavoratore</h2>
+    <ol>
+        <li>Il <strong>trasferimento è privo di motivazione reale</strong>: non esistono ragioni tecniche, organizzative o produttive effettive. Esempio: trasferimento punitivo mascherato da esigenza di sede.</li>
+        <li>La motivazione <strong>è generica o non documentata</strong>: lettera di trasferimento che cita "esigenze organizzative" senza spiegare quali.</li>
+        <li>Il trasferimento <strong>viola patti individuali o CCNL</strong>: es. contratto individuale che fissa la sede.</li>
+        <li>Il trasferimento è <strong>ritorsivo</strong>: segue una denuncia sindacale, una lamentela formale, una segnalazione di illeciti.</li>
+        <li>Il trasferimento causa <strong>condotta datoriale intollerabile</strong>: la distanza rende oggettivamente impossibile la conciliazione con la vita familiare e la motivazione aziendale non giustifica il sacrificio.</li>
+    </ol>
+
+    <h2>Procedura consigliata</h2>
+    <ol>
+        <li><strong>Ricezione lettera di trasferimento</strong>: leggere con attenzione le motivazioni.</li>
+        <li><strong>Richiesta chiarimenti scritta</strong> (PEC): chiedere al datore le ragioni tecniche/organizzative/produttive dettagliate. La risposta (o il silenzio) sarà prova.</li>
+        <li><strong>Rifiuto motivato del trasferimento</strong> (PEC): dichiarare che il trasferimento è privo delle motivazioni richieste dall'art. 2103 e contestare.</li>
+        <li><strong>Diffida formale</strong>: se il datore insiste, chiedere il ritiro entro 15 giorni.</li>
+        <li><strong>Dimissioni per giusta causa</strong>: se il datore non ritira, procedere con dimissioni telematiche spuntando "giusta causa" e indicando "trasferimento illegittimo ex art. 2103 c.c.".</li>
+        <li><strong>Domanda NASpI</strong> entro 68 giorni, allegando copia PEC e documenti.</li>
+    </ol>
+
+    <h2>Rischi e alternative</h2>
+    <ul>
+        <li>Se l'INPS rigetta la domanda, serve il <a href="/guida/ricorso">ricorso amministrativo</a> entro 90 giorni, seguito eventualmente dal Tribunale del Lavoro.</li>
+        <li><strong>Alternativa giudiziale</strong>: impugnare il trasferimento davanti al giudice (art. 2103 c.c.) per ottenerne l'annullamento e il rientro in sede originaria. Tempi lunghi ma nessun rischio NASpI.</li>
+        <li><strong>Trattativa conciliativa ITL</strong>: risoluzione consensuale in sede protetta Ispettorato, con accordo espresso sull'accesso alla NASpI. È la via più sicura ma richiede disponibilità del datore.</li>
+    </ul>
+
+    <h2>Link utili</h2>
+    <ul>
+        <li><a href="/guida/dimissioni-giusta-causa">Guida generale alle dimissioni per giusta causa</a></li>
+        <li><a href="/obblighi/cpi">Offerta di lavoro congrua</a> — criteri di distanza nel caso opposto (percettore NASpI che riceve un'offerta)</li>
+        <li><a href="/guida/ricorso">Come ricorrere se INPS rigetta</a></li>
+    </ul>
+</GuidaLayout>

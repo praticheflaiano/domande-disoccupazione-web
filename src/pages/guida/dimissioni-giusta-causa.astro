@@ -1,0 +1,143 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+import ExpertQuote from '../../components/ExpertQuote.astro';
+
+const faq = [
+    {
+        q: 'Quando le dimissioni danno diritto alla NASpI?',
+        a: 'Solo se rese per giusta causa, cioè quando il datore di lavoro commette un inadempimento grave (mancato pagamento, mancati contributi, demansionamento, mobbing, trasferimento illegittimo, variazioni peggiorative). Le dimissioni volontarie "semplici" non danno mai diritto alla NASpI.',
+    },
+    {
+        q: 'La giusta causa va dichiarata nel modulo delle dimissioni telematiche?',
+        a: 'Sì. Nel modulo telematico di dimissioni bisogna spuntare "dimissioni per giusta causa" e allegare/conservare documenti a supporto (denunce, PEC, certificati medici, buste paga mancanti).',
+    },
+    {
+        q: 'Posso dimettermi prima con la giusta causa?',
+        a: 'Sì, le dimissioni per giusta causa sono effettive senza obbligo di preavviso. Hai diritto all\'indennità sostitutiva del preavviso (pagata dal datore) e alla NASpI dall\'8° giorno successivo alla cessazione.',
+    },
+    {
+        q: 'Cosa succede se l\'INPS contesta la giusta causa?',
+        a: 'Se INPS rigetta la domanda puoi fare ricorso amministrativo entro 90 giorni e, in caso di esito negativo, ricorrere al Tribunale del Lavoro entro 3 anni. Documenti a supporto sono decisivi.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Dimissioni per giusta causa e NASpI 2026: procedura e causali"
+    description="Quando le dimissioni danno diritto alla NASpI 2026: le 7 causali di giusta causa (mancato pagamento, contributi, mobbing, demansionamento, trasferimento, cessione azienda, molestie), procedura telematica e convalida."
+    slug="dimissioni-giusta-causa"
+    h1="Dimissioni per giusta causa e diritto alla NASpI"
+    kicker="Come uscire da un rapporto di lavoro senza perdere la NASpI"
+    sources={[
+        'D.Lgs. 22/2015 art. 3 comma 2 (NASpI anche per dimissioni per giusta causa)',
+        'Cass. sez. lav. 11 marzo 2026 n. 5445 (mancato versamento contributi)',
+        'Cass. sez. lav. ord. 21 aprile 2026 n. 10559 (trasferimento)',
+        'Art. 2119 c.c. (giusta causa di recesso)',
+        'D.Lgs. 23/2015 art. 26 (dimissioni telematiche)',
+    ]}
+    faq={faq}
+>
+    <h2>Il principio base</h2>
+    <p>
+        Le <strong>dimissioni "semplici"</strong> (volontarie) <strong>non danno mai diritto alla NASpI</strong>. L'INPS
+        considera la cessazione del rapporto come non involontaria e respinge la domanda. Esiste però una deroga
+        fondamentale: le <strong>dimissioni per giusta causa</strong> (art. 2119 c.c.), cioè rese per fatti gravi
+        imputabili al datore di lavoro, equivalgono a un licenziamento involontario. In questi casi la NASpI spetta,
+        nessun periodo di preavviso è dovuto e il datore deve pagare l'<strong>indennità sostitutiva di preavviso</strong>.
+    </p>
+
+    <ExpertQuote id="cass-5445-2026" />
+
+    <h2>Le 7 causali riconosciute dalla giurisprudenza</h2>
+    <p>La Cassazione ha consolidato negli anni le seguenti ipotesi. Per ciascuna serve una soglia di gravità specifica.</p>
+
+    <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Causale</th>
+                    <th class="p-3 text-left">Quando scatta</th>
+                    <th class="p-3 text-left">Prove da raccogliere</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Mancato pagamento stipendio</td>
+                    <td class="p-3">Almeno 2-3 mensilità arretrate, non occasionali.</td>
+                    <td class="p-3">Buste paga, PEC di sollecito, estratto conto bancario.</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Mancato versamento contributi</td>
+                    <td class="p-3">Omissione prolungata (≥ 3 mesi) risultante da estratto conto INPS.</td>
+                    <td class="p-3">Estratto conto contributivo, raccomandata/PEC con intimazione di pagamento.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Demansionamento</td>
+                    <td class="p-3">Assegnazione a mansioni inferiori o privazione di mansioni in modo permanente.</td>
+                    <td class="p-3">Contratto originario, ordine di servizio, mail del capo, testimonianze.</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Mobbing o molestie</td>
+                    <td class="p-3">Comportamenti vessatori, denigratori, persecutori dal datore o colleghi (se datore non interviene).</td>
+                    <td class="p-3">Certificato medico psicologo, denuncia penale, messaggi WhatsApp, testimoni.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Trasferimento illegittimo</td>
+                    <td class="p-3">Spostamento di sede senza "comprovate ragioni tecniche/organizzative/produttive" (art. 2103 c.c.).</td>
+                    <td class="p-3">Ordine di trasferimento, documenti aziendali che negano le ragioni addotte. <a href="/guida/dimissioni-trasferimento">Approfondimento</a>.</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="p-3 font-semibold">Variazioni peggiorative post-cessione azienda</td>
+                    <td class="p-3">Trasferimento d'azienda (art. 2112 c.c.) con peggioramenti rilevanti delle condizioni di lavoro.</td>
+                    <td class="p-3">Accordo ex art. 2112, comparazione condizioni pre/post, CCNL.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="p-3 font-semibold">Dimissioni nel periodo di maternità/paternità</td>
+                    <td class="p-3">Entro il primo anno di vita del figlio, qualsiasi motivo. Convalida ITL obbligatoria.</td>
+                    <td class="p-3">Nessuna prova causale richiesta (equiparate a licenziamento per legge). <a href="/guida/dimissioni-maternita">Approfondimento</a>.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Procedura passo-passo</h2>
+    <ol>
+        <li><strong>Diffida formale al datore</strong> (PEC o raccomandata A/R): elenca l'inadempimento, chiede rimedio entro 15 giorni. È la prova principale della buona fede. Conserva copia.</li>
+        <li><strong>Raccolta prove</strong>: busta paga mancante, estratto conto INPS, certificato medico, email, testimonianze. Serve tutto in caso di contestazione INPS o giudizio.</li>
+        <li><strong>Dimissioni telematiche</strong> sul portale <a href="https://servizi.lavoro.gov.it" target="_blank" rel="noopener noreferrer">servizi.lavoro.gov.it</a>, spuntando <strong>"dimissioni per giusta causa"</strong>. SPID/CIE/CNS.</li>
+        <li><strong>Comunicazione al datore</strong>: PEC con la ricevuta del modulo telematico + dichiarazione "dimissioni per giusta causa, esercito il diritto di recesso immediato ex art. 2119 c.c.".</li>
+        <li><strong>Domanda NASpI</strong> entro 68 giorni dalla cessazione. Nel modulo INPS indicare "cessazione per giusta causa". Allegare copia PEC + prove.</li>
+        <li><strong>Indennità sostitutiva preavviso</strong>: il datore deve pagarla. Se non lo fa, azione per il recupero via Tribunale del Lavoro o conciliazione ITL.</li>
+    </ol>
+
+    <h2>Cosa serve per vincere in caso di contestazione</h2>
+    <ul>
+        <li><strong>Tempestività</strong>: le dimissioni devono essere ravvicinate all'inadempimento. Aspettare troppi mesi indebolisce la tesi.</li>
+        <li><strong>Diffida scritta</strong> prima delle dimissioni. L'assenza di diffida non è fatale ma pesa.</li>
+        <li><strong>Gravità oggettiva</strong>: breve ritardo di stipendio, singola occasione isolata, piccole variazioni non bastano. Serve inadempimento grave e reiterato.</li>
+        <li><strong>Coerenza</strong>: se dichiari mobbing e nel frattempo lodi il datore in LinkedIn, il giudice non ti crede.</li>
+    </ul>
+
+    <h2>Differenza con le "dimissioni incentivate"</h2>
+    <p>
+        Le <strong>dimissioni incentivate</strong> (risoluzione consensuale con bonus) non sono giusta causa: non danno
+        diritto a NASpI, salvo che siano state firmate in sede protetta ITL e tu sia stato sostanzialmente "costretto"
+        da un clima aziendale ostile. In quei casi servono prove robuste. Meglio preferire le dimissioni per giusta
+        causa o una risoluzione consensuale in sede ITL con accordo espresso di accesso alla NASpI.
+    </p>
+
+    <h2>Novità 2025-2026: stretta sui 13 contributi post-dimissioni</h2>
+    <p>
+        Dal 1° gennaio 2025 (Circolare INPS n. 98/2025), se ti dimetti da un tempo indeterminato e poi subisci un
+        licenziamento entro 12 mesi, servono <strong>13 settimane di contributi nel nuovo rapporto</strong>. Le dimissioni
+        per giusta causa, per maternità e quelle in sede ITL sono escluse da questa stretta. Vedi la
+        <a href="/faq">FAQ dedicata</a>.
+    </p>
+
+    <h2>Serve un patronato?</h2>
+    <p>
+        Molto consigliato. Il patronato verifica la documentazione, presenta la diffida, gestisce le dimissioni telematiche
+        e la domanda NASpI. Il Centro Pratiche Flaiano segue l'intera procedura a titolo gratuito (servizio finanziato dallo
+        Stato tramite Inps). Se l'INPS contesta, offre anche assistenza per il ricorso.
+    </p>
+</GuidaLayout>

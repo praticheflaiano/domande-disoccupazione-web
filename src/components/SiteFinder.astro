@@ -1,0 +1,209 @@
+---
+// Finder client-side. Legge /search-index.json generato dallo script
+// scripts/build-search-index.mjs durante prebuild.
+// Shortcut: Cmd/Ctrl+K per aprire, Esc per chiudere.
+// Nessuna dipendenza esterna: matching vanilla su title/description/headings.
+---
+
+<button
+    type="button"
+    id="site-finder-open"
+    aria-label="Cerca nel sito (Ctrl + K)"
+    class="inline-flex items-center gap-2 px-3 py-1.5 text-sm text-slate-500 bg-slate-100 hover:bg-slate-200 rounded-lg border border-slate-200 transition-colors"
+>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" />
+    </svg>
+    <span class="hidden lg:inline">Cerca</span>
+    <kbd class="hidden lg:inline text-[10px] font-semibold bg-white border border-slate-300 rounded px-1 py-0.5">Ctrl K</kbd>
+</button>
+
+<div
+    id="site-finder-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Cerca nel sito"
+    class="fixed inset-0 z-[60] hidden items-start justify-center pt-[10vh] px-4 bg-slate-900/70 backdrop-blur-sm"
+>
+    <div class="w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+        <div class="flex items-center gap-3 p-4 border-b border-slate-200">
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z" />
+            </svg>
+            <input
+                id="site-finder-input"
+                type="search"
+                placeholder="Cerca tra guide, obblighi, news…"
+                class="flex-1 bg-transparent outline-none text-lg text-slate-900 placeholder:text-slate-400"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+            />
+            <kbd class="text-[11px] font-semibold bg-slate-100 border border-slate-300 text-slate-600 rounded px-1.5 py-0.5">Esc</kbd>
+        </div>
+        <div id="site-finder-results" class="max-h-[60vh] overflow-y-auto p-2">
+            <p class="p-6 text-sm text-slate-500 text-center">Scrivi per cercare. Prova: "NASpI 68 giorni", "SIISL", "trasferimento"…</p>
+        </div>
+        <div class="px-4 py-2 bg-slate-50 border-t border-slate-200 text-[11px] text-slate-500 flex gap-4">
+            <span><kbd class="font-semibold">↑ ↓</kbd> per navigare</span>
+            <span><kbd class="font-semibold">⏎</kbd> per aprire</span>
+            <span><kbd class="font-semibold">Esc</kbd> per chiudere</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    interface IndexEntry {
+        url: string;
+        type: 'pagina' | 'guida' | 'obbligo' | 'news';
+        title: string;
+        description: string;
+        kicker: string;
+        headings: string[];
+    }
+
+    const btn = document.getElementById('site-finder-open');
+    const modal = document.getElementById('site-finder-modal');
+    const input = document.getElementById('site-finder-input') as HTMLInputElement | null;
+    const results = document.getElementById('site-finder-results');
+
+    let index: IndexEntry[] = [];
+    let loaded = false;
+    let selected = 0;
+
+    const typeLabel: Record<IndexEntry['type'], string> = {
+        pagina: 'Pagina',
+        guida: 'Guida',
+        obbligo: 'Obbligo',
+        news: 'News',
+    };
+    const typeColor: Record<IndexEntry['type'], string> = {
+        pagina: 'bg-slate-100 text-slate-700',
+        guida: 'bg-teal-100 text-teal-800',
+        obbligo: 'bg-blue-100 text-blue-800',
+        news: 'bg-amber-100 text-amber-800',
+    };
+
+    async function loadIndex() {
+        if (loaded) return;
+        try {
+            const res = await fetch('/search-index.json');
+            if (!res.ok) throw new Error('fetch failed');
+            index = await res.json();
+            loaded = true;
+        } catch (err) {
+            console.error('SiteFinder: impossibile caricare indice', err);
+        }
+    }
+
+    function normalize(s: string): string {
+        return s
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[̀-ͯ]/g, '')
+            .replace(/[^a-z0-9\s]/g, ' ')
+            .trim();
+    }
+
+    function score(entry: IndexEntry, terms: string[]): number {
+        const title = normalize(entry.title);
+        const desc = normalize(entry.description);
+        const headings = normalize(entry.headings.join(' '));
+        const kicker = normalize(entry.kicker);
+
+        let s = 0;
+        for (const t of terms) {
+            if (!t) continue;
+            if (title.includes(t)) s += 10;
+            if (title.split(/\s+/).includes(t)) s += 5;
+            if (kicker.includes(t)) s += 3;
+            if (headings.includes(t)) s += 2;
+            if (desc.includes(t)) s += 1;
+        }
+        return s;
+    }
+
+    function search(q: string): IndexEntry[] {
+        const terms = normalize(q).split(/\s+/).filter(Boolean);
+        if (terms.length === 0) return [];
+        return index
+            .map((e) => ({ e, s: score(e, terms) }))
+            .filter((r) => r.s > 0)
+            .sort((a, b) => b.s - a.s)
+            .slice(0, 10)
+            .map((r) => r.e);
+    }
+
+    function render(entries: IndexEntry[]) {
+        if (!results) return;
+        if (entries.length === 0 && input?.value.trim()) {
+            results.innerHTML = '<p class="p-6 text-sm text-slate-500 text-center">Nessun risultato.</p>';
+            return;
+        }
+        if (entries.length === 0) {
+            results.innerHTML = '<p class="p-6 text-sm text-slate-500 text-center">Scrivi per cercare. Prova: "NASpI 68 giorni", "SIISL", "trasferimento"…</p>';
+            return;
+        }
+        results.innerHTML = entries
+            .map(
+                (e, i) => `
+            <a href="${e.url}" data-finder-index="${i}" class="finder-result block px-4 py-3 rounded-lg hover:bg-slate-100 ${i === selected ? 'bg-slate-100' : ''}">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded ${typeColor[e.type]}">${typeLabel[e.type]}</span>
+                    <span class="font-bold text-slate-900 text-sm">${escapeHtml(e.title)}</span>
+                </div>
+                ${e.description ? `<p class="text-xs text-slate-500 line-clamp-2">${escapeHtml(e.description)}</p>` : ''}
+            </a>
+        `,
+            )
+            .join('');
+    }
+
+    function escapeHtml(s: string): string {
+        return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string));
+    }
+
+    function open() {
+        if (!modal || !input) return;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        loadIndex().then(() => {
+            input.focus();
+            input.value = '';
+            selected = 0;
+            render([]);
+        });
+    }
+
+    function close() {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    btn?.addEventListener('click', open);
+
+    document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            open();
+            return;
+        }
+        if (!modal || modal.classList.contains('hidden')) return;
+        if (e.key === 'Escape') { close(); return; }
+
+        const current = search(input?.value || '');
+        if (e.key === 'ArrowDown') { e.preventDefault(); selected = Math.min(selected + 1, current.length - 1); render(current); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); selected = Math.max(selected - 1, 0); render(current); }
+        else if (e.key === 'Enter' && current[selected]) { window.location.href = current[selected].url; }
+    });
+
+    input?.addEventListener('input', () => {
+        selected = 0;
+        render(search(input.value));
+    });
+
+    modal?.addEventListener('click', (e) => {
+        if (e.target === modal) close();
+    });
+</script>
