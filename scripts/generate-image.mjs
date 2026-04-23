@@ -56,7 +56,7 @@ const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'https://domandedisoccupazione.it',
-        'X-Title': 'Centro Pratiche Flaiano — OG image generation',
+        'X-Title': 'Centro Pratiche Flaiano - OG image generation',
     },
     body: JSON.stringify({
         model: 'openai/gpt-5.4-image-2',
