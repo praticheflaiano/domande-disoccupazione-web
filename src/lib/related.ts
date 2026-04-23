@@ -100,6 +100,21 @@ const G_DIMISSIONI_CESS = {
     label: 'Cessione d\'azienda',
     description: 'Art. 2112 c.c., finestra 3 mesi per dimettersi se le condizioni peggiorano.',
 };
+const G_PAGAMENTI = {
+    href: '/guida/pagamenti-accredito',
+    label: 'Quando arriva la NASpI',
+    description: 'Calendario pagamenti 2026, come verificare stato accredito, ritardi.',
+};
+const G_SOSPENSIONE = {
+    href: '/guida/sospensione-naspi',
+    label: 'NASpI sospesa: riattivazione',
+    description: 'Cause frequenti (PAD, CPI, NASpI-Com) e come tornare in pagamento.',
+};
+const G_NUOVOLAVORO = {
+    href: '/guida/nuovo-lavoro-durante-naspi',
+    label: 'Nuovo lavoro durante NASpI',
+    description: 'Cosa fare se trovi lavoro: cumulo, sospensione, contratti brevi vs indeterminato.',
+};
 
 // Obblighi
 const O_SIISL = {
@@ -175,7 +190,7 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'obblighi': [GUIDA_HUB, G_DOMANDA, FAQ_PAGE],
 
     // Guide
-    'guida/presentare-domanda': [G_DID, G_DIMISSIONI_GC, CALC],
+    'guida/presentare-domanda': [G_PAGAMENTI, G_DID, G_DIMISSIONI_GC],
     'guida/did': [O_SIISL, G_DOMANDA, G_MATERNITA],
     'guida/fiscalita': [G_ANF, O_REDDITI, G_ESTERO],
     'guida/anf': [G_FISCALITA, O_REDDITI, CALC],
@@ -188,6 +203,9 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'guida/dimissioni-stipendio-non-pagato': [G_DIMISSIONI_GC, G_DIMISSIONI_MOBBING, G_RICORSO],
     'guida/dimissioni-mobbing': [G_DIMISSIONI_GC, G_DIMISSIONI_STIP, G_MATERNITA],
     'guida/dimissioni-cessione-azienda': [G_DIMISSIONI_TRASF, G_DIMISSIONI_GC, G_RICORSO],
+    'guida/pagamenti-accredito': [G_SOSPENSIONE, G_DOMANDA, G_FISCALITA],
+    'guida/sospensione-naspi': [G_NUOVOLAVORO, O_NASPICOM, G_RICORSO],
+    'guida/nuovo-lavoro-durante-naspi': [O_NASPICOM, O_REDDITI, G_SOSPENSIONE],
 
     // Obblighi
     'obblighi/siisl': [O_CPI, O_GOL, G_DID],

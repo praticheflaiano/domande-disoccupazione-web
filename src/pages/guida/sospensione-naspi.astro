@@ -1,0 +1,119 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Perché la mia NASpI è stata sospesa?',
+        a: 'Le 5 cause più frequenti: 1) mancata firma del PAD su SIISL entro 15 giorni; 2) assenza al colloquio CPI (Centro per l\'Impiego); 3) NASpI-Com non compilata per un nuovo contratto attivato; 4) superamento delle soglie di reddito compatibile; 5) decadenza dello stato di disoccupazione. In ciascun caso INPS invia notifica nel Fascicolo Previdenziale con la motivazione.',
+    },
+    {
+        q: 'Posso riattivare una NASpI sospesa?',
+        a: 'Sì, se la sospensione non è definitiva (cioè non è decadenza). Procedura: identificare la causa dalla notifica INPS, correggere l\'adempimento mancante (firmare PAD, presentarsi al CPI, compilare NASpI-Com), poi chiedere riattivazione dal portale o tramite patronato. Tempi tipici: 10-30 giorni dal completamento.',
+    },
+    {
+        q: 'Cosa differenzia sospensione da decadenza?',
+        a: 'Sospensione = blocco temporaneo del pagamento, reversibile. Decadenza = perdita definitiva del diritto, irreversibile senza ricorso accolto. La decadenza scatta tipicamente dopo sospensioni ripetute non sanate, rifiuto offerta congrua, omessa NASpI-Com per rapporti attivi.',
+    },
+    {
+        q: 'Quanto tempo ho per riattivare prima che diventi decadenza?',
+        a: 'Dipende dalla causa. Mancata firma PAD: 30 giorni dalla sospensione. Assenza CPI: 20 giorni dal sollecito. NASpI-Com: 30 giorni dalla contestazione INPS. Reddito sopra soglia: la decadenza è immediata al superamento, non c\'è "tempo di grazia".',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI sospesa: come riattivarla | Guida 2026"
+    description="NASpI sospesa? Le 5 cause più frequenti (PAD SIISL, CPI, NASpI-Com, redditi, decadenza stato disoccupazione) e la procedura di riattivazione passo-passo. Tempi e decadenza definitiva."
+    slug="sospensione-naspi"
+    h1="NASpI sospesa: cause e come riattivarla"
+    kicker="Sospensione vs decadenza — come tornare in pagamento"
+    sources={[
+        'D.Lgs. 150/2015 art. 21 (sospensione per inadempimenti PSP)',
+        'D.Lgs. 22/2015 artt. 10-11 (decadenza e sospensione NASpI)',
+        'DL 48/2023 conv. L. 85/2023 (SIISL e PAD obbligatorio)',
+        'Msg. INPS 3905/2024 (iscrizione automatica SIISL)',
+    ]}
+    faq={faq}
+>
+    <h2>Sospensione vs decadenza</h2>
+    <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Aspetto</th>
+                    <th class="p-3 text-left">Sospensione</th>
+                    <th class="p-3 text-left">Decadenza</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white"><td class="p-3 font-semibold">Effetto</td><td class="p-3">Blocco temporaneo del pagamento</td><td class="p-3">Perdita definitiva del diritto</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Reversibile?</td><td class="p-3">Sì, con sanatoria</td><td class="p-3">No (salvo ricorso accolto)</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Durata NASpI preservata?</td><td class="p-3">Sì, riprende dal punto in cui si è interrotta</td><td class="p-3">Giorni residui persi</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Stato disoccupazione</td><td class="p-3">Mantenuto</td><td class="p-3">Perso (serve nuova DID)</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Retribuzione figurativa</td><td class="p-3">Continua a maturare</td><td class="p-3">Si interrompe</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Le 5 cause più frequenti di sospensione</h2>
+
+    <h3>1. Mancata firma del PAD su SIISL</h3>
+    <p>
+        Entro 15 giorni dall'accoglimento della domanda NASpI devi accedere al portale <a href="https://siisl.lavoro.gov.it" target="_blank" rel="noopener noreferrer">siisl.lavoro.gov.it</a>,
+        aggiornare il CV e firmare il Patto di Attivazione Digitale. In assenza, INPS sospende il pagamento al secondo
+        mese successivo.
+    </p>
+    <p><strong>Riattivazione</strong>: accedi a SIISL, completa il profilo, firma PAD. Entro 10 giorni il pagamento riprende con arretrati.</p>
+
+    <h3>2. Assenza alla convocazione CPI</h3>
+    <p>
+        Dopo la firma del PAD, il Centro per l'Impiego ti convoca entro 30 giorni per il colloquio di assessment e la firma
+        del PSP. La mancata presentazione senza giustificato motivo comporta sospensione progressiva (-25% 1ª volta, -1 mese
+        2ª volta, decadenza 3ª volta).
+    </p>
+    <p><strong>Riattivazione</strong>: contatta il CPI, giustifica l'assenza con documento (certificato medico, impedimento oggettivo), chiedi nuovo appuntamento. Alla conferma del CPI, INPS riattiva il pagamento.</p>
+
+    <h3>3. Omessa NASpI-Com per nuovo rapporto di lavoro</h3>
+    <p>
+        Se attivi un nuovo contratto di lavoro subordinato, autonomo, collaborazione, prestazione occasionale o P.IVA e
+        non presenti la comunicazione NASpI-Com entro 30 giorni, INPS lo rileva tramite flussi UniEmens/Agenzia Entrate
+        e <strong>sospende la NASpI con minaccia di decadenza retroattiva</strong>.
+    </p>
+    <p><strong>Riattivazione</strong>: compila NASpI-Com online indicando data inizio lavoro e reddito previsto. Se sotto soglia la NASpI viene ridotta dell'80% del reddito; se sopra, sospesa per la durata del rapporto. Vedi <a href="/obblighi/naspi-com">guida NASpI-Com</a>.</p>
+
+    <h3>4. Superamento soglie di reddito compatibile</h3>
+    <p>
+        Nel 2026 le soglie sono: <strong>€ 8.500</strong> annui per subordinato, <strong>€ 5.500</strong> per autonomo/P.IVA,
+        <strong>€ 5.000</strong> per PrestO. Superamento = decadenza dal mese successivo, non sospensione reversibile.
+    </p>
+    <p><strong>Riattivazione</strong>: non possibile. Se previsione reddito era errata e consuntivo conferma sotto soglia, contesta formalmente con documentazione. Vedi <a href="/obblighi/redditi">guida redditi</a>.</p>
+
+    <h3>5. Decadenza dello stato di disoccupazione</h3>
+    <p>
+        Se perdi lo stato di disoccupazione formale (es. hai trovato lavoro a tempo indeterminato, ti sei trasferito all'estero
+        senza U2, hai rifiutato offerta congrua) la NASpI cessa. Non è propriamente "sospensione" ma "chiusura".
+    </p>
+
+    <h2>Procedura di riattivazione passo-passo</h2>
+    <ol>
+        <li><strong>Individua la causa</strong>. Accedi a <a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">inps.it</a> → MyINPS → Fascicolo Previdenziale → NASpI → "Consultazione domanda". Lo stato "Sospesa" è accompagnato da una breve motivazione. Se non è chiara, apri la "Cassetta Postale" interna INPS per leggere la lettera di sospensione.</li>
+        <li><strong>Correggi l'adempimento mancante</strong> (firma PAD, NASpI-Com, appuntamento CPI, ecc.).</li>
+        <li><strong>Comunicazione a INPS</strong>: se l'adempimento non è autorilevato (es. firma PAD su SIISL è rilevata automaticamente), devi inviare comunicazione tramite la Cassetta Postale con allegato l'adempimento compiuto. Modulo: "Richiesta riattivazione NASpI".</li>
+        <li><strong>Tempi tipici di riattivazione</strong>: 10-30 giorni da INPS. In caso di arretrati, i pagamenti sospesi vengono inclusi nel primo accredito post-riattivazione.</li>
+        <li><strong>Se INPS non risponde</strong>: contatta il Contact Center 803.164 o chiedi assistenza al patronato. Tempo medio risoluzione tramite patronato: 5-10 giorni lavorativi.</li>
+    </ol>
+
+    <h2>Errori che trasformano sospensione in decadenza</h2>
+    <ul>
+        <li><strong>Ignorare la notifica</strong>: se ricevi sospensione e non agisci entro 30 giorni, INPS converte in decadenza automatica.</li>
+        <li><strong>Firmare PAD ma non aggiornare CV</strong>: CV vuoto o incompleto = INPS considera PAD non valido.</li>
+        <li><strong>Non presentarsi al secondo appuntamento CPI</strong> anche dopo aver giustificato il primo.</li>
+        <li><strong>Aspettare il consuntivo di reddito</strong> invece di dichiarare subito il reddito previsto con NASpI-Com.</li>
+    </ul>
+
+    <h2>Se la decadenza è già stata disposta</h2>
+    <p>
+        Hai <strong>90 giorni</strong> dalla notifica per il ricorso amministrativo al Comitato Provinciale INPS. Oltre:
+        Tribunale del Lavoro entro 3 anni. Vedi <a href="/guida/ricorso">guida ricorso</a>.
+    </p>
+</GuidaLayout>
