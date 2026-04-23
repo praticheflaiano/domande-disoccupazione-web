@@ -85,6 +85,21 @@ const G_DIMISSIONI_MAT = {
     label: 'Dimissioni primo anno figlio',
     description: 'Convalida ITL e diritto pieno alla NASpI ex art. 55 D.Lgs. 151/2001.',
 };
+const G_DIMISSIONI_STIP = {
+    href: '/guida/dimissioni-stipendio-non-pagato',
+    label: 'Stipendio non pagato',
+    description: 'Soglia 3 mesi per giusta causa, diffida, Fondo di Garanzia INPS.',
+};
+const G_DIMISSIONI_MOBBING = {
+    href: '/guida/dimissioni-mobbing',
+    label: 'Mobbing e demansionamento',
+    description: 'Cass. 811/2021 demansionamento immediato, onere della prova, danno risarcibile.',
+};
+const G_DIMISSIONI_CESS = {
+    href: '/guida/dimissioni-cessione-azienda',
+    label: 'Cessione d\'azienda',
+    description: 'Art. 2112 c.c., finestra 3 mesi per dimettersi se le condizioni peggiorano.',
+};
 
 // Obblighi
 const O_SIISL = {
@@ -167,9 +182,12 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'guida/maternita-malattia': [G_DIMISSIONI_MAT, O_NASPICOM, G_FISCALITA],
     'guida/estero-u2': [O_NASPICOM, G_DOMANDA, G_DID],
     'guida/ricorso': [G_DIMISSIONI_GC, O_SANZIONI, G_DOMANDA],
-    'guida/dimissioni-giusta-causa': [G_DIMISSIONI_TRASF, G_DIMISSIONI_MAT, G_RICORSO],
-    'guida/dimissioni-trasferimento': [G_DIMISSIONI_GC, O_CPI, G_RICORSO],
+    'guida/dimissioni-giusta-causa': [G_DIMISSIONI_STIP, G_DIMISSIONI_MOBBING, G_DIMISSIONI_TRASF],
+    'guida/dimissioni-trasferimento': [G_DIMISSIONI_CESS, G_DIMISSIONI_GC, O_CPI],
     'guida/dimissioni-maternita': [G_DIMISSIONI_GC, G_MATERNITA, G_DOMANDA],
+    'guida/dimissioni-stipendio-non-pagato': [G_DIMISSIONI_GC, G_DIMISSIONI_MOBBING, G_RICORSO],
+    'guida/dimissioni-mobbing': [G_DIMISSIONI_GC, G_DIMISSIONI_STIP, G_MATERNITA],
+    'guida/dimissioni-cessione-azienda': [G_DIMISSIONI_TRASF, G_DIMISSIONI_GC, G_RICORSO],
 
     // Obblighi
     'obblighi/siisl': [O_CPI, O_GOL, G_DID],

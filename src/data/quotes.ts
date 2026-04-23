@@ -101,6 +101,39 @@ export const quotes: Record<string, Quote> = {
         date: '2001-03-26',
         topic: 'dimissioni',
     },
+
+    'cass-811-2021': {
+        id: 'cass-811-2021',
+        text: "Il demansionamento del lavoratore, quando risulta evidente già dalla comunicazione di assegnazione alle nuove mansioni, legittima le dimissioni immediate per giusta causa senza che il lavoratore sia tenuto a sperimentare in concreto la dequalificazione professionale. La riduzione meramente quantitativa dei compiti non basta: occorre la sottrazione di mansioni che comporti un abbassamento del livello di prestazione e un impoverimento della professionalità.",
+        author: 'Corte di Cassazione',
+        role: 'Sezione Lavoro, sentenza n. 811/2021',
+        source: 'Cass. sez. lav., 15 gennaio 2021, n. 811',
+        sourceUrl: 'https://www.studiomoscarini.it/2025/07/10/dimissioni-per-giusta-causa-guida-completa/',
+        date: '2021-01-15',
+        topic: 'dimissioni',
+    },
+
+    'cc-art2112': {
+        id: 'cc-art2112',
+        text: "In caso di trasferimento d'azienda, il rapporto di lavoro continua con il cessionario e il lavoratore conserva tutti i diritti che ne derivano. Il lavoratore le cui condizioni di lavoro subiscano una sostanziale modifica nei tre mesi successivi al trasferimento può rassegnare le proprie dimissioni con gli effetti di cui all'art. 2119, primo comma: dimissioni per giusta causa con conseguente diritto alla NASpI e all'indennità sostitutiva del preavviso.",
+        author: 'Legislatore italiano',
+        role: 'Testo normativo',
+        source: 'Codice civile, art. 2112 — Mantenimento dei diritti dei lavoratori nel trasferimento d\'azienda',
+        sourceUrl: 'https://www.brocardi.it/codice-civile/libro-quinto/titolo-ii/capo-i/sezione-iii/art2112.html',
+        date: '1942-04-04',
+        topic: 'dimissioni',
+    },
+
+    'inps-circ-163-2003': {
+        id: 'inps-circ-163-2003',
+        text: "Il mobbing, inteso come comportamento vessatorio e persecutorio posto in essere dal datore di lavoro o dai superiori gerarchici, idoneo a determinare un grave pregiudizio alla dignità e all'integrità psico-fisica del lavoratore, costituisce giusta causa di dimissioni ai sensi dell'art. 2119 c.c. e legittima l'accesso all'indennità di disoccupazione.",
+        author: 'INPS',
+        role: 'Direzione Generale — Circolare n. 163',
+        source: 'Circolare INPS n. 163 del 20 ottobre 2003',
+        sourceUrl: 'https://www.laleggepertutti.it/705878_dimissioni-per-mobbing-ce-diritto-alla-naspi',
+        date: '2003-10-20',
+        topic: 'dimissioni',
+    },
 };
 
 export const quoteById = (id: string): Quote | undefined => quotes[id];
