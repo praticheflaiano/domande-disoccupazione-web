@@ -1,5 +1,6 @@
 ---
 import { Logo } from './Logo';
+import SiteFinder from './SiteFinder.astro';
 import { NAV_LINKS } from '../lib/routes';
 
 interface Props {
@@ -37,6 +38,7 @@ const isActive = (href: string): boolean => {
         </nav>
 
         <div class="flex items-center gap-2 flex-shrink-0">
+            <SiteFinder />
             <a
                 href="/richiedi"
                 class="hidden sm:inline-flex bg-teal-700 hover:bg-teal-800 text-white px-4 md:px-5 py-2.5 rounded-md text-xs md:text-sm font-bold transition-all shadow-sm hover:shadow-md uppercase tracking-wide"

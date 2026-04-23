@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "dev:vercel": "vercel dev",
-    "build": "astro build",
+    "build": "node scripts/build-search-index.mjs && astro build",
+    "build:search-index": "node scripts/build-search-index.mjs",
     "preview": "astro preview",
     "typecheck": "astro check && tsc --noEmit -p tsconfig.json",
     "lint": "eslint . --ext .ts,.tsx --max-warnings=0",

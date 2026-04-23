@@ -1,0 +1,136 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+import ExpertQuote from '../../components/ExpertQuote.astro';
+
+const faq = [
+    {
+        q: 'Posso dimettermi nel primo anno di vita del figlio e ricevere la NASpI?',
+        a: 'Sì. Le dimissioni rese nei primi 12 mesi di vita del figlio (biologico o adottato) equivalgono per legge a un licenziamento involontario: danno diritto a NASpI, indennità sostitutiva del preavviso e non richiedono un motivo specifico. Vale anche per il padre lavoratore, esteso fino ai 3 anni del figlio secondo alcune interpretazioni.',
+    },
+    {
+        q: 'Serve la convalida dell\'Ispettorato del Lavoro?',
+        a: 'Sì. L\'art. 55 D.Lgs. 151/2001 impone la convalida presso l\'Ispettorato Territoriale del Lavoro (ITL). Senza convalida le dimissioni non producono effetti: non c\'è cessazione, non c\'è NASpI. La procedura è gratuita.',
+    },
+    {
+        q: 'Devo dare il preavviso?',
+        a: 'No. Le dimissioni in questo regime sono effettive senza obbligo di preavviso; il datore deve comunque pagare l\'indennità sostitutiva del preavviso come se si trattasse di un licenziamento.',
+    },
+    {
+        q: 'Vale anche per il padre?',
+        a: 'Sì. La tutela riguarda entrambi i genitori. Per il padre la legge estende la protezione fino ai 3 anni del figlio in casi specifici (es. periodo di fruibilità del congedo di paternità). Serve convalida ITL anche in questo caso.',
+    },
+    {
+        q: 'Cosa succede se non convalido all\'ITL?',
+        a: 'Le dimissioni sono inefficaci: il rapporto di lavoro continua, il datore deve reintegrarti, non c\'è NASpI. Per questo la convalida è sempre il primo passo.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Dimissioni nel primo anno del figlio e NASpI: procedura e convalida ITL"
+    description="Dimissioni nei primi 12 mesi del figlio (o 3 anni per il padre): convalida obbligatoria presso l'Ispettorato del Lavoro, diritto a NASpI, indennità sostitutiva del preavviso. Guida passo-passo."
+    slug="dimissioni-maternita"
+    h1="Dimissioni nel primo anno di vita del figlio"
+    kicker="Tutela art. 55 D.Lgs. 151/2001"
+    sources={[
+        'D.Lgs. 26 marzo 2001 n. 151 art. 55 (Testo Unico Maternità e Paternità)',
+        'INL nota 25 settembre 2020 n. 749 (padre lavoratore fino a 3 anni)',
+        'Ministero del Lavoro interpello n. 28/2014',
+        'Bollettino ADAPT (evidenze operative dimissioni entro l\'anno)',
+    ]}
+    faq={faq}
+>
+    <h2>La tutela a colpo d'occhio</h2>
+    <p>
+        La normativa italiana considera particolarmente fragile la posizione del genitore che vuole lasciare il lavoro
+        subito dopo la nascita o l'adozione di un figlio. Per questo motivo l'art. 55 del D.Lgs. 151/2001 prevede
+        una tutela rafforzata: le dimissioni devono essere <strong>convalidate dall'Ispettorato Territoriale del Lavoro (ITL)</strong>
+        per produrre effetti, e in compenso il genitore ottiene:
+    </p>
+    <ul>
+        <li><strong>NASpI piena</strong>, come se fosse stato licenziato;</li>
+        <li><strong>Indennità sostitutiva del preavviso</strong> pagata dal datore;</li>
+        <li><strong>Nessun obbligo di preavviso</strong>: cessazione immediata;</li>
+        <li><strong>Ticket licenziamento</strong> a carico del datore (come in un vero licenziamento).</li>
+    </ul>
+
+    <ExpertQuote id="dlgs-151-2001-art55" />
+
+    <h2>A chi si applica</h2>
+    <ul>
+        <li><strong>Madre lavoratrice</strong>: durante la gravidanza e nei primi 12 mesi di vita del bambino.</li>
+        <li><strong>Padre lavoratore</strong>: nei primi 12 mesi, esteso <strong>fino ai 3 anni del figlio</strong> in casi particolari (es. periodo di fruibilità del congedo di paternità, nota INL 749/2020).</li>
+        <li><strong>Adottanti o affidatari</strong>: nei primi 12 mesi (o fino a 3 anni) dall'ingresso in famiglia del minore, biologico o adottato.</li>
+        <li>Tutte le tipologie contrattuali subordinate (tempo indeterminato, determinato, apprendistato).</li>
+    </ul>
+
+    <h2>Procedura passo-passo</h2>
+    <ol>
+        <li><strong>Prenotazione appuntamento ITL</strong>: contatta l'ITL competente (per sede di lavoro o residenza) via portale <a href="https://www.ispettorato.gov.it" target="_blank" rel="noopener noreferrer">ispettorato.gov.it</a>, telefono o email. Alcune ITL accettano videocolloquio online.</li>
+        <li><strong>Documenti da portare</strong>:
+            <ul>
+                <li>Documento d'identità e codice fiscale.</li>
+                <li>Certificato di nascita o documenti adozione.</li>
+                <li>Ultima busta paga.</li>
+                <li>Contratto di lavoro (opzionale).</li>
+            </ul>
+        </li>
+        <li><strong>Colloquio con l'ispettore</strong>: durata ~30 minuti. L'ispettore verifica che la scelta sia libera e consapevole (non estorta dal datore) e rilascia il <strong>verbale di convalida</strong>.</li>
+        <li><strong>Dimissioni telematiche</strong>: entro 7 giorni dalla convalida, invia il modulo telematico su <a href="https://servizi.lavoro.gov.it" target="_blank" rel="noopener noreferrer">servizi.lavoro.gov.it</a> indicando "dimissioni ex art. 55 D.Lgs. 151/2001". In alternativa, la convalida stessa vale come dimissione.</li>
+        <li><strong>Comunicazione al datore</strong>: PEC con copia del verbale ITL. Il datore deve:
+            <ul>
+                <li>Cessare immediatamente il rapporto;</li>
+                <li>Pagare l'indennità sostitutiva del preavviso;</li>
+                <li>Trasmettere l'UniLav di cessazione.</li>
+            </ul>
+        </li>
+        <li><strong>Domanda NASpI</strong> entro 68 giorni dalla cessazione, allegando al portale INPS:
+            <ul>
+                <li>Copia del verbale ITL;</li>
+                <li>Copia della ricevuta di dimissioni telematiche.</li>
+            </ul>
+            Nella sezione "motivo cessazione" scegliere "dimissioni per maternità" (o "art. 55 D.Lgs. 151/2001").
+        </li>
+    </ol>
+
+    <h2>Costi e tempi</h2>
+    <ul>
+        <li>Procedura ITL: <strong>gratuita</strong>. Attesa dell'appuntamento: in genere 1-3 settimane a seconda dell'ufficio.</li>
+        <li>Domanda NASpI: <strong>gratuita</strong> se fatta in autonomia o tramite patronato. Termine decadenziale: 68 giorni.</li>
+        <li>Primo pagamento NASpI: 45-60 giorni dalla domanda accolta.</li>
+    </ul>
+
+    <h2>Casi particolari</h2>
+    <h3>Dimissioni durante il periodo di prova</h3>
+    <p>
+        Anche le dimissioni rese durante il periodo di prova, se il genitore è nel primo anno di vita del figlio, richiedono
+        la convalida ITL (nota Ministero del Lavoro 2025). Senza convalida non producono effetti.
+    </p>
+
+    <h3>Risoluzione consensuale</h3>
+    <p>
+        La risoluzione consensuale nel periodo protetto richiede comunque la convalida ITL. Serve per evitare accordi
+        collusivi tra datore e lavoratrice per aggirare la tutela.
+    </p>
+
+    <h3>Secondo figlio</h3>
+    <p>
+        La tutela si applica a ogni nuovo figlio. Se nasce un secondo bambino mentre sei ancora nel primo anno del primo,
+        il termine decorre nuovamente dalla nascita del secondo.
+    </p>
+
+    <h2>Errori frequenti che fanno perdere la NASpI</h2>
+    <ul>
+        <li><strong>Dimettersi senza passare per l'ITL</strong>: le dimissioni sono inefficaci → non c'è cessazione → INPS non accetta la domanda.</li>
+        <li><strong>Aspettare oltre i 68 giorni</strong> per la domanda NASpI dopo la convalida. Il termine decorre dalla cessazione, non dal verbale.</li>
+        <li><strong>Firmare documenti preparati dal datore</strong> che sottintendono una risoluzione consensuale non convalidata ITL: nulla di valido.</li>
+        <li><strong>Non conservare il verbale ITL</strong>: è il documento principale da allegare all'INPS.</li>
+    </ul>
+
+    <h2>Link utili</h2>
+    <ul>
+        <li><a href="/guida/dimissioni-giusta-causa">Guida generale dimissioni per giusta causa</a></li>
+        <li><a href="/guida/maternita-malattia">NASpI durante maternità e malattia</a></li>
+        <li><a href="/guida/presentare-domanda">Come presentare la domanda NASpI</a></li>
+    </ul>
+</GuidaLayout>
