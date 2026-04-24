@@ -4,6 +4,8 @@ import Home from '../components/Home';
 import NewsCard from '../components/NewsCard.astro';
 import ReviewsBlock from '../components/ReviewsBlock.astro';
 import ExpertQuote from '../components/ExpertQuote.astro';
+import PracticesCounter from '../components/PracticesCounter.astro';
+import LeadMagnet from '../components/LeadMagnet.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { NASPI_CONSTANTS } from '../constants';
 
@@ -73,6 +75,12 @@ const howToSchema = {
 >
     <Home client:load />
 
+    <section aria-label="Statistiche operative" class="bg-white border-t border-slate-200 py-10 px-4">
+        <div class="max-w-4xl mx-auto">
+            <PracticesCounter variant="box" />
+        </div>
+    </section>
+
     <section aria-label="Cosa dice la normativa" class="bg-white border-t border-slate-200 py-12 px-4">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-slate-900 mb-2">Cosa dice la normativa</h2>
@@ -94,6 +102,12 @@ const howToSchema = {
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {latestNews.map((entry: NewsEntry) => <NewsCard entry={entry} />)}
             </div>
+        </div>
+    </section>
+
+    <section class="bg-white border-t border-slate-200 py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <LeadMagnet variant="banner" source="home-footer" />
         </div>
     </section>
 </Base>

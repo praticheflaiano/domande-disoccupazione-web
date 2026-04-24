@@ -1,0 +1,102 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'I precari della scuola hanno diritto alla NASpI?',
+        a: 'Sì. Docenti e ATA con contratto a tempo determinato (supplenze annuali 30/06 o 31/08) accedono alla NASpI alla scadenza del contratto, purché abbiano maturato almeno 13 settimane di contribuzione negli ultimi 4 anni. La scadenza naturale del contratto è cessazione involontaria.',
+    },
+    {
+        q: 'Quando posso presentare la domanda se il contratto scade il 30 giugno?',
+        a: "Da 1° luglio: hai 68 giorni per presentare la domanda, pena la decadenza. Decorrenza NASpI dall'8° giorno successivo (~8 luglio). Primo accredito tipicamente a fine agosto / inizio settembre con arretrati.",
+    },
+    {
+        q: 'Sono obbligato a iscrivermi a SIISL anche se aspetto convocazione GPS il 1° settembre?',
+        a: "Sì. Dal 2024 l'iscrizione a SIISL è automatica all'accoglimento della domanda NASpI. Hai 15 giorni per firmare il PAD, anche se sai già che a settembre rientri in servizio. La NASpI si interromperà automaticamente alla nuova presa di servizio via NASpI-Com.",
+    },
+    {
+        q: 'Se prendo servizio a settembre la NASpI si sospende?',
+        a: 'Dipende dalla durata del nuovo contratto. Se supplenza breve (<6 mesi) con stipendio sotto soglia 8.500 €/anno, NASpI ridotta dell\'80% del reddito previsto. Contratto oltre 6 mesi o reddito sopra soglia: NASpI sospesa per la durata del contratto e ripresa alla scadenza se ancora entro i giorni residui.',
+    },
+    {
+        q: 'Devo partecipare a corsi GOL durante l\'estate?',
+        a: 'Se il CPI ti convoca e ti assegna a un percorso GOL (es. Reinserimento lavorativo o Upskilling) sei obbligato a partecipare. Per docenti precari con prospettiva rientro a settembre, è possibile chiedere sospensione del percorso GOL o partecipare a corsi brevi compatibili.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI precari scuola 2026: docenti, ATA, supplenze"
+    description="Guida completa alla NASpI per docenti precari e ATA della scuola: scadenza contratto 30/06 o 31/08, procedura, SIISL obbligatorio, sospensione per nuove supplenze a settembre."
+    slug="precari-scuola"
+    h1="NASpI per precari della scuola"
+    kicker="Docenti, ATA, supplenze annuali"
+    sources={[
+        'D.Lgs. 22/2015 art. 3 (NASpI dopo scadenza contratto a termine)',
+        'Circolare INPS n. 94/2015 (istruzioni operative)',
+        'Contratto Collettivo Nazionale Scuola (durata supplenze)',
+        'Msg. INPS n. 3905/2024 (SIISL automatico)',
+    ]}
+    faq={faq}
+>
+    <h2>La situazione tipica del precario della scuola</h2>
+    <p>
+        Ogni anno scolastico centinaia di migliaia di <strong>docenti precari</strong> e personale ATA escono dal ruolo
+        il <strong>30 giugno</strong> (supplenze brevi / fino al termine delle attività didattiche) o il
+        <strong>31 agosto</strong> (supplenze annuali 30/06 vs 31/08). La cessazione è considerata
+        <strong>involontaria</strong> ai fini NASpI: la fine del contratto a termine dà pieno diritto all'indennità.
+    </p>
+
+    <h2>Requisiti specifici 2026</h2>
+    <ul>
+        <li><strong>Cessazione involontaria</strong>: scadenza naturale del contratto supplenza. ✓</li>
+        <li><strong>13 settimane di contributi</strong> negli ultimi 4 anni. Per i precari storici è quasi sempre soddisfatto.</li>
+        <li><strong>Stato di disoccupazione</strong>: DID online contestuale alla domanda NASpI.</li>
+        <li><strong>Novità 2025</strong>: se ti sei dimesso da un tempo indeterminato nei 12 mesi precedenti (raro ma possibile tra ex-statali che sono passati a scuola), servono 13 settimane <em>nel nuovo rapporto</em>.</li>
+    </ul>
+
+    <h2>Procedura speciale per precari</h2>
+    <ol>
+        <li><strong>Dal 1° luglio (o 1° settembre)</strong>: presenta domanda NASpI sul portale INPS. Hai 68 giorni dalla scadenza del contratto.</li>
+        <li><strong>Decorrenza</strong>: dall'8° giorno successivo alla cessazione. Se contratto finisce 30 giugno, decorrenza 8 luglio.</li>
+        <li><strong>Primo pagamento</strong>: tipicamente fine agosto (arretrati + mese corrente).</li>
+        <li><strong>SIISL/PAD entro 15 giorni</strong>: obbligatorio anche se prevedi nuova supplenza a settembre. Vedi <a href="/obblighi/siisl">guida SIISL</a>.</li>
+        <li><strong>Convocazione CPI</strong>: entro 30 giorni. Comunica tempestivamente eventuale impegno scolastico imminente.</li>
+        <li><strong>Settembre nuovo contratto?</strong> NASpI-Com entro 30 giorni dalla presa di servizio. NASpI si sospende o riduce in base a durata e reddito.</li>
+    </ol>
+
+    <h2>Quanto spetta a un precario con supplenza 30/06</h2>
+    <p>Esempio pratico: docente con supplenza 10 mesi (1° settembre - 30 giugno), stipendio lordo mensile 2.000 €.</p>
+    <ul>
+        <li>Retribuzione media mensile: 2.000 €</li>
+        <li>Importo NASpI: <strong>1.228,36 €</strong> lordi (75% × 1.456,72 + 25% × 543,28)</li>
+        <li>Durata: <strong>5 mesi</strong> (metà delle 43 settimane di contribuzione)</li>
+        <li>Pagamento luglio, agosto, settembre, ottobre, novembre (se non rientri in servizio)</li>
+    </ul>
+
+    <h2>Attenzione al GOL in estate</h2>
+    <p>
+        Il Centro per l'Impiego può convocarti per il programma GOL (Garanzia Occupabilità Lavoratori) anche se sai già
+        di avere probabilità di rientro a settembre. Opzioni:
+    </p>
+    <ul>
+        <li><strong>Partecipa ai colloqui</strong>: dichiara al CPI la tua posizione nella GPS / MAD e l'aspettativa di rientro.</li>
+        <li><strong>Chiedi un percorso breve</strong>: upskilling digitale 30-60 ore è compatibile con l'estate libera.</li>
+        <li><strong>Non ignorare convocazioni</strong>: decadenza progressiva (-25%, -1 mese, decadenza totale).</li>
+    </ul>
+
+    <h2>Quando NON hai diritto (casi particolari)</h2>
+    <ul>
+        <li><strong>Rifiuto di rinnovo con variazioni minori</strong>: se rifiuti un rinnovo solo perché la nuova sede è 10 km più lontana, INPS può considerarti cessante volontario.</li>
+        <li><strong>Supplenza brevissima</strong> (meno di 13 settimane totali negli ultimi 4 anni): requisito contributivo non soddisfatto.</li>
+        <li><strong>Dimissioni volontarie</strong> durante l'anno scolastico: senza giusta causa, niente NASpI. Eccezione: dimissioni entro 12 mesi dalla nascita di un figlio (<a href="/guida/dimissioni-maternita">vedi guida</a>).</li>
+    </ul>
+
+    <h2>Link utili</h2>
+    <ul>
+        <li><a href="/guida/presentare-domanda">Come presentare la domanda NASpI</a></li>
+        <li><a href="/obblighi/siisl">Obblighi SIISL e firma PAD</a></li>
+        <li><a href="/guida/nuovo-lavoro-durante-naspi">Cosa fare se trovi un nuovo lavoro durante NASpI</a></li>
+        <li><a href="/calcolatore">Calcolatore importo e durata</a></li>
+    </ul>
+</GuidaLayout>

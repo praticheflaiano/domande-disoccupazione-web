@@ -1,0 +1,111 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'I lavoratori stagionali del turismo hanno diritto alla NASpI?',
+        a: 'Sì. Stagionali del turismo, della ristorazione, dei stabilimenti balneari, degli agriturismi hanno pieno diritto alla NASpI alla scadenza del contratto stagionale, purché abbiano maturato almeno 13 settimane di contributi negli ultimi 4 anni.',
+    },
+    {
+        q: 'Settimane stagionali contano come una sola contribuzione annuale?',
+        a: 'No. Ogni settimana effettivamente lavorata accredita contribuzione corrispondente. Uno stagionale che lavora 20 settimane/anno per 3 anni ha 60 settimane totali, ben oltre la soglia 13.',
+    },
+    {
+        q: 'La NASpI dura solo qualche mese per gli stagionali?',
+        a: 'La durata è metà delle settimane di contribuzione. Stagionale con 20 settimane/anno × 2 anni = 40 settimane → NASpI di 20 settimane (~4,5 mesi). Chi cumula più stagioni può arrivare a 52 settimane / 12 mesi.',
+    },
+    {
+        q: 'Se firmo un nuovo contratto stagionale l\'anno dopo, NASpI si interrompe?',
+        a: 'Sì, ma solo per la durata della nuova stagione. Se il nuovo contratto dura 5 mesi con stipendio sotto soglia 8.500 € annui, NASpI ridotta dell\'80% del reddito. Alla scadenza del nuovo contratto, NASpI riprende per i giorni residui.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI stagionali 2026: turismo, agricoltura, ristorazione"
+    description="Guida alla NASpI per lavoratori stagionali: turismo, agriturismi, balneari, ristorazione. Calcolo settimane cumulate, durata, cosa fare tra una stagione e l'altra."
+    slug="naspi-stagionali"
+    h1="NASpI per lavoratori stagionali"
+    kicker="Turismo, ristorazione, balneari, agricoltura"
+    sources={[
+        'D.Lgs. 22/2015 art. 3 comma 1 (cessazione contratto a termine)',
+        'Circolare INPS n. 94/2015',
+        'L. 68/1999 (specifiche settori stagionali)',
+        'CCNL Turismo e Pubblici Esercizi',
+    ]}
+    faq={faq}
+>
+    <h2>Chi è il "lavoratore stagionale" ai fini NASpI</h2>
+    <p>
+        È un lavoratore <strong>subordinato</strong> con contratto a tempo determinato la cui durata corrisponde al
+        <strong>picco stagionale</strong> dell'attività del datore di lavoro. I settori tipici:
+    </p>
+    <ul>
+        <li><strong>Turismo balneare</strong>: bagnini, camerieri, cuochi, receptionist (maggio-settembre, 4-5 mesi)</li>
+        <li><strong>Turismo montano</strong>: maestri di sci, addetti piste, alberghi (dicembre-marzo, 3-4 mesi)</li>
+        <li><strong>Agricoltura</strong>: raccoglitori (varia per coltura: olive ott-dic, uva ago-ott, fragole mag-giu)</li>
+        <li><strong>Ristorazione eventi</strong>: feste patronali, stagione sagre (estate)</li>
+        <li><strong>Stabilimenti commerciali estivi</strong>: gelaterie, chioschi, lidi (giu-sett)</li>
+    </ul>
+
+    <h2>Come si cumulano le settimane stagionali</h2>
+    <p>
+        Ai fini del requisito <strong>13 settimane negli ultimi 4 anni</strong>, si sommano tutte le settimane
+        effettivamente lavorate con contribuzione INPS:
+    </p>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 my-6">
+        <p class="font-bold text-slate-900 mb-2">Esempio stagionale balneare:</p>
+        <ul class="text-sm space-y-1 text-slate-700">
+            <li>• Estate 2023: 18 settimane (1° giu – 30 set)</li>
+            <li>• Estate 2024: 20 settimane (15 mag – 5 ott)</li>
+            <li>• Estate 2025: 22 settimane (1° mag – 5 ott)</li>
+            <li>• <strong>Totale: 60 settimane</strong> → soglia ampiamente superata</li>
+        </ul>
+    </div>
+
+    <h2>Calcolo durata NASpI</h2>
+    <p>La durata è pari alla <strong>metà delle settimane di contribuzione</strong> negli ultimi 4 anni, massimo 104 settimane (24 mesi):</p>
+    <ul>
+        <li>60 settimane totali → <strong>30 settimane di NASpI</strong> (~7 mesi)</li>
+        <li>100 settimane → 50 settimane (~11,5 mesi)</li>
+        <li>208 settimane (4 stagioni intere 12 mesi) → cap 24 mesi</li>
+    </ul>
+
+    <h2>Tra una stagione e l'altra: strategia</h2>
+    <ol>
+        <li><strong>Fine stagione (es. 30 settembre)</strong>: contratto scade, cessazione involontaria.</li>
+        <li><strong>Entro 68 giorni</strong>: presenta domanda NASpI. Primo pagamento ~45 giorni dopo.</li>
+        <li><strong>SIISL + PAD</strong>: iscrizione automatica, firma entro 15 giorni.</li>
+        <li><strong>CPI convocazione</strong>: partecipa, dichiara intenzione di rientrare alla stagione successiva. Richiedi percorso GOL <strong>Upskilling</strong> con corsi brevi (es. HACCP, lingue, software prenotazioni).</li>
+        <li><strong>Aprile-maggio</strong>: firmi nuovo contratto stagionale. NASpI-Com entro 30 giorni, NASpI ridotta per la durata del rapporto.</li>
+        <li><strong>Fine stagione successiva</strong>: NASpI riprende se restano giorni, oppure nuova domanda.</li>
+    </ol>
+
+    <h2>Contratto intermittente vs stagionale</h2>
+    <p>
+        <strong>Contratto intermittente</strong> (job on call): il lavoratore è "chiamato" a lavorare quando serve. Per
+        la NASpI conta solo il periodo effettivamente lavorato con chiamata. Non è considerato stagionale classico.
+        Il contratto intermittente NON si interrompe alla fine dell'estate: rimane attivo "in attesa di chiamata". Chi
+        lo termina deve usare le regole generali (dimissioni o licenziamento).
+    </p>
+
+    <h2>Cosa NON è NASpI</h2>
+    <ul>
+        <li><strong>Disoccupazione agricola (DS-agri)</strong>: lavoratori agricoli dipendenti a tempo determinato con ≥ 102 giornate lavorative l'anno precedente. Prestazione separata dalla NASpI, domanda entro 31 marzo anno successivo. La CISOA è la CIG agricola.</li>
+        <li><strong>Borse lavoro e tirocini</strong>: non cumulabili come contributi NASpI (no iscrizione obbligatoria INPS FPLD).</li>
+    </ul>
+
+    <h2>Formazione tra stagioni: occasione d'oro</h2>
+    <p>
+        Il periodo "morto" tra una stagione e l'altra (ottobre-aprile per estate) è ideale per corsi GOL finanziati
+        gratuitamente. Vedi <a href="/obblighi/formazione">guida formazione</a>. Corsi consigliati per stagionali:
+    </p>
+    <ul>
+        <li>HACCP e igiene alimentare (4-8 ore) — obbligatorio per ristorazione</li>
+        <li>Primo soccorso / BLS-D</li>
+        <li>Inglese turistico B1/B2 (40-80 ore)</li>
+        <li>Software gestione prenotazioni (Booking, Airbnb)</li>
+        <li>Vendita e customer care</li>
+    </ul>
+</GuidaLayout>

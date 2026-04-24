@@ -1,0 +1,111 @@
+---
+export interface Props {
+    variant?: 'banner' | 'inline' | 'compact';
+    headline?: string;
+    source?: string;
+}
+
+const {
+    variant = 'banner',
+    headline = 'Scarica la Guida NASpI 2026 (PDF gratuito)',
+    source = 'lead-magnet-generic',
+} = Astro.props;
+
+const bullets = [
+    'Checklist 7 passi per presentare la domanda',
+    'Parametri INPS 2026 aggiornati (soglia 1.456,72 €, massimale 1.584,70 €)',
+    'Tabella compatibilità con altri redditi',
+    'Modelli di diffida e PEC pre-compilati',
+];
+---
+
+<section
+    data-lead-source={source}
+    class:list={[
+        'rounded-3xl p-6 md:p-8 not-prose',
+        variant === 'banner' && 'bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 text-white shadow-xl my-10',
+        variant === 'inline' && 'bg-amber-50 border border-amber-200 my-6',
+        variant === 'compact' && 'bg-white border border-slate-200 my-4',
+    ]}
+>
+    <div class="grid md:grid-cols-5 gap-6 items-center">
+        <div class="md:col-span-3">
+            <h3 class:list={['text-xl md:text-2xl font-extrabold mb-3', variant === 'banner' ? 'text-white' : 'text-slate-900']}>
+                {headline}
+            </h3>
+            <ul class:list={['space-y-1.5 text-sm', variant === 'banner' ? 'text-slate-200' : 'text-slate-700']}>
+                {bullets.map((b) => <li>✓ {b}</li>)}
+            </ul>
+        </div>
+        <div class="md:col-span-2">
+            <form class="lead-magnet-form space-y-2" novalidate>
+                <input type="hidden" name="source" value={source} />
+                <input
+                    name="name"
+                    type="text"
+                    placeholder="Nome (facoltativo)"
+                    autocomplete="given-name"
+                    class="w-full px-3 py-2 rounded-lg text-slate-900 text-sm border border-slate-300 bg-white"
+                />
+                <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="La tua email"
+                    autocomplete="email"
+                    class="w-full px-3 py-2 rounded-lg text-slate-900 text-sm border border-slate-300 bg-white"
+                />
+                <label class:list={['flex items-start gap-2 text-xs leading-snug', variant === 'banner' ? 'text-slate-300' : 'text-slate-600']}>
+                    <input type="checkbox" name="consent" required class="mt-0.5" />
+                    <span>Acconsento all'uso della mia email per ricevere il PDF e comunicazioni su NASpI. <a href="/privacy" class="underline">Privacy</a>.</span>
+                </label>
+                <button
+                    type="submit"
+                    class="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold px-5 py-3 rounded-xl text-sm uppercase tracking-wide transition-colors"
+                >
+                    Scarica il PDF
+                </button>
+                <p class="lead-magnet-msg text-xs text-center hidden" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll<HTMLFormElement>('.lead-magnet-form').forEach((form) => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const payload = {
+                name: (data.get('name') as string) || undefined,
+                email: data.get('email') as string,
+                consent: !!data.get('consent'),
+                source: (data.get('source') as string) || 'lead-magnet',
+                tags: ['naspi-pdf-2026'],
+            };
+            const msgEl = form.querySelector<HTMLElement>('.lead-magnet-msg');
+            if (!msgEl) return;
+            msgEl.classList.remove('hidden');
+            msgEl.textContent = 'Invio in corso...';
+            try {
+                const res = await fetch('/api/lead-capture', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                const body = await res.json();
+                if (!res.ok) throw new Error(body.error || 'Errore');
+                msgEl.textContent = 'Scaricamento in corso...';
+                if ((window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+                    (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', 'lead_capture', {
+                        source: payload.source,
+                    });
+                }
+                window.location.href = body.pdfUrl;
+            } catch (err) {
+                msgEl.textContent = 'Errore invio. Riprova o contattaci su WhatsApp.';
+                console.error(err);
+            }
+        });
+    });
+</script>

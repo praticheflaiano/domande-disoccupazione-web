@@ -1,0 +1,55 @@
+---
+import { STATS } from '../data/stats.ts';
+
+export interface Props {
+    variant?: 'inline' | 'box';
+    showReviews?: boolean;
+}
+
+const { variant = 'box', showReviews = false } = Astro.props;
+const monthFmt = new Intl.DateTimeFormat('it-IT', { month: 'long', year: 'numeric' }).format(new Date());
+---
+
+{variant === 'box' ? (
+    <aside class="bg-gradient-to-br from-teal-50 to-blue-50 border border-teal-200 rounded-2xl p-5 md:p-6 my-6" aria-label="Statistiche operative">
+        <div class="flex items-center gap-2 mb-3">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-500"></span>
+            </span>
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-800">Attività in corso</span>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+                <div class="text-2xl md:text-3xl font-extrabold text-slate-900">{STATS.currentMonthPractices}</div>
+                <div class="text-xs text-slate-600 leading-snug mt-0.5">pratiche NASpI elaborate<br /><span class="capitalize">{monthFmt}</span></div>
+            </div>
+            <div class="border-x border-teal-200">
+                <div class="text-2xl md:text-3xl font-extrabold text-slate-900">{STATS.totalPractices.toLocaleString('it-IT')}</div>
+                <div class="text-xs text-slate-600 leading-snug mt-0.5">totali dal {STATS.foundedYear}</div>
+            </div>
+            <div>
+                <div class="text-2xl md:text-3xl font-extrabold text-slate-900">{STATS.acceptanceRate}%</div>
+                <div class="text-xs text-slate-600 leading-snug mt-0.5">accolte dall'INPS</div>
+            </div>
+        </div>
+        {showReviews && STATS.googleReviewsCount > 0 && (
+            <div class="mt-4 pt-3 border-t border-teal-200 flex items-center justify-center gap-1 text-sm">
+                <span class="font-bold text-slate-900">{STATS.googleReviewsAverage.toFixed(1)}</span>
+                <span class="text-amber-400">★★★★★</span>
+                <span class="text-slate-600">su {STATS.googleReviewsCount} recensioni Google</span>
+            </div>
+        )}
+    </aside>
+) : (
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 my-4">
+        <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse" aria-hidden="true"></span>
+            <strong class="text-slate-900">{STATS.currentMonthPractices}</strong> pratiche questo mese
+        </span>
+        <span>•</span>
+        <span><strong class="text-slate-900">{STATS.totalPractices.toLocaleString('it-IT')}</strong> totali</span>
+        <span>•</span>
+        <span><strong class="text-slate-900">{STATS.acceptanceRate}%</strong> accolte</span>
+    </div>
+)}

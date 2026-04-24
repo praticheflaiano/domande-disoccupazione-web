@@ -164,6 +164,41 @@ const DIS_COLL = {
     label: 'DIS-COLL per co.co.co.',
     description: 'Disoccupazione per collaboratori coordinati: requisiti 2026.',
 };
+const CALC_DIS_COLL = {
+    href: '/calcolatore-dis-coll',
+    label: 'Calcolatore DIS-COLL 2026',
+    description: 'Stima indennità per co.co.co. con decalage e cap 1.584,70 €.',
+};
+const G_PRECARI_SCUOLA = {
+    href: '/guida/precari-scuola',
+    label: 'NASpI per precari scuola',
+    description: 'Docenti e ATA precari: scadenza 30/06 o 31/08, SIISL, rientro.',
+};
+const G_STAGIONALI = {
+    href: '/guida/naspi-stagionali',
+    label: 'NASpI stagionali',
+    description: 'Turismo, balneari, agricoltura: cumulo settimane e formazione.',
+};
+const G_SFL = {
+    href: '/guida/sfl-naspi',
+    label: 'SFL vs NASpI',
+    description: 'Supporto Formazione Lavoro 500 €/mese: alternativa ISEE 10.140 €.',
+};
+const G_ADI = {
+    href: '/guida/adi-naspi',
+    label: 'ADI e NASpI',
+    description: 'Assegno di Inclusione: cumulabilità e impatto ISEE familiare.',
+};
+const G_GIG = {
+    href: '/guida/naspi-gig-economy',
+    label: 'Rider, autisti, freelancer',
+    description: 'Gig economy: NASpI, DIS-COLL, ISCRO, chiusura P.IVA.',
+};
+const G_APPRENDISTATO = {
+    href: '/guida/naspi-apprendistato',
+    label: 'NASpI dopo apprendistato',
+    description: 'Mancata conferma, licenziamento, tipologie duale e professionalizzante.',
+};
 const GUIDA_HUB = {
     href: '/guida',
     label: 'Guida operativa NASpI',
@@ -185,13 +220,14 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'manuale': [GUIDA_HUB, O_SIISL, O_SANZIONI],
     'contatti': [CHISIAMO, RICHIEDI, CALC],
     'chi-siamo': [MANUALE, CALC, RICHIEDI],
-    'dis-coll': [CALC, G_DOMANDA, CHISIAMO],
+    'dis-coll': [CALC_DIS_COLL, G_GIG, CHISIAMO],
+    'calcolatore-dis-coll': [DIS_COLL, CALC, G_GIG],
     'guida': [CALC, OBBLIGHI_HUB, FAQ_PAGE],
     'obblighi': [GUIDA_HUB, G_DOMANDA, FAQ_PAGE],
 
     // Guide
-    'guida/presentare-domanda': [G_PAGAMENTI, G_DID, G_DIMISSIONI_GC],
-    'guida/did': [O_SIISL, G_DOMANDA, G_MATERNITA],
+    'guida/presentare-domanda': [G_PAGAMENTI, G_DID, G_STAGIONALI],
+    'guida/did': [O_SIISL, G_DOMANDA, G_PRECARI_SCUOLA],
     'guida/fiscalita': [G_ANF, O_REDDITI, G_ESTERO],
     'guida/anf': [G_FISCALITA, O_REDDITI, CALC],
     'guida/maternita-malattia': [G_DIMISSIONI_MAT, O_NASPICOM, G_FISCALITA],
@@ -205,7 +241,13 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'guida/dimissioni-cessione-azienda': [G_DIMISSIONI_TRASF, G_DIMISSIONI_GC, G_RICORSO],
     'guida/pagamenti-accredito': [G_SOSPENSIONE, G_DOMANDA, G_FISCALITA],
     'guida/sospensione-naspi': [G_NUOVOLAVORO, O_NASPICOM, G_RICORSO],
-    'guida/nuovo-lavoro-durante-naspi': [O_NASPICOM, O_REDDITI, G_SOSPENSIONE],
+    'guida/nuovo-lavoro-durante-naspi': [O_NASPICOM, O_REDDITI, G_APPRENDISTATO],
+    'guida/precari-scuola': [G_DOMANDA, O_SIISL, O_GOL],
+    'guida/naspi-stagionali': [G_NUOVOLAVORO, O_GOL, G_DOMANDA],
+    'guida/sfl-naspi': [G_ADI, O_GOL, G_DOMANDA],
+    'guida/adi-naspi': [G_SFL, G_FISCALITA, O_REDDITI],
+    'guida/naspi-gig-economy': [DIS_COLL, CALC_DIS_COLL, G_SFL],
+    'guida/naspi-apprendistato': [G_DOMANDA, G_DIMISSIONI_GC, G_FISCALITA],
 
     // Obblighi
     'obblighi/siisl': [O_CPI, O_GOL, G_DID],

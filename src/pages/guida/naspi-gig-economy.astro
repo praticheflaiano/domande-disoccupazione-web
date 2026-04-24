@@ -1,0 +1,128 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'I rider di Glovo, Deliveroo, Just Eat hanno diritto alla NASpI?',
+        a: "Dipende dalla tipologia contrattuale. Se assunti come subordinati (tempo indeterminato o determinato), sì. Se lavorano con partita IVA o prestazione occasionale, no: devono guardare DIS-COLL (se co.co.co.) o SFL (se requisiti ISEE).",
+    },
+    {
+        q: 'Autisti NCC e taxi hanno NASpI?',
+        a: 'Solo se dipendenti di cooperative o società (subordinati). Titolari di licenza autonoma con P.IVA sono lavoratori autonomi: nessuna NASpI possibile. Possono accedere a ISCRO (Indennità Straordinaria di Continuità Reddituale) se hanno versato contribuzione alla Gestione Separata.',
+    },
+    {
+        q: 'Se chiudo la P.IVA adesso, posso chiedere NASpI?',
+        a: 'Solo se hai avuto lavoro subordinato nei 4 anni precedenti con almeno 13 settimane di contributi. La chiusura della P.IVA di per sé non dà diritto a NASpI, perché è lavoro autonomo (no contribuzione Fondo Pensione Lavoratori Dipendenti).',
+    },
+    {
+        q: 'ISCRO è come la NASpI per autonomi?',
+        a: 'Parzialmente. ISCRO è una prestazione sperimentale per lavoratori autonomi iscritti alla Gestione Separata INPS con calo reddituale. Importo 350-800 €/mese per 6 mesi, max 3 volte in vita. Requisiti e calcolo diversi dalla NASpI.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI per rider, autisti, freelancer e gig economy | 2026"
+    description="Rider, autisti NCC, freelancer, creator digitali: chi ha diritto a NASpI. Differenze con DIS-COLL, ISCRO, SFL. Come gestire la chiusura partita IVA e prestazione occasionale."
+    slug="naspi-gig-economy"
+    h1="NASpI per lavoratori della gig economy"
+    kicker="Rider, autisti, freelancer, creator digitali"
+    sources={[
+        'D.Lgs. 22/2015 (NASpI lavoro subordinato)',
+        'D.Lgs. 81/2015 art. 47-quater (rider)',
+        'L. 81/2017 (DIS-COLL e lavoro autonomo)',
+        'L. 213/2023 (ISCRO stabilizzazione)',
+    ]}
+    faq={faq}
+>
+    <h2>Il dilemma della gig economy</h2>
+    <p>
+        Rider, autisti di piattaforma, freelance digitali, creator, microtasker: categorie in forte crescita ma spesso
+        <strong>escluse</strong> dalle tutele tradizionali per la NASpI. Il motivo: la NASpI è riservata ai lavoratori
+        <strong>subordinati</strong> iscritti al Fondo Pensione Lavoratori Dipendenti (FPLD). La maggior parte dei gig worker
+        ha partita IVA o lavora con collaborazioni, quindi contribuisce alla <strong>Gestione Separata INPS</strong>, che ha
+        altre prestazioni.
+    </p>
+
+    <h2>Mappa delle prestazioni per tipologia contrattuale</h2>
+
+    <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Tipo contratto</th>
+                    <th class="p-3 text-left">Prestazione disponibile</th>
+                    <th class="p-3 text-left">Soglia / requisito</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white"><td class="p-3 font-semibold">Subordinato (indeterminato/determinato)</td><td class="p-3"><a href="/calcolatore" class="text-blue-600">NASpI</a></td><td class="p-3">13 settimane ultimi 4 anni</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Co.co.co. / collaboratore Gestione Separata</td><td class="p-3"><a href="/calcolatore-dis-coll" class="text-blue-600">DIS-COLL</a></td><td class="p-3">1 mese contributi anno precedente</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">P.IVA autonomo (Gestione Separata)</td><td class="p-3">ISCRO (se requisiti)</td><td class="p-3">Calo reddituale 50%, ≥ 4 anni attività</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">P.IVA artigiano/commerciante</td><td class="p-3">Nessuna, solo pensione anticipata (se requisiti)</td><td class="p-3">—</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Prestazione occasionale PrestO</td><td class="p-3">Nessuna</td><td class="p-3">—</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Senza contratto / nero</td><td class="p-3">Nessuna (salvo emersione)</td><td class="p-3">—</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Rider: il caso complesso</h2>
+    <p>
+        La normativa italiana sui rider è evoluta. L'<strong>art. 47-quater D.Lgs. 81/2015</strong> introdotto dalla L. 128/2019
+        ha definito due categorie:
+    </p>
+    <ul>
+        <li><strong>Rider subordinato</strong>: alcune piattaforme italiane (es. alcuni accordi Glovo/Just Eat) hanno adottato il contratto subordinato → pieno diritto a NASpI. Da verificare nel singolo CCNL applicato.</li>
+        <li><strong>Rider autonomo con tutele</strong>: la maggior parte. Accesso a tutele minime (compenso orario minimo, assicurazione INAIL) ma <strong>nessuna NASpI</strong>. Restano le vie DIS-COLL (se co.co.co.) o ISCRO (se P.IVA).</li>
+    </ul>
+
+    <h2>ISCRO: la "NASpI degli autonomi"</h2>
+    <p>
+        L'<strong>Indennità Straordinaria di Continuità Reddituale (ISCRO)</strong> è stata stabilizzata dalla Legge di
+        Bilancio 2024. Destinata ai lavoratori autonomi iscritti alla Gestione Separata (partite IVA forfettarie,
+        freelancer, consulenti), con calo reddituale documentato.
+    </p>
+    <ul>
+        <li><strong>Requisiti</strong>: P.IVA attiva da almeno 4 anni, reddito anno precedente fino a 12.000 €, reddito ultimo anno inferiore al 50% della media dei 2 precedenti, no trattamenti pensionistici.</li>
+        <li><strong>Importo</strong>: 25% del reddito medio dei 2 anni precedenti, tra 350 e 800 €/mese.</li>
+        <li><strong>Durata</strong>: 6 mesi, al massimo 3 volte in vita lavorativa, a distanza di 4 anni tra una richiesta e l'altra.</li>
+        <li><strong>Procedura</strong>: domanda entro 31 ottobre dell'anno successivo a quello del calo reddituale.</li>
+    </ul>
+
+    <h2>Strategia concreta per gig worker</h2>
+    <ol>
+        <li><strong>Verifica il tuo contratto</strong>: leggi cosa c'è scritto nel contratto firmato o nei termini piattaforma. Cerca "subordinato", "collaboratore", "autonomo", "P.IVA".</li>
+        <li><strong>Controlla contribuzione</strong>: accedi al Fascicolo Previdenziale INPS, sezione contribuzione. Se vedi FPLD → subordinato. Se Gestione Separata → autonomo o co.co.co.</li>
+        <li><strong>Se subordinato cessato</strong>: chiedi NASpI.</li>
+        <li><strong>Se co.co.co. con progetto cessato</strong>: chiedi DIS-COLL.</li>
+        <li><strong>Se P.IVA Gestione Separata con calo reddituale</strong>: chiedi ISCRO.</li>
+        <li><strong>Se nessuna delle tre</strong>: valuta <a href="/guida/sfl-naspi">SFL</a> o ADI.</li>
+    </ol>
+
+    <h2>Chiusura P.IVA per poi chiedere NASpI: funziona?</h2>
+    <p>
+        <strong>No</strong>, se non hai mai avuto lavoro subordinato negli ultimi 4 anni. La chiusura P.IVA non genera
+        automaticamente diritto a NASpI. La NASpI nasce dalla cessazione involontaria di un rapporto di
+        <strong>lavoro subordinato</strong> con contribuzione FPLD. La chiusura P.IVA è equiparata a una "libera
+        scelta", senza diritto a indennità.
+    </p>
+    <p>
+        Chi ha storia mista (subordinato in passato + P.IVA ora) può recuperare NASpI se nei 4 anni precedenti la chiusura
+        P.IVA ci sono 13+ settimane subordinate e la cessazione del subordinato era involontaria. La chiusura P.IVA "sblocca"
+        il diritto sopito.
+    </p>
+
+    <h2>Creator digitali e micro-task</h2>
+    <p>
+        YouTuber, TikToker, streamer, influencer, venditori Etsy, freelancer Fiverr/Upwork: quasi sempre lavorano con
+        P.IVA o senza inquadramento contrattuale italiano (se pagati da piattaforme estere). <strong>Zero diritto a NASpI</strong>.
+        Vie alternative: ISCRO (se Gestione Separata), SFL (se ISEE basso), assicurazioni private contro la cessazione di attività.
+    </p>
+
+    <h2>Link utili</h2>
+    <ul>
+        <li><a href="/calcolatore-dis-coll">Calcolatore DIS-COLL per co.co.co.</a></li>
+        <li><a href="/guida/sfl-naspi">SFL: l'alternativa per chi non ha NASpI</a></li>
+        <li><a href="/dis-coll">Panoramica DIS-COLL</a></li>
+    </ul>
+</GuidaLayout>

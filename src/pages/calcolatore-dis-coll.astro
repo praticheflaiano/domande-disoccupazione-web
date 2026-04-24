@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import DisCollCalculator from '../components/DisCollCalculator';
+import RelatedPages from '../components/RelatedPages.astro';
+
+const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Calcolatore DIS-COLL', href: '/calcolatore-dis-coll' },
+];
+
+const calcSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Calcolatore DIS-COLL 2026',
+    applicationCategory: 'GovernmentApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    description: "Simulatore dell'indennità di disoccupazione DIS-COLL per co.co.co. e assegnisti 2026 con parametri INPS aggiornati (soglia 1.456,72 €, massimale 1.584,70 €, durata max 12 mesi).",
+};
+---
+
+<Base
+    title="Calcolatore DIS-COLL 2026 | Stima importo e durata per co.co.co."
+    description="Calcola l'indennità DIS-COLL 2026 per collaboratori coordinati, assegnisti, dottorandi. Parametri INPS: massimale 1.584,70 €, durata max 12 mesi, decalage 3% dal 6° mese."
+    breadcrumbs={breadcrumbs}
+    jsonLd={calcSchema}
+>
+    <DisCollCalculator client:load />
+
+    <RelatedPages current="calcolatore-dis-coll" />
+</Base>
