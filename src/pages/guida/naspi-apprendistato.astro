@@ -1,0 +1,129 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Se l\'apprendistato finisce senza assunzione, ho diritto alla NASpI?',
+        a: 'Sì. La cessazione dell\'apprendistato al termine del periodo formativo per mancata conferma è considerata cessazione involontaria. Hai diritto a NASpI a parità di requisiti (13 settimane contributi ultimi 4 anni).',
+    },
+    {
+        q: 'Se l\'azienda mi licenzia durante l\'apprendistato, ho diritto alla NASpI?',
+        a: 'Dipende. Durante il periodo formativo tipicamente sì se il licenziamento è per ragioni oggettive (crisi aziendale, riorganizzazione). Se il licenziamento è per giusta causa imputabile a te (dolo, grave inadempimento), la NASpI può essere negata. Verifica la comunicazione del datore.',
+    },
+    {
+        q: 'I contributi da apprendistato contano per il requisito delle 13 settimane?',
+        a: 'Sì, pienamente. Durante l\'apprendistato il datore versa contribuzione FPLD INPS (ridotta per lui, ma accreditata pienamente al lavoratore). Le settimane effettive di apprendistato contano una a una per la NASpI.',
+    },
+    {
+        q: 'Apprendistato professionalizzante, duale, scolastico: ci sono differenze?',
+        a: 'Sul piano NASpI no. Tutte e tre le tipologie (art. 43 D.Lgs. 81/2015: duale; art. 44: professionalizzante; art. 45: alta formazione) danno diritto a NASpI alla cessazione, senza trattamenti particolari.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI dopo apprendistato: cessazione, licenziamento, conferma"
+    description="Diritti NASpI alla fine dell'apprendistato: mancata conferma, licenziamento, dimissioni. Contributi accreditati, requisiti 13 settimane, casi particolari duale e professionalizzante."
+    slug="naspi-apprendistato"
+    h1="NASpI dopo apprendistato"
+    kicker="Fine formazione, mancata conferma, licenziamento"
+    sources={[
+        'D.Lgs. 81/2015 artt. 43-47 (tipologie apprendistato)',
+        'D.Lgs. 22/2015 (NASpI per apprendisti)',
+        'Circolare INPS n. 94/2015 (istruzioni)',
+        'Messaggio INPS n. 4676/2022 (apprendistato duale)',
+    ]}
+    faq={faq}
+>
+    <h2>Apprendistato: 3 tipologie</h2>
+    <p>L'apprendistato in Italia è regolato dal D.Lgs. 81/2015 nelle seguenti tipologie:</p>
+    <ul>
+        <li><strong>Apprendistato duale</strong> (art. 43) — 15-25 anni — combina lavoro e scuola. Non obbliga conferma a fine percorso, ma la durata è determinata dal ciclo formativo.</li>
+        <li><strong>Apprendistato professionalizzante</strong> (art. 44) — 18-29 anni — il più diffuso. Dura 3-5 anni con qualifica contrattuale al termine.</li>
+        <li><strong>Apprendistato alta formazione e ricerca</strong> (art. 45) — 18-29 anni — per laurea, master, dottorato, praticantato professionale.</li>
+    </ul>
+
+    <h2>Le 3 situazioni tipiche di cessazione</h2>
+
+    <h3>1. Mancata conferma al termine del periodo</h3>
+    <p>
+        Al termine della durata contrattuale dell'apprendistato, il datore può scegliere se <strong>confermare</strong>
+        il rapporto (automatica trasformazione a tempo indeterminato) o <strong>recedere</strong>. Il recesso deve essere
+        comunicato con preavviso ex CCNL. La mancata conferma è a tutti gli effetti una <strong>cessazione involontaria</strong>:
+    </p>
+    <ul>
+        <li>Diritto pieno a NASpI ✓</li>
+        <li>Diritto al preavviso (indennità sostitutiva se non rispettato) ✓</li>
+        <li>Diritto al TFR maturato ✓</li>
+    </ul>
+
+    <h3>2. Licenziamento durante l'apprendistato</h3>
+    <p>
+        Durante il periodo formativo il datore può licenziare per:
+    </p>
+    <ul>
+        <li><strong>Giustificato motivo soggettivo</strong> (inadempimento lavoratore): tipicamente niente NASpI, valutazione caso per caso.</li>
+        <li><strong>Giustificato motivo oggettivo</strong> (crisi aziendale, soppressione posto): NASpI dovuta.</li>
+        <li><strong>Giusta causa</strong> (grave inadempimento, dolo): NASpI negata.</li>
+        <li><strong>Recesso nel periodo di prova</strong>: primi 30-45 giorni (varia per CCNL). Se recesso è del datore, NASpI dovuta.</li>
+    </ul>
+
+    <h3>3. Dimissioni dell'apprendista</h3>
+    <p>
+        Le dimissioni volontarie dell'apprendista, anche durante il periodo formativo, <strong>non danno diritto a NASpI</strong>
+        salvo giusta causa (vedi <a href="/guida/dimissioni-giusta-causa">guida dedicata</a>). La giusta causa per apprendista
+        ha le stesse caratteristiche del subordinato standard: mancato pagamento, mancato versamento contributi, demansionamento
+        rispetto alle mansioni formative previste, mobbing.
+    </p>
+
+    <h2>Requisiti NASpI per apprendisti</h2>
+    <p>Identici al lavoratore subordinato standard:</p>
+    <ul>
+        <li><strong>Cessazione involontaria</strong>: mancata conferma, licenziamento oggettivo, prova negativa del datore.</li>
+        <li><strong>13 settimane contributive negli ultimi 4 anni</strong>: contano anche periodi come apprendistato. In apprendistato professionalizzante di 3 anni, settimane accreditate = ~156, ampiamente oltre la soglia.</li>
+        <li><strong>Stato di disoccupazione</strong>: DID + SIISL.</li>
+    </ul>
+
+    <h2>Calcolo importo apprendista</h2>
+    <p>
+        La retribuzione imponibile per il calcolo della retribuzione media mensile (RMM) NASpI è <strong>il compenso effettivamente
+        percepito</strong>, non quello "virtuale" del qualificato. Gli apprendisti ricevono tipicamente:
+    </p>
+    <ul>
+        <li><strong>Primi 6 mesi</strong>: 75-85% della paga qualificata.</li>
+        <li><strong>Successivi</strong>: 90-95%.</li>
+        <li><strong>Ultimo anno</strong>: retribuzione piena da qualificato.</li>
+    </ul>
+    <p>
+        Esempio: apprendista professionalizzante metalmeccanico, ultimi 2 anni stipendio medio 1.400 €/mese. RMM = 1.400 €
+        → NASpI = (1.400 × 75%) = <strong>1.050 € lordi</strong>. Durata: metà delle settimane, max 104 → se hai 3 anni
+        di apprendistato = 78 settimane NASpI (~18 mesi).
+    </p>
+
+    <h2>Apprendistato duale e NASpI</h2>
+    <p>
+        L'apprendistato duale (scuola-lavoro) ha peculiarità:
+    </p>
+    <ul>
+        <li>Durata generalmente coincidente con il ciclo formativo (diploma, qualifica).</li>
+        <li>Ore a scuola: contribuzione figurativa accreditata.</li>
+        <li>Alla cessazione, se non confermato, NASpI dovuta a parità di requisiti.</li>
+        <li>Il contributo formativo ricevuto dallo studente durante il duale non incide sulla NASpI (è formazione, non retribuzione in senso stretto).</li>
+    </ul>
+
+    <h2>Alta formazione: dottorandi e praticanti</h2>
+    <p>
+        L'apprendistato alta formazione (art. 45) per dottorati, master o praticantato professionale merita un'attenzione
+        specifica. I dottorandi e praticanti iscritti a questo tipo di apprendistato <strong>sono lavoratori subordinati</strong>
+        e quindi accedono a NASpI alla cessazione, a differenza dei dottorandi "puri" (borsa di studio) che accedono invece
+        a DIS-COLL. Verifica il contratto firmato.
+    </p>
+
+    <h2>Link utili</h2>
+    <ul>
+        <li><a href="/guida/presentare-domanda">Presentare la domanda NASpI</a></li>
+        <li><a href="/calcolatore">Calcolatore importo e durata</a></li>
+        <li><a href="/guida/dimissioni-giusta-causa">Dimissioni per giusta causa</a></li>
+        <li><a href="/dis-coll">DIS-COLL per dottorandi con borsa</a></li>
+    </ul>
+</GuidaLayout>

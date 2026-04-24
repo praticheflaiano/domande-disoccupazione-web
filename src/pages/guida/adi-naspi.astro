@@ -1,0 +1,108 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Posso percepire NASpI e ADI contemporaneamente?',
+        a: "Nello stesso nucleo familiare sì, ma attenzione: l'importo NASpI concorre al calcolo del reddito ai fini ISEE del nucleo, quindi può ridurre o azzerare l'ADI. La NASpI è individuale, l'ADI è familiare.",
+    },
+    {
+        q: 'Se finisce la NASpI posso chiedere ADI?',
+        a: "Sì, se il nucleo familiare ha i requisiti ADI: presenza di almeno un minore, disabile o over 60, ISEE ≤ 10.140 €, residenza 5+ anni di cui 2 continuativi. Domanda su portale INPS dedicato, risposta 30 giorni.",
+    },
+    {
+        q: 'Differenza tra ADI e Reddito di Cittadinanza?',
+        a: "L'ADI (dal 2024) ha sostituito il Reddito di Cittadinanza con criteri più selettivi: richiede presenza di soggetti fragili nel nucleo (minori, disabili, over 60). Importo base: 6.000 €/anno per famiglia (scala equivalenza) + 3.640 € contributo affitto.",
+    },
+    {
+        q: 'ADI si può avere insieme a SFL?',
+        a: 'Sì, ma a componenti diversi del nucleo: ADI al capofamiglia con fragile, SFL al familiare 18-59 attivabile (condizionato alla partecipazione GOL). Sono misure complementari, non sovrapponibili sulla stessa persona.',
+    },
+];
+---
+
+<GuidaLayout
+    title="ADI + NASpI: cumulabilità e impatto ISEE 2026"
+    description="Assegno di Inclusione (ADI) e NASpI: come cumulare, impatto NASpI sull'ISEE familiare, passaggio tra le due prestazioni, requisiti ADI 2026."
+    slug="adi-naspi"
+    h1="Assegno di Inclusione (ADI) e NASpI"
+    kicker="Cumulo, ISEE, passaggi tra prestazioni"
+    sources={[
+        'DL 48/2023 conv. L. 85/2023 art. 1-6 (istituzione ADI)',
+        'Decreto MLPS 13 dicembre 2023 (modalità ADI)',
+        'Messaggio INPS n. 4382/2023',
+        'D.P.C.M. 159/2013 (ISEE)',
+    ]}
+    faq={faq}
+>
+    <h2>ADI: cos'è e chi può chiederlo</h2>
+    <p>
+        L'<strong>Assegno di Inclusione</strong> (ADI) è la prestazione di contrasto alla povertà introdotta dal DL 48/2023
+        e operativa dal 1° gennaio 2024 in sostituzione del Reddito di Cittadinanza. È rivolto a <strong>nuclei familiari</strong>
+        con almeno un componente in condizione di fragilità: minore, disabile, over 60, o in carico ai servizi sociali.
+    </p>
+
+    <h2>Requisiti ADI 2026</h2>
+    <ul>
+        <li><strong>ISEE ≤ 10.140 € annui</strong> (ordinario, non specifico).</li>
+        <li><strong>Reddito familiare</strong> ≤ 6.000 € annui (moltiplicato per scala equivalenza se più componenti).</li>
+        <li><strong>Patrimonio immobiliare</strong> ≤ 30.000 € (escluso prima casa).</li>
+        <li><strong>Patrimonio mobiliare</strong> ≤ 6.000 € (+ 2.000 per ogni altro componente oltre il primo).</li>
+        <li><strong>Residenza</strong>: almeno 5 anni in Italia, di cui 2 continuativi.</li>
+        <li><strong>Almeno 1 componente "fragile"</strong>: minorenne, disabile (invalidità ≥ 67%), over 60, o in situazione sociale documentata.</li>
+    </ul>
+
+    <h2>Importi 2026</h2>
+    <ul>
+        <li><strong>Beneficio base</strong>: 6.000 €/anno per un nucleo di 1 persona (elevato da scala equivalenza).</li>
+        <li><strong>Contributo affitto</strong>: fino a 3.640 €/anno se nucleo in locazione (no proprietà prima casa).</li>
+        <li><strong>Scala equivalenza</strong>: 1,0 primo adulto + 0,5 per ogni altro + 0,4 per ogni minore 14-17 + 0,15 per ogni minore 0-13. Massimo 2,2.</li>
+    </ul>
+
+    <h2>Cumulabilità NASpI + ADI</h2>
+    <p>
+        <strong>Non esiste un divieto</strong> di cumulo: il membro A del nucleo può percepire NASpI e il nucleo intero
+        può ricevere ADI. Ma l'importo NASpI rientra nel <strong>reddito familiare</strong> ai fini del calcolo ADI.
+    </p>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 my-6">
+        <p class="font-bold text-amber-900 mb-2">Esempio pratico:</p>
+        <p class="text-sm text-amber-800">
+            Nucleo: coppia + 2 minori. Lui percepisce NASpI 1.200 €/mese (14.400 € annui). Lei disoccupata.
+            Reddito familiare annuo: 14.400 €. ISEE stimato: ~12.000 €. <strong>ADI escluso</strong> (soglia 10.140).
+            Solo alla fine della NASpI, con reddito crollato, il nucleo potrà accedere ad ADI.
+        </p>
+    </div>
+
+    <h2>Strategia pratica di transizione</h2>
+    <p>Per nuclei che vivono la cessazione NASpI in condizione di povertà:</p>
+    <ol>
+        <li><strong>Durante la NASpI</strong>: non chiedere ADI (probabile diniego per superamento ISEE).</li>
+        <li><strong>Ultimi 2 mesi di NASpI</strong>: aggiorna DSU e calcola ISEE prospettico (senza NASpI).</li>
+        <li><strong>Giorno della cessazione NASpI</strong>: presenta domanda ADI. Copertura parte dal mese successivo.</li>
+        <li><strong>Parallelamente</strong>: membro 18-59 attivabile può chiedere SFL se non ha requisiti ADI personali (es. non è capofamiglia del minore).</li>
+    </ol>
+
+    <h2>Obblighi ADI</h2>
+    <p>Chi riceve ADI ha obblighi simili alla NASpI:</p>
+    <ul>
+        <li><strong>Iscrizione SIISL + firma PAD</strong>: entro 60 giorni dall'accoglimento.</li>
+        <li><strong>Partecipazione a percorsi di inclusione sociale</strong> stabiliti dai Comuni.</li>
+        <li><strong>NASpI-Com equivalente per ADI</strong>: comunicare ogni variazione reddituale o patrimoniale entro 15 giorni.</li>
+        <li><strong>Rinnovo annuale</strong>: DSU aggiornata ogni anno, pena sospensione.</li>
+    </ul>
+
+    <h2>Bonus genitori e figli: impatto ISEE</h2>
+    <p>
+        Bonus nati 2024 (1.000 €), Bonus mamme (100 €/mese), Assegno Unico Universale: concorrono al reddito familiare
+        ma <strong>non incidono</strong> sul plafond ADI perché esclusi esplicitamente dal calcolo ISEE (D.P.C.M. 159/2013).
+        La NASpI invece <strong>sì</strong>: è reddito da lavoro assimilato e pesa pienamente nell'ISEE.
+    </p>
+
+    <h2>Link utili</h2>
+    <ul>
+        <li><a href="/guida/sfl-naspi">SFL vs NASpI</a></li>
+        <li><a href="/guida/anf">ANF durante NASpI</a></li>
+        <li><a href="/guida/fiscalita">Fiscalità NASpI e 730</a></li>
+    </ul>
+</GuidaLayout>

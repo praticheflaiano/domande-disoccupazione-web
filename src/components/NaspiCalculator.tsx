@@ -7,6 +7,7 @@ import type { NaspiResult, UserInputData, CalculatorMode } from '../types';
 import Obligations from './Obligations';
 import LegalDisclaimer from './LegalDisclaimer';
 import ConversionCTA from './ConversionCTA';
+import DecalageChart from './DecalageChart';
 
 const InfoCard = ({ title, desc }: { title: string, desc: string }) => (
     <div className="bg-blue-50 border border-blue-100 p-4 rounded-xl mb-4 text-sm">
@@ -247,6 +248,12 @@ const NaspiCalculator: React.FC = () => {
                                     <ConversionCTA
                                         headline={`Puoi ottenere fino a € ${result.grossMonthlyAmount.toLocaleString('it-IT')} al mese`}
                                         subline={`La tua stima NASpI copre ${result.totalDaysDuration} giorni, dal ${result.startDate} al ${result.endDate}. Presenta la domanda entro 68 giorni dal licenziamento: possiamo farlo per te oggi.`}
+                                    />
+
+                                    <DecalageChart
+                                        baseMonthlyAmount={result.grossMonthlyAmount}
+                                        totalMonths={Math.ceil(result.totalDaysDuration / 30)}
+                                        age={inputData.age}
                                     />
 
                                     <div>

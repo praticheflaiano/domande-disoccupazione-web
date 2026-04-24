@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import StickyContactBar from '../components/StickyContactBar';
 import AccessibilityToolbar from '../components/AccessibilityToolbar';
 import CookieBanner from '../components/CookieBanner';
+import ExitIntentModal from '../components/ExitIntentModal';
 import { LAST_UPDATED } from '../constants';
 
 export interface Props {
@@ -88,6 +89,9 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
           })),
       }
     : null;
+
+// Google Analytics 4 measurement ID (set in Vercel env: PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXX)
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undefined;
 ---
 
 <!DOCTYPE html>
@@ -133,6 +137,41 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        {gaId && (
+            <>
+                <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} async></script>
+                <script is:inline define:vars={{ gaId }}>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() { dataLayer.push(arguments); }
+                    window.gtag = gtag;
+                    // Consent Mode v2 — default DENY, upgrade on user accept via CookieBanner
+                    gtag('consent', 'default', {
+                        ad_storage: 'denied',
+                        ad_user_data: 'denied',
+                        ad_personalization: 'denied',
+                        analytics_storage: 'denied',
+                        functionality_storage: 'granted',
+                        security_storage: 'granted',
+                        wait_for_update: 500,
+                    });
+                    // Restore consent from localStorage if already given
+                    try {
+                        const saved = JSON.parse(localStorage.getItem('cookie-consent') || 'null');
+                        if (saved && saved.analytics) {
+                            gtag('consent', 'update', {
+                                analytics_storage: 'granted',
+                                ad_storage: saved.marketing ? 'granted' : 'denied',
+                                ad_user_data: saved.marketing ? 'granted' : 'denied',
+                                ad_personalization: saved.marketing ? 'granted' : 'denied',
+                            });
+                        }
+                    } catch (_) {}
+                    gtag('js', new Date());
+                    gtag('config', gaId, { anonymize_ip: true });
+                </script>
+            </>
+        )}
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
             rel="stylesheet"
@@ -180,5 +219,6 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         <StickyContactBar client:idle />
         <AccessibilityToolbar client:idle />
         <CookieBanner client:idle />
+        <ExitIntentModal client:idle />
     </body>
 </html>

@@ -1,0 +1,111 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'SFL e NASpI sono cumulabili?',
+        a: 'No. Sono alternative: SFL (Supporto Formazione Lavoro) è riservato a chi NON ha diritto a NASpI o DIS-COLL. Se hai i requisiti NASpI accedi a quella, che è più generosa. SFL è pensato per disoccupati di lungo corso o soggetti esclusi dagli ammortizzatori ordinari.',
+    },
+    {
+        q: 'Chi può richiedere l\'SFL?',
+        a: 'Cittadini 18-59 anni con ISEE ≤ 10.140 € annui, in stato di disoccupazione, che non abbiano diritto a NASpI/DIS-COLL. Indennità di 500 €/mese per max 12 mesi, condizionata a partecipazione a corsi GOL o tirocinio.',
+    },
+    {
+        q: 'Posso passare da SFL a NASpI (o viceversa)?',
+        a: 'Sì. Se hai SFL e poi trovi lavoro per almeno 13 settimane, maturi il requisito NASpI e puoi chiederla alla cessazione (SFL si chiude). Vice-versa, finita la NASpI senza nuovo lavoro, se l\'ISEE rientra nei 10.140 € puoi chiedere SFL.',
+    },
+    {
+        q: 'Devo fare corsi GOL per avere SFL?',
+        a: 'Sì, è la condizione essenziale. L\'SFL finanzia formazione e tirocinio: la stessa piattaforma SIISL ti propone percorsi compatibili. Non partecipare = sospensione indennità.',
+    },
+];
+---
+
+<GuidaLayout
+    title="SFL e NASpI: quando spetta uno o l'altro | 2026"
+    description="Supporto Formazione Lavoro (SFL) vs NASpI: chi ne ha diritto, importi 2026 (500 €/mese, ISEE 10.140 €), transizione tra le due prestazioni, obblighi GOL."
+    slug="sfl-naspi"
+    h1="Supporto Formazione Lavoro (SFL) vs NASpI"
+    kicker="Alternativa per chi non ha i requisiti NASpI"
+    sources={[
+        'DL 48/2023 conv. L. 85/2023 art. 12 (istituzione SFL)',
+        'Decreto MLPS 8 agosto 2023 (modalità SFL)',
+        'Messaggio INPS n. 2925/2023',
+        'ISEE ordinario 2026 soglia 10.140 € annui',
+    ]}
+    faq={faq}
+>
+    <h2>Cos'è l'SFL</h2>
+    <p>
+        Il <strong>Supporto Formazione Lavoro (SFL)</strong> è una prestazione introdotta dal DL 48/2023 e operativa
+        dal 1° settembre 2023. Eroga <strong>500 € al mese per massimo 12 mesi</strong> a persone tra 18 e 59 anni in
+        stato di disoccupazione che NON abbiano diritto a NASpI/DIS-COLL e che abbiano un ISEE entro la soglia.
+    </p>
+
+    <h2>Requisiti 2026</h2>
+    <ul>
+        <li><strong>Età</strong>: 18-59 anni.</li>
+        <li><strong>ISEE ordinario ≤ 10.140 €/anno</strong> (rivalutabile annualmente).</li>
+        <li><strong>Stato di disoccupazione</strong>: DID online + iscrizione SIISL.</li>
+        <li><strong>Esclusione da altri ammortizzatori</strong>: no NASpI/DIS-COLL attive (ma compatibile con ADI in altro membro famiglia).</li>
+        <li><strong>Residenza</strong>: almeno 5 anni in Italia di cui 2 continuativi.</li>
+        <li><strong>Partecipazione corsi GOL o tirocinio</strong>: obbligatoria.</li>
+    </ul>
+
+    <h2>Tabella: SFL vs NASpI</h2>
+    <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-slate-900 text-white">
+                <tr>
+                    <th class="p-3 text-left">Aspetto</th>
+                    <th class="p-3 text-left">NASpI</th>
+                    <th class="p-3 text-left">SFL</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y">
+                <tr class="bg-white"><td class="p-3 font-semibold">Platea</td><td class="p-3">Lavoratori subordinati cessati involontariamente</td><td class="p-3">Disoccupati 18-59 senza NASpI</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Requisito contributivo</td><td class="p-3">13 settimane ultimi 4 anni</td><td class="p-3">ISEE ≤ 10.140 €</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Importo</td><td class="p-3">75% retribuzione media (fino max 1.584,70 €)</td><td class="p-3">500 € fissi/mese</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Durata max</td><td class="p-3">24 mesi</td><td class="p-3">12 mesi</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold">Obblighi</td><td class="p-3">SIISL/PAD/CPI/GOL</td><td class="p-3">Formazione GOL o tirocinio (condizione costitutiva)</td></tr>
+                <tr class="bg-slate-50"><td class="p-3 font-semibold">Cumulabilità ADI</td><td class="p-3">Limitata (stesso nucleo)</td><td class="p-3">Sì (in altro componente nucleo)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Come passare da NASpI a SFL</h2>
+    <p>
+        Se finisci la NASpI (24 mesi o fine settimane residue) e sei ancora disoccupato con ISEE basso, puoi chiedere SFL:
+    </p>
+    <ol>
+        <li><strong>Aggiorna DSU e ISEE</strong> (necessario per accedere).</li>
+        <li><strong>Domanda SFL</strong> sul portale INPS, sezione "Supporto Formazione Lavoro".</li>
+        <li><strong>Iscrizione SIISL</strong>: se era già attiva per NASpI, resta valida.</li>
+        <li><strong>Firma PSP</strong> specifico per SFL (diverso da quello NASpI).</li>
+        <li><strong>Partecipazione percorso GOL</strong>: dopo 60 giorni senza attività formativa o tirocinio, SFL si sospende.</li>
+    </ol>
+
+    <h2>Come passare da SFL a NASpI</h2>
+    <p>Se durante SFL trovi un lavoro subordinato che dura almeno 13 settimane:</p>
+    <ol>
+        <li>SFL si sospende (NASpI-Com per comunicare il nuovo lavoro).</li>
+        <li>Finito il nuovo lavoro per cessazione involontaria, maturi il requisito NASpI.</li>
+        <li>Nuova domanda NASpI entro 68 giorni. SFL si chiude definitivamente.</li>
+        <li>NASpI ha priorità perché più generosa.</li>
+    </ol>
+
+    <h2>Compatibilità SFL-ADI</h2>
+    <p>
+        Dal 1° gennaio 2024 l'<strong>Assegno di Inclusione (ADI)</strong> ha sostituito il Reddito di Cittadinanza per
+        famiglie con minori, disabili, anziani ≥ 60. SFL e ADI sono compatibili nello stesso nucleo ma assegnati a membri
+        diversi (SFL al 18-59enne attivabile, ADI all'intera famiglia se requisiti specifici). Vedi
+        <a href="/guida/adi-naspi">guida ADI + NASpI</a>.
+    </p>
+
+    <h2>Link</h2>
+    <ul>
+        <li><a href="/obblighi/gol">Programma GOL: i 4 percorsi</a></li>
+        <li><a href="/obblighi/formazione">Dove cercare i corsi</a></li>
+        <li><a href="/guida/adi-naspi">ADI e NASpI: compatibilità</a></li>
+    </ul>
+</GuidaLayout>
