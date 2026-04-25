@@ -110,6 +110,10 @@ export const calculateNaspiEligibility = (data: UserInputData): NaspiResult => {
         isEligible = false;
         ineligibilityReason = "Le dimissioni volontarie non danno diritto alla NASpI (salvo giusta causa/maternità).";
     }
+    if (isEligible && !data.hasWorked30DaysLastYear) {
+        isEligible = false;
+        ineligibilityReason = "Requisito non soddisfatto: servono almeno 30 giorni di lavoro effettivo nei 12 mesi precedenti la cessazione del rapporto.";
+    }
     if (isEligible && weeksWorkedLast4Years < 13) {
         isEligible = false;
         ineligibilityReason = `Requisito non soddisfatto: servono 13 settimane contributive (tu ne hai ${weeksWorkedLast4Years}).`;

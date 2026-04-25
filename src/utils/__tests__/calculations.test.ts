@@ -173,6 +173,61 @@ describe('calculateNaspiEligibility — edge case eligibilità', () => {
         expect(r.ineligibilityReason).toMatch(/13 settimane/);
     });
 
+    it('NOT eligible se manca il requisito dei 30 giorni nell\'ultimo anno (altri requisiti OK)', () => {
+        const r = calculateNaspiEligibility(
+            baseInput({
+                hasWorked30DaysLastYear: false,
+            }),
+        );
+        expect(r.isEligible).toBe(false);
+        expect(r.ineligibilityReason).toMatch(/30 giorni/);
+        expect(r.durationWeeks).toBe(0);
+        expect(r.schedule).toEqual([]);
+    });
+
+    it('eligible quando hasWorked30DaysLastYear=true e tutti gli altri requisiti sono OK', () => {
+        const r = calculateNaspiEligibility(
+            baseInput({
+                hasWorked30DaysLastYear: true,
+                weeksWorkedLast4Years: 52,
+                totalGrossWagesLast4Years: 26000,
+            }),
+        );
+        expect(r.isEligible).toBe(true);
+        expect(r.schedule.length).toBeGreaterThan(0);
+    });
+
+    it('ordine dei check: 30 giorni mancanti + settimane < 13 → vince la reason dei 30 giorni', () => {
+        // L'ordine atteso dei check è:
+        //   1) VOLUNTARY/NONE
+        //   2) hasWorked30DaysLastYear
+        //   3) weeksWorkedLast4Years < 13
+        // Quindi se hasWorked30DaysLastYear=false e settimane=5, la prima reason ad essere
+        // impostata è quella sui 30 giorni.
+        const r = calculateNaspiEligibility(
+            baseInput({
+                hasWorked30DaysLastYear: false,
+                weeksWorkedLast4Years: 5,
+                totalGrossWagesLast4Years: 2500,
+            }),
+        );
+        expect(r.isEligible).toBe(false);
+        expect(r.ineligibilityReason).toMatch(/30 giorni/);
+        expect(r.ineligibilityReason).not.toMatch(/13 settimane/);
+    });
+
+    it('ordine dei check: VOLUNTARY/NONE vince anche se mancano i 30 giorni', () => {
+        const r = calculateNaspiEligibility(
+            baseInput({
+                terminationReason: TerminationReason.VOLUNTARY,
+                voluntaryException: VoluntaryException.NONE,
+                hasWorked30DaysLastYear: false,
+            }),
+        );
+        expect(r.isEligible).toBe(false);
+        expect(r.ineligibilityReason).toMatch(/dimissioni volontarie/i);
+    });
+
     it('VOLUNTARY senza eccezione: NOT eligible, durata=0 e schedule vuoto', () => {
         const r = calculateNaspiEligibility(
             baseInput({
