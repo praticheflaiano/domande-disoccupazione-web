@@ -30,7 +30,7 @@ const OfficeInfo: React.FC = () => {
             </div>
             <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row gap-12">
                 <div className="flex-1 bg-white rounded-2xl overflow-hidden shadow border min-h-[600px]">
-                    <iframe src="https://link.arcanis.it/widget/group/bklXY9sZUszt8V2GpkU1" style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} scrolling="no" id="bklXY9sZUszt8V2GpkU1_1764775911716" title="Prenotazioni"></iframe>
+                    <iframe src="https://link.arcanis.it/widget/group/bklXY9sZUszt8V2GpkU1" style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} id="bklXY9sZUszt8V2GpkU1_1764775911716" title="Prenotazioni"></iframe>
                 </div>
             </div>
         </div>

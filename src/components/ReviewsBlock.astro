@@ -37,7 +37,7 @@ const reviewSchema = hasReviews && GOOGLE_STATS
     : null;
 ---
 
-{reviewSchema && <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />}
+{reviewSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(reviewSchema)} />}
 
 <section aria-label="Recensioni Google" class="max-w-6xl mx-auto px-4 py-10">
     {hasReviews && GOOGLE_STATS ? (
