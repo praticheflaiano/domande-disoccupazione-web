@@ -88,6 +88,30 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
           })),
       }
     : null;
+
+const GA4_REGEX = /^G-[A-Z0-9]{8,}$/i;
+const GTM_REGEX = /^GTM-[A-Z0-9]{6,}$/i;
+
+const rawGa4 = (import.meta.env.PUBLIC_GA4_ID ?? '').toString().trim();
+const rawGtm = (import.meta.env.PUBLIC_GTM_ID ?? '').toString().trim();
+
+let ga4Id: string | null = null;
+if (rawGa4) {
+    if (GA4_REGEX.test(rawGa4)) {
+        ga4Id = rawGa4;
+    } else {
+        console.warn(`[Base.astro] PUBLIC_GA4_ID non valido ("${rawGa4}"): atteso formato G-XXXXXXXXXX. Snippet GA4 non iniettato.`);
+    }
+}
+
+let gtmId: string | null = null;
+if (rawGtm) {
+    if (GTM_REGEX.test(rawGtm)) {
+        gtmId = rawGtm;
+    } else {
+        console.warn(`[Base.astro] PUBLIC_GTM_ID non valido ("${rawGtm}"): atteso formato GTM-XXXXXXX. Snippet GTM non iniettato.`);
+    }
+}
 ---
 
 <!DOCTYPE html>
@@ -138,6 +162,24 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
             rel="stylesheet"
         />
 
+        {/* Analytics: opt-in via PUBLIC_GA4_ID o PUBLIC_GTM_ID — vedi docs/seo-submission.md */}
+        {gtmId && (
+            <script is:inline define:vars={{ gtmId }}>
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtmId);
+            </script>
+        )}
+        {ga4Id && (
+            <>
+                <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+                <script is:inline define:vars={{ ga4Id }}>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', ga4Id);
+                </script>
+            </>
+        )}
+
         <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
         {breadcrumbSchema && (
             <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
@@ -145,6 +187,9 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
     </head>
     <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col font-sans">
+        {gtmId && (
+            <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        )}
         <a href="#main" class="skip-link">Salta al contenuto principale</a>
 
         <SiteHeader currentPath={currentPath} />
@@ -177,7 +222,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         </p>
 
         <Footer client:idle />
-        <StickyContactBar client:idle />
+        {!currentPath.startsWith('/richiedi') && <StickyContactBar client:idle />}
         <AccessibilityToolbar client:idle />
         <CookieBanner client:idle />
     </body>

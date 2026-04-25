@@ -1,0 +1,29 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - name: Ping IndexNow (modified URLs)
+        if: env.INDEXNOW_KEY != ''
+        continue-on-error: true
+        run: node scripts/indexnow-ping.mjs --from-git

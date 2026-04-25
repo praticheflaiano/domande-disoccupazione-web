@@ -1,5 +1,12 @@
 import React, { useEffect } from 'react';
-import { Zap, ShieldCheck, FileText, Download } from 'lucide-react';
+import { Zap, ShieldCheck, FileText, Download, User, FileCheck2, PenLine, Send, Clock } from 'lucide-react';
+
+const APPLY_STEPS = [
+    { num: 1, label: 'Dati personali', time: '~2 min', Icon: User },
+    { num: 2, label: 'Documenti', time: '~3 min', Icon: FileCheck2 },
+    { num: 3, label: 'Mandato', time: '~1 min', Icon: PenLine },
+    { num: 4, label: 'Invio', time: '~30 sec', Icon: Send },
+] as const;
 
 const ApplyOnline: React.FC = () => {
     useEffect(() => {
@@ -110,8 +117,65 @@ const ApplyOnline: React.FC = () => {
                 </div>
 
                 {/* Form Column */}
-                <div className="lg:col-span-2 bg-white rounded-xl shadow border border-slate-200 overflow-hidden min-h-[800px]">
-                    <iframe src="https://link.arcanis.it/widget/survey/sImJrbagruVY43JLeqA9" style={{ border: 'none', width: '100%', minHeight: '800px' }} id="sImJrbagruVY43JLeqA9" title="Modulo Richiesta NASpI"></iframe>
+                <div className="lg:col-span-2 space-y-4">
+                    {/* Stepper visivo statico: panoramica fasi del form */}
+                    <section
+                        aria-label="Panoramica delle fasi della richiesta"
+                        className="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-6"
+                    >
+                        {/* Mobile: lista verticale compatta */}
+                        <ol className="md:hidden space-y-3">
+                            {APPLY_STEPS.map(({ num, label, time, Icon }) => (
+                                <li key={num} className="flex items-center gap-3">
+                                    <div className="shrink-0 w-9 h-9 rounded-full bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center font-bold text-sm">
+                                        {num}
+                                    </div>
+                                    <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+                                        <div className="flex items-center gap-2 min-w-0">
+                                            <Icon className="w-4 h-4 text-slate-500 shrink-0" aria-hidden="true" />
+                                            <span className="text-sm font-semibold text-slate-800 truncate">{label}</span>
+                                        </div>
+                                        <span className="text-xs text-slate-500 whitespace-nowrap">{time}</span>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
+
+                        {/* Desktop: orizzontale con linea connettrice */}
+                        <ol className="hidden md:flex items-start justify-between gap-2 relative">
+                            {APPLY_STEPS.map(({ num, label, time, Icon }, idx) => (
+                                <li
+                                    key={num}
+                                    className="relative flex-1 flex flex-col items-center text-center"
+                                >
+                                    {idx < APPLY_STEPS.length - 1 && (
+                                        <span
+                                            aria-hidden="true"
+                                            className="absolute top-5 left-1/2 w-full h-0.5 bg-slate-200"
+                                        />
+                                    )}
+                                    <div className="relative z-10 w-10 h-10 rounded-full bg-white border-2 border-blue-200 text-blue-700 flex items-center justify-center font-bold">
+                                        {num}
+                                    </div>
+                                    <div className="mt-2 flex items-center gap-1.5">
+                                        <Icon className="w-4 h-4 text-slate-500" aria-hidden="true" />
+                                        <span className="text-sm font-semibold text-slate-800">{label}</span>
+                                    </div>
+                                    <span className="mt-1 text-xs text-slate-500">{time}</span>
+                                </li>
+                            ))}
+                        </ol>
+
+                        <p className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-600">
+                            <Clock className="w-4 h-4 text-slate-400 shrink-0" aria-hidden="true" />
+                            <span><strong className="text-slate-800">Tempo medio totale: 6-8 minuti</strong> — puoi riprendere in qualsiasi momento.</span>
+                        </p>
+                    </section>
+
+                    {/* Iframe Arcanis */}
+                    <div className="bg-white rounded-xl shadow border border-slate-200 overflow-hidden min-h-[800px]">
+                        <iframe src="https://link.arcanis.it/widget/survey/sImJrbagruVY43JLeqA9" style={{ border: 'none', width: '100%', minHeight: '800px' }} id="sImJrbagruVY43JLeqA9" title="Modulo Richiesta NASpI"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
