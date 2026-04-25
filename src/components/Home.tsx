@@ -3,6 +3,7 @@ import HomeHero from './home/HomeHero';
 import StatsBar from './home/StatsBar';
 import RequisitiSection from './home/RequisitiSection';
 import CalcoloSection from './home/CalcoloSection';
+import CompareSection from './home/CompareSection';
 import HowToApplySection from './home/HowToApplySection';
 
 const Home: React.FC = () => {
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
             <StatsBar />
             <RequisitiSection />
             <CalcoloSection />
+            <CompareSection />
             <HowToApplySection />
         </div>
     );

@@ -62,22 +62,27 @@ const ConversionCTA: React.FC<ConversionCTAProps> = ({
                         Invia la domanda online
                         <ArrowRight className="w-5 h-5" aria-hidden="true" />
                     </a>
-                    <a
-                        href={WHATSAPP_HREF}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-6 py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
-                    >
-                        <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                        Scrivi su WhatsApp
-                    </a>
-                    <a
-                        href={PHONE_HREF}
-                        className={`w-full font-semibold px-6 py-3 rounded-2xl text-center inline-flex items-center justify-center gap-2 transition-colors ${variant === 'result' ? 'text-slate-200 hover:text-white border border-slate-700 hover:border-slate-500' : 'text-slate-700 hover:text-slate-900 border border-slate-200 hover:border-slate-300'}`}
-                    >
-                        <Phone className="w-4 h-4" aria-hidden="true" />
-                        Chiama {PHONE_LABEL}
-                    </a>
+                    <div className={`flex flex-wrap items-center gap-x-3 gap-y-1 justify-center text-sm ${variant === 'result' ? 'text-slate-300' : 'text-slate-600'}`}>
+                        <a
+                            href={WHATSAPP_HREF}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Scrivici su WhatsApp al ${WHATSAPP_NUMBER}`}
+                            className={`inline-flex items-center gap-1.5 font-semibold transition-colors ${variant === 'result' ? 'text-emerald-300 hover:text-emerald-200' : 'text-emerald-700 hover:text-emerald-800'}`}
+                        >
+                            <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                            Scrivi su WhatsApp
+                        </a>
+                        <span aria-hidden="true" className={variant === 'result' ? 'text-slate-500' : 'text-slate-400'}>·</span>
+                        <a
+                            href={PHONE_HREF}
+                            aria-label={`Chiama il numero ${PHONE_LABEL}`}
+                            className={`inline-flex items-center gap-1.5 font-semibold transition-colors ${variant === 'result' ? 'text-slate-200 hover:text-white' : 'text-slate-700 hover:text-slate-900'}`}
+                        >
+                            <Phone className="w-4 h-4" aria-hidden="true" />
+                            Chiama {PHONE_LABEL}
+                        </a>
+                    </div>
                 </div>
             </div>
         </aside>

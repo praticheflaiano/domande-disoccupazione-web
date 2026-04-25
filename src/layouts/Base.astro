@@ -222,7 +222,7 @@ if (rawGtm) {
         </p>
 
         <Footer client:idle />
-        <StickyContactBar client:idle />
+        {!currentPath.startsWith('/richiedi') && <StickyContactBar client:idle />}
         <AccessibilityToolbar client:idle />
         <CookieBanner client:idle />
     </body>
