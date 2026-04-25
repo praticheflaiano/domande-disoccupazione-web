@@ -111,7 +111,7 @@ const ApplyOnline: React.FC = () => {
 
                 {/* Form Column */}
                 <div className="lg:col-span-2 bg-white rounded-xl shadow border border-slate-200 overflow-hidden min-h-[800px]">
-                    <iframe src="https://link.arcanis.it/widget/survey/sImJrbagruVY43JLeqA9" style={{ border: 'none', width: '100%', minHeight: '800px' }} scrolling="yes" id="sImJrbagruVY43JLeqA9" title="Modulo Richiesta NASpI"></iframe>
+                    <iframe src="https://link.arcanis.it/widget/survey/sImJrbagruVY43JLeqA9" style={{ border: 'none', width: '100%', minHeight: '800px' }} id="sImJrbagruVY43JLeqA9" title="Modulo Richiesta NASpI"></iframe>
                 </div>
             </div>
         </div>

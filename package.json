@@ -13,7 +13,8 @@
     "lint": "eslint . --ext .ts,.tsx --max-warnings=0",
     "format": "prettier --write \"src/**/*.{ts,tsx,astro,css}\" \"api/**/*.ts\"",
     "test": "vitest",
-    "test:coverage": "vitest --run --coverage"
+    "test:coverage": "vitest --run --coverage",
+    "indexnow": "node scripts/indexnow-ping.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

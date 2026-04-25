@@ -138,11 +138,11 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
             rel="stylesheet"
         />
 
-        <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
         {breadcrumbSchema && (
-            <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+            <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
         )}
-        {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+        {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
     </head>
     <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col font-sans">
         <a href="#main" class="skip-link">Salta al contenuto principale</a>

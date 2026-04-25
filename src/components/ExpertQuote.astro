@@ -52,5 +52,5 @@ const formatDate = (iso: string): string => {
         )}
         {' '}(<time datetime={q.date}>{formatDate(q.date)}</time>)
     </figcaption>
-    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(ld)} />
 </figure>
