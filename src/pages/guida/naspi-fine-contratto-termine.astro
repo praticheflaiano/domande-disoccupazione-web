@@ -1,0 +1,206 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Il mio contratto a termine e finito alla scadenza: ho NASpI?',
+        a: 'Si. La cessazione naturale di un contratto a termine alla data di scadenza e una cessazione involontaria. Codice UNILAV 1L. Spetta NASpI a parita di altri requisiti (13 settimane contributi, domanda entro 68 giorni).',
+    },
+    {
+        q: 'Cosa cambia se l\'ho fatto io a non rinnovare?',
+        a: 'Nel contratto a termine non c\'e "rinnovo" automatico: scaduto, e scaduto. Se il datore propone un rinnovo o una proroga e tu rifiuti, dal punto di vista NASpI non sei tu a recedere - il rapporto e cessato per scadenza. Continua a spettare NASpI.',
+    },
+    {
+        q: 'Apprendistato finito: stesso trattamento?',
+        a: 'Si. Cessazione di apprendistato (codice UNILAV 1Q), per fine periodo formativo o recesso del datore: NASpI spetta. L\'apprendistato e l\'unico contratto a termine speciale per cui il datore non paga il ticket licenziamento.',
+    },
+    {
+        q: 'Contratto stagionale di 4 mesi: 13 settimane di contributi le ho?',
+        a: 'Dipende dalla storia complessiva. Le 13 settimane si guardano sui 4 anni precedenti. Se hai fatto il bagnino solo a luglio-agosto 2025 e poi non hai altra storia, e probabile no. Se hai cumulato altri rapporti, si.',
+    },
+    {
+        q: 'Tra fine contratto e nuovo lavoro ho una settimana di pausa: devo fare NASpI?',
+        a: 'Se trovi nuovo lavoro entro 7 giorni dalla cessazione, in genere conviene non fare la NASpI (sarebbe troncata subito). Ma valuta sempre con il Patronato: se il nuovo lavoro e poi a sua volta breve o di nuovo a termine, NASpI presentata e poi sospesa puo aiutare.',
+    },
+    {
+        q: 'Trasformazione a tempo indeterminato: e ancora NASpI dopo?',
+        a: 'Se il contratto a termine viene trasformato in indeterminato non c\'e cessazione: il rapporto continua. NASpI non spetta perche non c\'e cessato. Se eventualmente vieni licenziato dal nuovo rapporto a indeterminato, ricomincia il calcolo dei requisiti NASpI da li.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI dopo contratto a termine 2026: scadenza e apprendistato"
+    description="NASpI 2026 alla fine di un contratto a termine, stagionale, somministrato, apprendistato. Codici UNILAV 1L/1Q, requisiti, calcolo settimane sui 4 anni, niente ticket licenziamento."
+    slug="naspi-fine-contratto-termine"
+    h1="NASpI dopo cessazione contratto a termine"
+    kicker="Scadenza naturale e fine apprendistato"
+    sources={[
+        'D.Lgs. 4 marzo 2015 n. 22 (NASpI)',
+        'D.Lgs. 15 giugno 2015 n. 81 (riordino tipi contrattuali)',
+        'D.Lgs. 14 settembre 2015 n. 150 art. 2 commi 28-29 (NASpI per somministrati)',
+        'L. 28 giugno 2012 n. 92 art. 2 c. 31 (esenzione ticket licenziamento per contratti a termine)',
+        'INPS Circolare n. 94/2015',
+        'Min. Lavoro - Codici UNILAV cessazione 2024',
+    ]}
+    faq={faq}
+>
+    <h2>Cessazione naturale = cessazione involontaria</h2>
+    <p>
+        Quando un <strong>contratto a tempo determinato</strong> arriva alla data di scadenza pattuita e il datore non
+        propone proroga o trasformazione, il rapporto cessa per <strong>scadenza naturale</strong>. Ai fini NASpI questo
+        e equivalente a un licenziamento: cessazione involontaria, codice UNILAV 1L, diritto a NASpI con i requisiti
+        ordinari (13 settimane di contributi nei 4 anni, domanda entro 68 giorni).
+    </p>
+
+    <h2>I tipi di contratto a termine</h2>
+
+    <h3>Contratto a tempo determinato (CTD)</h3>
+    <p>
+        Il classico contratto subordinato con data di scadenza prefissata. Disciplinato dal D.Lgs. 81/2015 con limiti
+        a durata massima (24 mesi tra rinnovi e proroghe), causalita (oltre 12 mesi serve causale specifica), forma scritta.
+        Alla scadenza: codice UNILAV 1L, NASpI spetta.
+    </p>
+
+    <h3>Contratto stagionale</h3>
+    <p>
+        Variante del CTD per attivita stagionali (turismo, agricoltura, ristorazione estiva). Esente da molti vincoli del
+        CTD ordinario, ma applica le stesse regole NASpI alla cessazione: codice 1L, NASpI spetta. Il problema tipico per
+        gli stagionali e raggiungere le 13 settimane di contributi sui 4 anni: una sola stagione di 3-4 mesi non basta,
+        servono almeno 2 stagioni o altri rapporti contributivi.
+    </p>
+
+    <h3>Contratto di somministrazione (lavoro interinale)</h3>
+    <p>
+        Il lavoratore e dipendente dell'<strong>agenzia per il lavoro</strong> (APL) e viene "somministrato" all'azienda
+        utilizzatrice. Alla fine del periodo di missione il rapporto con l'APL puo proseguire (se l'APL ti propone altre
+        missioni) o cessare. NASpI spetta secondo regole ordinarie. Il datore di NASpI e l'APL (codice fiscale APL su
+        UNILAV).
+    </p>
+
+    <h3>Apprendistato</h3>
+    <p>
+        Contratto a tempo indeterminato con periodo formativo (24-36 mesi a seconda del livello). Al termine del periodo
+        formativo entrambe le parti possono recedere senza giusta causa (recesso ad nutum). Codice UNILAV 1Q. NASpI spetta.
+        L'apprendistato e l'unica forma contrattuale per cui il datore <strong>non paga il ticket licenziamento</strong>.
+    </p>
+
+    <h3>Contratti a chiamata / intermittente</h3>
+    <p>
+        Lavoro a chiamata (job on call). NASpI alla cessazione spetta se i requisiti sono raggiunti, ma con questo tipo
+        di contratto e raro maturare le 13 settimane sui 4 anni perche i contributi sono versati solo per le ore
+        effettivamente lavorate.
+    </p>
+
+    <h2>Calcolo settimane: la storia di 4 anni</h2>
+    <p>
+        Il calcolo dei contributi <strong>guarda agli ultimi 4 anni</strong> prima della data di cessazione.
+        Conta tutto: rapporti subordinati con qualsiasi datore, anche di ramo o tipologia diversa, periodi a termine,
+        somministrazione, apprendistato, lavoro stagionale, settori dello spettacolo. Vale anche la <strong>contribuzione
+        figurativa</strong> per maternita, malattia, congedi e periodi di NASpI gia percepita in precedenza
+        (entro certi limiti).
+    </p>
+    <p>
+        Esempio:
+    </p>
+    <ul>
+        <li>Maggio-settembre 2024 (5 mesi stagionale ristorante): ~21 settimane</li>
+        <li>Novembre 2024-marzo 2025 (5 mesi a termine logistica): ~21 settimane</li>
+        <li>Settembre 2025-aprile 2026 (8 mesi a termine commercio): ~34 settimane</li>
+    </ul>
+    <p>
+        Totale 76 settimane sui 4 anni: <strong>NASpI spetta</strong>, durata circa 38 settimane (~9 mesi).
+        Il calcolo veloce e nel nostro <a href="/calcolatore">calcolatore NASpI 2026</a>.
+    </p>
+
+    <h2>Cessazione: chi paga cosa</h2>
+
+    <h3>Ticket licenziamento</h3>
+    <p>
+        Il ticket licenziamento <strong>NON e dovuto</strong> per:
+    </p>
+    <ul>
+        <li>Cessazione di contratto a termine alla scadenza (CTD, stagionale)</li>
+        <li>Apprendistato (esenzione totale)</li>
+    </ul>
+    <p>
+        Il ticket e dovuto invece se il datore <strong>recede prima della scadenza</strong> di un CTD per giusta causa
+        o cause oggettive (ipotesi residuale).
+    </p>
+
+    <h3>TFR e indennita</h3>
+    <p>
+        Il TFR maturato e sempre dovuto, anche per contratti brevi. La sua liquidazione avviene alla cessazione del
+        rapporto, eccetto per i casi in cui il TFR sia stato accantonato in fondo pensione o erogato mensilmente in
+        busta paga (raro per contratti brevi).
+    </p>
+
+    <h2>Cosa fare il giorno della scadenza</h2>
+    <ol>
+        <li><strong>Verifica con il datore</strong> la data di cessazione e il codice UNILAV (1L per contratto a
+            termine, 1Q per apprendistato)</li>
+        <li><strong>Ricevi la CU</strong> (Certificazione Unica) e ultima busta paga</li>
+        <li><strong>Verifica TFR</strong>: tempi di erogazione, eventuali fondi pensione</li>
+        <li><strong>Confronta le settimane di contribuzione</strong>: storia degli ultimi 4 anni. Se sei sotto le
+            13 settimane, NASpI non scattera</li>
+        <li><strong>Prenota il Patronato</strong> entro 7-10 giorni</li>
+        <li><strong>Presenta domanda NASpI</strong> entro 68 giorni dalla cessazione</li>
+        <li><strong>Iscriviti a SIISL</strong> entro 15 giorni dall'accoglimento, firma il PAD</li>
+    </ol>
+
+    <h2>Casi particolari</h2>
+
+    <h3>Contratto rinnovato di poche settimane</h3>
+    <p>
+        Se il tuo contratto a termine e stato rinnovato per un breve periodo dopo una pausa, attenzione:
+    </p>
+    <ul>
+        <li>Tra rinnovi serve uno <strong>stop di almeno 10 giorni</strong> (CTD breve) o 20 giorni (CTD &gt; 6 mesi)</li>
+        <li>Limite massimo <strong>24 mesi complessivi</strong> tra primo contratto e rinnovi</li>
+        <li>Oltre i 12 mesi totali serve <strong>causale specifica</strong> (esigenze sostitutive, picchi non programmabili,
+            specifiche esigenze)</li>
+    </ul>
+    <p>
+        Se le regole non sono rispettate, il rapporto si converte automaticamente in <strong>tempo indeterminato</strong>
+        e l'eventuale cessazione diventa licenziamento (con tutte le tutele connesse).
+    </p>
+
+    <h3>Trasformazione a tempo indeterminato</h3>
+    <p>
+        Se il datore trasforma il tuo contratto a termine in tempo indeterminato (caso normalmente positivo per il
+        lavoratore), il rapporto continua. <strong>Non c'e cessazione, NASpI non spetta</strong>. La trasformazione si
+        comunica con apposito codice UNILAV (non e una cessazione).
+    </p>
+
+    <h3>Mancato rinnovo dopo 24 mesi</h3>
+    <p>
+        Se il datore non rinnova il contratto dopo i 24 mesi consentiti dal D.Lgs. 81/2015, e una cessazione naturale
+        (codice 1L), NASpI spetta. Se invece prosegue il rapporto oltre i 24 mesi senza trasformazione, il contratto si
+        considera <strong>convertito in tempo indeterminato</strong> dal 25° mese e l'eventuale cessazione successiva
+        diventa licenziamento.
+    </p>
+
+    <h2>Differenze con la NASpI da licenziamento</h2>
+    <p>
+        Operativamente sono identiche: stessa domanda, stessi requisiti, stesse regole su importo e durata. Le
+        differenze rilevanti per il lavoratore:
+    </p>
+    <ul>
+        <li><strong>Niente impugnazione</strong>: la cessazione per scadenza non e impugnabile (era pattuita), salvo
+            nullita del termine (cause inesistenti, mancanza di forma scritta).</li>
+        <li><strong>Niente ticket licenziamento</strong> a carico del datore (esenzione).</li>
+        <li><strong>Niente preavviso ne indennita sostitutiva</strong>: il contratto cessa al termine pattuito senza
+            obblighi reciproci.</li>
+        <li><strong>Niente procedura disciplinare</strong>: non c'e contestazione di alcun comportamento.</li>
+    </ul>
+
+    <h2>Vedi anche</h2>
+    <ul>
+        <li><a href="/guida/presentare-domanda">Come presentare la domanda NASpI</a></li>
+        <li><a href="/guida/naspi-dopo-licenziamento">NASpI dopo licenziamento</a></li>
+        <li><a href="/guida/dimissioni-periodo-prova">Dimissioni in periodo di prova</a></li>
+        <li><a href="/guida/anf">ANF: assegni familiari per chi e in NASpI</a></li>
+        <li><a href="/calcolatore">Calcolatore NASpI 2026</a></li>
+        <li><a href="/anticipo">Anticipo NASpI in unica soluzione</a></li>
+    </ul>
+</GuidaLayout>
