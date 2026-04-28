@@ -29,3 +29,9 @@ export const IRPEF_BRACKETS_2026 = {
 
 export const REFERENCE_YEAR = 2026;
 export const LAST_UPDATED = "2026-04-22";
+
+// Sito principale del Centro Pratiche Flaiano - cross-link bidirezionale
+// per continuita brand. Il sito principale (praticheflaiano-sito.vercel.app)
+// linka qui via EXTERNAL_PORTALS.naspi nel suo consts.ts.
+export const MAIN_SITE_URL = "https://praticheflaiano-sito.vercel.app";
+export const MAIN_SITE_LABEL = "Centro Pratiche Flaiano";

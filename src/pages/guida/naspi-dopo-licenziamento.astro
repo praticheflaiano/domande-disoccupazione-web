@@ -1,0 +1,252 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'NASpI spetta anche per licenziamento disciplinare?',
+        a: 'Si. INPS riconosce la NASpI in tutti i tipi di licenziamento (giusta causa, giustificato motivo soggettivo, oggettivo, disciplinare, conciliativo). Il licenziamento e per definizione un atto del datore, quindi cessazione involontaria.',
+    },
+    {
+        q: 'Cosa devo fare nei primi giorni dopo il licenziamento?',
+        a: 'Ricevi la lettera di licenziamento, verifica il codice cessazione UNILAV (deve iniziare con 1A/1B/1S/1H/1L), prenota appuntamento al Patronato entro 7-10 giorni, presenta domanda NASpI entro 68 giorni dalla data di cessazione.',
+    },
+    {
+        q: 'Cosa e il "ticket licenziamento"?',
+        a: 'E un contributo che il datore di lavoro deve versare all\'INPS in caso di licenziamento di dipendente a tempo indeterminato. Per il 2026 vale circa il 41% del massimale NASpI per ogni anno di anzianita del lavoratore (max 3 anni). Non incide sul lavoratore.',
+    },
+    {
+        q: 'Posso impugnare il licenziamento e chiedere comunque NASpI?',
+        a: 'Si. La NASpI viene erogata da INPS sulla base della cessazione comunicata. Se vinci la causa di reintegra, dovrai restituire la NASpI percepita per il periodo coperto dalla reintegra (fino al massimo dell\'anzianita ricostituita).',
+    },
+    {
+        q: 'Licenziamento orale: ho NASpI?',
+        a: 'Si, in fatto la cessazione e avvenuta. Ma serve provare il licenziamento (PEC al datore con sollecito di formalizzare per iscritto, testimoni, mancato pagamento delle ultime spettanze). Senza prova INPS puo qualificare la cessazione come abbandono e negare NASpI.',
+    },
+    {
+        q: 'Sono stato licenziato dopo aver dato dimissioni da un altro lavoro 8 mesi fa: posso avere NASpI?',
+        a: 'Dipende. Dal 2025 (Legge di Bilancio 2025) se hai dato dimissioni nei 12 mesi precedenti, le 13 settimane di contributi richieste devono essere maturate dopo le dimissioni. Se le 13 settimane le hai fatte interamente nel nuovo lavoro, NASpI spetta. Altrimenti no.',
+    },
+];
+---
+
+<GuidaLayout
+    title="NASpI dopo licenziamento 2026: tutti i tipi e la procedura"
+    description="NASpI 2026 dopo licenziamento: giustificato motivo oggettivo, soggettivo, giusta causa, disciplinare, conciliativo, orale. Codici UNILAV, ticket licenziamento, procedura, ricorsi."
+    slug="naspi-dopo-licenziamento"
+    h1="NASpI dopo licenziamento: tutti i casi e la procedura"
+    kicker="Cessazione involontaria - i tuoi diritti subito"
+    sources={[
+        'D.Lgs. 4 marzo 2015 n. 22 (NASpI)',
+        'L. 28 giugno 2012 n. 92 art. 2 commi 31-35 (ticket licenziamento)',
+        'L. 207/2024 (Legge di Bilancio 2025) - stretta dimissioni 12 mesi precedenti',
+        'L. 199/2025 (Legge di Bilancio 2026) - conferma requisiti',
+        'Min. Lavoro - Codici UNILAV cessazione (Decreto Direttoriale 2024)',
+        'INPS Circolare n. 94/2015 (NASpI applicativa)',
+    ]}
+    faq={faq}
+>
+    <h2>Licenziamento = cessazione involontaria = NASpI</h2>
+    <p>
+        Il licenziamento e per definizione un atto unilaterale del datore di lavoro. Per la NASpI cio significa
+        <strong>cessazione involontaria</strong>, e quindi diritto all'indennita a parita di altri requisiti
+        (13 settimane di contributi nei 4 anni precedenti, presentazione domanda entro 68 giorni). Vale per tutte le
+        forme di licenziamento, anche quelle "scomode": disciplinare, per giusta causa, conciliativo. Il <strong>tipo</strong>
+        di licenziamento incide sull'eventuale impugnazione e sulle conseguenze risarcitorie, ma non sul diritto a NASpI.
+    </p>
+
+    <h2>I tipi di licenziamento (e il codice UNILAV)</h2>
+    <p>
+        Il datore comunica al Centro per l'Impiego (sistema UNILAV) la cessazione del rapporto con un codice causale.
+        Per la NASpI conta che il codice sia <strong>involontario</strong>:
+    </p>
+
+    <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+            <thead class="bg-brand-950 text-white">
+                <tr>
+                    <th class="p-3 text-left">Codice</th>
+                    <th class="p-3 text-left">Tipologia</th>
+                    <th class="p-3 text-left">Quando</th>
+                    <th class="p-3 text-left">NASpI?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1A, 1S</td>
+                    <td class="p-3">Licenziamento <strong>giustificato motivo oggettivo</strong> (GMO)</td>
+                    <td class="p-3">Riorganizzazioni, soppressione posto, crisi aziendale</td>
+                    <td class="p-3 text-brand-700 font-bold">Si</td>
+                </tr>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1B</td>
+                    <td class="p-3">Licenziamento <strong>giusta causa o motivo soggettivo</strong> (disciplinare)</td>
+                    <td class="p-3">Inadempimento grave del lavoratore, comportamenti gravi</td>
+                    <td class="p-3 text-brand-700 font-bold">Si</td>
+                </tr>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1H</td>
+                    <td class="p-3">Licenziamento <strong>conciliativo</strong> (offerta art. 6 D.Lgs. 23/2015)</td>
+                    <td class="p-3">Accordo economico tra le parti dopo il licenziamento</td>
+                    <td class="p-3 text-brand-700 font-bold">Si</td>
+                </tr>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1L</td>
+                    <td class="p-3">Cessazione <strong>contratto a termine</strong> alla scadenza</td>
+                    <td class="p-3">Contratto a termine giunto a scadenza naturale</td>
+                    <td class="p-3 text-brand-700 font-bold">Si</td>
+                </tr>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1N, 1T, 1V</td>
+                    <td class="p-3">Recesso datore in <strong>periodo di prova</strong></td>
+                    <td class="p-3">Datore interrompe prima della fine prova</td>
+                    <td class="p-3 text-brand-700 font-bold">Si</td>
+                </tr>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1Q</td>
+                    <td class="p-3">Cessazione <strong>apprendistato</strong></td>
+                    <td class="p-3">Fine periodo formativo o recesso datore</td>
+                    <td class="p-3 text-brand-700 font-bold">Si</td>
+                </tr>
+                <tr class="border-b border-line">
+                    <td class="p-3 font-mono">1C</td>
+                    <td class="p-3">Dimissioni volontarie</td>
+                    <td class="p-3">Recesso del lavoratore</td>
+                    <td class="p-3 text-red-700 font-bold">No (salvo eccezioni)</td>
+                </tr>
+                <tr>
+                    <td class="p-3 font-mono">1G</td>
+                    <td class="p-3">Risoluzione consensuale</td>
+                    <td class="p-3">Accordo tra le parti per cessare</td>
+                    <td class="p-3 text-red-700 font-bold">No (salvo conciliazione protetta)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Licenziamento per giustificato motivo oggettivo (GMO)</h2>
+    <p>
+        E il licenziamento "economico-organizzativo": il datore non ha piu bisogno della tua mansione (es. soppressione
+        del posto, crisi aziendale, riorganizzazione). Va comunicato per iscritto, motivato, e in alcuni casi preceduto
+        da una <strong>procedura di conciliazione presso l'Ispettorato Territoriale del Lavoro</strong> (per imprese sopra
+        15 dipendenti, art. 7 L. 604/1966 modificato dalla Riforma Fornero).
+    </p>
+    <p>
+        Per la NASpI vale come ogni altro licenziamento: codice 1A o 1S, ticket licenziamento a carico datore, NASpI
+        spetta dall'8° giorno dopo cessazione.
+    </p>
+
+    <h2>Licenziamento per giustificato motivo soggettivo (GMS)</h2>
+    <p>
+        E un licenziamento <strong>disciplinare</strong> motivato da un inadempimento del lavoratore non cosi grave da
+        giustificare la giusta causa, ma comunque rilevante (notevole inadempimento degli obblighi contrattuali).
+        Tipicamente preceduto da <strong>procedura disciplinare</strong> ex art. 7 Statuto Lavoratori (contestazione
+        scritta, diritto di difesa entro 5 giorni, eventuale audizione, decisione finale).
+    </p>
+    <p>
+        Codice UNILAV 1B, NASpI spetta. Eventuale impugnazione davanti al Giudice del Lavoro (entro 60 giorni
+        dalla comunicazione + 180 giorni per il ricorso giudiziale).
+    </p>
+
+    <h2>Licenziamento per giusta causa</h2>
+    <p>
+        Il livello piu grave: condotte del lavoratore che <strong>impediscono la prosecuzione anche provvisoria</strong>
+        del rapporto (art. 2119 c.c.). Sospetti gravi (furto, violenza, falsificazione documenti), o anche fatti
+        extra-lavorativi che ledono il vincolo fiduciario.
+    </p>
+    <p>
+        Il datore puo recedere <strong>senza preavviso</strong> e senza indennita sostitutiva. Per il lavoratore:
+        codice UNILAV 1B, NASpI spetta comunque (e cessazione involontaria), ticket licenziamento dovuto dal datore.
+    </p>
+
+    <h2>Licenziamento conciliativo (art. 6 D.Lgs. 23/2015)</h2>
+    <p>
+        Per i lavoratori assunti dal 7 marzo 2015 (regime "tutele crescenti"), in caso di licenziamento il datore puo
+        offrire al lavoratore una <strong>somma esente IRPEF e contributi</strong> pari a 1 mensilita per ogni anno di
+        servizio (min 3, max 27 mensilita). L'accettazione formalizza la cessazione, evita la causa di lavoro e
+        non incide sulla NASpI.
+    </p>
+    <p>
+        Codice UNILAV 1H. NASpI spetta. La somma conciliativa e indipendente da NASpI (non si decurtano le rate).
+    </p>
+
+    <h2>Licenziamento orale o di fatto</h2>
+    <p>
+        Se il datore ti dice "non venire piu" senza formalizzare per iscritto, dal punto di vista legale il licenziamento
+        e <strong>nullo</strong> (manca la forma scritta obbligatoria, art. 2 L. 604/1966) e quindi inefficace. Pero
+        nei fatti il rapporto e cessato e non puoi tornare a lavorare. Strategia:
+    </p>
+    <ol>
+        <li>Invia subito una <strong>PEC al datore</strong> chiedendo formalizzazione scritta del licenziamento o
+            invito a riprendere servizio</li>
+        <li>Se non risponde, considera il rapporto cessato di fatto e presenta <strong>domanda NASpI</strong>
+            entro 68 giorni</li>
+        <li>In parallelo, <strong>impugna giudizialmente</strong> il licenziamento orale (avvocato del lavoro)
+            chiedendo reintegra ex art. 18 St. Lav. o tutele crescenti</li>
+    </ol>
+
+    <h2>Stretta 2025: dimissioni nei 12 mesi precedenti</h2>
+    <p>
+        La <strong>Legge di Bilancio 2025</strong> ha introdotto un requisito aggiuntivo per chi sia stato
+        prima dimissionario e poi licenziato:
+    </p>
+    <p>
+        <em>"Se nei 12 mesi precedenti la cessazione hai dato dimissioni volontarie da un rapporto a tempo indeterminato,
+        le 13 settimane di contributi richieste per la NASpI devono essere state maturate <strong>dopo</strong> tali dimissioni."</em>
+    </p>
+    <p>
+        Esempio: dimissioni a luglio 2025, nuovo lavoro a settembre 2025, licenziamento a marzo 2026. Hai NASpI solo
+        se le 13 settimane di contributi tra settembre 2025 e marzo 2026 sono complete. Non valgono i contributi
+        dell'anno precedente nel rapporto chiuso per dimissioni.
+    </p>
+    <p>
+        La regola e stata <strong>confermata anche per il 2026</strong> (Legge 199/2025). Vale solo per il caso specifico
+        "dimissioni + licenziamento + NASpI" e non penalizza altri scenari.
+    </p>
+
+    <h2>Ticket licenziamento: cos'e e a chi spetta</h2>
+    <p>
+        Il <strong>ticket licenziamento</strong> e un contributo che il datore deve versare all'INPS per ogni licenziamento
+        di dipendente <strong>a tempo indeterminato</strong> che dia diritto a NASpI. Per il 2026 e pari al
+        <strong>41%</strong> del massimale mensile NASpI moltiplicato per gli anni di anzianita del lavoratore (max 3 anni).
+        Il ticket e doppio o triplicato in caso di licenziamento collettivo, e dovuto in tutti i casi salvo:
+    </p>
+    <ul>
+        <li>Apprendisti (esenti)</li>
+        <li>Cessazione contratti a termine alla scadenza naturale (esente)</li>
+        <li>Pensionamento</li>
+        <li>Decesso del lavoratore</li>
+    </ul>
+    <p>
+        Il ticket non incide sul lavoratore: e onere del datore. Non riduce la NASpI ricevuta.
+    </p>
+
+    <h2>Cosa fare passo per passo</h2>
+    <ol>
+        <li><strong>Ricevi la lettera di licenziamento</strong> con motivazione chiara</li>
+        <li><strong>Verifica il codice cessazione UNILAV</strong> chiedendolo al datore (deve iniziare con 1A/1B/1S/1H/1L)</li>
+        <li><strong>Raccoglie i documenti</strong>: lettera di licenziamento, ultime 3 buste paga, CU, contributi
+            (storia previdenziale)</li>
+        <li><strong>Valuta impugnazione</strong> entro 60 giorni con un avvocato del lavoro o sindacato (azione
+            separata da NASpI)</li>
+        <li><strong>Prenota il Patronato</strong> per la domanda NASpI</li>
+        <li><strong>Presenta domanda NASpI all'INPS</strong> entro 68 giorni dalla data di cessazione (online,
+            via Patronato gratuito, o Contact Center)</li>
+        <li><strong>Iscriviti a SIISL</strong> entro 15 giorni dall'accoglimento, firma il PAD</li>
+        <li><strong>Aggiorna l'ISEE corrente</strong> al CAF (gratis prima presentazione) per ricalibrare AUU e bonus</li>
+    </ol>
+
+    <p>
+        Per il calcolo veloce dell'importo e della durata NASpI, usa il <a href="/calcolatore">calcolatore NASpI 2026</a>.
+        Per chi ha intenzione di avviare un'attivita autonoma c'e l'<a href="/anticipo">anticipo NASpI in unica soluzione</a>.
+    </p>
+
+    <h2>Vedi anche</h2>
+    <ul>
+        <li><a href="/guida/presentare-domanda">Come presentare la domanda NASpI passo per passo</a></li>
+        <li><a href="/guida/dimissioni-giusta-causa">Dimissioni per giusta causa: NASpI con dimissioni</a></li>
+        <li><a href="/guida/dimissioni-periodo-prova">Dimissioni in periodo di prova</a></li>
+        <li><a href="/guida/ricorso">Ricorso amministrativo NASpI</a></li>
+        <li><a href="/obblighi/siisl">SIISL e Patto di Attivazione Digitale</a></li>
+        <li><a href="/calcolatore">Calcolatore NASpI 2026</a></li>
+    </ul>
+</GuidaLayout>

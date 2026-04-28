@@ -1,0 +1,167 @@
+---
+import GuidaLayout from '../../layouts/GuidaLayout.astro';
+
+const faq = [
+    {
+        q: 'Se mi dimetto durante la prova ho diritto alla NASpI?',
+        a: 'No. Le dimissioni in periodo di prova sono dimissioni volontarie a tutti gli effetti e non danno diritto alla NASpI, salvo i casi eccezionali previsti per qualunque dimissione (giusta causa documentata, periodo protetto maternita).',
+    },
+    {
+        q: 'E se e il datore a recedere durante la prova?',
+        a: 'Si, hai diritto alla NASpI. Il recesso del datore in periodo di prova viene comunicato all\'INPS con i codici cessazione 1N (per le cessazioni 2024 in poi 1T/1V), che sono codici "involontari" come il licenziamento.',
+    },
+    {
+        q: 'Quante settimane di contributi servono se la prova e durata pochi giorni?',
+        a: 'I requisiti NASpI sono identici: 13 settimane di contributi nei 4 anni precedenti, anche se non maturate nel rapporto interrotto. Conta tutta la storia contributiva. Per chi e al primo rapporto e ha prova brevissima senza altra storia, NASpI spesso non scatta.',
+    },
+    {
+        q: 'Patto di prova nullo: cambia qualcosa per la NASpI?',
+        a: 'Si. Se la prova e nulla per vizi formali (mansione non specificata, durata oltre limiti CCNL, mancata forma scritta, ecc.) il rapporto si considera a tempo indeterminato dall\'origine, e la cessazione e qualificata come licenziamento, con diritto a NASpI ed eventuale reintegra.',
+    },
+    {
+        q: 'Come faccio le dimissioni durante la prova?',
+        a: 'In periodo di prova le dimissioni NON richiedono la procedura telematica obbligatoria (art. 26 D.Lgs. 151/2015). Bastano dimissioni in forma libera (consigliata raccomandata o PEC). Niente preavviso, niente convalida ITL.',
+    },
+];
+---
+
+<GuidaLayout
+    title="Dimissioni in periodo di prova e NASpI 2026: tutti i casi"
+    description="Cosa succede alla NASpI se ti dimetti durante il periodo di prova o se e il datore a recedere. Codici cessazione 1N/1T/1V, contributi necessari, prova nulla, niente procedura telematica."
+    slug="dimissioni-periodo-prova"
+    h1="Dimissioni in periodo di prova e diritto alla NASpI"
+    kicker="Recesso del lavoratore vs recesso del datore"
+    sources={[
+        'Art. 2096 codice civile (patto di prova)',
+        'D.Lgs. 4 marzo 2015 n. 22 art. 3 (requisiti NASpI - involontarieta)',
+        'D.Lgs. 14 settembre 2015 n. 151 art. 26 (dimissioni telematiche - escluso periodo di prova)',
+        'INPS Circolare n. 94/2015 (cause non involontarie)',
+        'Min. Lavoro - Codici cessazione UNILAV 2024 (1N, 1T, 1V)',
+    ]}
+    faq={faq}
+>
+    <h2>Il principio</h2>
+    <p>
+        Il <strong>periodo di prova</strong> e la fase iniziale del rapporto di lavoro (max 6 mesi per dipendenti generali, 3 mesi
+        per impiegati al di sotto di un certo livello CCNL) durante la quale entrambe le parti possono recedere senza preavviso e
+        senza dover dimostrare una causa specifica (art. 2096 c.c.). Il punto critico per la NASpI e <strong>chi recede</strong>:
+        se il datore, hai diritto alla NASpI come per qualsiasi licenziamento; se il lavoratore, nessuna NASpI.
+    </p>
+
+    <h2>Recesso del datore in periodo di prova: NASpI SI</h2>
+    <p>
+        Quando e il datore a "interrompere la prova" comunica all'INPS la cessazione con uno dei seguenti codici cessazione
+        UNILAV (rilasciati dal Ministero del Lavoro, in vigore per le cessazioni dal 2024 in avanti):
+    </p>
+    <ul>
+        <li><strong>1N</strong> - "Recesso datore di lavoro durante o al termine del periodo di prova" (codice storico)</li>
+        <li><strong>1T</strong>, <strong>1V</strong> - varianti specifiche introdotte dal 2024 per particolari categorie</li>
+    </ul>
+    <p>
+        Tutti e tre sono <strong>codici involontari</strong> e abilitano la NASpI a parita di altri requisiti
+        (13 settimane di contributi nei 4 anni precedenti, presentazione domanda entro 68 giorni). E lo stesso trattamento
+        di un licenziamento ordinario.
+    </p>
+
+    <h2>Recesso del lavoratore in periodo di prova: NASpI NO</h2>
+    <p>
+        Le dimissioni in prova sono <strong>dimissioni volontarie</strong> a tutti gli effetti. INPS le considera causa
+        "non involontaria" (codice cessazione 1C) e <strong>rigetta la domanda NASpI</strong>. Le poche eccezioni sono
+        quelle valide per qualunque dimissione:
+    </p>
+    <ul>
+        <li><strong>Dimissioni per giusta causa</strong>: il datore commette inadempimento grave (mancato pagamento stipendi,
+            mancato versamento contributi, mobbing documentato, trasferimento illegittimo, demansionamento). Vale anche in periodo
+            di prova. Vedi la nostra <a href="/guida/dimissioni-giusta-causa">guida dedicata alle dimissioni per giusta causa</a>.</li>
+        <li><strong>Periodo protetto maternita</strong>: se la lavoratrice e madre nel 1° anno del bambino le dimissioni
+            danno comunque diritto a NASpI. Vedi <a href="/guida/dimissioni-maternita">dimissioni in maternita</a>.</li>
+    </ul>
+
+    <h2>Patto di prova nullo: cambia tutto</h2>
+    <p>
+        Il <strong>patto di prova</strong> deve avere requisiti formali stringenti pena nullita:
+    </p>
+    <ul>
+        <li><strong>Forma scritta</strong> con indicazione precisa delle <strong>mansioni</strong> da provare</li>
+        <li>Durata <strong>non superiore</strong> a quella prevista dal CCNL</li>
+        <li>Sottoscrizione <strong>prima</strong> dell'inizio del rapporto (non in seguito)</li>
+        <li>Mansioni <strong>compatibili</strong> con il livello contrattuale assunto</li>
+    </ul>
+    <p>
+        Se il patto e nullo (es. non e stata indicata la mansione, oppure e durata oltre il limite CCNL), il rapporto si
+        considera <strong>a tempo indeterminato dall'origine</strong> e la cessazione viene qualificata come licenziamento
+        ordinario. Con conseguenze fondamentali:
+    </p>
+    <ul>
+        <li>Diritto alla NASpI come da regola generale</li>
+        <li>Eventuale <strong>reintegra</strong> se il licenziamento risulta privo di giusta causa o giustificato motivo</li>
+        <li>Indennita risarcitoria se la reintegra non e possibile</li>
+    </ul>
+    <p>
+        La nullita del patto va contestata <strong>davanti al Giudice del Lavoro</strong> (avvocato), tipicamente con il
+        sostegno del sindacato di settore. Il Patronato puo seguire la fase NASpI in parallelo.
+    </p>
+
+    <h2>Procedura: niente dimissioni telematiche obbligatorie</h2>
+    <p>
+        Le <strong>dimissioni in periodo di prova</strong> NON richiedono la procedura telematica
+        (art. 26 D.Lgs. 151/2015 esclude espressamente la prova). Bastano dimissioni in forma libera, ma e fortemente
+        consigliato comunicarle in modo formale:
+    </p>
+    <ul>
+        <li>Raccomandata A/R</li>
+        <li>PEC dal proprio indirizzo</li>
+        <li>Consegna a mano con copia firmata per ricevuta</li>
+    </ul>
+    <p>
+        Niente convalida all'Ispettorato Territoriale del Lavoro. Niente periodo di preavviso da rispettare. Recesso
+        immediato salvo diversa pattuizione del contratto individuale o CCNL.
+    </p>
+
+    <h2>Calcolo settimane: come contano i giorni di prova</h2>
+    <p>
+        Se la prova e durata <strong>poche settimane</strong> e non hai altra storia contributiva, e probabile che tu
+        non raggiunga le 13 settimane di contribuzione necessarie. La NASpI guarda agli <strong>ultimi 4 anni</strong>
+        prima della cessazione: vale qualunque rapporto contribuitivo subordinato che hai avuto, anche da datori diversi,
+        anche con periodi di interruzione.
+    </p>
+    <p>
+        Per il calcolo veloce sui tuoi contributi, usa il <a href="/calcolatore">calcolatore NASpI 2026</a>.
+    </p>
+
+    <h2>Contestare un codice cessazione errato</h2>
+    <p>
+        Non e raro che il datore comunichi all'UNILAV un codice <strong>1C (dimissioni)</strong> quando in realta era
+        <strong>lui</strong> a recedere durante la prova. In quel caso:
+    </p>
+    <ol>
+        <li>Richiedi <strong>copia dell'UNILAV</strong> dal datore (o dal Centro per l'Impiego, su richiesta)</li>
+        <li>Se il codice e errato, contesta <strong>per iscritto</strong> al datore con PEC, chiedendo rettifica</li>
+        <li>Se il datore non rettifica, presenta <strong>ricorso amministrativo all'INPS</strong> entro 90 giorni
+            allegando documentazione (lettera del datore, email, testimoni)</li>
+        <li>In alternativa, ricorso al <strong>Giudice del Lavoro</strong> entro 3 anni</li>
+    </ol>
+    <p>
+        Il <a href="https://praticheflaiano-sito.vercel.app/servizi/patronato">Patronato del Centro Pratiche Flaiano</a>
+        gestisce gratuitamente i ricorsi amministrativi all'INPS. Se serve avvocato, ti indirizziamo a un legale del lavoro.
+    </p>
+
+    <h2>Cosa raccogliere prima di portare la pratica al Patronato</h2>
+    <ul>
+        <li>Contratto di assunzione con clausola del periodo di prova</li>
+        <li>Eventuale CCNL applicato</li>
+        <li>Comunicazione di recesso (se ricevuta dal datore) o lettera di dimissioni</li>
+        <li>UNILAV con codice cessazione</li>
+        <li>Buste paga del periodo di prova</li>
+        <li>Documenti a supporto (mail, sms, testimoni) se contesti la causale</li>
+    </ul>
+
+    <h2>Vedi anche</h2>
+    <ul>
+        <li><a href="/guida/dimissioni-giusta-causa">Dimissioni per giusta causa: le 7 causali e la procedura</a></li>
+        <li><a href="/guida/dimissioni-stipendio-non-pagato">Dimissioni per stipendio non pagato</a></li>
+        <li><a href="/guida/presentare-domanda">Come presentare la domanda NASpI passo per passo</a></li>
+        <li><a href="/guida/ricorso">Ricorso amministrativo NASpI</a></li>
+        <li><a href="/calcolatore">Calcolatore NASpI 2026</a></li>
+    </ul>
+</GuidaLayout>

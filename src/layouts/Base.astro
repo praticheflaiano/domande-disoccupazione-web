@@ -101,6 +101,16 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hreflang="it-IT" href={canonicalUrl} />
 
+        {/* Font: Newsreader display serif + Public Sans body + JetBrains Mono.
+            Allineato al sito principale praticheflaiano-sito.vercel.app per
+            continuita brand. Design system "Adriatic Blue". */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Public+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap"
+        />
+
         <meta property="og:type" content={ogType} />
         <meta property="og:locale" content="it_IT" />
         <meta property="og:url" content={canonicalUrl} />
@@ -144,7 +154,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         )}
         {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
     </head>
-    <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col font-sans">
+    <body class="bg-brand-50 text-ink antialiased selection:bg-brand-200 selection:text-brand-950 min-h-screen flex flex-col font-sans grain">
         <a href="#main" class="skip-link">Salta al contenuto principale</a>
 
         <SiteHeader currentPath={currentPath} />
