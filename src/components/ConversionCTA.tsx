@@ -14,8 +14,8 @@ interface ConversionCTAProps {
 }
 
 const ConversionCTA: React.FC<ConversionCTAProps> = ({
-    headline = 'Vuoi che ci pensiamo noi?',
-    subline = 'Invia la tua domanda NASpI con assistenza professionale: verifichiamo i dati, firmiamo il mandato e inoltriamo all\'INPS in 24 ore.',
+    headline = 'Evita errori e ritardi: Affidaci la tua Domanda NASpI',
+    subline = 'Un errore nella compilazione può costarti mesi di attesa. Affidati ai nostri esperti: verifichiamo i tuoi requisiti, controlliamo i documenti e inoltriamo la pratica all\'INPS in 24 ore, garantendo il massimo del risultato.',
     variant = 'result',
     className = '',
 }) => {

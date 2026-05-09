@@ -43,27 +43,26 @@ const Home: React.FC = () => {
                                 Aggiornato alla Normativa 2026
                             </div>
                             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-                                La Tua NASpI, <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">Semplificata.</span>
+                                La Tua Domanda NASpI, <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">Senza Errori o Ritardi.</span>
                             </h1>
                             <p className="text-xl text-slate-600 max-w-lg leading-relaxed">
-                                Il portale esperto per calcolare, richiedere e gestire la tua indennità di disoccupazione.
-                                Niente burocrazia, solo chiarezza.
+                                Affidati ai professionisti per calcolare, richiedere e gestire la tua indennità di disoccupazione. Niente burocrazia, zero stress, pratica inviata in 24 ore.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href="/calcolatore"
+                                    href="/richiedi"
                                     className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-300 flex items-center justify-center gap-2 group"
                                 >
-                                    Calcola Ora
+                                    Fai Domanda Ora
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </a>
                                 <a
-                                    href="/manuale"
+                                    href="/calcolatore"
                                     className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-100 rounded-2xl font-bold text-lg hover:border-teal-100 hover:bg-teal-50/50 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
                                     <BookOpen className="w-5 h-5 text-teal-600" />
-                                    Guida 2026
+                                    Calcola Importo
                                 </a>
                             </div>
                             <div className="flex items-center gap-4 text-sm text-slate-500 pt-4">
@@ -185,7 +184,7 @@ const Home: React.FC = () => {
             </Section>
 
             {/* HOW TO APPLY SECTION */}
-            <Section title="Come Richiederla">
+            <Section title="Come Fare Domanda">
                 <div className="mb-10">
                     <ConversionCTA
                         headline="Fai fare tutto a noi in 24 ore"
