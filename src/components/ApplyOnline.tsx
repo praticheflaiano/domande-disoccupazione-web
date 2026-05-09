@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Zap, ShieldCheck, FileText, Download } from 'lucide-react';
+import { Zap, ShieldCheck, FileText, Download, User } from 'lucide-react';
 
 const ApplyOnline: React.FC = () => {
     useEffect(() => {
@@ -13,10 +13,10 @@ const ApplyOnline: React.FC = () => {
 
     return (
         <div className="animate-in fade-in duration-500">
-            <title>Richiedi NASpI Online</title>
+            <title>Domanda NASpI Online</title>
             <div className="bg-slate-900 text-slate-100 py-12 px-4 text-center border-b border-slate-800">
-                <h1 className="text-3xl font-bold mb-4 text-white">Richiesta NASpI Online</h1>
-                <p className="max-w-2xl mx-auto text-slate-400">Compila il modulo, carica i documenti e noi pensiamo a tutto il resto.</p>
+                <h1 className="text-3xl font-bold mb-4 text-white">Domanda NASpI: Affidati a Professionisti</h1>
+                <p className="max-w-2xl mx-auto text-slate-400">Evita errori e perdite di tempo. Carica i tuoi documenti e invieremo la tua domanda in 24h con il massimo del risultato.</p>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 py-8 grid lg:grid-cols-3 gap-8">
@@ -72,16 +72,20 @@ const ApplyOnline: React.FC = () => {
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                         <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
                             <ShieldCheck className="w-5 h-5 text-slate-500" />
-                            Come Funziona
+                            Perché affidarti a noi?
                         </h3>
                         <ul className="space-y-3 text-xs text-slate-600">
                             <li className="flex gap-2">
                                 <Zap className="w-4 h-4 text-amber-500 shrink-0" />
-                                <strong>Invio Rapido:</strong> La tua pratica viene lavorata entro 24h dall'invio.
+                                <strong>Inviata in 24 Ore:</strong> La tua pratica viene lavorata entro 24h dall'invio.
                             </li>
                             <li className="flex gap-2">
                                 <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
-                                <strong>Controllo Requisiti:</strong> Verifichiamo la completezza dei dati prima dell'inoltro all'INPS.
+                                <strong>Zero Errori:</strong> Verifichiamo la completezza dei dati prima dell'inoltro all'INPS per evitare blocchi.
+                            </li>
+                            <li className="flex gap-2">
+                                <User className="w-4 h-4 text-blue-500 shrink-0" />
+                                <strong>Assistenza Dedicata:</strong> Un esperto ti seguirà passo passo.
                             </li>
                         </ul>
                     </div>
