@@ -48,8 +48,8 @@ const ConversionCTA: React.FC<ConversionCTAProps> = ({
                     <h3 className={`text-2xl md:text-3xl font-extrabold ${variant === 'result' ? 'text-white' : 'text-slate-900'}`}>{headline}</h3>
                     <p className={`text-base md:text-lg leading-relaxed ${textClasses}`}>{subline}</p>
                     <ul className={`grid sm:grid-cols-3 gap-3 text-sm ${variant === 'result' ? 'text-slate-300' : 'text-slate-700'}`}>
-                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" aria-hidden="true" /> 1.843+ pratiche</li>
-                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" aria-hidden="true" /> 99,8% accolte</li>
+                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" aria-hidden="true" /> Domanda gratis</li>
+                        <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-400" aria-hidden="true" /> Patronato ENASC</li>
                         <li className="flex items-center gap-2"><Clock className="w-4 h-4 text-emerald-400" aria-hidden="true" /> Invio in 24 h</li>
                     </ul>
                 </div>

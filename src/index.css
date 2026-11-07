@@ -8,7 +8,7 @@
     }
 
     :focus-visible {
-        @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-slate-50 rounded-md;
+        @apply outline-none ring-2 ring-blue-600 ring-offset-2 ring-offset-white rounded-md;
     }
 
     .skip-link {
@@ -46,16 +46,35 @@
     }
 
     .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-blue-600;
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500;
     }
 }
 
 body {
-    background-color: #f8fafc;
-    background-image:
-        radial-gradient(at 0% 0%, hsla(192, 100%, 96%, 1) 0, transparent 50%),
-        radial-gradient(at 100% 0%, hsla(214, 100%, 96%, 1) 0, transparent 50%);
-    background-attachment: fixed;
+    background-color: #FFFFFF;
+}
+
+/* ===== Grafica "giovane" condivisa con info.praticheflaiano.it ===== */
+h1, h2, h3, .font-display {
+    font-family: "Bricolage Grotesque", Inter, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+}
+h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; }
+h2 { font-weight: 800; line-height: 1.08; }
+h3 { font-weight: 700; }
+.hl-lime { background: #D4FF4F; color: #14142B; padding: 0 .3em; border-radius: .35em; display: inline-block; transform: rotate(-1.5deg); -webkit-text-fill-color: #14142B; }
+.sticker { display: inline-block; padding: 6px 12px; border-radius: 12px; font-weight: 800; transform: rotate(-4deg); }
+/* bottoni pieni: pillola con ombra piena come sul portale */
+a.bg-blue-600, button.bg-blue-600, a.bg-teal-600, button.bg-teal-600, a.bg-blue-700, button.bg-blue-700,
+a[class*="from-blue-600"], button[class*="from-blue-600"], a[class*="from-teal-600"], button[class*="from-teal-600"] {
+    border-radius: 999px !important;
+    box-shadow: 0 5px 0 #14142B !important;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+a.bg-blue-600:hover, button.bg-blue-600:hover, a.bg-teal-600:hover, button.bg-teal-600:hover,
+a[class*="from-blue-600"]:hover, button[class*="from-blue-600"]:hover, a[class*="from-teal-600"]:hover, button[class*="from-teal-600"]:hover {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #14142B !important;
 }
 
 @keyframes float {
@@ -91,3 +110,23 @@ body {
     background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     background-size: 1000px 100%;
 }
+/* Tipografia articoli/guide (il plugin typography non e installato) */
+.prose { font-size: 17px; line-height: 1.7; color: #3F3F5A; }
+.prose > * + * { margin-top: 1em; }
+.prose h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); color: #14142B; margin-top: 2em; margin-bottom: .4em; }
+.prose h3 { font-size: 1.3rem; color: #14142B; margin-top: 1.6em; margin-bottom: .3em; }
+.prose h4 { font-weight: 700; color: #14142B; margin-top: 1.4em; }
+.prose p { margin-top: .9em; }
+.prose ul, .prose ol { padding-left: 1.4em; margin-top: .8em; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li { margin-top: .4em; }
+.prose li::marker { color: #5B3DF5; }
+.prose a { color: #4B2FE0; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.prose strong { color: #14142B; }
+.prose blockquote { background: #F1EEFF; border-radius: 24px; padding: 18px 22px; color: #14142B; border: 0; }
+.prose table { width: 100%; border-collapse: collapse; font-size: .95em; margin-top: 1.2em; }
+.prose th { background: #F1EEFF; color: #14142B; text-align: left; padding: 10px 12px; font-weight: 700; }
+.prose td { border-bottom: 1px solid #E4E4EE; padding: 10px 12px; vertical-align: top; }
+@media (max-width: 760px) { .prose table { display: block; overflow-x: auto; } }
+.grid > * { min-width: 0; }

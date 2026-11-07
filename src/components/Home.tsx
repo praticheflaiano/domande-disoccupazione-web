@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CheckCircle2, Calendar, Euro, AlertCircle, Briefcase, GraduationCap, ArrowRight, BookOpen, Clock, type LucideIcon } from 'lucide-react';
 import ConversionCTA from './ConversionCTA';
 
-const PracticeCounter = () => {
-    const [count] = useState(1843);
-    return <span className="font-mono">{count.toLocaleString('it-IT')}</span>;
-};
 
 const Section = ({ title, children, className = "" }: { title: string, children: React.ReactNode, className?: string }) => (
     <section className={`py-16 px-4 ${className}`}>
@@ -35,46 +31,36 @@ const Home: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8 animate-in slide-in-from-left duration-700">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 text-teal-700 font-medium text-sm shadow-sm backdrop-blur-sm">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-bold text-sm">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
                                 </span>
                                 Aggiornato alla Normativa 2026
                             </div>
-                            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-                                La Tua NASpI, <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">Semplificata.</span>
+                            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.02]">
+                                Hai perso il lavoro? <br />
+                                <span className="hl-lime">Non perdere la NASpI.</span>
                             </h1>
                             <p className="text-xl text-slate-600 max-w-lg leading-relaxed">
-                                Il portale esperto per calcolare, richiedere e gestire la tua indennità di disoccupazione.
+                                Calcola quanto ti spetta, scopri cosa fare e mandaci la domanda: la presentiamo noi all'INPS.
                                 Niente burocrazia, solo chiarezza.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
                                     href="/calcolatore"
-                                    className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-300 flex items-center justify-center gap-2 group"
+                                    className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg transition-all duration-150 flex items-center justify-center gap-2 group"
                                 >
-                                    Calcola Ora
+                                    Calcola la tua NASpI
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </a>
                                 <a
                                     href="/manuale"
-                                    className="px-8 py-4 bg-white text-slate-700 border-2 border-slate-100 rounded-2xl font-bold text-lg hover:border-teal-100 hover:bg-teal-50/50 transition-all duration-300 flex items-center justify-center gap-2"
+                                    className="px-8 py-4 bg-white text-slate-900 border-2 border-slate-900 rounded-full font-bold text-lg hover:bg-slate-900 hover:text-white transition-all duration-150 flex items-center justify-center gap-2"
                                 >
-                                    <BookOpen className="w-5 h-5 text-teal-600" />
+                                    <BookOpen className="w-5 h-5" />
                                     Guida 2026
                                 </a>
-                            </div>
-                            <div className="flex items-center gap-4 text-sm text-slate-500 pt-4">
-                                <div className="flex -space-x-2">
-                                    {[1, 2, 3, 4].map(i => (
-                                        <div key={i} className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-400">
-                                            U
-                                        </div>
-                                    ))}
-                                </div>
-                                <p>Oltre 10.000 utenti aiutati quest'anno</p>
                             </div>
                         </div>
 
@@ -97,20 +83,20 @@ const Home: React.FC = () => {
 
             {/* FEATURES GRID */}
             <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-4 md:gap-6 -mt-10 relative z-20">
-                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
-                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1"><PracticeCounter /></div>
-                    <div className="text-sm font-medium text-slate-600">Pratiche Gestite</div>
+                <div className="bg-[#D4FF4F] p-5 rounded-2xl">
+                    <div className="font-display text-3xl md:text-4xl font-extrabold text-slate-900 mb-1">0 €</div>
+                    <div className="text-sm font-semibold text-slate-900">la domanda NASpI con il nostro patronato</div>
                 </div>
-                <div className="bg-white p-5 rounded-2xl shadow-lg border border-slate-100">
-                    <div className="text-3xl md:text-4xl font-bold text-slate-900 mb-1">24 h</div>
-                    <div className="text-sm font-medium text-slate-600">Invio della domanda</div>
+                <div className="bg-blue-600 p-5 rounded-2xl">
+                    <div className="font-display text-3xl md:text-4xl font-extrabold text-white mb-1">24 h</div>
+                    <div className="text-sm font-medium text-blue-100">Invio della domanda</div>
                 </div>
-                <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-5 rounded-2xl shadow-lg border border-amber-200">
-                    <div className="text-3xl md:text-4xl font-bold text-amber-900 mb-1 flex items-center gap-1">
+                <div className="bg-slate-900 p-5 rounded-2xl">
+                    <div className="font-display text-3xl md:text-4xl font-extrabold text-[#D4FF4F] mb-1 flex items-center gap-1">
                         <Clock className="w-7 h-7" aria-hidden="true" />
                         68
                     </div>
-                    <div className="text-sm font-semibold text-amber-900">giorni per presentare la domanda</div>
+                    <div className="text-sm font-semibold text-slate-300">giorni per presentare la domanda</div>
                 </div>
             </div>
 

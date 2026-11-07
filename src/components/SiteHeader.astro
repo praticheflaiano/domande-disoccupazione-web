@@ -15,20 +15,20 @@ const isActive = (href: string): boolean => {
 };
 ---
 
-<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+<header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4">
 
         <a href="/" class="flex items-center flex-shrink-0" aria-label="Centro Pratiche Flaiano — Home">
             <Logo />
         </a>
 
-        <nav class="hidden lg:flex items-center gap-5 flex-1 justify-center" aria-label="Navigazione principale">
+        <nav class="hidden lg:flex items-center gap-1 flex-1 justify-center" aria-label="Navigazione principale">
             {NAV_LINKS.map((link) => (
                 <a
                     href={link.href}
                     class:list={[
-                        'text-sm font-bold uppercase tracking-wider transition-colors whitespace-nowrap',
-                        isActive(link.href) ? 'text-teal-700' : 'text-slate-600 hover:text-slate-900',
+                        'text-[15px] font-semibold px-3 py-2 rounded-full transition-colors whitespace-nowrap',
+                        isActive(link.href) ? 'bg-blue-50 text-blue-700' : 'text-slate-900 hover:bg-blue-50',
                     ]}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                 >
@@ -41,9 +41,9 @@ const isActive = (href: string): boolean => {
             <SiteFinder />
             <a
                 href="/richiedi"
-                class="hidden sm:inline-flex bg-teal-700 hover:bg-teal-800 text-white px-4 md:px-5 py-2.5 rounded-md text-xs md:text-sm font-bold transition-all shadow-sm hover:shadow-md uppercase tracking-wide"
+                class="hidden sm:inline-flex bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all"
             >
-                Richiedi Online
+                Richiedi online
             </a>
 
             <button
@@ -72,7 +72,7 @@ const isActive = (href: string): boolean => {
                     class:list={[
                         'block px-4 py-3 rounded-lg text-base font-semibold transition-colors',
                         isActive(link.href)
-                            ? 'bg-teal-50 text-teal-800'
+                            ? 'bg-blue-50 text-blue-800'
                             : 'text-slate-700 hover:bg-slate-50',
                     ]}
                     aria-current={isActive(link.href) ? 'page' : undefined}
@@ -84,7 +84,7 @@ const isActive = (href: string): boolean => {
                 href="/richiedi"
                 class="block mt-4 px-4 py-3 rounded-lg text-center bg-teal-700 hover:bg-teal-800 text-white font-bold uppercase tracking-wide text-sm"
             >
-                Richiedi Online
+                Richiedi online
             </a>
         </nav>
     </div>

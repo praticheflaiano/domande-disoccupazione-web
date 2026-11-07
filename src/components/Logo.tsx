@@ -9,11 +9,11 @@ export const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
         <span className={`inline-flex items-center gap-3 ${className}`}>
             <LogoMark />
             <span className="flex flex-col leading-tight">
-                <span className="text-sm md:text-base font-extrabold text-slate-900 tracking-tight uppercase">
-                    Centro Pratiche
+                <span className="font-display text-base md:text-lg font-extrabold text-slate-900 tracking-tight">
+                    Pratiche Flaiano
                 </span>
-                <span className="text-xs md:text-sm font-semibold text-teal-700 tracking-[0.18em] uppercase">
-                    Flaiano
+                <span className="text-xs font-medium text-slate-500">
+                    Patronato ENASC · NASpI
                 </span>
             </span>
         </span>
@@ -26,9 +26,9 @@ export const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
 export const LogoMark: React.FC<{ className?: string }> = ({ className = '' }) => (
     <span
         aria-hidden="true"
-        className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-slate-900 to-slate-700 text-white font-extrabold text-base shadow-sm ${className}`}
+        className={`inline-flex items-center justify-center w-10 h-10 rounded-[12px] bg-[#5B3DF5] text-[#D4FF4F] font-display font-extrabold text-lg ${className}`}
     >
-        CF
+        F
     </span>
 );
 
