@@ -64,18 +64,22 @@ const Home: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Hero Image */}
-                        <div className="relative animate-in slide-in-from-right duration-1000 delay-200 hidden lg:block">
-                            <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100/50 to-blue-100/50 rounded-full blur-3xl opacity-60 animate-pulse"></div>
-                            <img
-                                src="/assets/hero_illustration_v2.png"
-                                alt="Illustrazione: persona che consulta documenti NASpI al computer"
-                                width={1024}
-                                height={1024}
-                                decoding="async"
-                                fetchPriority="high"
-                                className="w-full h-auto drop-shadow-2xl animate-float hover:scale-105 transition-transform duration-500"
-                            />
+                        {/* Hero card (stile portale info.praticheflaiano.it) */}
+                        <div className="relative hidden lg:block py-6 px-2">
+                            <div className="bg-slate-900 text-white rounded-[32px] p-8 space-y-5 rotate-[1.5deg]">
+                                <p className="font-display text-3xl font-extrabold leading-tight">Tre passi, zero code.</p>
+                                {[
+                                    ['1', 'Calcola', 'Scopri quanto ti spetta e per quanto tempo.'],
+                                    ['2', 'Mandaci i documenti', 'Da WhatsApp o dal modulo online, in pochi minuti.'],
+                                    ['3', 'Pensiamo a tutto noi', "Presentiamo la domanda all'INPS e ti seguiamo fino al pagamento."],
+                                ].map(([n, t, d]) => (
+                                    <div key={n} className="flex gap-4 items-start">
+                                        <span className="flex-none w-11 h-11 rounded-[14px] bg-[#D4FF4F] text-slate-900 font-extrabold grid place-items-center text-lg">{n}</span>
+                                        <span><b className="text-white text-lg">{t}</b><br /><span className="text-slate-300">{d}</span></span>
+                                    </div>
+                                ))}
+                            </div>
+                            <span className="sticker absolute -left-2 -bottom-1 bg-[#FF5C8A] text-white text-base">Domanda NASpI gratis</span>
                         </div>
                     </div>
                 </div>
