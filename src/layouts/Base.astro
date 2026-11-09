@@ -50,26 +50,20 @@ const organizationSchema = {
     email: 'praticheflaiano@gmail.com',
     address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Via Filoteo Alberini, 25/int 10',
+        streetAddress: 'Via Filoteo Alberini 25, int. 10',
         addressLocality: 'Roma',
         postalCode: '00139',
         addressRegion: 'RM',
         addressCountry: 'IT',
     },
+    geo: { '@type': 'GeoCoordinates', latitude: 41.9599639, longitude: 12.539951 },
+    hasMap: 'https://maps.app.goo.gl/HBKDcNoEWpPyy9x69',
     openingHoursSpecification: [
-        {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-            opens: '09:30',
-            closes: '18:00',
-        },
-        {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: 'Friday',
-            opens: '09:30',
-            closes: '14:00',
-        },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '09:30', closes: '13:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '15:30', closes: '18:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:30', closes: '14:00' },
     ],
+    sameAs: ['https://info.praticheflaiano.it', 'https://praticheflaiano.it', 'https://www.facebook.com/PRATICHEFLAIANO'],
     areaServed: 'IT',
     priceRange: '€€',
     description:
@@ -103,6 +97,10 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
 
         <meta property="og:type" content={ogType} />
         <meta property="og:locale" content="it_IT" />
+        <meta name="geo.region" content="IT-RM" />
+        <meta name="geo.placename" content="Roma" />
+        <meta name="geo.position" content="41.9599639;12.539951" />
+        <meta name="ICBM" content="41.9599639, 12.539951" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
