@@ -1,0 +1,45 @@
+---
+// Articoli del blog di praticheflaiano.it su NASpI, disoccupazione e lavoro.
+// I dati arrivano da src/data/blog-flaiano.json (aggiornato da `npm run sync:blog`).
+import posts from '../data/blog-flaiano.json';
+import { BLOG_CATEGORY_URL } from '../lib/blogFlaiano';
+
+export interface Props {
+    limit?: number;
+    heading?: string;
+}
+
+const { limit = 3, heading = 'Dal blog di Centro Pratiche Flaiano' } = Astro.props;
+const visible = posts.slice(0, limit);
+const fmt = new Intl.DateTimeFormat('it-IT', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+
+{visible.length > 0 && (
+    <section class="bg-white border-t border-slate-200 py-12 px-4" aria-labelledby="blog-flaiano-title">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+                <div>
+                    <h2 id="blog-flaiano-title" class="text-3xl font-bold text-slate-900">{heading}</h2>
+                    <p class="text-slate-600 mt-1">Approfondimenti su NASpI, disoccupazione e lavoro dal nostro sito principale praticheflaiano.it.</p>
+                </div>
+                <a href={BLOG_CATEGORY_URL} class="text-sm font-bold text-blue-600 hover:text-blue-700">Tutti gli articoli su NASpI e disoccupazione →</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {visible.map((post) => (
+                    <a
+                        href={post.url}
+                        class="block bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                    >
+                        <div class="flex items-center gap-2 mb-3">
+                            {post.category && <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-800">{post.category}</span>}
+                            <time datetime={post.date} class="text-xs text-slate-500">{fmt.format(new Date(post.date))}</time>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-blue-600 transition-colors">{post.title}</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">{post.summary}</p>
+                        <p class="text-xs font-semibold text-slate-500 mt-3">praticheflaiano.it</p>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+)}
