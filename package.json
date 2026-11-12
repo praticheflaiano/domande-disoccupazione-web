@@ -14,7 +14,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,astro,css}\" \"api/**/*.ts\"",
     "test": "vitest",
     "test:coverage": "vitest --run --coverage",
-    "indexnow": "node scripts/indexnow-ping.mjs"
+    "indexnow": "node scripts/indexnow-ping.mjs",
+    "sync:blog": "vite-node scripts/sync-blog-flaiano.ts"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

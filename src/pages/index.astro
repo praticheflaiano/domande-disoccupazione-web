@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Home from '../components/Home';
 import NewsCard from '../components/NewsCard.astro';
+import BlogFlaiano from '../components/BlogFlaiano.astro';
 import ReviewsBlock from '../components/ReviewsBlock.astro';
 import ExpertQuote from '../components/ExpertQuote.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
@@ -96,4 +97,6 @@ const howToSchema = {
             </div>
         </div>
     </section>
+
+    <BlogFlaiano limit={3} />
 </Base>

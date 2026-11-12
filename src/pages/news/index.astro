@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import NewsCard from '../../components/NewsCard.astro';
+import BlogFlaiano from '../../components/BlogFlaiano.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 type NewsEntry = CollectionEntry<'news'>;
@@ -28,4 +29,6 @@ const breadcrumbs = [
             {news.map((entry: NewsEntry) => <NewsCard entry={entry} />)}
         </div>
     </section>
+
+    <BlogFlaiano limit={12} heading="Guide e approfondimenti dal blog" />
 </Base>
