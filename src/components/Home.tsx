@@ -150,7 +150,7 @@ const Home: React.FC = () => {
                             <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center shrink-0"><Euro className="w-6 h-6" /></div>
                             <div>
                                 <h3 className="font-bold text-xl mb-1">Calcolo Importo</h3>
-                                <p className="text-slate-600">75% della retribuzione media mensile (se inferiore a €1.425,21). Se superiore, si aggiunge il 25% dell'eccedenza. Tetto massimo 2024: <strong>€1.550,42</strong>.</p>
+                                <p className="text-slate-600">75% della retribuzione media mensile (fino a €1.456,72). Se superiore, si aggiunge il 25% dell'eccedenza. Tetto massimo 2026: <strong>€1.584,70</strong> (circolare INPS n. 4/2026).</p>
                             </div>
                         </div>
                         <div className="flex gap-4">

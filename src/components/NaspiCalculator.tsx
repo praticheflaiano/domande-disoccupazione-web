@@ -334,7 +334,7 @@ const NaspiCalculator: React.FC = () => {
                         <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><HelpCircle className="w-5 h-5" /> Come funziona?</h3>
                         <div className="space-y-4 text-sm text-indigo-100">
                             <p><strong>1. Retribuzione Media:</strong> Calcoliamo la media dei tuoi stipendi degli ultimi 4 anni.</p>
-                            <p><strong>2. Coefficiente 75%:</strong> Se la media è sotto €1.425, prendi il 75%. Se sopra, si aggiunge il 25% dell'eccedenza.</p>
+                            <p><strong>2. Coefficiente 75%:</strong> Se la media è fino a €1.456,72, prendi il 75%. Se sopra, si aggiunge il 25% dell'eccedenza.</p>
                             <p><strong>3. Durata:</strong> Spetta per la metà delle settimane lavorate (max 2 anni).</p>
                         </div>
                     </div>

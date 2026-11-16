@@ -42,6 +42,8 @@ const FIGURATIVA = /figurat|fig\.|cassa integr|\bcig\b|malattia|naspi|aspi|disoc
 const MATERNITA = /maternit|paternit|congedo parentale|astensione (obbligatoria|facoltativa)|congedo di paternit/i;
 const NON_DIPENDENTE = /artigian|commerciant|titolare|coadiuv|separata|parasubordin|collaboraz|co\.co|professionist|autonom|coltivator/i;
 
+const it = (iso: string) => `${iso.slice(8, 10)}/${iso.slice(5, 7)}/${iso.slice(0, 4)}`;
+
 function giorni(dal: string, al: string): number {
     return Math.round((Date.parse(al) - Date.parse(dal)) / GIORNO) + 1;
 }
@@ -87,7 +89,7 @@ export function calcolaDaRighe(righe: RigaTrascritta[], fineRapporto: string): R
         const euro = maternita ? 0 : numeroItaliano(r.importo) ?? 0;
         retribuzioni += Math.max(0, euro) * quota;
         contate++;
-        if (quota < 1) avvisi.push(`La riga dal ${r.dal} al ${r.al} è a cavallo dell'inizio del periodo: contata per la parte dal ${dal}, in proporzione ai giorni.`);
+        if (quota < 1) avvisi.push(`La riga dal ${it(r.dal)} al ${it(r.al)} è a cavallo dell'inizio del periodo: contata per la parte dal ${it(dal)}, in proporzione ai giorni.`);
     }
 
     if (figurativeEscluse) avvisi.push(`${figurativeEscluse} ${figurativeEscluse === 1 ? 'riga di contributi figurativi (es. malattia, cassa integrazione, NASpI precedente) non è stata contata' : 'righe di contributi figurativi (es. malattia, cassa integrazione, NASpI precedente) non sono state contate'}: per la NASpI valgono solo maternità e congedo parentale. Alcuni di questi periodi possono allungare il periodo di riferimento: lo verifichiamo noi.`);
