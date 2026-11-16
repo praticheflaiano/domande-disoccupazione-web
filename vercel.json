@@ -23,6 +23,17 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.domandedisoccupazione.it"
+        }
+      ],
+      "destination": "https://domandedisoccupazione.it/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
