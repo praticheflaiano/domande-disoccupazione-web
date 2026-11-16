@@ -59,6 +59,9 @@ export interface ExtractedData {
     startDate?: string;
     days?: number;
     monthlyAmount?: number;
+    avvisi?: string[];
+    periodo?: { dal: string; al: string };
+    errore?: string;
 }
 
 export interface AnticipoInput {

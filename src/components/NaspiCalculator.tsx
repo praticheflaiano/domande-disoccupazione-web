@@ -28,12 +28,17 @@ const StepIndicator = ({ step, current }: { step: number, current: number }) => 
     );
 };
 
+const MAX_FILE_BYTES = 3 * 1024 * 1024;
+
 const NaspiCalculator: React.FC = () => {
     const [mode, setMode] = useState<CalculatorMode | null>(null);
     const [step, setStep] = useState<number>(0);
     const [loading, setLoading] = useState<boolean>(false);
     const [inputData, setInputData] = useState<UserInputData>({ age: 30, weeksWorkedLast4Years: 0, totalGrossWagesLast4Years: 0, terminationReason: TerminationReason.INVOLUNTARY, voluntaryException: VoluntaryException.NONE, hasWorked30DaysLastYear: true, terminationDate: new Date().toISOString().split('T')[0], approvedStartDate: '', approvedDaysDuration: 0, approvedMonthlyAmount: 0 });
     const [result, setResult] = useState<NaspiResult | null>(null);
+    const [avvisi, setAvvisi] = useState<string[]>([]);
+    const [erroreLettura, setErroreLettura] = useState<string>('');
+    const [letto, setLetto] = useState<boolean>(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const ageId = useId();
     const termDateId = useId();
@@ -44,17 +49,33 @@ const NaspiCalculator: React.FC = () => {
     const reasonId = useId();
     const daysApprovedId = useId();
     const monthlyApprovedId = useId();
+    const startApprovedId = useId();
+    const termDateUploadId = useId();
 
     const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
+        e.target.value = '';
         if (!file || !mode) return;
+        setAvvisi([]);
+        setErroreLettura('');
+        if (file.size > MAX_FILE_BYTES) {
+            setErroreLettura('Il file è troppo grande (massimo 3 MB). Carica un PDF più leggero o inserisci i dati a mano.');
+            return;
+        }
         setLoading(true);
         const reader = new FileReader();
         reader.onloadend = async () => {
             const base64Content = (reader.result as string).split(',')[1];
-            const data = await analyzeContributionDocument(base64Content, file.type, mode);
+            const data = await analyzeContributionDocument(base64Content, file.type, mode, inputData.terminationDate);
+            if (data.errore) {
+                setErroreLettura(data.errore);
+                setLoading(false);
+                return;
+            }
             if (mode === 'forecast') setInputData(prev => ({ ...prev, weeksWorkedLast4Years: data.weeks || 0, totalGrossWagesLast4Years: data.wages || 0 }));
             else setInputData(prev => ({ ...prev, approvedStartDate: data.startDate || '', approvedDaysDuration: data.days || 0, approvedMonthlyAmount: data.monthlyAmount || 0 }));
+            setAvvisi(data.avvisi || []);
+            setLetto(true);
             setLoading(false);
             setStep(2);
         };
@@ -66,7 +87,7 @@ const NaspiCalculator: React.FC = () => {
         setStep(3);
     };
 
-    const reset = () => { setStep(0); setResult(null); setMode(null); };
+    const reset = () => { setStep(0); setResult(null); setMode(null); setAvvisi([]); setErroreLettura(''); setLetto(false); };
 
     return (
         <div className="max-w-7xl mx-auto p-4 md:p-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -114,7 +135,15 @@ const NaspiCalculator: React.FC = () => {
                     {step === 1 && (
                         <div className="p-8 md:p-12 text-center">
                             <h2 className="text-2xl font-bold mb-4">Carica Documento</h2>
-                            <p className="text-slate-500 mb-8">Carica il tuo Estratto Conto Contributivo (o la lettera INPS) per compilare i dati automaticamente.</p>
+                            <p className="text-slate-500 mb-8">{mode === 'forecast' ? "Carica l'Estratto Conto Contributivo INPS: leggiamo le righe e calcoliamo settimane e retribuzioni degli ultimi 4 anni." : 'Carica la lettera INPS di accoglimento della NASpI per compilare i dati automaticamente.'}</p>
+                            {mode === 'forecast' && (
+                                <div className="max-w-xs mx-auto mb-6 text-left">
+                                    <label htmlFor={termDateUploadId} className="block text-sm font-bold text-slate-700 mb-2">Ultimo giorno di lavoro</label>
+                                    <input id={termDateUploadId} type="date" value={inputData.terminationDate} onChange={e => setInputData({ ...inputData, terminationDate: e.target.value })} className="w-full p-3 rounded-xl border border-slate-300" />
+                                    <p className="text-xs text-slate-500 mt-1">Serve per contare i 4 anni precedenti.</p>
+                                </div>
+                            )}
+                            {erroreLettura && <div role="alert" className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm text-left">{erroreLettura}</div>}
 
                             <button
                                 type="button"
@@ -123,7 +152,7 @@ const NaspiCalculator: React.FC = () => {
                             >
                                 <Upload className="w-12 h-12 text-slate-400 mx-auto mb-4 group-hover:text-blue-500 transition-colors" aria-hidden="true" />
                                 <span className="font-bold text-slate-700 block">Clicca per caricare</span>
-                                <span className="text-sm text-slate-400 mt-2 block">PDF, Immagini (max 10MB)</span>
+                                <span className="text-sm text-slate-400 mt-2 block">PDF o foto (massimo 3 MB)</span>
                             </button>
                             <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*,application/pdf" aria-label="Carica documento contributivo" />
 
@@ -132,13 +161,19 @@ const NaspiCalculator: React.FC = () => {
                                 <div className="relative flex justify-center"><span className="bg-white px-3 text-sm text-slate-400">oppure</span></div>
                             </div>
 
-                            <button onClick={() => setStep(2)} className="text-blue-600 font-bold hover:underline mt-2">Inserisci dati manualmente</button>
+                            <button onClick={() => { setLetto(false); setAvvisi([]); setStep(2); }} className="text-blue-600 font-bold hover:underline mt-2">Inserisci dati manualmente</button>
                         </div>
                     )}
 
                     {step === 2 && (
                         <div className="p-8 md:p-12">
                             <h2 className="text-2xl font-bold mb-6">Dati per il calcolo</h2>
+                            {letto && (
+                                <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900">
+                                    <p className="font-bold mb-1">Dati letti dal documento: controllali prima di calcolare.</p>
+                                    {avvisi.length > 0 && <ul className="list-disc pl-5 space-y-1">{avvisi.map((a, i) => <li key={i}>{a}</li>)}</ul>}
+                                </div>
+                            )}
                             <div className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
@@ -185,7 +220,11 @@ const NaspiCalculator: React.FC = () => {
                                 ) : (
                                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                                         <h3 className="font-bold text-slate-900 mb-4">Dati da Lettera INPS</h3>
-                                        <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="grid md:grid-cols-3 gap-6">
+                                            <div>
+                                                <label htmlFor={startApprovedId} className="block text-sm">Data di decorrenza</label>
+                                                <input id={startApprovedId} type="date" value={inputData.approvedStartDate} onChange={e => setInputData({ ...inputData, approvedStartDate: e.target.value })} className="w-full p-3 rounded-lg border" />
+                                            </div>
                                             <div>
                                                 <label htmlFor={daysApprovedId} className="block text-sm">Giorni Spettanti</label>
                                                 <input id={daysApprovedId} type="number" min={0} value={inputData.approvedDaysDuration} onChange={e => setInputData({ ...inputData, approvedDaysDuration: +e.target.value })} className="w-full p-3 rounded-lg border" />
@@ -295,7 +334,7 @@ const NaspiCalculator: React.FC = () => {
                         <h3 className="font-bold text-lg mb-4 flex items-center gap-2"><HelpCircle className="w-5 h-5" /> Come funziona?</h3>
                         <div className="space-y-4 text-sm text-indigo-100">
                             <p><strong>1. Retribuzione Media:</strong> Calcoliamo la media dei tuoi stipendi degli ultimi 4 anni.</p>
-                            <p><strong>2. Coefficiente 75%:</strong> Se la media è sotto €1.425, prendi il 75%. Se sopra, si aggiunge il 25% dell'eccedenza.</p>
+                            <p><strong>2. Coefficiente 75%:</strong> Se la media è fino a €1.456,72, prendi il 75%. Se sopra, si aggiunge il 25% dell'eccedenza.</p>
                             <p><strong>3. Durata:</strong> Spetta per la metà delle settimane lavorate (max 2 anni).</p>
                         </div>
                     </div>
