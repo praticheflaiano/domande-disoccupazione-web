@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { z } from 'zod';
-import { callOpenRouter, type OpenRouterMessage } from './_lib/openrouter';
-import { checkRateLimit, resolveClientIp } from './_lib/rateLimit';
-import { assertAllowedOrigin } from './_lib/origin';
-import { calcolaDaRighe, quattroAnniPrima, type RigaTrascritta } from './_lib/naspiDaEstratto';
+import { callOpenRouter, type OpenRouterMessage } from './_lib/openrouter.js';
+import { checkRateLimit, resolveClientIp } from './_lib/rateLimit.js';
+import { assertAllowedOrigin } from './_lib/origin.js';
+import { calcolaDaRighe, quattroAnniPrima, type RigaTrascritta } from './_lib/naspiDaEstratto.js';
 
 // Lettura dei documenti del calcolatore NASpI.
 // 1. I PDF sono letti da Mistral OCR (plugin file-parser di OpenRouter, motore "mistral-ocr");
