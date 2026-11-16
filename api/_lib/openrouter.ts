@@ -20,6 +20,7 @@ export interface OpenRouterRequest {
     };
     temperature?: number;
     max_tokens?: number;
+    plugins?: Array<{ id: string; pdf?: { engine: string } }>;
 }
 
 export interface OpenRouterResponse {
@@ -45,7 +46,7 @@ export async function callOpenRouter(request: OpenRouterRequest): Promise<OpenRo
             'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
             'HTTP-Referer': 'https://domandedisoccupazione.it',
-            'X-Title': 'Centro Pratiche Flaiano - OCR INPS',
+            'X-Title': 'Centro Pratiche Flaiano - Calcolatore NASpI',
         },
         body: JSON.stringify(request),
     });
