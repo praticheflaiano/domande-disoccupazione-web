@@ -36,7 +36,8 @@ const {
     jsonLd,
 } = Astro.props;
 
-const currentPath = Astro.url.pathname;
+// Indirizzo canonico sempre senza barra finale (la home resta "/"), uguale a sitemap e link interni.
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const canonicalUrl = canonical ?? new URL(currentPath, SITE_URL).toString();
 const fullOgImage = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_URL).toString();
 
