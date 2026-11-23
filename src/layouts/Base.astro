@@ -145,7 +145,8 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
             <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
         )}
         {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
-    </head>
+      <script is:inline defer src="/_vercel/insights/script.js"></script>
+</head>
     <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen flex flex-col font-sans">
         <a href="#main" class="skip-link">Salta al contenuto principale</a>
 
