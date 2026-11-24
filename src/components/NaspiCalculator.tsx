@@ -23,7 +23,7 @@ const StepIndicator = ({ step, current }: { step: number, current: number }) => 
             <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${isActive ? 'border-blue-600 bg-blue-50' : isCompleted ? 'border-green-600 bg-green-50' : 'border-slate-300'}`}>
                 {isCompleted ? <CheckCircle className="w-5 h-5" /> : step + 1}
             </div>
-            <div className="hidden md:block text-sm">Fase {step + 1}</div>
+            <div className="hidden md:block text-sm text-slate-600">Fase {step + 1}</div>
         </div>
     );
 };
@@ -291,7 +291,7 @@ const NaspiCalculator: React.FC = () => {
                                     <div>
                                         <h3 className="font-bold text-slate-900 mb-4">Piano dei Pagamenti Stimato</h3>
                                         <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
-                                            <table className="w-full text-sm text-left">
+                                            <table tabIndex={0} className="w-full text-sm text-left">
                                                 <thead className="bg-slate-50 text-slate-500 font-medium border-b">
                                                     <tr>
                                                         <th className="p-4">Periodo</th>

@@ -13,7 +13,6 @@ const OfficeInfo: React.FC = () => {
 
     return (
         <div className="animate-in fade-in duration-500 pb-12">
-            <title>Chi Siamo | Centro Flaiano</title>
             <div className="bg-slate-900 text-white py-16 px-4 text-center">
                 <h1 className="text-3xl font-bold mb-6">Centro Pratiche Flaiano</h1>
             </div>

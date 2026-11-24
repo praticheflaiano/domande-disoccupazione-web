@@ -13,7 +13,6 @@ const ApplyOnline: React.FC = () => {
 
     return (
         <div className="animate-in fade-in duration-500">
-            <title>Richiedi NASpI Online</title>
             <div className="bg-slate-900 text-slate-100 py-12 px-4 text-center border-b border-slate-800">
                 <h1 className="text-3xl font-bold mb-4 text-white">Richiesta NASpI Online</h1>
                 <p className="max-w-2xl mx-auto text-slate-400">Compila il modulo, carica i documenti e noi pensiamo a tutto il resto.</p>
@@ -25,10 +24,10 @@ const ApplyOnline: React.FC = () => {
 
                     {/* Document Checklist */}
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                        <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <h2 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                             <span className="w-8 h-8 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center font-bold">1</span>
                             Documenti Necessari
-                        </h3>
+                        </h2>
                         <p className="text-sm text-slate-500 mb-4">Tieni a portata di mano questi file (foto o PDF) prima di iniziare:</p>
                         <ul className="space-y-3 text-sm text-slate-700">
                             <li className="flex items-start gap-2">
