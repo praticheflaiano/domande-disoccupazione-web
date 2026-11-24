@@ -15,8 +15,8 @@ const CALC = {
 };
 const ANTICIPO = {
     href: '/anticipo',
-    label: 'Anticipo NASpI in unica soluzione',
-    description: 'Liquidazione anticipata per avvio P.IVA o cooperativa.',
+    label: 'Anticipo NASpI 2026 in due rate',
+    description: '70% subito e 30% dopo, per chi apre P.IVA, impresa o entra in cooperativa.',
 };
 const MANUALE = {
     href: '/manuale',
@@ -38,7 +38,7 @@ const RICHIEDI = {
 const G_DOMANDA = {
     href: '/guida/presentare-domanda',
     label: 'Come presentare la domanda',
-    description: 'Portale INPS passo-passo, SPID, modulo SR163, scadenza 68 giorni.',
+    description: 'Portale INPS passo-passo, SPID, documenti, scadenza 68 giorni.',
 };
 const G_DID = {
     href: '/guida/did',

@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 import StickyContactBar from '../components/StickyContactBar';
 import AccessibilityToolbar from '../components/AccessibilityToolbar';
 import CookieBanner from '../components/CookieBanner';
-import { LAST_UPDATED } from '../constants';
 
 export interface Props {
     title: string;
@@ -174,10 +173,6 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
         <main id="main" class="flex-1" tabindex="-1">
             <slot />
         </main>
-
-        <p class="text-xs text-slate-400 text-center py-4" aria-label="Ultimo aggiornamento dei contenuti">
-            Ultimo aggiornamento: {LAST_UPDATED}
-        </p>
 
         <Footer client:idle />
         <StickyContactBar client:idle />

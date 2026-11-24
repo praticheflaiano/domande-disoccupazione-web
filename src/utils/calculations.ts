@@ -172,7 +172,7 @@ export const calculateNaspiFromDecree = (data: UserInputData): NaspiResult => {
 export const calculateAnticipo = (input: AnticipoInput): AnticipoResult => {
     const startDate = new Date(input.naspiStartDate);
     const requestDate = new Date(input.anticipoRequestDate);
-    const fullSchedule = generateSchedule(startDate, input.totalDays, input.monthlyGrossAmount, 40);
+    const fullSchedule = generateSchedule(startDate, input.totalDays, input.monthlyGrossAmount, input.age ?? 40);
 
     let totalGross = 0;
     let remainingDays = 0;
@@ -191,11 +191,23 @@ export const calculateAnticipo = (input: AnticipoInput): AnticipoResult => {
         }
     }
     const estimatedTax = totalGross * NASPI_CONSTANTS.SEPARATE_TAXATION_RATE_ESTIMATE;
+    // Dal 1° gennaio 2026 l'anticipo è pagato in due rate: 70% alla liquidazione, 30% al termine
+    // del periodo teorico NASpI e comunque non oltre 6 mesi dalla domanda (messaggio INPS 1215/2026).
+    const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const endDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate() + input.totalDays - 1);
+    const sixMonths = new Date(requestDate.getFullYear(), requestDate.getMonth() + 6, requestDate.getDate());
+    const secondBy = endDate < sixMonths ? endDate : sixMonths;
+    const gross = parseFloat(totalGross.toFixed(2));
+    const first = parseFloat((gross * 0.7).toFixed(2));
     return {
-        totalGrossAmount: parseFloat(totalGross.toFixed(2)),
+        totalGrossAmount: gross,
         estimatedTax: parseFloat(estimatedTax.toFixed(2)),
         estimatedNetAmount: parseFloat((totalGross - estimatedTax).toFixed(2)),
         daysRemaining: remainingDays,
-        lastDayCovered: "Fine NASpI"
+        lastDayCovered: formatDate(endDate),
+        firstInstallment: first,
+        secondInstallment: parseFloat((gross - first).toFixed(2)),
+        naspiEndDate: iso(endDate),
+        secondInstallmentBy: iso(secondBy),
     };
 };

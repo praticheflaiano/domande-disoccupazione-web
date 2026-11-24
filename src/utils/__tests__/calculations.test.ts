@@ -250,4 +250,28 @@ describe('calculateAnticipo', () => {
         expect(r.estimatedNetAmount).toBeCloseTo(r.totalGrossAmount - r.estimatedTax, 1);
         expect(r.daysRemaining).toBeGreaterThan(0);
     });
+
+    it('divide il lordo in due rate 70% e 30%', () => {
+        const r = calculateAnticipo({ naspiStartDate: '2026-01-15', anticipoRequestDate: '2026-03-15', totalDays: 300, monthlyGrossAmount: 1200 });
+        expect(r.firstInstallment).toBeCloseTo(r.totalGrossAmount * 0.7, 1);
+        expect(r.firstInstallment + r.secondInstallment).toBeCloseTo(r.totalGrossAmount, 2);
+    });
+
+    it('seconda rata: fine NASpI se arriva prima di 6 mesi dalla domanda', () => {
+        const r = calculateAnticipo({ naspiStartDate: '2026-01-01', anticipoRequestDate: '2026-02-01', totalDays: 120, monthlyGrossAmount: 1000 });
+        expect(r.naspiEndDate).toBe('2026-04-30');
+        expect(r.secondInstallmentBy).toBe('2026-04-30');
+    });
+
+    it('seconda rata: al massimo 6 mesi dalla domanda', () => {
+        const r = calculateAnticipo({ naspiStartDate: '2026-01-01', anticipoRequestDate: '2026-02-01', totalDays: 600, monthlyGrossAmount: 1000 });
+        expect(r.secondInstallmentBy).toBe('2026-08-01');
+    });
+
+    it('da 55 anni la riduzione parte più tardi, quindi il residuo è più alto', () => {
+        const base = { naspiStartDate: '2026-01-01', anticipoRequestDate: '2026-02-01', totalDays: 600, monthlyGrossAmount: 1000 };
+        const giovane = calculateAnticipo({ ...base, age: 40 });
+        const over55 = calculateAnticipo({ ...base, age: 56 });
+        expect(over55.totalGrossAmount).toBeGreaterThan(giovane.totalGrossAmount);
+    });
 });

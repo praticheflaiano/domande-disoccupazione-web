@@ -68,12 +68,12 @@ const Footer: React.FC = () => {
                 </div>
             </div>
             <p>© 2026 Centro Pratiche Flaiano. Tutti i diritti riservati.</p>
-            <p className="text-xs mt-4 max-w-xl mx-auto opacity-50">
+            <p className="text-xs mt-4 max-w-xl mx-auto text-[#A3A3BD]">
                 Le informazioni fornite hanno scopo puramente informativo e non sostituiscono la consulenza professionale.
                 Gli importi sono stime basate sulla normativa vigente.
             </p>
-            <p className="text-xs mt-2 opacity-50">
-                <a href="/privacy" className="hover:text-[#D4FF4F]">Privacy Policy</a>
+            <p className="text-xs mt-2">
+                <a href="/privacy" className="text-[#A3A3BD] underline inline-block py-1 hover:text-[#D4FF4F]">Privacy Policy</a>
             </p>
         </footer>
     );

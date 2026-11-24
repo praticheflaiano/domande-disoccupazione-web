@@ -69,6 +69,8 @@ export interface AnticipoInput {
     totalDays: number;
     monthlyGrossAmount: number;
     anticipoRequestDate: string;
+    /** Età alla cessazione: da 55 anni la riduzione del 3% parte dall'8° mese invece che dal 6°. */
+    age?: number;
 }
 
 export interface AnticipoResult {
@@ -77,4 +79,12 @@ export interface AnticipoResult {
     estimatedNetAmount: number;
     daysRemaining: number;
     lastDayCovered: string;
+    /** Prima rata: 70% del lordo residuo (art. 8, c. 3-bis, d.lgs. 22/2015). */
+    firstInstallment: number;
+    /** Seconda rata: 30% del lordo residuo. */
+    secondInstallment: number;
+    /** Ultimo giorno del periodo teorico NASpI (YYYY-MM-DD). */
+    naspiEndDate: string;
+    /** Data entro cui è prevista la seconda rata: fine periodo teorico, al massimo 6 mesi dalla domanda (YYYY-MM-DD). */
+    secondInstallmentBy: string;
 }
