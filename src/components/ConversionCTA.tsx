@@ -57,7 +57,7 @@ const ConversionCTA: React.FC<ConversionCTAProps> = ({
                 <div className="md:col-span-2 flex flex-col gap-3">
                     <a
                         href="/richiedi"
-                        className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold px-6 py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
+                        className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
                     >
                         Invia la domanda online
                         <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -66,7 +66,7 @@ const ConversionCTA: React.FC<ConversionCTAProps> = ({
                         href={WHATSAPP_HREF}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-6 py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
+                        className="w-full bg-[#25D366] hover:bg-[#3EE07A] text-[#14142B] font-bold px-6 py-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2"
                     >
                         <MessageCircle className="w-5 h-5" aria-hidden="true" />
                         Scrivi su WhatsApp

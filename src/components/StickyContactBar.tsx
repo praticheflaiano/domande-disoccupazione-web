@@ -9,16 +9,18 @@ import { WHATSAPP_HREF, WHATSAPP_NUMBER, PHONE_HREF } from './ConversionCTA';
 const StickyContactBar: React.FC = () => {
     return (
         <>
-            {/* Desktop: solo FAB WhatsApp (occupa poco, alto contrasto) */}
+            {/* Desktop: solo FAB WhatsApp (occupa poco, alto contrasto: testo scuro sul verde WhatsApp) */}
+            <aside aria-label="WhatsApp" className="hidden md:block">
             <a
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Scrivici su WhatsApp al ${WHATSAPP_NUMBER}`}
-                className="hidden md:flex fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full shadow-xl items-center justify-center transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200"
+                className="hidden md:flex fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#3EE07A] text-[#14142B] w-14 h-14 rounded-full shadow-xl items-center justify-center transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200"
             >
                 <MessageCircle className="w-7 h-7" aria-hidden="true" />
             </a>
+            </aside>
 
             {/* Mobile: sticky bottom bar con 3 azioni (non blocca AccessibilityToolbar che sta in bottom-left) */}
             <nav

@@ -7,7 +7,7 @@ Il portale è gestito dal Centro Pratiche Flaiano, Via Filoteo Alberini 25, int.
 ## Strumenti
 - [Calcolatore NASpI](https://domandedisoccupazione.it/calcolatore): stima di importo e durata con i parametri INPS dell'anno
 - [Richiedi la NASpI online](https://domandedisoccupazione.it/richiedi): invio della domanda con assistenza e caricamento documenti
-- [Anticipo NASpI](https://domandedisoccupazione.it/anticipo): liquidazione in un'unica soluzione per avviare un'attività
+- [Anticipo NASpI](https://domandedisoccupazione.it/anticipo): dal 2026 pagato in due rate (70% subito, 30% dopo) a chi avvia un'attività autonoma, un'impresa o entra in cooperativa; domanda entro 30 giorni
 
 ## Guide
 - [Guida operativa NASpI](https://domandedisoccupazione.it/guida)

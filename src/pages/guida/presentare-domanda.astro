@@ -9,7 +9,7 @@ const faq = [
     },
     {
         q: 'Serve lo SPID per fare la domanda?',
-        a: 'Sì, per il portale INPS serve SPID livello 2, CIE o CNS. In alternativa puoi delegare un patronato o il Centro Pratiche Flaiano compilando il modulo SR163.',
+        a: 'Sì, per il portale INPS serve SPID livello 2, CIE o CNS. In alternativa la presenta per te un patronato, come il Centro Pratiche Flaiano: basta firmare il mandato di assistenza.',
     },
     {
         q: 'Cosa succede se commetto un errore nella domanda?',
@@ -17,14 +17,14 @@ const faq = [
     },
     {
         q: 'Quando inizia il pagamento?',
-        a: 'Dall\'8° giorno dopo la cessazione, indipendentemente da quando presenti la domanda (entro i 68 giorni). Se presenti dopo i primi 8 giorni, la prestazione decorre comunque dal giorno 8 ma il primo pagamento arriverà con arretrati.',
+        a: 'Dipende da quando presenti la domanda. Se la presenti entro l\'8° giorno dopo la fine del lavoro, la NASpI parte dall\'8° giorno. Se la presenti dopo, parte dal giorno successivo alla domanda: i giorni di ritardo non vengono pagati (art. 6, c. 2, d.lgs. 22/2015). Per questo conviene non aspettare la scadenza dei 68 giorni.',
     },
 ];
 ---
 
 <GuidaLayout
     title="Presentare la domanda NASpI 2026: guida INPS passo-passo"
-    description="Come compilare e trasmettere la domanda NASpI sul portale INPS nel 2026: documenti, SPID, modulo SR163, scadenza 68 giorni, decorrenza del pagamento."
+    description="Come compilare e trasmettere la domanda NASpI sul portale INPS nel 2026: documenti, SPID, patronato, scadenza 68 giorni, da quando parte il pagamento."
     slug="presentare-domanda"
     h1="Presentare la domanda NASpI passo-passo"
     kicker="Primo adempimento — entro 68 giorni"
@@ -32,7 +32,7 @@ const faq = [
         'D.Lgs. 22/2015 art. 6 (termine decadenziale 68 giorni)',
         'Circ. INPS n. 94/2015 (istruzioni operative)',
         'Portale INPS: Prestazioni → NASpI → "Domanda NASpI"',
-        'Modulo SR163 (delega al patronato)',
+        'D.Lgs. 22/2015 art. 6, c. 2 (decorrenza: dall\'8° giorno o dal giorno dopo la domanda)',
     ]}
     faq={faq}
 >
@@ -52,7 +52,7 @@ const faq = [
     <p>La domanda si presenta in due modi:</p>
     <ol>
         <li><strong>Portale INPS</strong> (autonomia completa): accedi a <a href="https://www.inps.it" target="_blank" rel="noopener noreferrer">inps.it</a>, sezione "Prestazioni → NASpI". Tempo stimato: 30-45 minuti, richiede dimestichezza con il portale.</li>
-        <li><strong>Patronato o CAF</strong> (es. Centro Pratiche Flaiano): firmi il modulo <strong>SR163</strong> (delega alla riscossione e all'assistenza), consegni i documenti, il patronato compila e trasmette per te. Tempo dell'utente: 10 minuti.</li>
+        <li><strong>Patronato o CAF</strong> (es. Centro Pratiche Flaiano): firmi il <strong>mandato di assistenza</strong> al patronato, consegni i documenti, il patronato compila e trasmette per te. Tempo dell'utente: 10 minuti.</li>
     </ol>
 
     <h2>Procedura su portale INPS — 8 passi</h2>
@@ -69,7 +69,7 @@ const faq = [
 
     <h2>Decorrenza dei pagamenti</h2>
     <ul>
-        <li>La NASpI decorre dall'<strong>8° giorno</strong> successivo alla cessazione (es. cessazione il 5 aprile → decorrenza dal 13 aprile).</li>
+        <li>La NASpI decorre dall'<strong>8° giorno</strong> successivo alla cessazione se la domanda è presentata entro quel giorno (es. cessazione il 5 aprile → decorrenza dal 13 aprile). Se la domanda arriva dopo, decorre dal <strong>giorno successivo alla domanda</strong>.</li>
         <li>Il <strong>primo pagamento</strong> arriva in genere 45-60 giorni dopo la trasmissione della domanda (INPS deve validare contributi e calcolare l'importo).</li>
         <li>I pagamenti successivi sono mensili posticipati, tipicamente tra il 10 e il 15 del mese.</li>
     </ul>
@@ -95,7 +95,7 @@ const faq = [
 
     <h2>Serve aiuto?</h2>
     <p>
-        Il Centro Pratiche Flaiano gestisce l'intera procedura al posto tuo con il modulo SR163: verifica requisiti, compila
+        Il Centro Pratiche Flaiano gestisce l'intera procedura al posto tuo con un mandato di assistenza: verifica requisiti, compila
         la domanda, la trasmette e segue l'istruttoria fino al primo pagamento. Documenti si inviano via WhatsApp o in sede
         a Roma. Tempo dell'utente: 10 minuti per la firma del mandato, zero altre interazioni richieste.
     </p>
