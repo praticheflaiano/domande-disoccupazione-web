@@ -79,7 +79,7 @@ const Home: React.FC = () => {
                                     </div>
                                 ))}
                             </div>
-                            <span className="sticker absolute -left-2 -bottom-1 bg-[#FF5C8A] text-white text-base">Domanda NASpI gratis</span>
+                            <span className="sticker absolute -left-2 -bottom-1 bg-[#DB2E6B] text-white text-base">Domanda NASpI gratis</span>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@ const Home: React.FC = () => {
                     <Card
                         icon={AlertCircle}
                         title="Novità 2026"
-                        text={<span className="text-amber-700 bg-amber-50 px-2 py-0.5 rounded font-medium">Importante: Nuova Regola</span>}
+                        text={<span className="text-amber-800 bg-amber-50 px-2 py-0.5 rounded font-medium">Importante: Nuova Regola</span>}
                     />
                 </div>
                 <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">

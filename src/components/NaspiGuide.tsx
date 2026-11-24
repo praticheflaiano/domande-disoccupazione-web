@@ -32,7 +32,7 @@ const NaspiGuide: React.FC = () => {
                         <div className="flex gap-3 print:hidden animate-in fade-in duration-1000 delay-300">
                             <button
                                 onClick={handlePrint}
-                                className="glass hover:bg-white/20 text-white px-6 py-4 rounded-2xl transition-all backdrop-blur-md border border-white/10 flex items-center gap-3 font-bold hover:scale-105 hover:shadow-lg lg:mt-12"
+                                className="bg-slate-900 hover:bg-slate-800 text-white px-6 py-4 rounded-2xl transition-all backdrop-blur-md border border-white/10 flex items-center gap-3 font-bold hover:scale-105 hover:shadow-lg lg:mt-12"
                             >
                                 <Printer className="w-5 h-5" /> Stampa
                             </button>
@@ -59,7 +59,7 @@ const NaspiGuide: React.FC = () => {
                             </p>
 
                             <div className="my-6 bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                                <table className="w-full text-sm text-left">
+                                <table tabIndex={0} className="w-full text-sm text-left">
                                     <thead className="bg-slate-50 text-slate-900 font-semibold">
                                         <tr>
                                             <th className="p-4 border-b">Tipo Attività</th>
@@ -73,19 +73,19 @@ const NaspiGuide: React.FC = () => {
                                             <td className="p-4"><strong>Lavoro Subordinato</strong></td>
                                             <td className="p-4">€ 8.500</td>
                                             <td className="p-4">Indeterminata</td>
-                                            <td className="p-4 text-orange-600 font-medium">Entro 30gg (Mod. NASpI-Com)</td>
+                                            <td className="p-4 text-orange-700 font-medium">Entro 30gg (Mod. NASpI-Com)</td>
                                         </tr>
                                         <tr className="border-b">
                                             <td className="p-4"><strong>Lavoro Occasionale (PrestO)</strong></td>
                                             <td className="p-4">€ 5.000</td>
                                             <td className="p-4">-</td>
-                                            <td className="p-4 text-emerald-600">Non necessaria (comunica committente)</td>
+                                            <td className="p-4 text-emerald-700">Non necessaria (comunica committente)</td>
                                         </tr>
                                         <tr>
                                             <td className="p-4"><strong>Lavoro Autonomo / P.IVA</strong></td>
                                             <td className="p-4">€ 5.500</td>
                                             <td className="p-4">-</td>
-                                            <td className="p-4 text-orange-600 font-medium">Entro 30gg (Mod. NASpI-Com)</td>
+                                            <td className="p-4 text-orange-700 font-medium">Entro 30gg (Mod. NASpI-Com)</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -159,7 +159,7 @@ const NaspiGuide: React.FC = () => {
                 <div className="hidden lg:block">
                     <div className="sticky top-24 space-y-8">
                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                            <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2"><Book className="w-4 h-4" /> Indice Guida</h4>
+                            <h2 className="font-bold text-slate-900 mb-4 flex items-center gap-2"><Book className="w-4 h-4" aria-hidden="true" /> Indice Guida</h2>
                             <nav className="space-y-2 text-sm">
                                 <a href="#compatibilita" className="block text-slate-600 hover:text-teal-600 hover:bg-teal-50 px-3 py-2 rounded-lg transition-colors">Compatibilità e Limiti</a>
                                 <a href="#sospensione" className="block text-slate-600 hover:text-teal-600 hover:bg-teal-50 px-3 py-2 rounded-lg transition-colors">Sospensione vs Decadenza</a>
@@ -167,10 +167,10 @@ const NaspiGuide: React.FC = () => {
                             </nav>
                         </div>
 
-                        <div className="bg-teal-600 p-6 rounded-2xl text-white shadow-lg shadow-teal-900/20">
-                            <h4 className="font-bold mb-2">Dubbi sulla tua situazione?</h4>
-                            <p className="text-teal-100 text-sm mb-4">Usa il nostro simulatore per verificare importi e durata previsti per il tuo caso specifico.</p>
-                            <a href="/?page=calculator" className="w-full bg-white text-teal-600 font-bold py-2 rounded-lg hover:bg-teal-50 transition-colors flex items-center justify-center gap-2">
+                        <div className="bg-teal-700 p-6 rounded-2xl text-white shadow-lg shadow-teal-900/20">
+                            <h2 className="font-bold mb-2">Dubbi sulla tua situazione?</h2>
+                            <p className="text-white text-sm mb-4">Usa il nostro simulatore per verificare importi e durata previsti per il tuo caso specifico.</p>
+                            <a href="/calcolatore" className="w-full bg-white text-teal-800 font-bold py-2 rounded-lg hover:bg-teal-50 transition-colors flex items-center justify-center gap-2">
                                 Vai al Calcolatore <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>

@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     <nav aria-label="Navigazione sito">
-                        <h3 className="font-bold text-lg mb-4 text-[#D4FF4F]">Navigazione</h3>
+                        <h2 className="font-bold text-lg mb-4 text-[#D4FF4F]">Navigazione</h2>
                         <ul className="space-y-2">
                             <li><a href="/" className="text-slate-400 hover:text-[#D4FF4F] transition-colors">Home</a></li>
                             <li><a href="/calcolatore" className="text-slate-400 hover:text-[#D4FF4F] transition-colors">Calcolatore</a></li>
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                     </nav>
 
                     <address className="not-italic">
-                        <h3 className="font-bold text-lg mb-4 text-[#D4FF4F]">Contatti</h3>
+                        <h2 className="font-bold text-lg mb-4 text-[#D4FF4F]">Contatti</h2>
                         <ul className="space-y-2 text-slate-400 text-sm">
                             <li>Via Filoteo Alberini, 25 — 00139 Roma (RM)</li>
                             <li><a href="tel:+390697845429" className="hover:text-[#D4FF4F]">06 9784 5429</a></li>
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                     </address>
 
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-[#D4FF4F]">Parlaci ora</h3>
+                        <h2 className="font-bold text-lg mb-4 text-[#D4FF4F]">Parlaci ora</h2>
                         <p className="text-slate-400 text-sm mb-4">Hai 68 giorni per presentare la NASpI. Non rimandare.</p>
                         <div className="space-y-2">
                             <a

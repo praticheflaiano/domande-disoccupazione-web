@@ -85,7 +85,7 @@ const Obligations: React.FC = () => {
                         <AlertOctagon className="w-5 h-5" /> Sistema Sanzionatorio
                     </h4>
                     <div className="overflow-x-auto">
-                        <table className="w-full text-sm text-left">
+                        <table tabIndex={0} className="w-full text-sm text-left">
                             <thead className="text-red-900/60 font-semibold border-b border-red-200">
                                 <tr>
                                     <th className="pb-2">Violazione</th>
