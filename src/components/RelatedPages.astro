@@ -1,5 +1,6 @@
 ---
 import { relatedFor } from '../lib/related';
+import { sitoLinksFor } from '../lib/sitoUfficiale';
 
 export interface Props {
     current: string;
@@ -8,6 +9,7 @@ export interface Props {
 
 const { current, title = 'Approfondisci' } = Astro.props;
 const links = relatedFor(current);
+const sito = sitoLinksFor(current);
 ---
 
 {links.length > 0 && (
@@ -29,3 +31,22 @@ const links = relatedFor(current);
         </div>
     </aside>
 )}
+
+<aside aria-label="Sul sito ufficiale praticheflaiano.it" class="max-w-4xl mx-auto px-4 py-10 border-t border-slate-200">
+    <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">Sul sito ufficiale praticheflaiano.it</h2>
+    <p class="text-slate-600 mb-6">Questo portale è curato dal Centro Pratiche Flaiano, CAF UNSIC e patronato ENASC di Roma. Servizi e prenotazioni sono sul sito ufficiale.</p>
+    <div class="grid md:grid-cols-3 gap-4">
+        {sito.map((link) => (
+            <a
+                href={link.href}
+                class="group block bg-[#F1EEFF] hover:bg-[#E4DEFF] border border-slate-200 rounded-xl p-5 transition-colors"
+            >
+                <div class="flex items-start justify-between gap-2 mb-2">
+                    <h3 class="font-bold text-slate-900 leading-tight underline underline-offset-2">{link.label}</h3>
+                    <span class="text-blue-700" aria-hidden="true">↗</span>
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed">{link.description}</p>
+            </a>
+        ))}
+    </div>
+</aside>

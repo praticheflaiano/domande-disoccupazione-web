@@ -63,7 +63,8 @@ export function parseBlogFeed(xml: string): BlogPost[] {
         const categories = allTagTexts(item, 'category');
         if (!isRelevant(categories)) continue;
 
-        const url = tagText(item, 'link');
+        // senza barra finale: sul sito ufficiale la barra produce un rimando
+        const url = tagText(item, 'link').replace(/\/+$/, '');
         const date = new Date(tagText(item, 'pubDate'));
         // Solo link al nostro blog e solo voci complete: niente sorprese in pagina.
         if (!url.startsWith(`${BLOG_ORIGIN}/blog/`) || Number.isNaN(date.getTime())) continue;
