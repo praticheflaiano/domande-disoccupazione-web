@@ -90,6 +90,11 @@ const G_DIMISSIONI_STIP = {
     label: 'Stipendio non pagato',
     description: 'Soglia 3 mesi per giusta causa, diffida, Fondo di Garanzia INPS.',
 };
+const G_FONDO_GARANZIA = {
+    href: '/guida/fondo-garanzia-tfr',
+    label: 'Fondo di garanzia INPS',
+    description: 'TFR e ultimi 3 stipendi pagati dall\'INPS se il datore fallisce o non paga.',
+};
 const G_DIMISSIONI_MOBBING = {
     href: '/guida/dimissioni-mobbing',
     label: 'Mobbing e demansionamento',
@@ -200,7 +205,8 @@ export const RELATED_MAP: Record<string, RelatedLink[]> = {
     'guida/dimissioni-giusta-causa': [G_DIMISSIONI_STIP, G_DIMISSIONI_MOBBING, G_DIMISSIONI_TRASF],
     'guida/dimissioni-trasferimento': [G_DIMISSIONI_CESS, G_DIMISSIONI_GC, O_CPI],
     'guida/dimissioni-maternita': [G_DIMISSIONI_GC, G_MATERNITA, G_DOMANDA],
-    'guida/dimissioni-stipendio-non-pagato': [G_DIMISSIONI_GC, G_DIMISSIONI_MOBBING, G_RICORSO],
+    'guida/dimissioni-stipendio-non-pagato': [G_FONDO_GARANZIA, G_DIMISSIONI_GC, G_RICORSO],
+    'guida/fondo-garanzia-tfr': [G_DIMISSIONI_STIP, G_DIMISSIONI_GC, G_RICORSO],
     'guida/dimissioni-mobbing': [G_DIMISSIONI_GC, G_DIMISSIONI_STIP, G_MATERNITA],
     'guida/dimissioni-cessione-azienda': [G_DIMISSIONI_TRASF, G_DIMISSIONI_GC, G_RICORSO],
     'guida/pagamenti-accredito': [G_SOSPENSIONE, G_DOMANDA, G_FISCALITA],

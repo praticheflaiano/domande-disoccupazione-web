@@ -13,6 +13,7 @@ Il portale è gestito dal Centro Pratiche Flaiano, Via Filoteo Alberini 25, int.
 - [Guida operativa NASpI](https://domandedisoccupazione.it/guida)
 - [Presentare la domanda](https://domandedisoccupazione.it/guida/presentare-domanda)
 - [Dimissioni per giusta causa](https://domandedisoccupazione.it/guida/dimissioni-giusta-causa)
+- [Fondo di garanzia INPS](https://domandedisoccupazione.it/guida/fondo-garanzia-tfr): TFR e stipendi degli ultimi tre mesi pagati dall'INPS se il datore fallisce o non può pagare; chi può chiederlo, quando, documenti, verifica interattiva
 - [Dimissioni per stipendio non pagato](https://domandedisoccupazione.it/guida/dimissioni-stipendio-non-pagato)
 - [Dimissioni per mobbing e demansionamento](https://domandedisoccupazione.it/guida/dimissioni-mobbing)
 - [Dimissioni per trasferimento](https://domandedisoccupazione.it/guida/dimissioni-trasferimento)
