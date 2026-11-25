@@ -32,6 +32,26 @@
   ],
   "redirects": [
     {
+      "source": "/calcolatore",
+      "destination": "https://praticheflaiano.it/calcolo-naspi",
+      "permanent": true
+    },
+    {
+      "source": "/anticipo",
+      "destination": "https://praticheflaiano.it/anticipo-naspi",
+      "permanent": true
+    },
+    {
+      "source": "/guida/presentare-domanda",
+      "destination": "https://praticheflaiano.it/naspi/domanda",
+      "permanent": true
+    },
+    {
+      "source": "/guida/fondo-garanzia-tfr",
+      "destination": "https://praticheflaiano.it/naspi/fondo-garanzia-tfr",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
