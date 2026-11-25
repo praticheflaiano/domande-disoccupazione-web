@@ -28,6 +28,7 @@ const KNOWN_PAGE_PATHS = new Set<string>([
     '/guida/dimissioni-trasferimento',
     '/guida/dimissioni-maternita',
     '/guida/dimissioni-stipendio-non-pagato',
+    '/guida/fondo-garanzia-tfr',
     '/guida/dimissioni-mobbing',
     '/guida/dimissioni-cessione-azienda',
     '/guida/pagamenti-accredito',
