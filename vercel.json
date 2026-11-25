@@ -52,6 +52,11 @@
       "permanent": true
     },
     {
+      "source": "/guida/ricorso",
+      "destination": "https://praticheflaiano.it/naspi/ricorso",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {

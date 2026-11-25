@@ -18,7 +18,7 @@ export default defineConfig({
             // Le pagine trasferite su praticheflaiano.it (rimando permanente in vercel.json) restano fuori dalla sitemap.
             filter: (page) =>
                 !page.includes('/api/') &&
-                !/\/(calcolatore|anticipo|guida\/presentare-domanda|guida\/fondo-garanzia-tfr)\/?$/.test(page),
+                !/\/(calcolatore|anticipo|guida\/presentare-domanda|guida\/fondo-garanzia-tfr|guida\/ricorso)\/?$/.test(page),
         }),
     ],
     vite: {

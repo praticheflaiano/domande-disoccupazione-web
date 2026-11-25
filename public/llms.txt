@@ -22,7 +22,7 @@ Il portale è gestito dal Centro Pratiche Flaiano, Via Filoteo Alberini 25, int.
 - [Nuovo lavoro durante la NASpI](https://domandedisoccupazione.it/guida/nuovo-lavoro-durante-naspi)
 - [Pagamenti e accredito](https://domandedisoccupazione.it/guida/pagamenti-accredito)
 - [NASpI sospesa](https://domandedisoccupazione.it/guida/sospensione-naspi)
-- [Ricorso contro il rigetto](https://domandedisoccupazione.it/guida/ricorso)
+- [Ricorso NASpI](https://praticheflaiano.it/naspi/ricorso): ricorso al Comitato provinciale INPS entro 90 giorni, solo online; tribunale entro 1 anno
 - [Fiscalità, CU e 730](https://domandedisoccupazione.it/guida/fiscalita)
 - [Maternità e malattia](https://domandedisoccupazione.it/guida/maternita-malattia)
 - [NASpI all'estero (modulo U2)](https://domandedisoccupazione.it/guida/estero-u2)
