@@ -14,9 +14,14 @@ export interface Props {
     kicker: string;
     sources: string[];
     faq?: Array<{ q: string; a: string }>;
+    /** Data dell'ultima revisione di questa pagina (YYYY-MM-DD). Se manca si usa LAST_UPDATED. */
+    updated?: string;
+    /** Data di prima pubblicazione (YYYY-MM-DD), per le pagine nuove. */
+    published?: string;
 }
 
-const { title, description, slug, h1, kicker, sources, faq } = Astro.props;
+const { title, description, slug, h1, kicker, sources, faq, updated, published } = Astro.props;
+const UPDATED = updated ?? LAST_UPDATED;
 
 const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -39,8 +44,8 @@ const articleSchema = {
     '@type': 'Article',
     headline: h1,
     description,
-    datePublished: LAST_UPDATED,
-    dateModified: LAST_UPDATED,
+    datePublished: published ?? LAST_UPDATED,
+    dateModified: UPDATED,
     inLanguage: 'it-IT',
     mainEntityOfPage: { '@type': 'WebPage', '@id': new URL(`/guida/${slug}`, SITE_URL).toString() },
     author: { '@id': `${SITE_URL}/#organization` },
@@ -56,13 +61,13 @@ const combinedSchema = faqSchema ? [articleSchema, faqSchema] : articleSchema;
     description={description}
     breadcrumbs={breadcrumbs}
     jsonLd={combinedSchema}
-    modifiedTime={LAST_UPDATED}
+    modifiedTime={UPDATED}
 >
     <article class="max-w-4xl mx-auto py-12 px-4 space-y-10">
         <header>
             <p class="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-2">{kicker}</p>
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">{h1}</h1>
-            <p class="text-sm text-slate-500">Aggiornato al <time datetime={LAST_UPDATED}>{LAST_UPDATED}</time></p>
+            <p class="text-sm text-slate-500">Aggiornato al <time datetime={UPDATED}>{UPDATED.split('-').reverse().join('/')}</time></p>
         </header>
 
         <div class="prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-blue-600">
@@ -107,7 +112,7 @@ const combinedSchema = faqSchema ? [articleSchema, faqSchema] : articleSchema;
                 Contenuto redatto e aggiornato dalla redazione del
                 <a href="/chi-siamo" class="text-blue-600 underline font-semibold">Centro Pratiche Flaiano</a>
                 — CAF e patronato di Roma specializzato in pratiche NASpI e ammortizzatori sociali.
-                Ultima revisione normativa: <time datetime={LAST_UPDATED}>{LAST_UPDATED}</time>.
+                Ultima revisione normativa: <time datetime={UPDATED}>{UPDATED.split('-').reverse().join('/')}</time>.
             </p>
         </section>
     </article>
