@@ -24,6 +24,9 @@ module.exports = {
         'jsx-a11y/label-has-associated-control': 'warn',
         'jsx-a11y/click-events-have-key-events': 'warn',
         'jsx-a11y/no-static-element-interactions': 'warn',
+        // Le tabelle larghe scorrono in orizzontale: devono poter ricevere il fuoco da tastiera
+        // (WCAG 2.1.1, regola axe scrollable-region-focusable). Per questo tabIndex sulle <table> è ammesso.
+        'jsx-a11y/no-noninteractive-tabindex': ['error', { tags: ['table'], roles: ['tabpanel'] }],
     },
     ignorePatterns: ['dist', 'node_modules'],
 };
