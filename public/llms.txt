@@ -5,15 +5,15 @@
 Il portale è gestito dal Centro Pratiche Flaiano, Via Filoteo Alberini 25, int. 10, 00139 Roma (quartiere Vigne Nuove, Municipio III). Telefono: +39 06 9784 5429. WhatsApp: +39 371 623 0690. Email: praticheflaiano@gmail.com. Orari: lunedì-giovedì 9:30-13:00 e 15:30-18:00, venerdì 9:30-14:00. Sito principale con tutti i servizi CAF e patronato: https://praticheflaiano.it
 
 ## Strumenti
-- [Calcolatore NASpI](https://domandedisoccupazione.it/calcolatore): stima di importo e durata con i parametri INPS dell'anno
+- [Calcolo NASpI](https://praticheflaiano.it/calcolo-naspi): stima di importo e durata con i parametri INPS dell'anno (dal 25/11/2026 sul sito ufficiale praticheflaiano.it)
 - [Richiedi la NASpI online](https://domandedisoccupazione.it/richiedi): invio della domanda con assistenza e caricamento documenti
-- [Anticipo NASpI](https://domandedisoccupazione.it/anticipo): dal 2026 pagato in due rate (70% subito, 30% dopo) a chi avvia un'attività autonoma, un'impresa o entra in cooperativa; domanda entro 30 giorni
+- [Anticipo NASpI](https://praticheflaiano.it/anticipo-naspi): dal 2026 pagato in due rate (70% subito, 30% dopo) a chi avvia un'attività autonoma, un'impresa o entra in cooperativa; domanda entro 30 giorni
 
 ## Guide
 - [Guida operativa NASpI](https://domandedisoccupazione.it/guida)
-- [Presentare la domanda](https://domandedisoccupazione.it/guida/presentare-domanda)
+- [Presentare la domanda NASpI](https://praticheflaiano.it/naspi/domanda): requisiti, 68 giorni, documenti, decorrenza, strumento delle scadenze
 - [Dimissioni per giusta causa](https://domandedisoccupazione.it/guida/dimissioni-giusta-causa)
-- [Fondo di garanzia INPS](https://domandedisoccupazione.it/guida/fondo-garanzia-tfr): TFR e stipendi degli ultimi tre mesi pagati dall'INPS se il datore fallisce o non può pagare; chi può chiederlo, quando, documenti, verifica interattiva
+- [Fondo di garanzia INPS](https://praticheflaiano.it/naspi/fondo-garanzia-tfr): TFR e stipendi degli ultimi tre mesi pagati dall'INPS se il datore fallisce o non può pagare; chi può chiederlo, quando, documenti, verifica interattiva
 - [Dimissioni per stipendio non pagato](https://domandedisoccupazione.it/guida/dimissioni-stipendio-non-pagato)
 - [Dimissioni per mobbing e demansionamento](https://domandedisoccupazione.it/guida/dimissioni-mobbing)
 - [Dimissioni per trasferimento](https://domandedisoccupazione.it/guida/dimissioni-trasferimento)

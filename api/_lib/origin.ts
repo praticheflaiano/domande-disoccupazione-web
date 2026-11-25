@@ -1,6 +1,9 @@
 const ALLOWED_HOSTS = [
     'domandedisoccupazione.it',
     'www.domandedisoccupazione.it',
+    // Dal 25/11/2026 il calcolatore vive su praticheflaiano.it e chiama questa funzione da lì.
+    'praticheflaiano.it',
+    'www.praticheflaiano.it',
     'localhost',
     '127.0.0.1',
 ];
