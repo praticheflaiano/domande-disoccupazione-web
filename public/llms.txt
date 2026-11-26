@@ -19,14 +19,14 @@ Il portale è gestito dal Centro Pratiche Flaiano, Via Filoteo Alberini 25, int.
 - [Dimissioni per trasferimento](https://domandedisoccupazione.it/guida/dimissioni-trasferimento)
 - [Dimissioni nel primo anno del figlio](https://domandedisoccupazione.it/guida/dimissioni-maternita)
 - [Cessione d'azienda e dimissioni](https://domandedisoccupazione.it/guida/dimissioni-cessione-azienda)
-- [Nuovo lavoro durante la NASpI](https://domandedisoccupazione.it/guida/nuovo-lavoro-durante-naspi)
-- [Pagamenti e accredito](https://domandedisoccupazione.it/guida/pagamenti-accredito)
-- [NASpI sospesa](https://domandedisoccupazione.it/guida/sospensione-naspi)
+- [Nuovo lavoro durante la NASpI](https://praticheflaiano.it/naspi/nuovo-lavoro): lavoro dipendente, autonomo e occasionale durante la NASpI, comunicazione entro un mese con NASpI-Com, sospensione e decadenza
+- [Pagamenti e accredito](https://praticheflaiano.it/naspi/pagamento): quando arriva la NASpI, come controllare i pagamenti, IBAN e trattenute
+- [NASpI sospesa](https://praticheflaiano.it/naspi/sospensione): perché la NASpI viene sospesa o revocata, come riprenderla, ricorso entro 90 giorni
 - [Ricorso NASpI](https://praticheflaiano.it/naspi/ricorso): ricorso al Comitato provinciale INPS entro 90 giorni, solo online; tribunale entro 1 anno
 - [Fiscalità, CU e 730](https://domandedisoccupazione.it/guida/fiscalita)
 - [Maternità e malattia](https://domandedisoccupazione.it/guida/maternita-malattia)
 - [NASpI all'estero (modulo U2)](https://domandedisoccupazione.it/guida/estero-u2)
-- [DID online](https://domandedisoccupazione.it/guida/did)
+- [DID online](https://praticheflaiano.it/naspi/did): DID online, SIISL e patto di attivazione, centro per l'impiego
 - [ANF durante la NASpI](https://domandedisoccupazione.it/guida/anf)
 - [DIS-COLL per collaboratori](https://domandedisoccupazione.it/dis-coll)
 - [Manuale NASpI](https://domandedisoccupazione.it/manuale)

@@ -57,6 +57,26 @@
       "permanent": true
     },
     {
+      "source": "/guida/pagamenti-accredito",
+      "destination": "https://praticheflaiano.it/naspi/pagamento",
+      "permanent": true
+    },
+    {
+      "source": "/guida/nuovo-lavoro-durante-naspi",
+      "destination": "https://praticheflaiano.it/naspi/nuovo-lavoro",
+      "permanent": true
+    },
+    {
+      "source": "/guida/did",
+      "destination": "https://praticheflaiano.it/naspi/did",
+      "permanent": true
+    },
+    {
+      "source": "/guida/sospensione-naspi",
+      "destination": "https://praticheflaiano.it/naspi/sospensione",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
